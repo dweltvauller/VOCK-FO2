@@ -2,8 +2,8 @@
 ## v1.5
 - Multilanguage support (hopefully fixed this time)
 - 2 new characters (not fully completed):
-[Zaius (Broken Hills)](https://fallout.fandom.com/wiki/Zaius)
-[Christopher Wright (New Reno)](https://fallout.fandom.com/wiki/Christopher_Wright)
+  - [Zaius (Broken Hills)](https://fallout.fandom.com/wiki/Zaius)
+  - [Christopher Wright (New Reno)](https://fallout.fandom.com/wiki/Christopher_Wright)
 
 ## v1.4
 - Multilanguage support (not working)
@@ -24,6 +24,6 @@
 
 ## v1.0
 - Voiced Characters with AI:
-[Morlis (Arroyo)](https://fallout.fandom.com/wiki/Morlis)
-[Sally Dunton (Klamath)](https://fallout.fandom.com/wiki/Sally_Dunton)
-[Bridgekeeper (Special Encounter)](https://fallout.fandom.com/wiki/Bridgekeeper)
+  - [Morlis (Arroyo)](https://fallout.fandom.com/wiki/Morlis)
+  - [Sally Dunton (Klamath)](https://fallout.fandom.com/wiki/Sally_Dunton)
+  - [Bridgekeeper (Special Encounter)](https://fallout.fandom.com/wiki/Bridgekeeper)
