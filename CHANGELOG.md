@@ -20,7 +20,7 @@
 - Added voices for float messages (some aren't working, this is an engine problem)
 - Updated phonemes to produce better quality mouth movements
 - Voiced Character with AI:
-[Arthur Pendragon (Special Encounter)](https://fallout.fandom.com/wiki/Arthur_Pendragon)
+  - [Arthur Pendragon (Special Encounter)](https://fallout.fandom.com/wiki/Arthur_Pendragon)
 
 ## v1.0
 - Voiced Characters with AI:
