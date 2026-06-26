@@ -2,7 +2,7 @@
 
 ## v1.5
 - Multilanguage support (resolved)
-- Added voices: Zaius (Broken Hills), Christopher Wright (New Reno)
+- Added voices (WIP): Zaius (Broken Hills), Christopher Wright (New Reno)
 
 ## v1.4
 - Multilanguage support (not working, see v1.5)
