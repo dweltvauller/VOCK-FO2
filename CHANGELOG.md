@@ -1,15 +1,14 @@
 # Changelog
+
 ## v1.5
-- Multilanguage support (hopefully fixed this time)
-- 2 new characters (not fully completed):
-  - sedatednerves ([YouTube](https://www.youtube.com/@sedatednerves), [Instagram](https://www.instagram.com/sedatednerves/)) voice modeling for [Zaius (Broken Hills)](https://fallout.fandom.com/wiki/Zaius)
-  - Halyze ([Linktree](https://linktr.ee/Halyze)) voice modeling for [Christopher Wright (New Reno)](https://fallout.fandom.com/wiki/Christopher_Wright)
+- Multilanguage support (resolved)
+- Added voices: Zaius (Broken Hills), Christopher Wright (New Reno)
 
 ## v1.4
-- Multilanguage support (not working)
+- Multilanguage support (not working, see v1.5)
 
 ## v1.3
-- Kiti Celine ([SoundCloud](https://on.soundcloud.com/FdxqvdlD5ywIIMQCDr)) voice modeling for [Jenny (Klamath)](https://fallout.fandom.com/wiki/Jenny_(Fallout_2))
+- Added voice: Jenny (Klamath)
 - VOCK script updated for better lip-sync quality
 
 ## v1.2
@@ -19,11 +18,11 @@
 ## v1.1
 - Added voices for float messages (some aren't working, this is an engine problem)
 - Updated phonemes to produce better quality mouth movements
-- Voiced Character with AI:
-  - [Arthur Pendragon (Special Encounter)](https://fallout.fandom.com/wiki/Arthur_Pendragon)
+- Added AI voice: Arthur Pendragon (Special Encounter)
 
 ## v1.0
-- Voiced Characters with AI:
-  - [Morlis (Arroyo)](https://fallout.fandom.com/wiki/Morlis)
-  - [Sally Dunton (Klamath)](https://fallout.fandom.com/wiki/Sally_Dunton)
-  - [Bridgekeeper (Special Encounter)](https://fallout.fandom.com/wiki/Bridgekeeper)
+- Added AI voices: Morlis (Arroyo), Sally Dunton (Klamath), Bridgekeeper (Special Encounter)
+
+---
+
+*For full cast and contributor links, see [CREDITS.md](CREDITS.md).*
