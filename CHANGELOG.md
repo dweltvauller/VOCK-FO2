@@ -2,14 +2,14 @@
 ## v1.5
 - Multilanguage support (hopefully fixed this time)
 - 2 new characters (not fully completed):
-  - [Zaius (Broken Hills)](https://fallout.fandom.com/wiki/Zaius)
-  - [Christopher Wright (New Reno)](https://fallout.fandom.com/wiki/Christopher_Wright)
+  - sedatednerves ([YouTube](https://www.youtube.com/@sedatednerves), [Instagram](https://www.instagram.com/sedatednerves/)) voice modeling for [Zaius (Broken Hills)](https://fallout.fandom.com/wiki/Zaius)
+  - Halyze ([Linktree](https://linktr.ee/Halyze)) voice modeling for [Christopher Wright (New Reno)](https://fallout.fandom.com/wiki/Christopher_Wright)
 
 ## v1.4
 - Multilanguage support (not working)
 
 ## v1.3
-- [Kiti Celine](https://on.soundcloud.com/FdxqvdlD5ywIIMQCDr) voice modeling for [Jenny (Klamath)](https://fallout.fandom.com/wiki/Jenny_(Fallout_2))
+- Kiti Celine ([SoundCloud](https://on.soundcloud.com/FdxqvdlD5ywIIMQCDr)) voice modeling for [Jenny (Klamath)](https://fallout.fandom.com/wiki/Jenny_(Fallout_2))
 - VOCK script updated for better lip-sync quality
 
 ## v1.2
