@@ -1,0 +1,923 @@
+variable tmp_gen_rep;
+variable restock_amt;
+variable restock_obj;
+variable removed_qty;
+
+procedure start;
+procedure critter_p_proc;
+procedure pickup_p_proc;
+procedure talk_p_proc;
+procedure destroy_p_proc;
+procedure look_at_p_proc;
+procedure description_p_proc;
+procedure use_skill_on_p_proc;
+procedure damage_p_proc;
+procedure do_setup;
+procedure map_enter_p_proc;
+procedure combat_p_proc;
+procedure timed_event_p_proc;
+procedure Node998;
+procedure NodeFighting;
+procedure doSequence;
+procedure Node001;
+procedure Node002;
+procedure Node003;
+procedure Node004;
+procedure Node005;
+
+variable Only_Once;
+variable pending_dialog;
+
+procedure map_exit_p_proc;
+
+
+procedure start
+begin
+end
+
+procedure critter_p_proc
+begin
+	if (pending_dialog) then begin
+		pending_dialog := 0;
+		dialogue_system_enter;
+	end
+	if (not(metarule(22, 0)) and not(global_var(399) bwand 32)) then begin
+		call do_setup();
+	end
+	else begin
+		if (not(combat_is_initialized) and (local_var(5) == 2) and obj_can_see_obj(self_obj, dude_obj)) then begin
+			attack_complex(dude_obj, 0, 1, 0, 0, 30000, 0, 0);
+		end
+	end
+end
+
+procedure pickup_p_proc
+begin
+	if (source_obj == dude_obj) then begin
+		set_local_var(5, 2);
+	end
+end
+
+procedure talk_p_proc
+begin
+	if ((game_time_hour < 600) or (game_time_hour >= 1900)) then begin
+		start_gdialog(835, self_obj, 4, 123, 21);
+	end
+	else begin
+		start_gdialog(835, self_obj, 4, 123, 16);
+	end
+	gsay_start;
+	call Node001();
+	gsay_end;
+	end_dialogue;
+end
+
+procedure destroy_p_proc
+begin
+	if (source_obj == dude_obj) then begin
+		set_global_var(4, global_var(4) + 1);
+		if (metarule(51, self_obj) == 2) then begin
+			if (source_obj == dude_obj) then begin
+				set_global_var(2, 0);
+				set_global_var(1, global_var(1) + 1);
+				set_global_var(0, global_var(0) + -15);
+				debug_msg("eckaga5" + ": " + "Player gains " + -15 + " Karma Points." + "\n");
+				set_global_var(37, 0);
+				set_global_var(38, 0);
+				set_global_var(39, 0);
+				set_global_var(40, 0);
+				set_global_var(41, 0);
+				set_global_var(42, 0);
+				set_global_var(43, 0);
+				set_global_var(44, 0);
+				set_global_var(45, 0);
+				tmp_gen_rep := global_var(0);
+				if (has_trait(0, dude_obj, 95)) then begin
+					tmp_gen_rep := global_var(0) * 2;
+				end
+				if (tmp_gen_rep >= 1000) then begin
+					set_global_var(37, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 750) then begin
+						set_global_var(38, 1);
+					end
+					else begin
+						if (tmp_gen_rep >= 500) then begin
+							set_global_var(39, 1);
+						end
+						else begin
+							if (tmp_gen_rep >= 250) then begin
+								set_global_var(40, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -250) then begin
+									set_global_var(41, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -500) then begin
+										set_global_var(42, 1);
+									end
+									else begin
+										if (tmp_gen_rep > -750) then begin
+											set_global_var(43, 1);
+										end
+										else begin
+											if (tmp_gen_rep > -1000) then begin
+												set_global_var(44, 1);
+											end
+											else begin
+												set_global_var(45, 1);
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		if (((global_var(4) + global_var(5)) >= 25) and ((global_var(5) > (2 * global_var(4))) or (global_var(3) == 1))) then begin
+			set_global_var(3, 1);
+			set_global_var(2, 0);
+		end
+		if (((global_var(4) + global_var(5)) >= 25) and ((global_var(4) > (3 * global_var(5))) or (global_var(2) == 1)) and (global_var(1) == 0)) then begin
+			set_global_var(2, 1);
+			set_global_var(3, 0);
+		end
+		set_global_var(0, global_var(0) + 5);
+		debug_msg("eckaga5" + ": " + "Player gains " + 5 + " Karma Points." + "\n");
+		set_global_var(37, 0);
+		set_global_var(38, 0);
+		set_global_var(39, 0);
+		set_global_var(40, 0);
+		set_global_var(41, 0);
+		set_global_var(42, 0);
+		set_global_var(43, 0);
+		set_global_var(44, 0);
+		set_global_var(45, 0);
+		tmp_gen_rep := global_var(0);
+		if (has_trait(0, dude_obj, 95)) then begin
+			tmp_gen_rep := global_var(0) * 2;
+		end
+		if (tmp_gen_rep >= 1000) then begin
+			set_global_var(37, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 750) then begin
+				set_global_var(38, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 500) then begin
+					set_global_var(39, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 250) then begin
+						set_global_var(40, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -250) then begin
+							set_global_var(41, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -500) then begin
+								set_global_var(42, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -750) then begin
+									set_global_var(43, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -1000) then begin
+										set_global_var(44, 1);
+									end
+									else begin
+										set_global_var(45, 1);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	set_global_var(399, global_var(399) bwor 128);
+	set_global_var(399, global_var(399) bwor 64);
+	give_exp_points(1000);
+	display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+end
+
+procedure look_at_p_proc
+begin
+	script_overrides;
+	if (local_var(4) == 0) then begin
+		display_msg(message_str(835, 100));
+	end
+	else begin
+		display_msg(message_str(835, 101));
+	end
+end
+
+procedure description_p_proc
+begin
+	script_overrides;
+	display_msg(message_str(835, 102));
+end
+
+procedure use_skill_on_p_proc
+begin
+end
+
+procedure damage_p_proc
+begin
+end
+
+procedure do_setup
+begin
+	variable LVar0 := 0;
+	variable LVar1 := 0;
+	variable LVar2 := 0;
+	variable LVar3 := 0;
+	debug_msg("eckaga5" + ": " + "do_setup" + "\n");
+	Only_Once := 0;
+	critter_add_trait(self_obj, 1, 6, 194);
+	critter_add_trait(self_obj, 1, 5, 141);
+	set_global_var(399, global_var(399) bwor 2);
+	set_global_var(399, global_var(399) bwor 4);
+	set_global_var(399, global_var(399) bwor 8);
+	set_global_var(399, global_var(399) bwor 16);
+	set_global_var(399, global_var(399) bwor 32);
+	restock_amt := random(3, 3);
+	if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
+		if (100 >= random(1, 100)) then begin
+			if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
+				restock_obj := create_object_sid(26, 0, 0, -1);
+				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 26));
+			end
+			else begin
+				if (obj_is_carrying_obj_pid(self_obj, 26) > restock_amt) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 26);
+					if ((obj_is_carrying_obj_pid(self_obj, 26) - restock_amt) < removed_qty) then begin
+						removed_qty := obj_is_carrying_obj_pid(self_obj, 26) - restock_amt;
+					end
+					if (removed_qty > 0) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 26);
+						if (obj_type(self_obj) == 1) then begin
+							restock_obj := obj_carrying_pid_obj(self_obj, 26);
+							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+									restock_obj := critter_inven_obj(self_obj, 0);
+									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+									rm_obj_from_inven(self_obj, restock_obj);
+									add_obj_to_inven(self_obj, restock_obj);
+								end
+							end
+							else begin
+								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+									metarule(43, self_obj);
+								end
+							end
+						end
+						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+						destroy_object(restock_obj);
+					end
+					restock_obj := 0;
+					restock_amt := 0;
+				end
+				else begin
+					restock_obj := 0;
+				end
+			end
+		end
+	end
+	else begin
+		if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
+			restock_obj := create_object_sid(26, 0, 0, -1);
+			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 26));
+		end
+		else begin
+			if (obj_is_carrying_obj_pid(self_obj, 26) > restock_amt) then begin
+				removed_qty := obj_is_carrying_obj_pid(self_obj, 26);
+				if ((obj_is_carrying_obj_pid(self_obj, 26) - restock_amt) < removed_qty) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 26) - restock_amt;
+				end
+				if (removed_qty > 0) then begin
+					restock_obj := obj_carrying_pid_obj(self_obj, 26);
+					if (obj_type(self_obj) == 1) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 26);
+						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+								restock_obj := critter_inven_obj(self_obj, 0);
+								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+								rm_obj_from_inven(self_obj, restock_obj);
+								add_obj_to_inven(self_obj, restock_obj);
+							end
+						end
+						else begin
+							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+								metarule(43, self_obj);
+							end
+						end
+					end
+					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+					destroy_object(restock_obj);
+				end
+				restock_obj := 0;
+				restock_amt := 0;
+			end
+			else begin
+				restock_obj := 0;
+			end
+		end
+	end
+	restock_amt := random(5, 5);
+	if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
+		if (100 >= random(1, 100)) then begin
+			if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
+				restock_obj := create_object_sid(40, 0, 0, -1);
+				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 40));
+			end
+			else begin
+				if (obj_is_carrying_obj_pid(self_obj, 40) > restock_amt) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 40);
+					if ((obj_is_carrying_obj_pid(self_obj, 40) - restock_amt) < removed_qty) then begin
+						removed_qty := obj_is_carrying_obj_pid(self_obj, 40) - restock_amt;
+					end
+					if (removed_qty > 0) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 40);
+						if (obj_type(self_obj) == 1) then begin
+							restock_obj := obj_carrying_pid_obj(self_obj, 40);
+							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+									restock_obj := critter_inven_obj(self_obj, 0);
+									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+									rm_obj_from_inven(self_obj, restock_obj);
+									add_obj_to_inven(self_obj, restock_obj);
+								end
+							end
+							else begin
+								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+									metarule(43, self_obj);
+								end
+							end
+						end
+						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+						destroy_object(restock_obj);
+					end
+					restock_obj := 0;
+					restock_amt := 0;
+				end
+				else begin
+					restock_obj := 0;
+				end
+			end
+		end
+	end
+	else begin
+		if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
+			restock_obj := create_object_sid(40, 0, 0, -1);
+			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 40));
+		end
+		else begin
+			if (obj_is_carrying_obj_pid(self_obj, 40) > restock_amt) then begin
+				removed_qty := obj_is_carrying_obj_pid(self_obj, 40);
+				if ((obj_is_carrying_obj_pid(self_obj, 40) - restock_amt) < removed_qty) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 40) - restock_amt;
+				end
+				if (removed_qty > 0) then begin
+					restock_obj := obj_carrying_pid_obj(self_obj, 40);
+					if (obj_type(self_obj) == 1) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 40);
+						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+								restock_obj := critter_inven_obj(self_obj, 0);
+								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+								rm_obj_from_inven(self_obj, restock_obj);
+								add_obj_to_inven(self_obj, restock_obj);
+							end
+						end
+						else begin
+							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+								metarule(43, self_obj);
+							end
+						end
+					end
+					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+					destroy_object(restock_obj);
+				end
+				restock_obj := 0;
+				restock_amt := 0;
+			end
+			else begin
+				restock_obj := 0;
+			end
+		end
+	end
+	restock_amt := random(3, 3);
+	if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
+		if (100 >= random(1, 100)) then begin
+			if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
+				restock_obj := create_object_sid(39, 0, 0, -1);
+				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 39));
+			end
+			else begin
+				if (obj_is_carrying_obj_pid(self_obj, 39) > restock_amt) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 39);
+					if ((obj_is_carrying_obj_pid(self_obj, 39) - restock_amt) < removed_qty) then begin
+						removed_qty := obj_is_carrying_obj_pid(self_obj, 39) - restock_amt;
+					end
+					if (removed_qty > 0) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 39);
+						if (obj_type(self_obj) == 1) then begin
+							restock_obj := obj_carrying_pid_obj(self_obj, 39);
+							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+									restock_obj := critter_inven_obj(self_obj, 0);
+									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+									rm_obj_from_inven(self_obj, restock_obj);
+									add_obj_to_inven(self_obj, restock_obj);
+								end
+							end
+							else begin
+								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+									metarule(43, self_obj);
+								end
+							end
+						end
+						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+						destroy_object(restock_obj);
+					end
+					restock_obj := 0;
+					restock_amt := 0;
+				end
+				else begin
+					restock_obj := 0;
+				end
+			end
+		end
+	end
+	else begin
+		if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
+			restock_obj := create_object_sid(39, 0, 0, -1);
+			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 39));
+		end
+		else begin
+			if (obj_is_carrying_obj_pid(self_obj, 39) > restock_amt) then begin
+				removed_qty := obj_is_carrying_obj_pid(self_obj, 39);
+				if ((obj_is_carrying_obj_pid(self_obj, 39) - restock_amt) < removed_qty) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 39) - restock_amt;
+				end
+				if (removed_qty > 0) then begin
+					restock_obj := obj_carrying_pid_obj(self_obj, 39);
+					if (obj_type(self_obj) == 1) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 39);
+						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+								restock_obj := critter_inven_obj(self_obj, 0);
+								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+								rm_obj_from_inven(self_obj, restock_obj);
+								add_obj_to_inven(self_obj, restock_obj);
+							end
+						end
+						else begin
+							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+								metarule(43, self_obj);
+							end
+						end
+					end
+					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+					destroy_object(restock_obj);
+				end
+				restock_obj := 0;
+				restock_amt := 0;
+			end
+			else begin
+				restock_obj := 0;
+			end
+		end
+	end
+	restock_amt := random(5000, 5000);
+	if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
+		if (100 >= random(1, 100)) then begin
+			if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
+				restock_obj := create_object_sid(41, 0, 0, -1);
+				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 41));
+			end
+			else begin
+				if (obj_is_carrying_obj_pid(self_obj, 41) > restock_amt) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 41);
+					if ((obj_is_carrying_obj_pid(self_obj, 41) - restock_amt) < removed_qty) then begin
+						removed_qty := obj_is_carrying_obj_pid(self_obj, 41) - restock_amt;
+					end
+					if (removed_qty > 0) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 41);
+						if (obj_type(self_obj) == 1) then begin
+							restock_obj := obj_carrying_pid_obj(self_obj, 41);
+							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+									restock_obj := critter_inven_obj(self_obj, 0);
+									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+									rm_obj_from_inven(self_obj, restock_obj);
+									add_obj_to_inven(self_obj, restock_obj);
+								end
+							end
+							else begin
+								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+									metarule(43, self_obj);
+								end
+							end
+						end
+						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+						destroy_object(restock_obj);
+					end
+					restock_obj := 0;
+					restock_amt := 0;
+				end
+				else begin
+					restock_obj := 0;
+				end
+			end
+		end
+	end
+	else begin
+		if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
+			restock_obj := create_object_sid(41, 0, 0, -1);
+			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 41));
+		end
+		else begin
+			if (obj_is_carrying_obj_pid(self_obj, 41) > restock_amt) then begin
+				removed_qty := obj_is_carrying_obj_pid(self_obj, 41);
+				if ((obj_is_carrying_obj_pid(self_obj, 41) - restock_amt) < removed_qty) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 41) - restock_amt;
+				end
+				if (removed_qty > 0) then begin
+					restock_obj := obj_carrying_pid_obj(self_obj, 41);
+					if (obj_type(self_obj) == 1) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 41);
+						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+								restock_obj := critter_inven_obj(self_obj, 0);
+								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+								rm_obj_from_inven(self_obj, restock_obj);
+								add_obj_to_inven(self_obj, restock_obj);
+							end
+						end
+						else begin
+							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+								metarule(43, self_obj);
+							end
+						end
+					end
+					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+					destroy_object(restock_obj);
+				end
+				restock_obj := 0;
+				restock_amt := 0;
+			end
+			else begin
+				restock_obj := 0;
+			end
+		end
+	end
+	restock_amt := random(1, 1);
+	if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
+		if (100 >= random(1, 100)) then begin
+			if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
+				restock_obj := create_object_sid(28, 0, 0, -1);
+				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 28));
+			end
+			else begin
+				if (obj_is_carrying_obj_pid(self_obj, 28) > restock_amt) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 28);
+					if ((obj_is_carrying_obj_pid(self_obj, 28) - restock_amt) < removed_qty) then begin
+						removed_qty := obj_is_carrying_obj_pid(self_obj, 28) - restock_amt;
+					end
+					if (removed_qty > 0) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 28);
+						if (obj_type(self_obj) == 1) then begin
+							restock_obj := obj_carrying_pid_obj(self_obj, 28);
+							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+									restock_obj := critter_inven_obj(self_obj, 0);
+									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+									rm_obj_from_inven(self_obj, restock_obj);
+									add_obj_to_inven(self_obj, restock_obj);
+								end
+							end
+							else begin
+								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+									metarule(43, self_obj);
+								end
+							end
+						end
+						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+						destroy_object(restock_obj);
+					end
+					restock_obj := 0;
+					restock_amt := 0;
+				end
+				else begin
+					restock_obj := 0;
+				end
+			end
+		end
+	end
+	else begin
+		if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
+			restock_obj := create_object_sid(28, 0, 0, -1);
+			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 28));
+		end
+		else begin
+			if (obj_is_carrying_obj_pid(self_obj, 28) > restock_amt) then begin
+				removed_qty := obj_is_carrying_obj_pid(self_obj, 28);
+				if ((obj_is_carrying_obj_pid(self_obj, 28) - restock_amt) < removed_qty) then begin
+					removed_qty := obj_is_carrying_obj_pid(self_obj, 28) - restock_amt;
+				end
+				if (removed_qty > 0) then begin
+					restock_obj := obj_carrying_pid_obj(self_obj, 28);
+					if (obj_type(self_obj) == 1) then begin
+						restock_obj := obj_carrying_pid_obj(self_obj, 28);
+						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
+							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
+								restock_obj := critter_inven_obj(self_obj, 0);
+								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
+								rm_obj_from_inven(self_obj, restock_obj);
+								add_obj_to_inven(self_obj, restock_obj);
+							end
+						end
+						else begin
+							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
+								metarule(43, self_obj);
+							end
+						end
+					end
+					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
+					destroy_object(restock_obj);
+				end
+				restock_obj := 0;
+				restock_amt := 0;
+			end
+			else begin
+				restock_obj := 0;
+			end
+		end
+	end
+	wield_obj_critter(self_obj, obj_carrying_pid_obj(self_obj, 28));
+	LVar1 := create_object_sid(16777470, 0, 0, 486);
+	add_obj_to_inven(LVar1, create_object_sid(24, 0, 0, -1));
+	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
+	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
+	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 24));
+	critter_add_trait(LVar1, 1, 6, 194);
+	critter_add_trait(LVar1, 1, 5, 12);
+	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
+	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
+	critter_attempt_placement(LVar1, LVar3, 0);
+	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
+	LVar1 := create_object_sid(16777470, 0, 0, 486);
+	add_obj_to_inven(LVar1, create_object_sid(388, 0, 0, -1));
+	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
+	add_mult_objs_to_inven(LVar1, create_object_sid(361, 0, 0, -1), 2);
+	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 388));
+	critter_add_trait(LVar1, 1, 6, 194);
+	critter_add_trait(LVar1, 1, 5, 12);
+	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
+	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
+	critter_attempt_placement(LVar1, LVar3, 0);
+	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
+	LVar1 := create_object_sid(16777471, 0, 0, 486);
+	add_obj_to_inven(LVar1, create_object_sid(116, 0, 0, -1));
+	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
+	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
+	LVar0 := create_object_sid(26, 0, 0, -1);
+	add_mult_objs_to_inven(LVar1, LVar0, random(4, 6));
+	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 26));
+	critter_add_trait(LVar1, 1, 6, 194);
+	critter_add_trait(LVar1, 1, 5, 12);
+	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
+	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
+	critter_attempt_placement(LVar1, LVar3, 0);
+	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
+	LVar1 := create_object_sid(16777471, 0, 0, 486);
+	add_obj_to_inven(LVar1, create_object_sid(116, 0, 0, -1));
+	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
+	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
+	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 116));
+	critter_add_trait(LVar1, 1, 6, 194);
+	critter_add_trait(LVar1, 1, 5, 12);
+	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
+	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
+	critter_attempt_placement(LVar1, LVar3, 0);
+	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
+	if (global_var(399) bwand 64) then begin
+		float_msg(dude_obj, message_str(835, 120), 3);
+		set_local_var(4, 1);
+		set_local_var(5, 2);
+	end
+	else begin
+		add_timer_event(self_obj, 1, 1);
+	end
+end
+
+procedure map_enter_p_proc
+begin
+	if (not(metarule(22, 0))) then begin
+		call do_setup();
+	end
+end
+
+procedure combat_p_proc
+begin
+	if (random(1, 100) <= 50) then begin
+		call NodeFighting();
+	end
+end
+
+procedure timed_event_p_proc
+begin
+	if (fixed_param == 1) then begin
+		call doSequence();
+	end
+end
+
+procedure Node998
+begin
+	set_local_var(5, 2);
+	end_dialogue;
+end
+
+procedure NodeFighting
+begin
+	variable LVar0 := 0;
+	LVar0 := random(103, 111);
+	if ((LVar0 == 103) or (LVar0 == 104) and not(global_var(399) bwand 64)) then begin
+		LVar0 := 105;
+	end
+	if (LVar0 == 108) then begin
+		set_global_var(37, 0);
+		set_global_var(38, 0);
+		set_global_var(39, 0);
+		set_global_var(40, 0);
+		set_global_var(41, 0);
+		set_global_var(42, 0);
+		set_global_var(43, 0);
+		set_global_var(44, 0);
+		set_global_var(45, 0);
+		tmp_gen_rep := global_var(0);
+		if (has_trait(0, dude_obj, 95)) then begin
+			tmp_gen_rep := global_var(0) * 2;
+		end
+		if (tmp_gen_rep >= 1000) then begin
+			set_global_var(37, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 750) then begin
+				set_global_var(38, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 500) then begin
+					set_global_var(39, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 250) then begin
+						set_global_var(40, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -250) then begin
+							set_global_var(41, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -500) then begin
+								set_global_var(42, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -750) then begin
+									set_global_var(43, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -1000) then begin
+										set_global_var(44, 1);
+									end
+									else begin
+										set_global_var(45, 1);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		if (not(global_var(39) == 1)) then begin
+			LVar0 := 110;
+		end
+	end
+	if (LVar0 == 109) then begin
+		set_global_var(37, 0);
+		set_global_var(38, 0);
+		set_global_var(39, 0);
+		set_global_var(40, 0);
+		set_global_var(41, 0);
+		set_global_var(42, 0);
+		set_global_var(43, 0);
+		set_global_var(44, 0);
+		set_global_var(45, 0);
+		tmp_gen_rep := global_var(0);
+		if (has_trait(0, dude_obj, 95)) then begin
+			tmp_gen_rep := global_var(0) * 2;
+		end
+		if (tmp_gen_rep >= 1000) then begin
+			set_global_var(37, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 750) then begin
+				set_global_var(38, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 500) then begin
+					set_global_var(39, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 250) then begin
+						set_global_var(40, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -250) then begin
+							set_global_var(41, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -500) then begin
+								set_global_var(42, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -750) then begin
+									set_global_var(43, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -1000) then begin
+										set_global_var(44, 1);
+									end
+									else begin
+										set_global_var(45, 1);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		if (not(global_var(43) == 1)) then begin
+			LVar0 := 110;
+		end
+	end
+	float_msg(self_obj, message_str(835, LVar0), 2);
+end
+
+procedure doSequence
+begin
+	anim(self_obj, 1000, rotation_to_tile(tile_num(self_obj), tile_num(dude_obj)));
+	anim(dude_obj, 1000, rotation_to_tile(tile_num(dude_obj), tile_num(self_obj)));
+	pending_dialog := 1;
+end
+
+procedure Node001
+begin
+	set_local_var(4, 1);
+	gsay_reply(835, 150);
+	giq_option(4, 835, 151, Node002, 50);
+	giq_option(4, 835, 152, Node003, 50);
+	giq_option(-3, 835, 200, Node004, 50);
+end
+
+procedure Node002
+begin
+	gsay_reply(835, 160);
+	giq_option(4, 835, message_str(14, 350), Node998, 50);
+end
+
+procedure Node003
+begin
+	gsay_reply(835, 161);
+	giq_option(4, 835, message_str(14, 350), Node998, 50);
+end
+
+procedure Node004
+begin
+	gsay_reply(835, 201);
+	giq_option(-3, 835, 202, Node005, 50);
+end
+
+procedure Node005
+begin
+	gsay_reply(835, 203);
+	giq_option(-3, 835, message_str(14, 350), Node998, 50);
+end
+
+procedure map_exit_p_proc
+begin
+	set_global_var(399, global_var(399) bwor 64);
+end
+
