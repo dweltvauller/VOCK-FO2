@@ -13,6 +13,8 @@
 | [Christopher Wright](https://fallout.fandom.com/wiki/Christopher_Wright) | New Reno | Halyze | [Linktree](https://linktr.ee/Halyze) |
 | [Jenny](https://fallout.fandom.com/wiki/Jenny_(Fallout_2)) | Klamath | Kiti Celine | [SoundCloud](https://on.soundcloud.com/FdxqvdlD5ywIIMQCDr) |
 | [Zomak the Destroyer](https://fallout.fandom.com/wiki/Zomak) | Gecko | Lewis Saunders | [Portfolio](https://lewissaundersvo.com/character-voices/) |
+| [Brother Paul](https://f2rp.bgforge.net/abbey/) | Abbey | Matt Bartlett | [Portfolio](https://mattbartlettvo.carrd.co/) |
+| [Big Jesus Mordino](https://fallout.fandom.com/wiki/Big_Jesus_Mordino) | New Reno | Enrico Leone | [AllMyLinks](https://allmylinks.com/enrico-leone-va) · [Casting Call Club](https://www.castingcall.club/incinerico) |
 
 ## AI-Voiced Characters (To Be Replaced)
 
