@@ -4,7 +4,7 @@
 
 | Character | Location | Voice Actor | Links |
 |-----------|----------|-------------|-------|
-| [Skeeter](https://fallout.fandom.com/wiki/Skeeter) | Gecko | Josh Luther | ... |
+| [Skeeter](https://fallout.fandom.com/wiki/Skeeter) | Gecko | Joshua Luther | [Mandy](https://www.mandy.com/vo/joshua-luther-2) · [Casting Call Club](https://www.castingcall.club/joshluther) |
 | [Keith Wright](https://fallout.fandom.com/wiki/Keith_Wright) | New Reno | dar_duck | [X](https://x.com/NomadFandom) · [YouTube](https://www.youtube.com/@dar_duck) |
 | [Eric](https://fallout.fandom.com/wiki/Eric_(Broken_Hills)) | Broken Hills | KALLEKANNIBAL | [NexusMods](https://www.nexusmods.com/profile/KALLEKANNIBAL) · [ModDB](https://www.moddb.com/members/kallekannibal) |
 | [Kaga](https://f2rp.bgforge.net/random-encounters/) | Random Encounter | Richard Manzano - Sp3lunky | [YouTube](https://www.youtube.com/@Sp3lunky) · [Portfolio](https://rmanz004.github.io/portfolio-website/projects/voiceover.html) |
