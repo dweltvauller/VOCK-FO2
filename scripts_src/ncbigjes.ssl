@@ -1,0 +1,1914 @@
+variable tmp_gen_rep;
+variable global_temp;
+variable in_dialog;
+variable restock_obj;
+variable last_timed_obj;
+variable last_timed_param;
+variable stored_msg;
+variable stored_node;
+variable top_msg;
+variable var_num;
+
+procedure ChooseFromList;
+procedure CLICK_PREV;
+procedure CLICK_0;
+procedure CLICK_1;
+procedure CLICK_2;
+procedure CLICK_3;
+procedure CLICK_4;
+procedure CLICK_MORE;
+procedure start;
+procedure critter_p_proc;
+procedure pickup_p_proc;
+procedure talk_p_proc;
+procedure destroy_p_proc;
+procedure look_at_p_proc;
+procedure description_p_proc;
+procedure use_skill_on_p_proc;
+procedure damage_p_proc;
+procedure map_enter_p_proc;
+procedure map_exit_p_proc;
+procedure timed_event_p_proc;
+procedure map_update_p_proc;
+procedure Node998;
+procedure Node999;
+procedure Node002;
+procedure Node003;
+procedure Node004;
+procedure Node005;
+procedure Node006;
+procedure Node007;
+procedure Node008;
+procedure Node009;
+procedure Node010;
+procedure Node011;
+procedure Node012;
+procedure Node013;
+procedure Node014;
+procedure Node015;
+procedure Node016;
+procedure Node017;
+procedure Node018;
+procedure Node019;
+procedure Node020;
+procedure Node021;
+procedure Node022;
+procedure Node023;
+procedure Node024;
+procedure Node025;
+procedure Node026;
+procedure Node027;
+procedure Node028;
+procedure Node029;
+procedure Node030;
+procedure Node031;
+procedure Node032;
+procedure Node033;
+procedure Node034;
+procedure Node035;
+procedure Node036;
+procedure Node037;
+procedure Node038;
+procedure Node039;
+procedure Node040;
+procedure Node041;
+procedure Node042;
+procedure Node043;
+procedure Node044;
+procedure Node046;
+procedure Node047;
+procedure Node048;
+procedure Node049;
+procedure Node050;
+procedure Node051;
+procedure Node052;
+
+variable prev_node;
+variable slave_price;
+variable myron_in_room;
+
+import variable new_reno_big_jesus_obj;
+
+procedure combat_p_proc;
+procedure use_obj_on_p_proc;
+procedure Node990;
+procedure Node989;
+procedure Node988;
+procedure Node987;
+procedure Node984;
+procedure Node982;
+procedure Node981;
+procedure Node980;
+procedure Node979;
+procedure Node978;
+procedure Node045;
+
+
+procedure ChooseFromList
+begin
+	variable LVar0 := 0;
+	gsay_reply(456, stored_msg);
+	if (message_str(353, top_msg - 1) != "") then begin
+		giq_option(1, 456, message_str(353, 150), CLICK_PREV, 50);
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 0) != "") then begin
+			giq_option(1, 456, message_str(353, top_msg + 0), CLICK_0, 50);
+		end
+		else begin
+			LVar0 := 1;
+		end
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 1) != "") then begin
+			giq_option(1, 456, message_str(353, top_msg + 1), CLICK_1, 50);
+		end
+		else begin
+			LVar0 := 1;
+		end
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 2) != "") then begin
+			giq_option(1, 456, message_str(353, top_msg + 2), CLICK_2, 50);
+		end
+		else begin
+			LVar0 := 1;
+		end
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 3) != "") then begin
+			giq_option(1, 456, message_str(353, top_msg + 3), CLICK_3, 50);
+		end
+		else begin
+			LVar0 := 1;
+		end
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 4) != "") then begin
+			giq_option(1, 456, message_str(353, top_msg + 4), CLICK_4, 50);
+		end
+		else begin
+			LVar0 := 1;
+		end
+	end
+	if (LVar0 == 0) then begin
+		if (message_str(353, top_msg + 5) != "") then begin
+			giq_option(1, 456, message_str(353, 151), CLICK_MORE, 50);
+		end
+	end
+end
+
+procedure CLICK_PREV
+begin
+	top_msg := top_msg - 5;
+	call ChooseFromList();
+end
+
+procedure CLICK_0
+begin
+	set_global_var(var_num, (global_var(var_num) / 100 * 100) + (top_msg % 100));
+	call stored_node();
+end
+
+procedure CLICK_1
+begin
+	set_global_var(var_num, (global_var(var_num) / 100 * 100) + ((top_msg + 1) % 100));
+	call stored_node();
+end
+
+procedure CLICK_2
+begin
+	set_global_var(var_num, (global_var(var_num) / 100 * 100) + ((top_msg + 2) % 100));
+	call stored_node();
+end
+
+procedure CLICK_3
+begin
+	set_global_var(var_num, (global_var(var_num) / 100 * 100) + ((top_msg + 3) % 100));
+	call stored_node();
+end
+
+procedure CLICK_4
+begin
+	set_global_var(var_num, (global_var(var_num) / 100 * 100) + ((top_msg + 4) % 100));
+	call stored_node();
+end
+
+procedure CLICK_MORE
+begin
+	top_msg := top_msg + 5;
+	call ChooseFromList();
+end
+
+procedure start
+begin
+end
+
+procedure critter_p_proc
+begin
+	if (((local_var(4) bwand 262144) != 0) == 0) then begin
+		if (obj_can_see_obj(self_obj, dude_obj)) then begin
+			if ((local_var(4) bwand 2) != 0) then begin
+				if (critter_is_fleeing(self_obj)) then begin
+					if (anim_busy(self_obj) == 0) then begin
+						if ((tile_distance_objs(self_obj, dude_obj) < 8) or obj_can_see_obj(self_obj, dude_obj)) then begin
+							if (anim_busy(self_obj) == 0) then begin
+								global_temp := rotation_to_tile(tile_num(dude_obj), tile_num(self_obj));
+								animate_move_obj_to_tile(self_obj, tile_num_in_direction(tile_num(self_obj), global_temp, random(3, 10)), 1);
+								global_temp := (global_temp + 1) % 6;
+								while ((anim_busy(self_obj) == 0) and (global_temp != rotation_to_tile(tile_num(dude_obj), tile_num(self_obj)))) do begin
+									debug_msg("ncbigjes" + ": " + "flee loop: rot == " + global_temp + "\n");
+									animate_move_obj_to_tile(self_obj, tile_num_in_direction(tile_num(self_obj), global_temp, random(3, 10)), 1);
+									global_temp := (global_temp + 1) % 6;
+								end
+							end
+						end
+					end
+				end
+				else begin
+					attack_complex(dude_obj, 0, 1, 0, 0, 30000, 0, 0);
+				end
+			end
+			if (((local_var(4) bwand 1048576) != 0) == 0) then begin
+				set_local_var(4, local_var(4) bwor 1048576);
+				dialogue_system_enter;
+			end
+			if (obj_can_see_obj(self_obj, party_member_obj(16777376))) then begin
+				set_local_var(4, local_var(4) bwor 1048576);
+				dialogue_system_enter;
+			end
+		end
+	end
+end
+
+procedure pickup_p_proc
+begin
+	if (source_obj == dude_obj) then begin
+		call Node998();
+	end
+end
+
+procedure talk_p_proc
+begin
+	set_local_var(4, local_var(4) bwor 1048576);
+	if (((local_var(4) bwand 262144) != 0) == 0) then begin
+		myron_in_room := 0;
+		if (party_member_obj(16777376) != 0) then begin
+			if (tile_in_tile_rect(11688, 11678, 13288, 13278, tile_num(party_member_obj(16777376))) or obj_can_see_obj(self_obj, party_member_obj(16777376))) then begin
+				myron_in_room := 1;
+			end
+		end
+		prev_node := 0;
+		slave_price := 0;
+		if (myron_in_room or ((local_var(4) bwand 512) != 0)) then begin
+			debug_msg("ncbigjes" + ": " + "Node006" + "\n");
+			if (in_dialog == 0) then begin
+				in_dialog := 1;
+				start_gdialog(456, self_obj, 4, 36, 13);
+				gsay_start;
+				call Node006();
+				gsay_end;
+				end_dialogue;
+				in_dialog := 0;
+			end
+			else begin
+				call Node006();
+			end
+		end
+		else begin
+			if ((global_var(230) / 100) == 3) then begin
+				debug_msg("ncbigjes" + ": " + "Node003" + "\n");
+				call Node003();
+			end
+			else begin
+				if ((global_var(354) == 1) or (global_var(354) == 2)) then begin
+					debug_msg("ncbigjes" + ": " + "Node021" + "\n");
+					if (in_dialog == 0) then begin
+						in_dialog := 1;
+						start_gdialog(456, self_obj, 4, 36, 13);
+						gsay_start;
+						call Node021();
+						gsay_end;
+						end_dialogue;
+						in_dialog := 0;
+					end
+					else begin
+						call Node021();
+					end
+				end
+				else begin
+					if ((global_var(355) == 1) or (global_var(355) == 2)) then begin
+						if ((global_var(345) bwand 8388608) != 0) then begin
+							debug_msg("ncbigjes" + ": " + "Node028" + "\n");
+							if (in_dialog == 0) then begin
+								in_dialog := 1;
+								start_gdialog(456, self_obj, 4, 36, 13);
+								gsay_start;
+								call Node028();
+								gsay_end;
+								end_dialogue;
+								in_dialog := 0;
+							end
+							else begin
+								call Node028();
+							end
+						end
+						else begin
+							debug_msg("ncbigjes" + ": " + "Node029" + "\n");
+							if (in_dialog == 0) then begin
+								in_dialog := 1;
+								start_gdialog(456, self_obj, 4, 36, 13);
+								gsay_start;
+								call Node029();
+								gsay_end;
+								end_dialogue;
+								in_dialog := 0;
+							end
+							else begin
+								call Node029();
+							end
+						end
+					end
+					else begin
+						if (global_var(356) == 1) then begin
+							debug_msg("ncbigjes" + ": " + "Node039" + "\n");
+							if (in_dialog == 0) then begin
+								in_dialog := 1;
+								start_gdialog(456, self_obj, 4, 36, 13);
+								gsay_start;
+								call Node039();
+								gsay_end;
+								end_dialogue;
+								in_dialog := 0;
+							end
+							else begin
+								call Node039();
+							end
+						end
+						else begin
+							if ((local_var(4) bwand 1024) != 0) then begin
+								debug_msg("ncbigjes" + ": " + "Node007" + "\n");
+								if (in_dialog == 0) then begin
+									in_dialog := 1;
+									start_gdialog(456, self_obj, 4, 36, 13);
+									gsay_start;
+									call Node007();
+									gsay_end;
+									end_dialogue;
+									in_dialog := 0;
+								end
+								else begin
+									call Node007();
+								end
+							end
+							else begin
+								debug_msg("ncbigjes" + ": " + "Node005" + "\n");
+								if (in_dialog == 0) then begin
+									in_dialog := 1;
+									start_gdialog(456, self_obj, 4, 36, 13);
+									gsay_start;
+									call Node005();
+									gsay_end;
+									end_dialogue;
+									in_dialog := 0;
+								end
+								else begin
+									call Node005();
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		set_local_var(4, local_var(4) bwor 1);
+		last_timed_obj := self_obj;
+		last_timed_param := last_timed_param;
+		metarule3(100, self_obj, 1, 0);
+		add_timer_event(self_obj, game_ticks(25) + random(0, game_ticks(10)), 1);
+	end
+end
+
+procedure destroy_p_proc
+begin
+	if (((local_var(4) bwand 32768) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 32768);
+		set_global_var(136, -1);
+		if (source_obj == dude_obj) then begin
+			set_global_var(4, global_var(4) + 1);
+			if (metarule(51, self_obj) == 2) then begin
+				if (source_obj == dude_obj) then begin
+					set_global_var(2, 0);
+					set_global_var(1, global_var(1) + 1);
+					set_global_var(0, global_var(0) + -15);
+					debug_msg("ncbigjes" + ": " + "Player gains " + -15 + " Karma Points." + "\n");
+					set_global_var(37, 0);
+					set_global_var(38, 0);
+					set_global_var(39, 0);
+					set_global_var(40, 0);
+					set_global_var(41, 0);
+					set_global_var(42, 0);
+					set_global_var(43, 0);
+					set_global_var(44, 0);
+					set_global_var(45, 0);
+					tmp_gen_rep := global_var(0);
+					if (has_trait(0, dude_obj, 95)) then begin
+						tmp_gen_rep := global_var(0) * 2;
+					end
+					if (tmp_gen_rep >= 1000) then begin
+						set_global_var(37, 1);
+					end
+					else begin
+						if (tmp_gen_rep >= 750) then begin
+							set_global_var(38, 1);
+						end
+						else begin
+							if (tmp_gen_rep >= 500) then begin
+								set_global_var(39, 1);
+							end
+							else begin
+								if (tmp_gen_rep >= 250) then begin
+									set_global_var(40, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -250) then begin
+										set_global_var(41, 1);
+									end
+									else begin
+										if (tmp_gen_rep > -500) then begin
+											set_global_var(42, 1);
+										end
+										else begin
+											if (tmp_gen_rep > -750) then begin
+												set_global_var(43, 1);
+											end
+											else begin
+												if (tmp_gen_rep > -1000) then begin
+													set_global_var(44, 1);
+												end
+												else begin
+													set_global_var(45, 1);
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+					set_global_var(55, global_var(55) + -8);
+					debug_msg("ncbigjes" + ": " + "Added " + -8 + " to Town Rep" + "\n");
+				end
+			end
+			if (((global_var(4) + global_var(5)) >= 25) and ((global_var(5) > (2 * global_var(4))) or (global_var(3) == 1))) then begin
+				set_global_var(3, 1);
+				set_global_var(2, 0);
+			end
+			if (((global_var(4) + global_var(5)) >= 25) and ((global_var(4) > (3 * global_var(5))) or (global_var(2) == 1)) and (global_var(1) == 0)) then begin
+				set_global_var(2, 1);
+				set_global_var(3, 0);
+			end
+			set_global_var(0, global_var(0) + 5);
+			debug_msg("ncbigjes" + ": " + "Player gains " + 5 + " Karma Points." + "\n");
+			set_global_var(37, 0);
+			set_global_var(38, 0);
+			set_global_var(39, 0);
+			set_global_var(40, 0);
+			set_global_var(41, 0);
+			set_global_var(42, 0);
+			set_global_var(43, 0);
+			set_global_var(44, 0);
+			set_global_var(45, 0);
+			tmp_gen_rep := global_var(0);
+			if (has_trait(0, dude_obj, 95)) then begin
+				tmp_gen_rep := global_var(0) * 2;
+			end
+			if (tmp_gen_rep >= 1000) then begin
+				set_global_var(37, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 750) then begin
+					set_global_var(38, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 500) then begin
+						set_global_var(39, 1);
+					end
+					else begin
+						if (tmp_gen_rep >= 250) then begin
+							set_global_var(40, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -250) then begin
+								set_global_var(41, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -500) then begin
+									set_global_var(42, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -750) then begin
+										set_global_var(43, 1);
+									end
+									else begin
+										if (tmp_gen_rep > -1000) then begin
+											set_global_var(44, 1);
+										end
+										else begin
+											set_global_var(45, 1);
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+			set_global_var(55, global_var(55) + 2);
+			debug_msg("ncbigjes" + ": " + "Added " + 2 + " to Town Rep" + "\n");
+		end
+	end
+	set_global_var(345, global_var(345) bwor 33554432);
+end
+
+procedure look_at_p_proc
+begin
+	script_overrides;
+	display_msg(message_str(456, 100));
+end
+
+procedure description_p_proc
+begin
+	script_overrides;
+	display_msg(message_str(456, 150 + ((local_var(4) bwand 4) != 0)));
+	set_local_var(4, local_var(4) bwor 4);
+end
+
+procedure use_skill_on_p_proc
+begin
+end
+
+procedure damage_p_proc
+begin
+	if (source_obj == dude_obj) then begin
+		set_local_var(4, local_var(4) bwor 8);
+		set_local_var(4, local_var(4) bwor 2);
+		if ((global_var(354) == 0) and 1) then begin
+		end
+		else begin
+			if (3 > global_var(354)) then begin
+				set_global_var(354, 3);
+			end
+		end
+		debug_msg("ncbigjes" + ": " + "delivery == " + global_var(354) + "\n");
+		if (1 and (global_var(355) == 0)) then begin
+		end
+		else begin
+			set_global_var(355, 3);
+		end
+		if (1 and (global_var(356) == 0)) then begin
+		end
+		else begin
+			set_global_var(356, 2);
+		end
+		set_global_var(253, global_var(253) bwor 1);
+		if (3 == (global_var(230) / 100)) then begin
+			set_global_var(55, global_var(55) + -25);
+			set_global_var(591, 0);
+			set_global_var(592, 0);
+			set_global_var(593, 0);
+			set_global_var(594, 0);
+			set_global_var(230, 0);
+		end
+		debug_msg("ncbigjes" + ": " + "called attack family(" + message_str(353, 203) + ")" + "\n");
+	end
+end
+
+procedure map_enter_p_proc
+begin
+	if (metarule(22, 0) == 0) then begin
+		if (metarule(14, 0)) then begin
+			critter_add_trait(self_obj, 1, 6, 58);
+			critter_add_trait(self_obj, 1, 5, 22);
+		end
+		last_timed_obj := self_obj;
+		last_timed_param := last_timed_param;
+		metarule3(100, self_obj, 1, 0);
+		add_timer_event(self_obj, game_ticks(25) + random(0, game_ticks(10)), 1);
+	end
+	new_reno_big_jesus_obj := self_obj;
+end
+
+procedure map_exit_p_proc
+begin
+	if (((local_var(4) bwand 262144) != 0) or (local_var(5) != 0)) then begin
+		if (((global_var(345) bwand 16777216) != 0) == 0) then begin
+			display_msg(message_str(456, 875));
+			give_exp_points(1000);
+			display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+			set_global_var(345, global_var(345) bwor 16777216);
+		end
+		set_global_var(345, global_var(345) bwor 33554432);
+		call destroy_p_proc();
+		kill_critter(self_obj, 48);
+	end
+end
+
+procedure timed_event_p_proc
+begin
+	if (fixed_param == 15) then begin
+		if (combat_is_initialized == 0) then begin
+			call Node004();
+		end
+		else begin
+			last_timed_obj := self_obj;
+			last_timed_param := last_timed_param;
+			metarule3(100, self_obj, 15, 0);
+			add_timer_event(self_obj, game_ticks(4) + random(0, game_ticks(2)), 15);
+		end
+	end
+	else begin
+		if (combat_is_initialized == 0) then begin
+			call Node002();
+		end
+	end
+	if (fixed_param != 15) then begin
+		last_timed_obj := self_obj;
+		last_timed_param := last_timed_param;
+		metarule3(100, self_obj, 1, 0);
+		add_timer_event(self_obj, game_ticks(25) + random(0, game_ticks(10)), 1);
+	end
+	else begin
+		metarule3(100, self_obj, 1, 0);
+	end
+end
+
+procedure map_update_p_proc
+begin
+	if ((local_var(4) bwand 1048576) != 0) then begin
+		if (elevation(self_obj) != elevation(dude_obj)) then begin
+			set_local_var(4, local_var(4) bwand -1048577);
+		end
+	end
+end
+
+procedure Node998
+begin
+	if (((local_var(4) bwand 2) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 2);
+	end
+	if ((global_var(354) == 0) and 1) then begin
+	end
+	else begin
+		if (3 > global_var(354)) then begin
+			set_global_var(354, 3);
+		end
+	end
+	debug_msg("ncbigjes" + ": " + "delivery == " + global_var(354) + "\n");
+	if (1 and (global_var(355) == 0)) then begin
+	end
+	else begin
+		set_global_var(355, 3);
+	end
+	if (1 and (global_var(356) == 0)) then begin
+	end
+	else begin
+		set_global_var(356, 2);
+	end
+	set_global_var(253, global_var(253) bwor 1);
+	if (3 == (global_var(230) / 100)) then begin
+		set_global_var(55, global_var(55) + -25);
+		set_global_var(591, 0);
+		set_global_var(592, 0);
+		set_global_var(593, 0);
+		set_global_var(594, 0);
+		set_global_var(230, 0);
+	end
+	debug_msg("ncbigjes" + ": " + "called attack family(" + message_str(353, 203) + ")" + "\n");
+end
+
+procedure Node999
+begin
+end
+
+procedure Node002
+begin
+	float_msg(self_obj, message_str(456, random(210, 212)), 8 + (-5 * has_trait(0, dude_obj, 22)));
+end
+
+procedure Node003
+begin
+	float_msg(self_obj, message_str(456, random(220, 221)), 8 + (-5 * has_trait(0, dude_obj, 22)));
+end
+
+procedure Node004
+begin
+	set_local_var(4, local_var(4) bwor 262144);
+	if (local_var(5) < 3) then begin
+		float_msg(self_obj, message_str(456, 230 + local_var(5)), 8 + (-5 * has_trait(0, dude_obj, 22)));
+		set_local_var(5, local_var(5) + 1);
+		reg_anim_func(2, self_obj);
+		reg_anim_func(1, 1);
+		reg_anim_animate(self_obj, 14, -1);
+		reg_anim_func(3, 0);
+	end
+	else begin
+		if (((local_var(4) bwand 524288) != 0) == 0) then begin
+			set_local_var(4, local_var(4) bwor 524288);
+			reg_anim_func(2, self_obj);
+			reg_anim_func(1, 1);
+			reg_anim_animate(self_obj, 14, -1);
+			reg_anim_animate(self_obj, 20, 5);
+			reg_anim_func(3, 0);
+			critter_injure(self_obj, 2);
+		end
+		else begin
+			if (anim_busy(self_obj) == 0) then begin
+				if (((global_var(345) bwand 16777216) != 0) == 0) then begin
+					display_msg(message_str(456, 875));
+					give_exp_points(1000);
+					display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+					set_global_var(345, global_var(345) bwor 16777216);
+				end
+				set_global_var(345, global_var(345) bwor 33554432);
+				call destroy_p_proc();
+				kill_critter(self_obj, 48);
+			end
+		end
+	end
+	last_timed_obj := self_obj;
+	last_timed_param := last_timed_param;
+	metarule3(100, self_obj, 15, 0);
+	add_timer_event(self_obj, game_ticks(4) + random(0, game_ticks(2)), 15);
+end
+
+procedure Node005
+begin
+	gsay_reply(456, message_str(456, 240) + message_str(456, 241 + (myron_in_room == 0)));
+	giq_option(-3, 456, 243, Node006, 51);
+	giq_option(-3, 456, 244, Node006, 51);
+	giq_option(-3, 456, 245, Node006, 51);
+	giq_option(-3, 456, 246, Node006, 51);
+	giq_option(-3, 456, 247, Node999, 50);
+	if (((local_var(4) bwand 1024) != 0) == 0) then begin
+		giq_option(4, 456, 248, Node007, 50);
+	end
+	if ((global_var(357) == 2) or (global_var(357) == 3)) then begin
+		giq_option(4, 456, 249, Node007, 50);
+	end
+	giq_option(4, 456, 250, Node999, 50);
+	prev_node := 5;
+end
+
+procedure Node006
+begin
+	if (myron_in_room) then begin
+		gsay_reply(456, 260);
+	end
+	else begin
+		gsay_reply(456, 261 + ((local_var(4) bwand 1024) != 0));
+	end
+	giq_option(-3, 456, 263, Node998, 51);
+	giq_option(-3, 456, 264, Node998, 51);
+	giq_option(-3, 456, 265, Node998, 51);
+	giq_option(4, 456, 266, Node998, 51);
+	giq_option(4, 456, 267, Node998, 51);
+	giq_option(4, 456, message_str(456, 268) + obj_name(dude_obj) + message_str(456, 5268), Node998, 51);
+	prev_node := 6;
+end
+
+procedure Node007
+begin
+	gsay_reply(456, 275 + ((local_var(4) bwand 1024) != 0));
+	set_local_var(4, local_var(4) bwor 1024);
+	if ((global_var(357) == 0) or (global_var(357) == 1)) then begin
+		giq_option(4, 456, 277, Node990, 50);
+	end
+	else begin
+		if (global_var(357) == 2) then begin
+			giq_option(4, 456, 278 + (1000 * (global_var(11) == 1)), Node989, 50);
+		end
+		else begin
+			if (global_var(357) == 3) then begin
+				giq_option(4, 456, 1278, Node989, 50);
+				giq_option(4, 456, 279, Node012, 50);
+			end
+		end
+	end
+	if (global_var(286) == 1) then begin
+		giq_option(4, 456, 280, Node046, 51);
+	end
+	if ((has_skill(dude_obj, 7) > 50) or (has_skill(dude_obj, 12) > 75)) then begin
+		giq_option(6, 456, 281, Node049, 50);
+	end
+	giq_option(4, 456, 282, Node999, 50);
+	prev_node := 7;
+end
+
+procedure Node008
+begin
+	if (get_critter_stat(dude_obj, 34) == 0) then begin
+		gsay_reply(456, 290);
+		giq_option(4, 456, 294, Node988, 50);
+		if (get_critter_stat(dude_obj, 3) > 5) then begin
+			giq_option(5, 456, 295, Node987, 49);
+		end
+	end
+	else begin
+		gsay_reply(456, 291);
+		giq_option(4, 456, 292, Node988, 50);
+		if (get_critter_stat(dude_obj, 3) > 5) then begin
+			giq_option(5, 456, 293, Node987, 49);
+		end
+	end
+	if (global_var(357) == 3) then begin
+		giq_option(4, 456, 1291, Node012, 50);
+	end
+	giq_option(4, 456, 296, Node999, 50);
+	prev_node := 8;
+end
+
+procedure Node009
+begin
+	set_local_var(4, local_var(4) bwor 512);
+	gsay_reply(456, 305);
+	giq_option(4, 456, 306, Node998, 51);
+	giq_option(4, 456, 307, Node999, 50);
+	prev_node := 9;
+end
+
+procedure Node010
+begin
+	gsay_reply(456, 315);
+	giq_option(4, 456, 316, Node998, 51);
+	giq_option(4, 456, 317, Node998, 51);
+	giq_option(4, 456, 318, Node998, 51);
+	giq_option(4, 456, 319, Node998, 51);
+	prev_node := 10;
+end
+
+procedure Node011
+begin
+	gsay_reply(456, 325);
+	if ((global_var(357) == 0) or (global_var(357) == 1)) then begin
+		giq_option(4, 456, 277, Node990, 50);
+	end
+	else begin
+		if (global_var(357) == 2) then begin
+			giq_option(4, 456, 278 + (1000 * (global_var(11) == 1)), Node989, 50);
+		end
+		else begin
+			if (global_var(357) == 3) then begin
+				giq_option(4, 456, 1278, Node989, 50);
+			end
+		end
+	end
+	if (global_var(11) == 1) then begin
+		giq_option(4, 456, 326, Node012, 50);
+	end
+	if (global_var(286) == 1) then begin
+		giq_option(4, 456, 327, Node046, 51);
+	end
+	if ((has_skill(dude_obj, 7) > 50) or (has_skill(dude_obj, 12) > 75)) then begin
+		giq_option(6, 456, 281, Node049, 50);
+	end
+	giq_option(4, 456, 329, Node999, 50);
+	prev_node := 11;
+end
+
+procedure Node012
+begin
+	if (prev_node == 7) then begin
+		gsay_reply(456, message_str(456, 335) + message_str(456, 336));
+	end
+	else begin
+		gsay_reply(456, 336);
+	end
+	if ((metarule(16, 0) - (party_member_obj(16777381) != 0) - (party_member_obj(16777407) != 0) - 1) > 0) then begin
+		giq_option(4, 456, 337, Node013, 50);
+	end
+	giq_option(4, 456, 338, Node989, 50);
+	giq_option(4, 456, 339, Node011, 50);
+	giq_option(4, 456, 340, Node999, 50);
+	prev_node := 12;
+end
+
+procedure Node013
+begin
+	if (((local_var(4) bwand 65536) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 65536);
+		set_global_var(0, global_var(0) + -3);
+		debug_msg("ncbigjes" + ": " + "Player gains " + -3 + " Karma Points." + "\n");
+		set_global_var(37, 0);
+		set_global_var(38, 0);
+		set_global_var(39, 0);
+		set_global_var(40, 0);
+		set_global_var(41, 0);
+		set_global_var(42, 0);
+		set_global_var(43, 0);
+		set_global_var(44, 0);
+		set_global_var(45, 0);
+		tmp_gen_rep := global_var(0);
+		if (has_trait(0, dude_obj, 95)) then begin
+			tmp_gen_rep := global_var(0) * 2;
+		end
+		if (tmp_gen_rep >= 1000) then begin
+			set_global_var(37, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 750) then begin
+				set_global_var(38, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 500) then begin
+					set_global_var(39, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 250) then begin
+						set_global_var(40, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -250) then begin
+							set_global_var(41, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -500) then begin
+								set_global_var(42, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -750) then begin
+									set_global_var(43, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -1000) then begin
+										set_global_var(44, 1);
+									end
+									else begin
+										set_global_var(45, 1);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	if (party_member_obj(16777380) != 0) then begin
+		gsay_reply(456, 345);
+		slave_price := 250;
+	end
+	else begin
+		if (party_member_obj(16777379) != 0) then begin
+			gsay_reply(456, 346);
+			slave_price := 200;
+		end
+		else begin
+			if (party_member_obj(16777313) != 0) then begin
+				gsay_reply(456, 347);
+				slave_price := 200;
+			end
+			else begin
+				if (party_member_obj(16777278) != 0) then begin
+					gsay_reply(456, 348);
+					slave_price := 100;
+				end
+				else begin
+					if (party_member_obj(16777305) != 0) then begin
+						gsay_reply(456, 349);
+						slave_price := 100;
+					end
+					else begin
+						if (party_member_obj(16777295) != 0) then begin
+							gsay_reply(456, 350);
+							slave_price := 500;
+						end
+						else begin
+							if (party_member_obj(16777352) != 0) then begin
+								gsay_reply(456, 351);
+								slave_price := 500;
+							end
+							else begin
+								gsay_reply(456, 352);
+								slave_price := 0;
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	if (slave_price > 0) then begin
+		giq_option(4, 456, 353, Node984, 51);
+		giq_option(4, 456, 354, Node016, 49);
+		giq_option(4, 456, 355, Node011, 50);
+		giq_option(4, 456, 356, Node999, 50);
+	end
+	else begin
+		giq_option(4, 456, 357, Node011, 50);
+		giq_option(4, 456, 358, Node999, 50);
+	end
+	prev_node := 13;
+end
+
+procedure Node014
+begin
+	if (party_member_obj(16777380) != 0) then begin
+		gsay_reply(456, 370);
+		slave_price := 250;
+	end
+	else begin
+		if (party_member_obj(16777379) != 0) then begin
+			gsay_reply(456, 371);
+			slave_price := 200;
+		end
+		else begin
+			if (party_member_obj(16777313) != 0) then begin
+				gsay_reply(456, 372);
+				slave_price := 100;
+			end
+			else begin
+				if (party_member_obj(16777278) != 0) then begin
+					gsay_reply(456, 373);
+					slave_price := 100;
+				end
+				else begin
+					if (party_member_obj(16777305) != 0) then begin
+						gsay_reply(456, 373);
+						slave_price := 100;
+					end
+					else begin
+						if (party_member_obj(16777295) != 0) then begin
+							gsay_reply(456, 375);
+							slave_price := 500;
+						end
+						else begin
+							if (party_member_obj(16777352) != 0) then begin
+								gsay_reply(456, 375);
+								slave_price := 500;
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	giq_option(4, 456, 377, Node017, 51);
+	giq_option(4, 456, 354, Node016, 50);
+	giq_option(4, 456, 355, Node011, 50);
+	giq_option(4, 456, 356, Node999, 50);
+	prev_node := 14;
+end
+
+procedure Node015
+begin
+	if (party_member_obj(16777380) != 0) then begin
+		gsay_reply(456, 390);
+		slave_price := 500;
+	end
+	else begin
+		if (party_member_obj(16777379) != 0) then begin
+			gsay_reply(456, 391);
+			slave_price := 400;
+		end
+		else begin
+			if (party_member_obj(16777313) != 0) then begin
+				gsay_reply(456, 392);
+				slave_price := 200;
+			end
+			else begin
+				if (party_member_obj(16777278) != 0) then begin
+					gsay_reply(456, 393);
+					slave_price := 200;
+				end
+				else begin
+					if (party_member_obj(16777305) != 0) then begin
+						gsay_reply(456, 394);
+						slave_price := 200;
+					end
+					else begin
+						if (party_member_obj(16777295) != 0) then begin
+							gsay_reply(456, 395);
+							slave_price := 1000;
+						end
+						else begin
+							if (party_member_obj(16777352) != 0) then begin
+								gsay_reply(456, 396);
+								slave_price := 1000;
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	giq_option(4, 456, 377, Node017, 51);
+	giq_option(4, 456, 354, Node016, 50);
+	giq_option(4, 456, 355, Node011, 50);
+	giq_option(4, 456, 356, Node999, 50);
+	prev_node := 15;
+end
+
+procedure Node016
+begin
+	set_local_var(4, local_var(4) bwor 2048);
+	set_global_var(0, global_var(0) + -10);
+	debug_msg("ncbigjes" + ": " + "Player gains " + -10 + " Karma Points." + "\n");
+	set_global_var(37, 0);
+	set_global_var(38, 0);
+	set_global_var(39, 0);
+	set_global_var(40, 0);
+	set_global_var(41, 0);
+	set_global_var(42, 0);
+	set_global_var(43, 0);
+	set_global_var(44, 0);
+	set_global_var(45, 0);
+	tmp_gen_rep := global_var(0);
+	if (has_trait(0, dude_obj, 95)) then begin
+		tmp_gen_rep := global_var(0) * 2;
+	end
+	if (tmp_gen_rep >= 1000) then begin
+		set_global_var(37, 1);
+	end
+	else begin
+		if (tmp_gen_rep >= 750) then begin
+			set_global_var(38, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 500) then begin
+				set_global_var(39, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 250) then begin
+					set_global_var(40, 1);
+				end
+				else begin
+					if (tmp_gen_rep > -250) then begin
+						set_global_var(41, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -500) then begin
+							set_global_var(42, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -750) then begin
+								set_global_var(43, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -1000) then begin
+									set_global_var(44, 1);
+								end
+								else begin
+									set_global_var(45, 1);
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	item_caps_adjust(dude_obj, slave_price);
+	if (party_member_obj(16777380) != 0) then begin
+		gfade_out(10);
+		if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777380), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777380), 2)) == 3)) then begin
+			metarule(43, party_member_obj(16777380));
+		end
+		move_obj_inven_to_obj(party_member_obj(16777380), dude_obj);
+		move_to(party_member_obj(16777380), 0, 0);
+		critter_heal(party_member_obj(16777380), -10000);
+		party_remove(party_member_obj(16777380));
+		gfade_in(10);
+		gsay_reply(456, 410);
+	end
+	else begin
+		if (party_member_obj(16777379) != 0) then begin
+			gfade_out(10);
+			if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777379), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777379), 2)) == 3)) then begin
+				metarule(43, party_member_obj(16777379));
+			end
+			move_obj_inven_to_obj(party_member_obj(16777379), dude_obj);
+			move_to(party_member_obj(16777379), 0, 0);
+			critter_heal(party_member_obj(16777379), -10000);
+			party_remove(party_member_obj(16777379));
+			gfade_in(10);
+			gsay_reply(456, 411);
+		end
+		else begin
+			if (party_member_obj(16777313) != 0) then begin
+				gfade_out(10);
+				if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777313), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777313), 2)) == 3)) then begin
+					metarule(43, party_member_obj(16777313));
+				end
+				move_obj_inven_to_obj(party_member_obj(16777313), dude_obj);
+				move_to(party_member_obj(16777313), 0, 0);
+				critter_heal(party_member_obj(16777313), -10000);
+				party_remove(party_member_obj(16777313));
+				gfade_in(10);
+				gsay_reply(456, 412);
+			end
+			else begin
+				if (party_member_obj(16777278) != 0) then begin
+					gfade_out(10);
+					if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777278), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777278), 2)) == 3)) then begin
+						metarule(43, party_member_obj(16777278));
+					end
+					move_obj_inven_to_obj(party_member_obj(16777278), dude_obj);
+					move_to(party_member_obj(16777278), 0, 0);
+					critter_heal(party_member_obj(16777278), -10000);
+					party_remove(party_member_obj(16777278));
+					gfade_in(10);
+					gsay_reply(456, 413);
+				end
+				else begin
+					if (party_member_obj(16777305) != 0) then begin
+						gfade_out(10);
+						if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777305), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777305), 2)) == 3)) then begin
+							metarule(43, party_member_obj(16777305));
+						end
+						move_obj_inven_to_obj(party_member_obj(16777305), dude_obj);
+						move_to(party_member_obj(16777305), 0, 0);
+						critter_heal(party_member_obj(16777305), -10000);
+						party_remove(party_member_obj(16777305));
+						gfade_in(10);
+						gsay_reply(456, 414);
+					end
+					else begin
+						if (party_member_obj(16777295) != 0) then begin
+							gfade_out(10);
+							if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777295), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777295), 2)) == 3)) then begin
+								metarule(43, party_member_obj(16777295));
+							end
+							move_obj_inven_to_obj(party_member_obj(16777295), dude_obj);
+							move_to(party_member_obj(16777295), 0, 0);
+							critter_heal(party_member_obj(16777295), -10000);
+							party_remove(party_member_obj(16777295));
+							gfade_in(10);
+							gsay_reply(456, 415);
+						end
+						else begin
+							if (party_member_obj(16777352) != 0) then begin
+								gfade_out(10);
+								if ((obj_item_subtype(critter_inven_obj(party_member_obj(16777352), 1)) == 3) or (obj_item_subtype(critter_inven_obj(party_member_obj(16777352), 2)) == 3)) then begin
+									metarule(43, party_member_obj(16777352));
+								end
+								move_obj_inven_to_obj(party_member_obj(16777352), dude_obj);
+								move_to(party_member_obj(16777352), 0, 0);
+								critter_heal(party_member_obj(16777352), -10000);
+								party_remove(party_member_obj(16777352));
+								gfade_in(10);
+								gsay_reply(456, 416);
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	if ((metarule(16, 0) - (party_member_obj(16777381) != 0) - (party_member_obj(16777407) != 0) - 1) > 0) then begin
+		giq_option(4, 456, 417, Node013, 50);
+	end
+	giq_option(4, 456, 418, Node011, 50);
+	giq_option(4, 456, 419, Node999, 50);
+	prev_node := 16;
+end
+
+procedure Node017
+begin
+	set_local_var(4, local_var(4) bwor 512);
+	gsay_reply(456, 430);
+	giq_option(4, 456, 431, Node010, 51);
+	giq_option(4, 456, 432, Node999, 50);
+	prev_node := 17;
+end
+
+procedure Node018
+begin
+	gsay_reply(456, 440);
+	giq_option(4, 456, 441, Node020, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 442, Node020, 49);
+	end
+	giq_option(4, 456, 443, Node019, 51);
+	giq_option(4, 456, 444, Node033, 51);
+	prev_node := 18;
+end
+
+procedure Node019
+begin
+	gsay_reply(456, 450);
+	giq_option(4, 456, 451, Node006, 50);
+	giq_option(4, 456, 452, Node020, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 442, Node020, 49);
+	end
+	giq_option(4, 456, 444, Node033, 51);
+	prev_node := 19;
+end
+
+procedure Node020
+begin
+	gsay_reply(456, 460);
+	giq_option(4, 456, 461, Node982, 50);
+	prev_node := 20;
+end
+
+procedure Node021
+begin
+	gsay_reply(456, 470);
+	if (global_var(354) == 2) then begin
+		giq_option(4, 456, 472, Node023, 50);
+		giq_option(4, 456, 473, Node024, 51);
+		giq_option(7, 456, 474, Node051, 50);
+	end
+	else begin
+		giq_option(4, 456, 471, Node022, 51);
+	end
+	prev_node := 21;
+end
+
+procedure Node022
+begin
+	gsay_reply(456, 480);
+	giq_option(4, 456, 481, Node006, 51);
+	if (((local_var(4) bwand 4096) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 4096);
+		giq_option(4, 456, 482, Node999, 50);
+	end
+	else begin
+		giq_option(4, 456, 483, Node006, 51);
+	end
+	prev_node := 22;
+end
+
+procedure Node023
+begin
+	item_caps_adjust(dude_obj, 100);
+	if ((global_var(354) == 0) and 1) then begin
+	end
+	else begin
+		if (3 > global_var(354)) then begin
+			set_global_var(354, 3);
+		end
+	end
+	debug_msg("ncbigjes" + ": " + "delivery == " + global_var(354) + "\n");
+	gsay_reply(456, 490);
+	giq_option(4, 456, 491, Node981, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 492, Node981, 49);
+	end
+	prev_node := 23;
+end
+
+procedure Node024
+begin
+	gsay_reply(456, 500);
+	giq_option(4, 456, 501, Node998, 51);
+	giq_option(4, 456, 502, Node023, 50);
+	prev_node := 24;
+end
+
+procedure Node025
+begin
+	set_local_var(4, local_var(4) bwor 512);
+	gsay_reply(456, 510);
+	giq_option(4, 456, 511, Node009, 51);
+	giq_option(4, 456, 512, Node999, 50);
+	giq_option(4, 456, 432, Node999, 50);
+	prev_node := 25;
+end
+
+procedure Node026
+begin
+	gsay_reply(456, 520);
+	giq_option(4, 456, 441, Node027, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 442, Node027, 49);
+	end
+	giq_option(4, 456, 523, Node033, 51);
+	prev_node := 26;
+end
+
+procedure Node027
+begin
+	if (0 and (global_var(355) == 0)) then begin
+	end
+	else begin
+		set_global_var(355, 1);
+	end
+	gsay_reply(456, 530);
+	giq_option(4, 456, 531, Node999, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 532, Node999, 49);
+	end
+	prev_node := 27;
+end
+
+procedure Node028
+begin
+	gsay_reply(456, 540);
+	giq_option(4, 456, 541, Node006, 51);
+	giq_option(4, 456, 542, Node006, 51);
+	giq_option(4, 456, 543, Node006, 51);
+	prev_node := 28;
+end
+
+procedure Node029
+begin
+	gsay_reply(456, 470);
+	if (global_var(355) == 2) then begin
+		if (item_caps_total(dude_obj) < 250) then begin
+			giq_option(4, 456, 551, Node030, 51);
+		end
+		else begin
+			giq_option(4, 456, 552, Node031, 50);
+		end
+	end
+	else begin
+		giq_option(4, 456, 553 + ((local_var(4) bwand 8192) != 0), Node030, 51);
+		set_local_var(4, local_var(4) bwor 8192);
+	end
+	prev_node := 29;
+end
+
+procedure Node030
+begin
+	gsay_reply(456, 560);
+	giq_option(4, 456, 561, Node006, 51);
+	if (((local_var(4) bwand 16384) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 16384);
+		giq_option(4, 456, 562, Node999, 50);
+	end
+	else begin
+		giq_option(4, 456, 483, Node006, 51);
+	end
+	prev_node := 30;
+end
+
+procedure Node031
+begin
+	display_msg(message_str(456, 850));
+	give_exp_points(500);
+	display_msg(message_str(14, 100) + (500 + (500 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+	set_global_var(55, global_var(55) + 5);
+	if (1 and (global_var(355) == 0)) then begin
+	end
+	else begin
+		set_global_var(355, 3);
+	end
+	item_caps_adjust(dude_obj, -125);
+	gsay_reply(456, 570);
+	giq_option(4, 456, 571, Node980, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 492, Node980, 49);
+	end
+	prev_node := 31;
+end
+
+procedure Node032
+begin
+	gsay_reply(456, 580);
+	giq_option(4, 456, 581, Node034, 50);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 583, Node034, 49);
+		giq_option(4, 456, 585, Node033, 51);
+	end
+	else begin
+		giq_option(4, 456, 582, Node034, 50);
+		giq_option(4, 456, 584, Node033, 51);
+	end
+	prev_node := 32;
+end
+
+procedure Node033
+begin
+	set_local_var(4, local_var(4) bwor 512);
+	gsay_reply(456, 595 + (prev_node != 52));
+	giq_option(4, 456, 597, Node010, 51);
+	giq_option(4, 456, 598, Node010, 51);
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 599, Node999, 50);
+	end
+	giq_option(4, 456, 600, Node006, 51);
+	giq_option(4, 456, 432, Node999, 50);
+	prev_node := 33;
+end
+
+procedure Node034
+begin
+	gsay_reply(456, 610);
+	giq_option(4, 456, 611, Node035, 50);
+	giq_option(4, 456, 615, Node037, 50);
+	if (((global_var(345) bwand 32) != 0) and ((global_var(314) bwand 16384) != 0)) then begin
+		giq_option(4, 456, 612, Node036, 51);
+	end
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		giq_option(4, 456, 613, Node037, 49);
+	end
+	giq_option(4, 456, 614, Node033, 51);
+	prev_node := 34;
+end
+
+procedure Node035
+begin
+	gsay_reply(456, 620);
+	if (((global_var(345) bwand 32) != 0) and ((global_var(314) bwand 16384) != 0)) then begin
+		giq_option(4, 456, 621, Node036, 51);
+	end
+	giq_option(4, 456, 1621, Node037, 50);
+	if (get_critter_stat(dude_obj, 3) > 6) then begin
+		giq_option(4, 456, 613, Node037, 49);
+	end
+	giq_option(4, 456, 623, Node033, 51);
+	giq_option(4, 456, 614, Node033, 51);
+	prev_node := 35;
+end
+
+procedure Node036
+begin
+	gsay_reply(456, 630);
+	giq_option(4, 456, 631, Node037, 50);
+	if (get_critter_stat(dude_obj, 3) > 6) then begin
+		giq_option(4, 456, 613, Node037, 49);
+	end
+	giq_option(4, 456, 633, Node033, 51);
+	prev_node := 36;
+end
+
+procedure Node037
+begin
+	if (0 and (global_var(356) == 0)) then begin
+	end
+	else begin
+		set_global_var(356, 1);
+	end
+	gsay_reply(456, 640);
+	giq_option(7, 456, 641, Node038, 50);
+	giq_option(4, 456, 642, Node999, 50);
+	if (get_critter_stat(dude_obj, 3) > 6) then begin
+		giq_option(4, 456, 652, Node999, 49);
+	end
+	prev_node := 37;
+end
+
+procedure Node038
+begin
+	gsay_reply(456, 650);
+	giq_option(7, 456, 651, Node999, 50);
+	if (get_critter_stat(dude_obj, 3) > 6) then begin
+		giq_option(4, 456, 652, Node999, 49);
+	end
+	prev_node := 38;
+end
+
+procedure Node039
+begin
+	if ((global_var(315) bwand 512) != 0) then begin
+		gsay_reply(456, 661);
+		giq_option(4, 456, 662, Node041, 49);
+	end
+	else begin
+		gsay_reply(456, 660);
+		giq_option(4, 456, 663, Node999, 51);
+	end
+	giq_option(4, 456, 664, Node040, 51);
+	prev_node := 39;
+end
+
+procedure Node040
+begin
+	gsay_reply(456, 670);
+	giq_option(4, 456, 671, Node999, 50);
+	giq_option(4, 456, 672, Node998, 51);
+	prev_node := 40;
+end
+
+procedure Node041
+begin
+	if (1 and (global_var(356) == 0)) then begin
+	end
+	else begin
+		set_global_var(356, 2);
+	end
+	display_msg(message_str(456, 925));
+	if ((global_var(315) bwand 8) != 0) then begin
+		give_exp_points(1000);
+		display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+	end
+	else begin
+		give_exp_points(750);
+		display_msg(message_str(14, 100) + (750 + (750 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+	end
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		gsay_reply(456, 683);
+		restock_obj := create_object_sid(332, 0, 0, -1);
+		add_mult_objs_to_inven(dude_obj, restock_obj, 1);
+		restock_obj := create_object_sid(379, 0, 0, -1);
+		add_mult_objs_to_inven(dude_obj, restock_obj, 1);
+	end
+	else begin
+		gsay_reply(456, 680);
+	end
+	item_caps_adjust(dude_obj, 500);
+	giq_option(4, 456, 681, Node979, 50);
+	giq_option(4, 456, 682, Node978, 51);
+end
+
+procedure Node042
+begin
+	gsay_reply(456, 690);
+	giq_option(4, 456, 691, Node044, 49);
+	giq_option(4, 456, 692, Node043, 51);
+	giq_option(4, 456, 693, Node043, 51);
+	prev_node := 42;
+end
+
+procedure Node043
+begin
+	gsay_reply(456, 700);
+	giq_option(4, 456, 266, Node998, 51);
+	giq_option(4, 456, 267, Node998, 51);
+	giq_option(4, 456, message_str(456, 268) + obj_name(dude_obj) + message_str(456, 5268), Node998, 51);
+	prev_node := 43;
+end
+
+procedure Node044
+begin
+	set_global_var(55, global_var(55) + 15);
+	set_global_var(253, 0);
+	set_global_var(593, 1);
+	set_global_var(230, 300 + (global_var(230) % 100));
+	var_num := 230;
+	top_msg := 301;
+	stored_msg := 710;
+	stored_node := "Node045";
+	call ChooseFromList();
+	prev_node := 44;
+end
+
+procedure Node046
+begin
+	gsay_reply(456, 730);
+	if ((global_var(345) bwand 16) != 0) then begin
+		giq_option(4, 456, 731, Node047, 51);
+	end
+	giq_option(4, 456, 732, Node048, 50);
+	giq_option(4, 456, 733, Node011, 50);
+	giq_option(4, 456, 734, Node999, 50);
+	prev_node := 46;
+end
+
+procedure Node047
+begin
+	gsay_reply(456, 740);
+	giq_option(4, 456, 741, Node010, 51);
+	giq_option(4, 456, 742, Node048, 50);
+	giq_option(4, 456, 743, Node011, 50);
+	giq_option(4, 456, 744, Node999, 50);
+	prev_node := 47;
+end
+
+procedure Node048
+begin
+	gsay_reply(456, 750);
+	giq_option(4, 456, 751, Node011, 50);
+	giq_option(4, 456, 752, Node999, 50);
+	prev_node := 48;
+end
+
+procedure Node049
+begin
+	gsay_reply(456, 760);
+	giq_option(4, 456, 761, Node011, 50);
+	giq_option(4, 456, 762, Node999, 50);
+	prev_node := 49;
+end
+
+procedure Node050
+begin
+	gsay_reply(456, 770);
+	giq_option(4, 456, 771, Node009, 51);
+	giq_option(4, 456, 762, Node999, 50);
+	prev_node := 50;
+end
+
+procedure Node051
+begin
+	gsay_reply(456, 780);
+	giq_option(4, 456, 781, Node052, 51);
+	giq_option(4, 456, 782, Node023, 50);
+	prev_node := 51;
+end
+
+procedure Node052
+begin
+	gsay_reply(456, 790);
+	giq_option(4, 456, 501, Node998, 51);
+	giq_option(4, 456, 792, Node033, 51);
+	giq_option(4, 456, 782, Node023, 50);
+	prev_node := 52;
+end
+
+procedure combat_p_proc
+begin
+	if (fixed_param == 4) then begin
+		if ((local_var(4) bwand 262144) != 0) then begin
+			script_overrides;
+			call Node004();
+		end
+	end
+end
+
+procedure use_obj_on_p_proc
+begin
+	variable LVar0 := 0;
+	if ((obj_pid(obj_being_used_with) == 259) or (obj_pid(obj_being_used_with) == 106) or (obj_pid(obj_being_used_with) == 87) or (obj_pid(obj_being_used_with) == 110)) then begin
+		script_overrides;
+		call Node004();
+		LVar0 := obj_being_used_with;
+		rm_obj_from_inven(source_obj, obj_being_used_with);
+		destroy_object(LVar0);
+	end
+end
+
+procedure Node990
+begin
+	if (is_success(roll_vs_skill(dude_obj, 14, -20))) then begin
+		if (((obj_is_carrying_obj_pid(dude_obj, 3) + obj_is_carrying_obj_pid(dude_obj, 348) + obj_is_carrying_obj_pid(dude_obj, 349) + obj_is_carrying_obj_pid(dude_obj, 232)) > 0) or ((obj_pid(critter_inven_obj(dude_obj, 0)) == 17) or (obj_pid(critter_inven_obj(dude_obj, 0)) == 239) or (obj_pid(critter_inven_obj(dude_obj, 0)) == 381)) or ((get_critter_stat(dude_obj, 34) == 0) and (get_critter_stat(dude_obj, 0) > 5))) then begin
+			call Node018();
+		end
+		else begin
+			call Node008();
+		end
+	end
+	else begin
+		call Node050();
+	end
+end
+
+procedure Node989
+begin
+	if (((obj_is_carrying_obj_pid(dude_obj, 3) + obj_is_carrying_obj_pid(dude_obj, 348) + obj_is_carrying_obj_pid(dude_obj, 349) + obj_is_carrying_obj_pid(dude_obj, 232)) > 0) or ((get_critter_stat(dude_obj, 34) == 0) and (get_critter_stat(dude_obj, 0) > 5))) then begin
+		call Node018();
+	end
+	else begin
+		call Node008();
+	end
+end
+
+procedure Node988
+begin
+	if (is_success(roll_vs_skill(dude_obj, 14, -20))) then begin
+		call Node018();
+	end
+	else begin
+		call Node009();
+	end
+end
+
+procedure Node987
+begin
+	if (is_success(roll_vs_skill(dude_obj, 14, 10))) then begin
+		call Node018();
+	end
+	else begin
+		call Node009();
+	end
+end
+
+procedure Node984
+begin
+	if (((local_var(4) bwand 131072) != 0) == 0) then begin
+		set_local_var(4, local_var(4) bwor 131072);
+		set_global_var(0, global_var(0) + -3);
+		debug_msg("ncbigjes" + ": " + "Player gains " + -3 + " Karma Points." + "\n");
+		set_global_var(37, 0);
+		set_global_var(38, 0);
+		set_global_var(39, 0);
+		set_global_var(40, 0);
+		set_global_var(41, 0);
+		set_global_var(42, 0);
+		set_global_var(43, 0);
+		set_global_var(44, 0);
+		set_global_var(45, 0);
+		tmp_gen_rep := global_var(0);
+		if (has_trait(0, dude_obj, 95)) then begin
+			tmp_gen_rep := global_var(0) * 2;
+		end
+		if (tmp_gen_rep >= 1000) then begin
+			set_global_var(37, 1);
+		end
+		else begin
+			if (tmp_gen_rep >= 750) then begin
+				set_global_var(38, 1);
+			end
+			else begin
+				if (tmp_gen_rep >= 500) then begin
+					set_global_var(39, 1);
+				end
+				else begin
+					if (tmp_gen_rep >= 250) then begin
+						set_global_var(40, 1);
+					end
+					else begin
+						if (tmp_gen_rep > -250) then begin
+							set_global_var(41, 1);
+						end
+						else begin
+							if (tmp_gen_rep > -500) then begin
+								set_global_var(42, 1);
+							end
+							else begin
+								if (tmp_gen_rep > -750) then begin
+									set_global_var(43, 1);
+								end
+								else begin
+									if (tmp_gen_rep > -1000) then begin
+										set_global_var(44, 1);
+									end
+									else begin
+										set_global_var(45, 1);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	if (is_success(roll_vs_skill(dude_obj, 15, 10))) then begin
+		call Node015();
+	end
+	else begin
+		call Node014();
+	end
+end
+
+procedure Node982
+begin
+	if ((global_var(354) == 0) and 0) then begin
+	end
+	else begin
+		if (1 > global_var(354)) then begin
+			set_global_var(354, 1);
+		end
+	end
+	debug_msg("ncbigjes" + ": " + "delivery == " + global_var(354) + "\n");
+	restock_obj := create_object_sid(431, 0, 0, -1);
+	add_mult_objs_to_inven(dude_obj, restock_obj, 1);
+	game_time_advance(72000);
+	load_map(60, 0);
+end
+
+procedure Node981
+begin
+	if (((global_var(345) bwand 8388608) != 0) == 0) then begin
+		call Node026();
+	end
+	else begin
+		call Node025();
+	end
+end
+
+procedure Node980
+begin
+	if (((global_var(315) bwand 512) != 0) == 0) then begin
+		call Node032();
+	end
+	else begin
+		call Node025();
+	end
+end
+
+procedure Node979
+begin
+	if (get_critter_stat(dude_obj, 3) > 5) then begin
+		call Node042();
+	end
+	else begin
+		call Node025();
+	end
+end
+
+procedure Node978
+begin
+	if (get_critter_stat(dude_obj, 3) > 8) then begin
+		call Node042();
+	end
+	else begin
+		call Node025();
+	end
+end
+
+procedure Node045
+begin
+	display_msg(message_str(456, 900));
+	give_exp_points(1000);
+	display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+	gsay_reply(456, 720);
+	giq_option(4, 456, 571, Node999, 50);
+	giq_option(4, 456, 492, Node999, 49);
+	prev_node := 45;
+end
+
