@@ -15,12 +15,11 @@
 | [Zomak the Destroyer](https://fallout.fandom.com/wiki/Zomak) | Gecko | Lewis Saunders | [Portfolio](https://lewissaundersvo.com/character-voices/) |
 | [Brother Paul](https://f2rp.bgforge.net/abbey/) | Abbey | Matt Bartlett | [Portfolio](https://mattbartlettvo.carrd.co/) |
 | [Big Jesus Mordino](https://fallout.fandom.com/wiki/Big_Jesus_Mordino) | New Reno | Enrico Leone | [AllMyLinks](https://allmylinks.com/enrico-leone-va) · [Casting Call Club](https://www.castingcall.club/incinerico) |
+| [Torr Buckner](https://fallout.fandom.com/wiki/Torr_Buckner) | Klamath | David Pastore-Theriaque | [Linktree](https://linktr.ee/dclpt0) |
 
 ## AI-Voiced Characters (To Be Replaced)
 
 | Character | Location |
 |-----------|----------|
 | [Morlis](https://fallout.fandom.com/wiki/Morlis) | Arroyo |
-| [Sally Dunton](https://fallout.fandom.com/wiki/Sally_Dunton) | Klamath |
-| [Bridgekeeper](https://fallout.fandom.com/wiki/Bridgekeeper) | Special Encounter |
-| [Arthur Pendragon](https://fallout.fandom.com/wiki/Arthur_Pendragon) | Special Encounter |
+|
