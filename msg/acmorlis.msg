@@ -41,6 +41,7 @@
 {209}{}{Yes, Aunt Morlis. I mean no, Aunt Morlis. Uh, I've got to go, Aunt Morlis.}
 {210}{mor17}{So, child. Once again you stand before me. Are you empty-handed yet again?}
 {211}{}{Yes, Aunt Morlis.}
+#VOCK - mor18 VA has to play: 212 + Chosen One + 213
 {212}{mor18}{Listen, }
 {213}{}{. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?}
 {214}{}{Yes, Aunt Morlis.}

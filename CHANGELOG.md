@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.7
+- Added voices: Torr Buckner (Klamath), Keith Wright (New Reno), Brother Paul (Abbey)
+
 ## v1.6
 - Added voices: Kaga (Special Encounter), Zomak (Gecko), Eric (Broken Hills)
 - WIP: Zaius (Broken Hills), Christopher Wright (New Reno)
