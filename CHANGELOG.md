@@ -5,7 +5,6 @@
 
 ## v1.6
 - Added voices: Kaga (Special Encounter), Zomak (Gecko), Eric (Broken Hills)
-- WIP: Zaius (Broken Hills), Christopher Wright (New Reno)
 
 ## v1.5
 - Multilanguage support (resolved)
