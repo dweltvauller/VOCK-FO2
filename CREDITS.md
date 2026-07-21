@@ -16,6 +16,7 @@
 | [Brother Paul](https://f2rp.bgforge.net/abbey/) | Abbey | Matt Bartlett | [Portfolio](https://mattbartlettvo.carrd.co/) |
 | [Big Jesus Mordino](https://fallout.fandom.com/wiki/Big_Jesus_Mordino) | New Reno | Enrico Leone | [AllMyLinks](https://allmylinks.com/enrico-leone-va) · [Casting Call Club](https://www.castingcall.club/incinerico) |
 | [Torr Buckner](https://fallout.fandom.com/wiki/Torr_Buckner) | Klamath | David Pastore-Theriaque | [Linktree](https://linktr.ee/dclpt0) |
+| [Louise](https://fallout.fandom.com/wiki/Louise) | Redding | Billy Graves | [AllMyLinks](https://allmylinks.com/billy-graves) |
 
 ## AI-Voiced Characters (To Be Replaced)
 
