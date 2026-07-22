@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- Added voices (WIP): Louise (Redding), Skeeter (Gecko)
+
 ## v1.7
 - Added voices: Torr Buckner (Klamath), Keith Wright (New Reno), Brother Paul (Abbey)
 
