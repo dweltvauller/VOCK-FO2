@@ -102,10 +102,10 @@ item []:
             text = "to" 
         intervals [23]:
             xmin = 7.05 
-            xmax = 7.54 
+            xmax = 7.55 
             text = "trade" 
         intervals [24]:
-            xmin = 7.54 
+            xmin = 7.55 
             xmax = 7.894785 
             text = "" 
     item [2]:
@@ -336,9 +336,9 @@ item []:
             text = "EY1" 
         intervals [56]:
             xmin = 7.41 
-            xmax = 7.54 
+            xmax = 7.55 
             text = "D" 
         intervals [57]:
-            xmin = 7.54 
+            xmin = 7.55 
             xmax = 7.894785 
             text = "" 

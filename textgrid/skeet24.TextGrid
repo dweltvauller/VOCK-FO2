@@ -332,10 +332,10 @@ item []:
             text = "F" 
         intervals [44]:
             xmin = 4.82 
-            xmax = 4.96 
+            xmax = 4.97 
             text = "AY1" 
         intervals [45]:
-            xmin = 4.96 
+            xmin = 4.97 
             xmax = 5.03 
             text = "N" 
         intervals [46]:
@@ -380,10 +380,10 @@ item []:
             text = "TH" 
         intervals [56]:
             xmin = 5.53 
-            xmax = 5.65 
+            xmax = 5.63 
             text = "AA1" 
         intervals [57]:
-            xmin = 5.65 
+            xmin = 5.63 
             xmax = 5.74 
             text = "R" 
         intervals [58]:

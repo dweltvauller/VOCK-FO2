@@ -46,10 +46,10 @@ item []:
             text = "cheap" 
         intervals [9]:
             xmin = 2.52 
-            xmax = 3.33 
+            xmax = 3.34 
             text = "" 
         intervals [10]:
-            xmin = 3.33 
+            xmin = 3.34 
             xmax = 3.5 
             text = "you" 
         intervals [11]:
@@ -176,10 +176,10 @@ item []:
             text = "P" 
         intervals [26]:
             xmin = 2.52 
-            xmax = 3.33 
+            xmax = 3.34 
             text = "" 
         intervals [27]:
-            xmin = 3.33 
+            xmin = 3.34 
             xmax = 3.44 
             text = "Y" 
         intervals [28]:

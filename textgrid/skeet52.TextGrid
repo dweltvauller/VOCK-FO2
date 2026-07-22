@@ -102,10 +102,10 @@ item []:
             text = "a" 
         intervals [23]:
             xmin = 5.96 
-            xmax = 6.48 
+            xmax = 6.47 
             text = "fee" 
         intervals [24]:
-            xmin = 6.48 
+            xmin = 6.47 
             xmax = 6.638685 
             text = "" 
     item [2]:
@@ -412,9 +412,9 @@ item []:
             text = "F" 
         intervals [75]:
             xmin = 6.12 
-            xmax = 6.48 
+            xmax = 6.47 
             text = "IY1" 
         intervals [76]:
-            xmin = 6.48 
+            xmin = 6.47 
             xmax = 6.638685 
             text = "" 

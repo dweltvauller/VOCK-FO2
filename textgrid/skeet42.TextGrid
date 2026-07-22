@@ -66,10 +66,10 @@ item []:
             text = "owe" 
         intervals [14]:
             xmin = 2.51 
-            xmax = 2.73 
+            xmax = 2.71 
             text = "you" 
         intervals [15]:
-            xmin = 2.73 
+            xmin = 2.71 
             xmax = 2.844444 
             text = "" 
     item [2]:
@@ -208,9 +208,9 @@ item []:
             text = "Y" 
         intervals [33]:
             xmin = 2.61 
-            xmax = 2.73 
+            xmax = 2.71 
             text = "UW1" 
         intervals [34]:
-            xmin = 2.73 
+            xmin = 2.71 
             xmax = 2.844444 
             text = "" 

@@ -212,7 +212,7 @@
 
 {680}{skeet59}{(Spots your magnum revolver.) I can rig a speed loader on that there magnum for free.}
 {681}{skeet60}{Hmm, that Desert Eagle sure would be a sweet rig with an expanded magazine. I can do that for free.}
-{682}{skeet61}{I can put a nice scope all-weather on that hunting rifle for free.}
+{682}{skeet61}{I can put a nice all-weather scope on that hunting rifle for free.}
 {683}{skeet62}{Nothing like having an assault rifle with an expanded magazine. I can fix yours up with one for free.}
 {684}{skeet63}{That FN FAL is a good gun. Hey, I got a low-light scope for that. It's yours for free.}
 {685}{skeet64}{You want that melee weapon juiced up? I can *supercharge* it for free.}

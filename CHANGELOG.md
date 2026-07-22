@@ -1,7 +1,10 @@
 # Changelog
 
-## Unreleased
-- Added voices (WIP): Louise (Redding), Skeeter (Gecko)
+## WIP
+- Louise (Redding), Zaius (Broken Hills), Christopher Wright (New Reno)
+
+## v1.8
+- Added voices: Skeeter (Gecko)
 
 ## v1.7
 - Added voices: Torr Buckner (Klamath), Keith Wright (New Reno), Brother Paul (Abbey)

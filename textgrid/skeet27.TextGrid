@@ -22,10 +22,10 @@ item []:
             text = "ta" 
         intervals [3]:
             xmin = 0.25 
-            xmax = 0.38 
+            xmax = 0.39 
             text = "be" 
         intervals [4]:
-            xmin = 0.38 
+            xmin = 0.39 
             xmax = 0.73 
             text = "right" 
         intervals [5]:
@@ -184,10 +184,10 @@ item []:
             text = "B" 
         intervals [5]:
             xmin = 0.31 
-            xmax = 0.38 
+            xmax = 0.39 
             text = "IY0" 
         intervals [6]:
-            xmin = 0.38 
+            xmin = 0.39 
             xmax = 0.48 
             text = "R" 
         intervals [7]:
@@ -352,10 +352,10 @@ item []:
             text = "S" 
         intervals [47]:
             xmin = 4.54 
-            xmax = 4.6 
+            xmax = 4.59 
             text = "T" 
         intervals [48]:
-            xmin = 4.6 
+            xmin = 4.59 
             xmax = 4.63 
             text = "AH0" 
         intervals [49]:

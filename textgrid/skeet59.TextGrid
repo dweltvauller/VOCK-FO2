@@ -184,10 +184,10 @@ item []:
             text = "R" 
         intervals [27]:
             xmin = 2.09 
-            xmax = 2.25 
+            xmax = 2.26 
             text = "M" 
         intervals [28]:
-            xmin = 2.25 
+            xmin = 2.26 
             xmax = 2.37 
             text = "AE1" 
         intervals [29]:
@@ -200,10 +200,10 @@ item []:
             text = "N" 
         intervals [31]:
             xmin = 2.52 
-            xmax = 2.57 
+            xmax = 2.56 
             text = "AH0" 
         intervals [32]:
-            xmin = 2.57 
+            xmin = 2.56 
             xmax = 2.64 
             text = "M" 
         intervals [33]:

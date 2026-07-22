@@ -54,10 +54,10 @@ item []:
             text = "" 
         intervals [11]:
             xmin = 4.22 
-            xmax = 5.52 
+            xmax = 5.51 
             text = "uranium" 
         intervals [12]:
-            xmin = 5.52 
+            xmin = 5.51 
             xmax = 6.41 
             text = "fever" 
         intervals [13]:
@@ -228,10 +228,10 @@ item []:
             text = "AH0" 
         intervals [36]:
             xmin = 5.43 
-            xmax = 5.52 
+            xmax = 5.51 
             text = "M" 
         intervals [37]:
-            xmin = 5.52 
+            xmin = 5.51 
             xmax = 5.69 
             text = "F" 
         intervals [38]:

@@ -54,10 +54,10 @@ item []:
             text = "is" 
         intervals [11]:
             xmin = 2.64 
-            xmax = 3.12 
+            xmax = 3.13 
             text = "" 
         intervals [12]:
-            xmin = 3.12 
+            xmin = 3.13 
             xmax = 3.28 
             text = "you" 
         intervals [13]:
@@ -182,10 +182,10 @@ item []:
             text = "vault" 
         intervals [43]:
             xmin = 10.93 
-            xmax = 11.43 
+            xmax = 11.44 
             text = "city" 
         intervals [44]:
-            xmin = 11.43 
+            xmin = 11.44 
             xmax = 11.598367 
             text = "" 
     item [2]:
@@ -324,10 +324,10 @@ item []:
             text = "Z" 
         intervals [33]:
             xmin = 2.64 
-            xmax = 3.12 
+            xmax = 3.13 
             text = "" 
         intervals [34]:
-            xmin = 3.12 
+            xmin = 3.13 
             xmax = 3.24 
             text = "Y" 
         intervals [35]:
@@ -412,18 +412,18 @@ item []:
             text = "D" 
         intervals [55]:
             xmin = 4.52 
-            xmax = 4.58 
+            xmax = 4.57 
             text = "IH1" 
         intervals [56]:
-            xmin = 4.58 
-            xmax = 4.61 
+            xmin = 4.57 
+            xmax = 4.6 
             text = "D" 
         intervals [57]:
-            xmin = 4.61 
-            xmax = 4.64 
+            xmin = 4.6 
+            xmax = 4.63 
             text = "AH0" 
         intervals [58]:
-            xmin = 4.64 
+            xmin = 4.63 
             xmax = 4.68 
             text = "N" 
         intervals [59]:
@@ -672,10 +672,10 @@ item []:
             text = "V" 
         intervals [120]:
             xmin = 10.73 
-            xmax = 10.78 
+            xmax = 10.76 
             text = "AA1" 
         intervals [121]:
-            xmin = 10.78 
+            xmin = 10.76 
             xmax = 10.88 
             text = "L" 
         intervals [122]:
@@ -696,9 +696,9 @@ item []:
             text = "T" 
         intervals [126]:
             xmin = 11.19 
-            xmax = 11.43 
+            xmax = 11.44 
             text = "IY0" 
         intervals [127]:
-            xmin = 11.43 
+            xmin = 11.44 
             xmax = 11.598367 
             text = "" 

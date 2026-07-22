@@ -22,10 +22,10 @@ item []:
             text = "hmm" 
         intervals [3]:
             xmin = 0.34 
-            xmax = 0.7 
+            xmax = 0.69 
             text = "" 
         intervals [4]:
-            xmin = 0.7 
+            xmin = 0.69 
             xmax = 0.85 
             text = "you" 
         intervals [5]:
@@ -114,10 +114,10 @@ item []:
             text = "look" 
         intervals [26]:
             xmin = 6.31 
-            xmax = 6.58 
+            xmax = 6.57 
             text = "at" 
         intervals [27]:
-            xmin = 6.58 
+            xmin = 6.57 
             xmax = 6.768617 
             text = "" 
     item [2]:
@@ -140,10 +140,10 @@ item []:
             text = "M" 
         intervals [4]:
             xmin = 0.34 
-            xmax = 0.7 
+            xmax = 0.69 
             text = "" 
         intervals [5]:
-            xmin = 0.7 
+            xmin = 0.69 
             xmax = 0.82 
             text = "Y" 
         intervals [6]:
@@ -416,9 +416,9 @@ item []:
             text = "AE1" 
         intervals [73]:
             xmin = 6.46 
-            xmax = 6.58 
+            xmax = 6.57 
             text = "T" 
         intervals [74]:
-            xmin = 6.58 
+            xmin = 6.57 
             xmax = 6.768617 
             text = "" 

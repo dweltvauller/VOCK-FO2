@@ -154,10 +154,10 @@ item []:
             text = "a" 
         intervals [36]:
             xmin = 8.55 
-            xmax = 9.18 
+            xmax = 9.17 
             text = "ghoul" 
         intervals [37]:
-            xmin = 9.18 
+            xmin = 9.17 
             xmax = 9.56 
             text = "" 
         intervals [38]:
@@ -596,10 +596,10 @@ item []:
             text = "UW1" 
         intervals [105]:
             xmin = 8.83 
-            xmax = 9.18 
+            xmax = 9.17 
             text = "L" 
         intervals [106]:
-            xmin = 9.18 
+            xmin = 9.17 
             xmax = 9.56 
             text = "" 
         intervals [107]:

@@ -22,10 +22,10 @@ item []:
             text = "yep" 
         intervals [3]:
             xmin = 0.54 
-            xmax = 0.67 
+            xmax = 0.66 
             text = "" 
         intervals [4]:
-            xmin = 0.67 
+            xmin = 0.66 
             xmax = 1.04 
             text = "sure" 
         intervals [5]:
@@ -58,10 +58,10 @@ item []:
             text = "jist" 
         intervals [12]:
             xmin = 3.39 
-            xmax = 3.98 
+            xmax = 3.97 
             text = "waitin'fer" 
         intervals [13]:
-            xmin = 3.98 
+            xmin = 3.97 
             xmax = 4.04 
             text = "a" 
         intervals [14]:
@@ -132,10 +132,10 @@ item []:
             text = "P" 
         intervals [5]:
             xmin = 0.54 
-            xmax = 0.67 
+            xmax = 0.66 
             text = "" 
         intervals [6]:
-            xmin = 0.67 
+            xmin = 0.66 
             xmax = 0.84 
             text = "SH" 
         intervals [7]:
@@ -244,10 +244,10 @@ item []:
             text = "F" 
         intervals [33]:
             xmin = 3.92 
-            xmax = 3.98 
+            xmax = 3.97 
             text = "ER1" 
         intervals [34]:
-            xmin = 3.98 
+            xmin = 3.97 
             xmax = 4.04 
             text = "AH0" 
         intervals [35]:

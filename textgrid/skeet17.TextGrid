@@ -86,10 +86,10 @@ item []:
             text = "to" 
         intervals [19]:
             xmin = 3.75 
-            xmax = 4.01 
+            xmax = 4.0 
             text = "look" 
         intervals [20]:
-            xmin = 4.01 
+            xmin = 4.0 
             xmax = 4.17 
             text = "at" 
         intervals [21]:
@@ -200,10 +200,10 @@ item []:
             text = "S" 
         intervals [24]:
             xmin = 1.69 
-            xmax = 1.75 
+            xmax = 1.76 
             text = "AH1" 
         intervals [25]:
-            xmin = 1.75 
+            xmin = 1.76 
             xmax = 1.81 
             text = "M" 
         intervals [26]:
@@ -304,10 +304,10 @@ item []:
             text = "UH1" 
         intervals [50]:
             xmin = 3.92 
-            xmax = 4.01 
+            xmax = 4.0 
             text = "K" 
         intervals [51]:
-            xmin = 4.01 
+            xmin = 4.0 
             xmax = 4.11 
             text = "AE1" 
         intervals [52]:

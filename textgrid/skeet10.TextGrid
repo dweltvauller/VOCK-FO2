@@ -208,10 +208,10 @@ item []:
             text = "G" 
         intervals [3]:
             xmin = 0.26 
-            xmax = 0.35 
+            xmax = 0.37 
             text = "R" 
         intervals [4]:
-            xmin = 0.35 
+            xmin = 0.37 
             xmax = 0.75 
             text = "EY1" 
         intervals [5]:
@@ -288,10 +288,10 @@ item []:
             text = "EH1" 
         intervals [23]:
             xmin = 2.37 
-            xmax = 2.46 
+            xmax = 2.45 
             text = "G" 
         intervals [24]:
-            xmin = 2.46 
+            xmin = 2.45 
             xmax = 2.51 
             text = "Y" 
         intervals [25]:
@@ -396,10 +396,10 @@ item []:
             text = "W" 
         intervals [50]:
             xmin = 6.21 
-            xmax = 6.4 
+            xmax = 6.41 
             text = "ER1" 
         intervals [51]:
-            xmin = 6.4 
+            xmin = 6.41 
             xmax = 6.56 
             text = "K" 
         intervals [52]:

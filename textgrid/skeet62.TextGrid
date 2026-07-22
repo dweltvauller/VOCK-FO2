@@ -38,10 +38,10 @@ item []:
             text = "assault" 
         intervals [7]:
             xmin = 1.45 
-            xmax = 1.48 
+            xmax = 1.49 
             text = "" 
         intervals [8]:
-            xmin = 1.48 
+            xmin = 1.49 
             xmax = 1.92 
             text = "rifle" 
         intervals [9]:
@@ -196,10 +196,10 @@ item []:
             text = "T" 
         intervals [22]:
             xmin = 1.45 
-            xmax = 1.48 
+            xmax = 1.49 
             text = "" 
         intervals [23]:
-            xmin = 1.48 
+            xmin = 1.49 
             xmax = 1.55 
             text = "R" 
         intervals [24]:

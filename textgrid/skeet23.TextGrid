@@ -604,14 +604,14 @@ item []:
             text = "AH1" 
         intervals [107]:
             xmin = 11.54 
-            xmax = 11.6 
+            xmax = 11.61 
             text = "B" 
         intervals [108]:
-            xmin = 11.6 
-            xmax = 11.61 
+            xmin = 11.61 
+            xmax = 11.62 
             text = "AH0" 
         intervals [109]:
-            xmin = 11.61 
+            xmin = 11.62 
             xmax = 11.83 
             text = "L" 
         intervals [110]:

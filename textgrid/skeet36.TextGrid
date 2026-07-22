@@ -86,14 +86,14 @@ item []:
             text = "and" 
         intervals [19]:
             xmin = 4.43 
-            xmax = 4.65 
+            xmax = 4.64 
             text = "git" 
         intervals [20]:
-            xmin = 4.65 
-            xmax = 4.72 
+            xmin = 4.64 
+            xmax = 4.73 
             text = "your" 
         intervals [21]:
-            xmin = 4.72 
+            xmin = 4.73 
             xmax = 5.08 
             text = "car" 
         intervals [22]:
@@ -114,10 +114,10 @@ item []:
             text = "know" 
         intervals [26]:
             xmin = 6.49 
-            xmax = 6.92 
+            xmax = 6.91 
             text = "" 
         intervals [27]:
-            xmin = 6.92 
+            xmin = 6.91 
             xmax = 6.99 
             text = "i" 
         intervals [28]:
@@ -404,22 +404,22 @@ item []:
             text = "IH0" 
         intervals [54]:
             xmin = 4.56 
-            xmax = 4.65 
+            xmax = 4.64 
             text = "T" 
         intervals [55]:
-            xmin = 4.65 
-            xmax = 4.68 
+            xmin = 4.64 
+            xmax = 4.67 
             text = "Y" 
         intervals [56]:
-            xmin = 4.68 
-            xmax = 4.69 
+            xmin = 4.67 
+            xmax = 4.7 
             text = "UH1" 
         intervals [57]:
-            xmin = 4.69 
-            xmax = 4.72 
+            xmin = 4.7 
+            xmax = 4.73 
             text = "R" 
         intervals [58]:
-            xmin = 4.72 
+            xmin = 4.73 
             xmax = 4.87 
             text = "K" 
         intervals [59]:
@@ -476,10 +476,10 @@ item []:
             text = "OW1" 
         intervals [72]:
             xmin = 6.49 
-            xmax = 6.92 
+            xmax = 6.91 
             text = "" 
         intervals [73]:
-            xmin = 6.92 
+            xmin = 6.91 
             xmax = 6.99 
             text = "AY1" 
         intervals [74]:
@@ -600,10 +600,10 @@ item []:
             text = "M" 
         intervals [103]:
             xmin = 9.34 
-            xmax = 9.39 
+            xmax = 9.4 
             text = "AH0" 
         intervals [104]:
-            xmin = 9.39 
+            xmin = 9.4 
             xmax = 9.48 
             text = "V" 
         intervals [105]:
@@ -644,10 +644,10 @@ item []:
             text = "ER0" 
         intervals [114]:
             xmin = 10.04 
-            xmax = 10.19 
+            xmax = 10.2 
             text = "F" 
         intervals [115]:
-            xmin = 10.19 
+            xmin = 10.2 
             xmax = 10.27 
             text = "R" 
         intervals [116]:

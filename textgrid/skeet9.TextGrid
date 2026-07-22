@@ -62,10 +62,10 @@ item []:
             text = "right" 
         intervals [13]:
             xmin = 3.32 
-            xmax = 3.76 
+            xmax = 3.74 
             text = "now" 
         intervals [14]:
-            xmin = 3.76 
+            xmin = 3.74 
             xmax = 4.15 
             text = "" 
         intervals [15]:
@@ -240,10 +240,10 @@ item []:
             text = "N" 
         intervals [35]:
             xmin = 3.36 
-            xmax = 3.76 
+            xmax = 3.74 
             text = "AW1" 
         intervals [36]:
-            xmin = 3.76 
+            xmin = 3.74 
             xmax = 4.15 
             text = "" 
         intervals [37]:

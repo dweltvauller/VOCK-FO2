@@ -292,10 +292,10 @@ item []:
             text = "EH2" 
         intervals [25]:
             xmin = 2.0 
-            xmax = 2.1 
+            xmax = 2.11 
             text = "K" 
         intervals [26]:
-            xmin = 2.1 
+            xmin = 2.11 
             xmax = 2.14 
             text = "W" 
         intervals [27]:
@@ -700,10 +700,10 @@ item []:
             text = "AH0" 
         intervals [127]:
             xmin = 10.68 
-            xmax = 10.76 
+            xmax = 10.77 
             text = "Z" 
         intervals [128]:
-            xmin = 10.76 
+            xmin = 10.77 
             xmax = 10.82 
             text = "IH1" 
         intervals [129]:
@@ -744,10 +744,10 @@ item []:
             text = "HH" 
         intervals [138]:
             xmin = 11.3 
-            xmax = 11.42 
+            xmax = 11.43 
             text = "EH1" 
         intervals [139]:
-            xmin = 11.42 
+            xmin = 11.43 
             xmax = 11.52 
             text = "R" 
         intervals [140]:

@@ -74,10 +74,10 @@ item []:
             text = "nuthin'with" 
         intervals [16]:
             xmin = 4.24 
-            xmax = 4.42 
+            xmax = 4.41 
             text = "it" 
         intervals [17]:
-            xmin = 4.42 
+            xmin = 4.41 
             xmax = 4.92 
             text = "" 
         intervals [18]:
@@ -280,14 +280,14 @@ item []:
             text = "DH" 
         intervals [35]:
             xmin = 4.24 
-            xmax = 4.32 
+            xmax = 4.33 
             text = "IH0" 
         intervals [36]:
-            xmin = 4.32 
-            xmax = 4.42 
+            xmin = 4.33 
+            xmax = 4.41 
             text = "T" 
         intervals [37]:
-            xmin = 4.42 
+            xmin = 4.41 
             xmax = 4.92 
             text = "" 
         intervals [38]:

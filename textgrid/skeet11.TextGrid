@@ -142,10 +142,10 @@ item []:
             text = "got" 
         intervals [33]:
             xmin = 9.63 
-            xmax = 9.84 
+            xmax = 9.85 
             text = "that" 
         intervals [34]:
-            xmin = 9.84 
+            xmin = 9.85 
             xmax = 10.29 
             text = "idjit" 
         intervals [35]:
@@ -572,10 +572,10 @@ item []:
             text = "AE1" 
         intervals [97]:
             xmin = 9.78 
-            xmax = 9.84 
+            xmax = 9.85 
             text = "T" 
         intervals [98]:
-            xmin = 9.84 
+            xmin = 9.85 
             xmax = 9.96 
             text = "IH1" 
         intervals [99]:

@@ -158,10 +158,10 @@ item []:
             text = "building" 
         intervals [37]:
             xmin = 10.31 
-            xmax = 10.68 
+            xmax = 10.67 
             text = "now" 
         intervals [38]:
-            xmin = 10.68 
+            xmin = 10.67 
             xmax = 11.3 
             text = "" 
         intervals [39]:
@@ -568,10 +568,10 @@ item []:
             text = "IY1" 
         intervals [89]:
             xmin = 8.45 
-            xmax = 8.5 
+            xmax = 8.51 
             text = "EH1" 
         intervals [90]:
-            xmin = 8.5 
+            xmin = 8.51 
             xmax = 8.55 
             text = "N" 
         intervals [91]:
@@ -680,10 +680,10 @@ item []:
             text = "N" 
         intervals [117]:
             xmin = 10.35 
-            xmax = 10.68 
+            xmax = 10.67 
             text = "AW1" 
         intervals [118]:
-            xmin = 10.68 
+            xmin = 10.67 
             xmax = 11.3 
             text = "" 
         intervals [119]:

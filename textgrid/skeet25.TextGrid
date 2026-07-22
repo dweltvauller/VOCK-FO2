@@ -146,10 +146,10 @@ item []:
             text = "crops" 
         intervals [34]:
             xmin = 8.9 
-            xmax = 9.5 
+            xmax = 9.49 
             text = "" 
         intervals [35]:
-            xmin = 9.5 
+            xmin = 9.49 
             xmax = 9.65 
             text = "and" 
         intervals [36]:
@@ -556,10 +556,10 @@ item []:
             text = "S" 
         intervals [89]:
             xmin = 8.9 
-            xmax = 9.5 
+            xmax = 9.49 
             text = "" 
         intervals [90]:
-            xmin = 9.5 
+            xmin = 9.49 
             xmax = 9.59 
             text = "AE1" 
         intervals [91]:
