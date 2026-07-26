@@ -1,11 +1,11 @@
 # Fallout 2 - Talking Heads Mod (THAT) — Voice Actor Reference
 
-> Pulled from public Casting Call Club project listings:
-> [Part 1](https://www.castingcall.club/projects/fallout-2-talking-heads-project) /
-> [Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy)),
-> This information comes from a third party and may be outdated or inaccurate.
-> Blank rows mean no confirmed actor was found in the public listings.
-> Most CCC audio previews require a free account to play.
+Pulled from public Casting Call Club project listings:
+[Part 1](https://www.castingcall.club/projects/fallout-2-talking-heads-project) /
+[Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy)),
+This information comes from a third party and may be outdated or inaccurate.
+Blank rows mean no confirmed actor was found in the public listings.
+Most CCC audio previews require a free account to play.
 
 | Location | NPC | FRM file | Voice Actor | Links |
 |---|---|---|---|---|
