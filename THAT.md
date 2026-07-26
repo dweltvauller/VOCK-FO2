@@ -1,10 +1,11 @@
 # Fallout 2 - Talking Heads Mod (THAT) — Voice Actor Reference
 
-> Pulled from public Casting Call Club project listings:
+> Pulled from public Casting Call Club project listings (Electric Goat Productions,
 > [Part 1](https://www.castingcall.club/projects/fallout-2-talking-heads-project) /
-> [Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy).
-> This information comes from a third party and may be outdated or inaccurate.
-> Blank rows mean no confirmed actor was found in the public listings.
+> [Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy)),
+> matched against the `THAT` rows in the VOCK NPC tracking sheet. This information
+> comes from a third party and may be outdated or inaccurate. Blank rows mean no
+> confirmed actor was found in the public listings.
 
 | Location | NPC | Voice Actor | Links |
 |---|---|---|---|
