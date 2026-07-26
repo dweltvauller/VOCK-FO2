@@ -142,10 +142,10 @@ item []:
             text = "mansion" 
         intervals [33]:
             xmin = 14.83 
-            xmax = 15.27 
+            xmax = 15.26 
             text = "south" 
         intervals [34]:
-            xmin = 15.27 
+            xmin = 15.26 
             xmax = 15.34 
             text = "of" 
         intervals [35]:
@@ -174,10 +174,10 @@ item []:
             text = "" 
         intervals [41]:
             xmin = 17.790001 
-            xmax = 18.27 
+            xmax = 18.26 
             text = "keith" 
         intervals [42]:
-            xmin = 18.27 
+            xmin = 18.26 
             xmax = 18.870001 
             text = "" 
         intervals [43]:
@@ -288,10 +288,10 @@ item []:
             text = "" 
         intervals [13]:
             xmin = 4.51 
-            xmax = 4.57 
+            xmax = 4.56 
             text = "DH" 
         intervals [14]:
-            xmin = 4.57 
+            xmin = 4.56 
             xmax = 4.63 
             text = "AH0" 
         intervals [15]:
@@ -580,10 +580,10 @@ item []:
             text = "AW1" 
         intervals [86]:
             xmin = 15.17 
-            xmax = 15.27 
+            xmax = 15.26 
             text = "TH" 
         intervals [87]:
-            xmin = 15.27 
+            xmin = 15.26 
             xmax = 15.3 
             text = "AH0" 
         intervals [88]:
@@ -664,10 +664,10 @@ item []:
             text = "IY1" 
         intervals [107]:
             xmin = 18.049999 
-            xmax = 18.27 
+            xmax = 18.26 
             text = "TH" 
         intervals [108]:
-            xmin = 18.27 
+            xmin = 18.26 
             xmax = 18.870001 
             text = "" 
         intervals [109]:

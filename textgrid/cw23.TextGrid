@@ -38,10 +38,10 @@ item []:
             text = "the" 
         intervals [7]:
             xmin = 1.9 
-            xmax = 2.3 
+            xmax = 2.31 
             text = "" 
         intervals [8]:
-            xmin = 2.3 
+            xmin = 2.31 
             xmax = 2.89 
             text = "biggest" 
         intervals [9]:
@@ -66,10 +66,10 @@ item []:
             text = "reno" 
         intervals [14]:
             xmin = 4.67 
-            xmax = 5.59 
+            xmax = 5.6 
             text = "" 
         intervals [15]:
-            xmin = 5.59 
+            xmin = 5.6 
             xmax = 5.94 
             text = "we're" 
         intervals [16]:
@@ -160,10 +160,10 @@ item []:
             text = "IY0" 
         intervals [16]:
             xmin = 1.9 
-            xmax = 2.3 
+            xmax = 2.31 
             text = "" 
         intervals [17]:
-            xmin = 2.3 
+            xmin = 2.31 
             xmax = 2.35 
             text = "B" 
         intervals [18]:
@@ -180,10 +180,10 @@ item []:
             text = "AH0" 
         intervals [21]:
             xmin = 2.65 
-            xmax = 2.84 
+            xmax = 2.78 
             text = "S" 
         intervals [22]:
-            xmin = 2.84 
+            xmin = 2.78 
             xmax = 2.89 
             text = "T" 
         intervals [23]:
@@ -220,10 +220,10 @@ item []:
             text = "M" 
         intervals [31]:
             xmin = 3.65 
-            xmax = 3.69 
+            xmax = 3.68 
             text = "AH0" 
         intervals [32]:
-            xmin = 3.69 
+            xmin = 3.68 
             xmax = 3.75 
             text = "L" 
         intervals [33]:
@@ -256,10 +256,10 @@ item []:
             text = "OW0" 
         intervals [40]:
             xmin = 4.67 
-            xmax = 5.59 
+            xmax = 5.6 
             text = "" 
         intervals [41]:
-            xmin = 5.59 
+            xmin = 5.6 
             xmax = 5.74 
             text = "W" 
         intervals [42]:
@@ -288,10 +288,10 @@ item []:
             text = "AH0" 
         intervals [48]:
             xmin = 6.32 
-            xmax = 6.57 
+            xmax = 6.58 
             text = "R" 
         intervals [49]:
-            xmin = 6.57 
+            xmin = 6.58 
             xmax = 6.86 
             text = "UW1" 
         intervals [50]:

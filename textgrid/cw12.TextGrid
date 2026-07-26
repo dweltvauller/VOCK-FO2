@@ -2,7 +2,7 @@ File type = "ooTextFile"
 Object class = "TextGrid"
 
 xmin = 0 
-xmax = 1.670975 
+xmax = 1.46771 
 tiers? <exists> 
 size = 2 
 item []: 
@@ -10,55 +10,55 @@ item []:
         class = "IntervalTier" 
         name = "words" 
         xmin = 0 
-        xmax = 1.670975 
+        xmax = 1.46771 
         intervals: size = 4 
         intervals [1]:
             xmin = 0.0 
-            xmax = 0.38 
+            xmax = 0.2 
             text = "" 
         intervals [2]:
-            xmin = 0.38 
-            xmax = 0.73 
+            xmin = 0.2 
+            xmax = 0.52 
             text = "piss" 
         intervals [3]:
-            xmin = 0.73 
-            xmax = 1.26 
+            xmin = 0.52 
+            xmax = 1.05 
             text = "off" 
         intervals [4]:
-            xmin = 1.26 
-            xmax = 1.670975 
+            xmin = 1.05 
+            xmax = 1.46771 
             text = "" 
     item [2]:
         class = "IntervalTier" 
         name = "phones" 
         xmin = 0 
-        xmax = 1.670975 
+        xmax = 1.46771 
         intervals: size = 7 
         intervals [1]:
             xmin = 0.0 
-            xmax = 0.38 
+            xmax = 0.2 
             text = "" 
         intervals [2]:
-            xmin = 0.38 
-            xmax = 0.41 
+            xmin = 0.2 
+            xmax = 0.29 
             text = "P" 
         intervals [3]:
-            xmin = 0.41 
-            xmax = 0.57 
+            xmin = 0.29 
+            xmax = 0.37 
             text = "IH1" 
         intervals [4]:
-            xmin = 0.57 
-            xmax = 0.73 
+            xmin = 0.37 
+            xmax = 0.52 
             text = "S" 
         intervals [5]:
-            xmin = 0.73 
-            xmax = 1.07 
+            xmin = 0.52 
+            xmax = 0.85 
             text = "AA1" 
         intervals [6]:
-            xmin = 1.07 
-            xmax = 1.26 
+            xmin = 0.85 
+            xmax = 1.05 
             text = "F" 
         intervals [7]:
-            xmin = 1.26 
-            xmax = 1.670975 
+            xmin = 1.05 
+            xmax = 1.46771 
             text = "" 

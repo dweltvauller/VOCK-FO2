@@ -124,7 +124,7 @@
 {402}{}{Hmmmmm. Thanks.}
 
 # 20. WHAT ABOUT RICHARD? (6, 8, 9, 10, 12)
-{410}{cw37}{Richard? We found him dead in one of the gutters like one of those Jet crashers. Near as we can figure, someone pumped him with drugs until he was dead.}
+{410}{cw37}{Richard? We found him dead in one of the gutters like one of those Jet crashers. Near as we can figure, someone pumped him up with drugs until he was dead.}
 {411}{}{'Someone' gave him too much? How do you know he didn't overdose because HE took too much?}
 {412}{}{Who do you figure might have done it?}
 {413}{}{Sorry to hear that. I had some other questions...}
@@ -149,7 +149,7 @@
 {447}{}{I'm leaving, I'm leaving.}
 
 # 24. IMPLY RICH KEPT TAKING DRUGS (15, 21, 22, 23)
-{455}{cw41}{(Chris stares at you for a moment, then lunges at you!)}
+{455}{}{(Chris stares at you for a moment, then lunges at you!)}
 {456}{}{So THIS is how it's gonna BE, huh? ALL RIGHT THEN, LET'S GO, MOTHER FU -- }
 
 # 25. WHO DO YOU THINK DID IT? (20, 21)
@@ -174,7 +174,7 @@
 
 
 # end lines
-{1200}{}{! Way to kick the Enclave's ass!}
+{1200}{}{! Way to kick Enclave's ass!}
 {1201}{}{! You rock!}
 {1202}{}{!}
 {1220}{}{. What you been up to?}
