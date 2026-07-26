@@ -20,7 +20,6 @@ Pulled from public Casting Call Club project listings: [Part 1](https://www.cast
 | Gecko | Wooz | | |
 | Klamath | Slim Picket | | |
 | Klamath | Smiley | | |
-| Klamath | Smiley | | |
 | Modoc | Balthas | gnetlemant-rex | [CCC Profile](https://www.castingcall.club/m/gnetlemant-rex) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1057801) |
 | Modoc | Jonny | Mousepelt | [CCC Profile](https://www.castingcall.club/m/mousepelt) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1057802) |
 | Modoc | Miria (Companion) | Ueichi | [CCC Profile](https://www.castingcall.club/m/ueichi) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole955622) |
