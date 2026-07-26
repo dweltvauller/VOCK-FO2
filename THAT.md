@@ -37,7 +37,6 @@ Pulled from public Casting Call Club project listings: [Part 1](https://www.cast
 | New Reno | Darlin' Nikki | | |
 | New Reno | Renesco | Krimson Graey | [CCC Profile](https://www.castingcall.club/m/kamelot777) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1052553) |
 | New Reno | Louis Salvatore | SoldierHobbes | [CCC Profile](https://www.castingcall.club/m/soldierhobbes) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1052554) |
-| New Reno | Louis Salvatore | SoldierHobbes | [CCC Profile](https://www.castingcall.club/m/soldierhobbes) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1052554) |
 | New Reno | Stuart Little | | |
 | Redding | Obidiah Hakeswill | | |
 | Redding | Earl Marion | | |
