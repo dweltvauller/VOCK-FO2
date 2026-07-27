@@ -8,7 +8,7 @@ Pulled from public Casting Call Club project listings: [Part 1](https://www.cast
 | [Abbot](https://f2rp.bgforge.net/abbey/) | Abbey | | |
 | [Klint](https://fallout.fandom.com/wiki/Klint) | Arroyo | | |
 | [Mynoc](https://fallout.fandom.com/wiki/Mynoc) | Arroyo | | |
-| [Cameron](https://fallout.fandom.com/wiki/Cameron_(Arroyo)) | Arroyo | | |
+| [Cameron](https://fallout.fandom.com/wiki/Cameron_(Arroyo)) | Arroyo | Tom Demont | [CCC Profile](https://www.castingcall.club/m/tomdiamond) · [Portfolio](https://tomdemont.carrd.co/) |
 | [Jacob](https://fallout.fandom.com/wiki/Jacob_the_Chemist) | Broken Hills | Laston | [CCC Profile](https://www.castingcall.club/m/laston) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1057345) |
 | [Steve](https://fallout.fandom.com/wiki/Steve_(Broken_Hills)) | Broken Hills | | |
 | [Typhon](https://fallout.fandom.com/wiki/Typhon) | Broken Hills | | |
@@ -59,6 +59,6 @@ Pulled from public Casting Call Club project listings: [Part 1](https://www.cast
 | [Doctor Troy](https://fallout.fandom.com/wiki/Troy_(Fallout_2)) | Vault City | Dylan_B_VO | [CCC Profile](https://www.castingcall.club/m/dylan_b_vo) · **[YouTube Channel](https://youtube.com/@deconvo?si=83VKqUmXEjG8CnY_)** |
 | [Gregory](https://fallout.fandom.com/wiki/Gregory_(Fallout_2)) | Vault City | | |
 | [Valerie](https://fallout.fandom.com/wiki/Valerie) | Vault City | Krissey | [CCC Profile](https://www.castingcall.club/m/krisseycrystal) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole955625) |
-| [McClure](https://fallout.fandom.com/wiki/McClure) | Vault City | tomdiamond | [CCC Profile](https://www.castingcall.club/m/tomdiamond) · **[Listen — YouTube](https://www.youtube.com/watch?v=WcNgjDRoGUs&t=39s&ab_channel=Black_Electric)** |
+| [McClure](https://fallout.fandom.com/wiki/McClure) | Vault City | Tom Demont | [CCC Profile](https://www.castingcall.club/m/tomdiamond) · **[Listen — YouTube](https://www.youtube.com/watch?v=WcNgjDRoGUs&t=39s&ab_channel=Black_Electric)** · [Portfolio](https://tomdemont.carrd.co/) |
 | [Stark](https://fallout.fandom.com/wiki/Stark) | Vault City | Dylan_B_VO | [CCC Profile](https://www.castingcall.club/m/dylan_b_vo) · **[Listen — YouTube](https://www.youtube.com/watch?v=XJnkoUigQiE&ab_channel=Black_Electric)** · **[YouTube Channel](https://youtube.com/@deconvo?si=83VKqUmXEjG8CnY_)** |
 | [Wallace](https://fallout.fandom.com/wiki/Wallace) | Vault City | | |
