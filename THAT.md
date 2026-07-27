@@ -1,21 +1,19 @@
 # Fallout 2 - Talking Heads Mod (THAT) — Voice Actor Reference
 
-Pulled from public Casting Call Club project listings: [Part 1](https://www.castingcall.club/projects/fallout-2-talking-heads-project) / [Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy). This information comes from a third party and may be outdated or inaccurate. Blank rows mean no confirmed actor was found in the public listings.
-
-NPC names link to fallout.fandom.com where available. Unlinked names mean no dedicated wiki page was found — this is expected for EPA (Dex, Sergeant Cat Jules) and Umbra Tribe (Shaman), which trace back to Fallout 2 Restoration Project content rather than vanilla Fallout 2 and aren't documented on the official wiki.
+Pulled from public Casting Call Club project listings: [Part 1](https://www.castingcall.club/projects/fallout-2-talking-heads-project) / [Part 2](https://www.castingcall.club/projects/fallout-2-talking-heads-mod-voice-actors-needed-copy). This information comes from a third party and may be outdated or inaccurate. Blank rows mean no confirmed actor was found in the public listings. If you participated in this project and want to be credited, please reach out.
 
 | NPC | Location | Voice Actor | Links |
 |---|---|---|---|
-| Abbey Merchant | Abbey | | |
-| Abbot | Abbey | | |
+| [Abbey Merchant](https://f2rp.bgforge.net/abbey/) | Abbey | | |
+| [Abbot](https://f2rp.bgforge.net/abbey/) | Abbey | | |
 | [Klint](https://fallout.fandom.com/wiki/Klint) | Arroyo | | |
 | [Mynoc](https://fallout.fandom.com/wiki/Mynoc) | Arroyo | | |
 | [Cameron](https://fallout.fandom.com/wiki/Cameron_(Arroyo)) | Arroyo | | |
 | [Jacob](https://fallout.fandom.com/wiki/Jacob_the_Chemist) | Broken Hills | Laston | [CCC Profile](https://www.castingcall.club/m/laston) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1057345) |
 | [Steve](https://fallout.fandom.com/wiki/Steve_(Broken_Hills)) | Broken Hills | | |
 | [Typhon](https://fallout.fandom.com/wiki/Typhon) | Broken Hills | | |
-| Dex (Companion) | EPA | | |
-| Sergeant Cat Jules (Companion) | EPA | | |
+| [Dex (Companion)](https://f2rp.bgforge.net/epa/) | EPA | | |
+| [Sergeant Cat Jules (Companion)](https://f2rp.bgforge.net/epa/) | EPA | | |
 | [Brain (Mole Rat)](https://fallout.fandom.com/wiki/Brain_(mole_rat)) | Gecko | | |
 | [Festus](https://fallout.fandom.com/wiki/Festus_(Fallout_2)) | Gecko | | |
 | [Gordon](https://fallout.fandom.com/wiki/Gordon_(Gecko)) | Gecko | Jerkytown | [CCC Profile](https://www.castingcall.club/m/jerkytown) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole978127) |
@@ -55,9 +53,8 @@ NPC names link to fallout.fandom.com where available. Unlinked names mean no ded
 | [Mom](https://fallout.fandom.com/wiki/Mom_(Fallout_2)) | The Den | coolartist1110 | [CCC Profile](https://www.castingcall.club/m/coolartist1110) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole962495) |
 | [Smitty](https://fallout.fandom.com/wiki/Smitty_(Den)) | The Den | | |
 | [Tyler](https://fallout.fandom.com/wiki/Tyler_(Fallout_2)) | The Den | | |
-| Shaman | Umbra Tribe | wykton | [CCC Profile](https://www.castingcall.club/m/wykton) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1054730) |
-| [Dalia](https://fallout.fandom.com/wiki/Dalia) | Vault 13 | | |
-| [Dalia](https://fallout.fandom.com/wiki/Dalia) | Vault 15 | | |
+| [Shaman](https://f2rp.bgforge.net/umbra-tribe/) | Umbra Tribe | wykton | [CCC Profile](https://www.castingcall.club/m/wykton) · [Role page](https://www.castingcall.club/projects/fallout-2-talking-heads-project#jumptorole1054730) |
+| [Dalia](https://fallout.fandom.com/wiki/Dalia) | Vault 13/15 | | |
 | [Barkus](https://fallout.fandom.com/wiki/Barkus) | Vault City | | |
 | [Doctor Troy](https://fallout.fandom.com/wiki/Troy_(Fallout_2)) | Vault City | | |
 | [Gregory](https://fallout.fandom.com/wiki/Gregory_(Fallout_2)) | Vault City | | |
