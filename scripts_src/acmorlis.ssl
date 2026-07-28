@@ -1,0 +1,644 @@
+/*
+	Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.
+*/
+
+/*
+        Name: Aunt Morlis
+        Location: Arroyo village
+        Description: She has the flint
+
+        Log:
+           Please note any changes that have been made to the file in Updated. Then comment
+           the code which you have changed/altered/commented out. Please, do not delete any
+           code which was written.
+
+           Created:
+
+           Updated:
+           2026-07-28 (VOCK): merged in the Talking Heads (TH) / THAT-RPU portrait changes on
+           top of this RPU baseline. Plain THAT does not touch this script at all (no
+           acmorlis.int in that build). TH and THAT-RPU turned out to be identical to each
+           other and to this RPU copy except for the head/mood/background args on every
+           start_gdialog() call in talk_p_proc -- confirmed by diffing node/procedure lists and
+           start_gdialog() arguments across all three (dat/th/scripts_ssl/acmorlis-th.ssl,
+           dat/that-rpu/scripts_ssl/acmorlis-that-rpu.ssl, and
+           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/arroyo/acmorlis.ssl). RPU
+           passed -1,-1 (no portrait) with a flat mood of 4 on every branch; TH/THAT-RPU/BEL
+           give her a real portrait (HEAD_MOR, day/night background swap) and use mood 7 on the
+           three "busy/annoyed" branches (Caught_Stealing, SPEAR_GET_POWDER, first
+           SPEAR_GET_FLINT check) vs mood 4 on the five later-game branches (reached_tl_1-4,
+           Darek's second SPEAR_GET_FLINT check) -- a real, intentional mood distinction, not
+           just a placeholder artifact, so it's preserved here. HEAD_MOR (194) is a TH-only
+           portrait ID, not defined in this project's header set (sourced from
+           rpu/scripts_src/headers), so it's inlined below as a raw number with a comment rather
+           than pulling in TH's whole header set. BACKGROUND_WASTELAND (16) and
+           BACKGROUND_WASTELAND_NIGHT (21) *are* already defined symbolically in this project's
+           headers, so those stayed symbolic. Also folded in the VOCK VA fix for Node015's
+           concatenated Reply (see msg 1212 in acmorlis.msg) so mor18 no longer relies on a
+           runtime mstr()+dude_name+mstr() concatenation -- it now plays back the single merged
+           line that was actually recorded.
+*/
+
+/* Include Files */
+
+/* Note, the Following Lines need to be in this order so that
+   the script will be compilable. The define Name is referenced
+   in a module from define.h and used in command.h. Please do
+   not change the ordering.
+        -rwh2   11/13/97
+*/
+#define SCRIPT_REALNAME "acmorlis"
+#include "../headers/define.h"
+//#include "../headers/<TownName.h>"
+
+#define NAME                    SCRIPT_ACMORLIS
+#define TOWN_REP_VAR            (GVAR_TOWN_REP_ARROYO)
+
+#include "../headers/command.h"
+#include "../headers/modreact.h"
+
+/* Standard Script Procedures */
+procedure start;
+procedure critter_p_proc;
+procedure pickup_p_proc;
+procedure talk_p_proc;
+procedure destroy_p_proc;
+procedure look_at_p_proc;
+procedure description_p_proc;
+procedure use_skill_on_p_proc;
+procedure damage_p_proc;
+procedure map_enter_p_proc;
+
+/* Script Specific Procedure Calls */
+procedure Node998;                                      // This Node is Always Combat
+procedure Node999;                                      // This Node is Always Ending
+
+
+// The next lines are added in by the Designer Tool.
+// Do NOT add in any lines here.
+//~~~~~~~~~~~~~~~~ DESIGNER TOOL STARTS HERE
+
+procedure Node001;
+procedure Node002;
+procedure Node003;
+procedure Node004;
+procedure Node005;
+//added by Darek
+procedure Node005a;
+procedure Node005b;
+procedure Node005c;
+//end
+procedure Node006;
+procedure Node007;
+procedure Node008;
+//added by Darek
+procedure Node007a;
+//end
+procedure Node009;
+procedure Node010;
+procedure Node011;
+procedure Node012;
+procedure Node013;
+procedure Node014;
+procedure Node015;
+procedure Node016;
+procedure Node017;
+procedure Node018;
+//added by Darek
+procedure Node018a;
+procedure Node018b;
+//end
+
+//~~~~~~~~~~~~~~~~ DESIGN TOOL ENDS HERE
+// The Following lines are for anything that is not needed to be
+// seen by the design Tool
+
+
+/* Local Variables which are saved. All Local Variables need to be
+   prepended by LVAR_ */
+#define LVAR_Herebefore                 (4)
+#define LVAR_Hostile                    (5)
+#define LVAR_Personal_Enemy             (6)
+#define LVAR_Gave_Flint                 (7)
+#define LVAR_Said_17                    (8)
+#define LVAR_Stole_Flint                (9)
+
+/* Imported variables from the Map scripts. These should only be
+   pointers and variables that need not be saved. If a variable
+   Needs to be saved, make it a map variable (MVAR_) */
+
+
+/* Local variables which do not need to be saved between map changes. */
+variable Only_Once:=0;
+variable Caught_Stealing;
+
+procedure start begin
+   set_local_var(LVAR_Stole_Flint,0); //added by killap
+end
+
+/* This procedure will get called each time that the map is first entered. It will
+   set up the Team number and AI packet for this critter. This will override the
+   default from the prototype, and needs to be set in scripts. */
+procedure map_enter_p_proc begin
+   Only_Once:=0;
+   set_self_team(TEAM_ARROYO);
+   set_self_ai(AI_ARROYO_VILLAGER);
+end
+
+
+/* Every heartbeat that the critter gets, this procedure will be called. Anything from
+   Movement to attacking the player on sight can be placed in here.*/
+procedure critter_p_proc begin
+
+/* If the critter is mad at the player for any reason, it will attack and remember to attack
+   the player should the game be saved and loaded repeatedly. Additionally, if any special
+   actions need to be taken by the critter based on previous combat, the critter will remember
+   this as well. */
+
+   //added by killap
+   if (not(self_item_count(PID_FLINT)) and (local_var(LVAR_Stole_Flint) == 0)) then begin
+      set_local_var(LVAR_Stole_Flint,1);
+   end else if ((self_item_count(PID_FLINT)) and (local_var(LVAR_Stole_Flint) == 1)) then begin
+      set_local_var(LVAR_Stole_Flint, 0);
+   end
+   //end added
+
+   if ((local_var(LVAR_Hostile) == 2) and (self_can_see_dude)) then begin
+       set_local_var(LVAR_Hostile,1);
+       attack(dude_obj);
+   end
+
+   if ( (REP_ENEMY_ARROYO) and (self_can_see_dude) ) then begin //added and (self_can_see_dude) by killap
+       attack(dude_obj);
+   end
+end
+
+/* Whenever the critter takes damage of any type, this procedure will be called. Things
+   like setting ENEMY_ and LVAR_Personal_Enemy can be set here. */
+procedure damage_p_proc begin
+
+/* If the player causes damage to this critter, then he will instantly consider the player
+   his personal enemy. In Critter_Proc or through dialog, actions will be taken against
+   the player for his evil acts. */
+   if (source_obj == dude_obj) then begin
+       set_local_var(LVAR_Personal_Enemy,1);
+       set_global_var(GVAR_ENEMY_ARROYO,1);
+   end
+
+end
+
+/* Any time that the player is caught stealing from this critter, Pickup_proc will be called.
+   In here, various things can happen. The most common response is instant hostility which
+   will be remembered. */
+procedure pickup_p_proc begin
+   if ((source_obj == dude_obj) and (self_item_count(PID_FLINT))) then begin
+       Caught_Stealing:=1;
+       dialogue_system_enter;
+   end
+end
+
+/* The dialog system is setup and prepares the player to talk to this NPC. Where To Go
+   written by designers are placed in here. Additionally, Reactions are generated and
+   stored which affects player interactions. */
+procedure talk_p_proc begin
+   Evil_Critter:=0;
+   Slavery_Tolerant:=SLAVE_TOLERANT;
+   Karma_Perception:=KARMA_PERCEPTION1;
+
+   CheckKarma;
+
+   GetReaction;
+
+   if (Caught_Stealing) then begin
+       Caught_Stealing:=0;
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
+       if night then
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node017;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if (dude_iq < 4) then begin
+      call Node001;
+   end
+
+   else if ((global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_POWDER) and
+            (local_var(LVAR_Gave_Flint) == 0)) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
+       if night then
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node006;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if ( (global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_FLINT) and
+              (local_var(LVAR_Stole_Flint) == 0)) then begin //edit by killap LVAR_Stole_Flint
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
+       if night then
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node002;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if (reached_tl_4) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
+       if night then
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node014;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if (reached_tl_3) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
+       if night then
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node013;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if (reached_tl_2) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
+       if night then
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node011;
+       gSay_End;
+       end_dialogue;
+   end
+
+   else if (reached_tl_1) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
+       if night then
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node009;
+       gSay_End;
+       end_dialogue;
+   end
+   //code by Darek
+   else if ((global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_FLINT) and (local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Said_17) < 2)) then begin
+       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
+       if night then
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        else
+        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+       gSay_Start;
+           call Node002;
+       gSay_End;
+       end_dialogue;
+   //end code by Darek
+   end else begin
+       call Node001;
+   end
+end
+
+/* This procedure gets called only on the death of this NPC. Special things like
+   incrementing the death count for reputation purposes and Enemy Counters are placed
+   in here. */
+procedure destroy_p_proc begin
+
+/* Increment the aligned critter counter*/
+   inc_good_critter
+
+/* Set global_variable for Enemy status*/
+end
+
+/* Look_at_p_proc gets called any time that the player passes the cursor over any object.
+   This should only hold the most cursory of glances for the player. */
+procedure look_at_p_proc begin
+   script_overrides;
+   display_msg(mstr(100));
+end
+
+/* The player will see more indepth descriptions from this procedure. They are actively
+   looking at the critter and want more information. Things like names can be added here
+   if the critter is known to the player. */
+procedure description_p_proc begin
+   script_overrides;
+   display_msg(mstr(100));
+end
+
+/* Any time a skill is used on a critter this call is made. This can be to give examinations
+   for things like Doctor skill or messages for various other skills. */
+procedure use_skill_on_p_proc begin
+end
+
+/* Should the Player ever cause the NPC too much discomfort that he desires to attack the player,
+   this call will be made. Essentially, it stores the Hostile vaule so that the critter remembers
+   he was once hostile towards the player.*/
+procedure Node998 begin
+   set_local_var(LVAR_Hostile,2);
+end
+
+/* Anytime that there is a need for an ending to dialog, this node is to be called. It will just
+   exit from the dialog system without any reprisals from the NPC. */
+procedure Node999 begin
+end
+
+
+// Not lines are allowed to be added below here
+// The Following lines are from the Design Tool
+//~~~~~~~~~~~~~~~~ DESIGN TOOL STARTS HERE
+
+procedure Node001 begin
+   if (dude_is_male) then
+       floater(101);
+   else
+       floater(301);
+
+   //NOption(102,Node999,000);
+end
+
+procedure Node002 begin
+   Reply(103);
+
+   NOption(104,Node003,004);
+end
+
+procedure Node003 begin
+   Reply(105);
+
+   NOption(106,Node004,004);
+end
+
+//edits by Darek
+procedure Node004 begin
+   if ((self_item_count(PID_FLINT) or (local_var(LVAR_Stole_Flint) == 1)) and (local_var(LVAR_Gave_Flint) == 0)) then begin
+      Reply(107);
+      NOption(108,Node005,004);
+   end else begin
+      Reply(304);
+      NOption(156,Node999,004);
+   end
+end
+//end
+
+//edits by Darek
+procedure Node005
+begin
+  if ((local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Gave_Flint) == 0) and (local_var(LVAR_Said_17) == 0)) then
+    call Node005b;
+  else if ((local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Gave_Flint) == 0) and (local_var(LVAR_Said_17) == 1)) then
+    call Node005c;
+  else
+    call Node005a;
+end
+//end
+
+//added by Darek
+procedure Node005a begin
+  if (self_item_count(PID_FLINT)) then begin
+    set_global_var(GVAR_ARROYO_SPEAR, 1);
+    Reply(109);
+    NOption(110,Node999,004);
+    if (dude_item_count(PID_HEALING_POWDER) > 2) then
+      NOption(118,Node007,004);
+    if (has_skill(dude_obj, SKILL_SPEECH) > 50) then
+      NOption(150,Node018,004);
+  end else begin
+      Reply(304);
+      NOption(156,Node999,004);
+  end
+end
+
+procedure Node005b begin
+  set_global_var(GVAR_ARROYO_SPEAR, 1);
+  Reply(109);
+  NOption(110,Node999,004);
+  if (dude_item_count(PID_HEALING_POWDER) > 2) then
+     NOption(118,Node007a,004);
+  if (has_skill(dude_obj, SKILL_SPEECH) > 50) then
+    NOption(150,Node018a,004);
+end
+
+procedure Node005c begin
+  set_global_var(GVAR_ARROYO_SPEAR, 1);
+  Reply(109);
+  NOption(110,Node999,004);
+  if (dude_item_count(PID_HEALING_POWDER) > 2) then
+    NOption(118,Node007a,004);
+  if (has_skill(dude_obj, SKILL_SPEECH) > 50) then
+    NOption(150,Node018b,004);
+end
+//end added by Darek
+
+//edits by Darek
+procedure Node006 begin
+  Reply(111);
+  if (dude_item_count(PID_HEALING_POWDER) > 2) then begin
+    if ((local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Gave_Flint) == 0)) then begin
+      NOption(112,Node007a,004);
+      NOption(113,Node008,004);
+    end else begin
+      NOption(112,Node007,004);
+      NOption(113,Node008,004);
+    end
+  end else
+    NOption(113,Node008,004);
+end
+//end
+
+procedure Node007 begin
+   variable item;
+   variable item2;
+   variable JunkIt;
+
+   if (dude_item_count(PID_HEALING_POWDER) > 2) then begin
+    //remove healing powders
+    item:=dude_item(PID_HEALING_POWDER);
+    JunkIt:=rm_mult_objs_from_inven(dude_obj,item,3);
+    add_mult_objs_to_inven(self_obj,item,3);
+    if (self_item_count(PID_FLINT)) then begin
+      Reply(114);
+      NOption(115,Node999,004);
+      //remove flint
+      item2:=self_item(PID_FLINT);
+      rm_obj_from_inven(self_obj,item2);
+      add_obj_to_inven(dude_obj,item2);
+      set_local_var(LVAR_Gave_Flint, 1);
+    end else begin
+      set_local_var(LVAR_Gave_Flint, 1);
+      Reply(305);
+      NOption(117,Node999,004);
+    end
+   end else
+    call Node008;
+end
+
+procedure Node007a
+begin
+   variable item;
+   variable item2;
+   variable JunkIt;
+   set_local_var(LVAR_Gave_Flint, 1);
+
+    if (dude_item_count(PID_HEALING_POWDER) > 2) then begin
+      //remove healing powders
+      item:=dude_item(PID_HEALING_POWDER);
+      JunkIt:=rm_mult_objs_from_inven(dude_obj,item,3);
+      add_mult_objs_to_inven(self_obj,item,3);
+      if (local_var(LVAR_Said_17) == 0) then begin
+         Reply(300);
+         NOption(117,Node999,004);
+      end else begin
+         Reply(302);
+         NOption(117,Node999,004);
+      end
+    end else begin
+      call Node008;
+    end
+end
+
+procedure Node008 begin
+  if (not self_item_count(PID_FLINT)) then
+    set_local_var(LVAR_Gave_Flint, 1);
+
+   Reply(116);
+
+   NOption(117,Node999,004);
+end
+
+procedure Node009 begin
+   Reply(200);
+
+   NOption(201,Node010,001);
+end
+
+procedure Node010 begin
+   Reply(202);
+
+   NOption(203,Node999,001);
+end
+
+procedure Node011 begin
+   Reply(204);
+
+   NOption(205,Node012,001);
+end
+
+procedure Node012 begin
+   Reply(206);
+
+   NOption(207,Node999,001);
+end
+
+procedure Node013 begin
+   Reply(208);
+
+   NOption(209,Node999,001);
+end
+
+procedure Node014 begin
+   Reply(210);
+
+   NOption(211,Node015,001);
+end
+
+procedure Node015 begin
+   // VOCK: was Reply(mstr(212)+dude_name+mstr(213)) -- mor18's actual recording covers the
+   // full merged line (see msg 1212 in acmorlis.msg), so play that single msg ID directly
+   // instead of concatenating a silent-tail mstr() with the runtime player name.
+   Reply(1212);
+
+   NOption(214,Node016,001);
+end
+
+procedure Node016 begin
+   Reply(215);
+
+   NOption(216,Node999,001);
+end
+
+procedure Node017 begin
+   variable item;
+
+   if (local_var(LVAR_Said_17) == 0) then begin
+       inc_local_var(LVAR_Said_17);
+       Reply(151);
+   end
+   else begin
+       if (self_item_count(PID_FLINT)) then begin
+           item:=self_item(PID_FLINT);
+           rm_obj_from_inven(self_obj,item);
+           add_obj_to_inven(dude_obj,item);
+       end
+       set_local_var(LVAR_Gave_Flint, 1);
+       set_local_var(LVAR_Said_17, 2);
+       Reply(152);
+   end
+
+   NOption(153,Node999,001);
+end
+
+//edits by Darek
+procedure Node018
+begin
+  variable item;
+
+  if (self_item_count(PID_FLINT)) then
+  begin
+    if (is_success(roll_vs_skill(dude_obj, SKILL_SPEECH, 0))) then begin
+      if (local_var(LVAR_Gave_Flint) == 0) then begin
+        set_local_var(LVAR_Gave_Flint, 1);
+        give_xp(EXP_TALK_FLINT);
+        item:=self_item(PID_FLINT);
+        rm_obj_from_inven(self_obj,item);
+        add_obj_to_inven(dude_obj,item);
+        Reply(154);
+        // This node is gated behind int 4 anyway, but just in case use min of 1 here.
+        NOption(115, Node999, 001);
+        return;
+      end
+    end
+    else
+      Reply(155);
+  end
+  else if (local_var(LVAR_Gave_Flint) == 0) then begin
+    set_local_var(LVAR_Gave_Flint, 1);
+    Reply(304);
+  end
+  NOption(156,Node999,001);
+end
+//end
+
+//added by Darek
+procedure Node018a begin
+  if (is_success(roll_vs_skill(dude_obj, SKILL_SPEECH, 0))) then begin
+    set_local_var(LVAR_Gave_Flint, 1);
+    give_xp(EXP_TALK_FLINT);
+    Reply(303);
+  end else
+     Reply(155);
+  NOption(156,Node999,001);
+end
+
+procedure Node018b begin
+  set_local_var(7, 1);
+  Reply(302);
+  NOption(156,Node999,001);
+end
+//end added

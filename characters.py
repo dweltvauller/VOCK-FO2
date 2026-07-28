@@ -146,7 +146,7 @@ CHARACTERS = [
     ("ocjoseph",   "Joseph",                     "josep",   ['ocjoseph'],              ['josep']),
     ("qcbird",     "Vice President Bird",        "bird",    ['qcbird'],                ['bird']),
     ("qccurlng",   "Charles Curling",            "curl",    ['qccurlng'],              ['curl']),
-    ("qcfrank",    "Frank Horrigan",             "bosss",   ['qcfrank'],               ['bosss']),
+    ("qcfrank",    "Frank Horrigan",             "ssa",     ['qcfrank'],               ['bosss']),
     ("qcgranit",   "Sergeant Granite",           "grani",   ['qcgranit'],              ['grani']),
     ("qhprzrch",   "Dick Richardson",            "presi",   ['qhprzrch'],              ['presi']),
     ("rcascort",   "Mayor Ascorti",              "ascor",   ['rcascort'],              ['ascor']),

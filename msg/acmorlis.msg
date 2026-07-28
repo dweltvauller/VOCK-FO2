@@ -41,8 +41,7 @@
 {209}{}{Yes, Aunt Morlis. I mean no, Aunt Morlis. Uh, I've got to go, Aunt Morlis.}
 {210}{mor17}{So, child. Once again you stand before me. Are you empty-handed yet again?}
 {211}{}{Yes, Aunt Morlis.}
-#VOCK - mor18 VA has to play: 212 + Chosen One + 213
-{212}{mor18}{Listen, }
+{212}{}{Listen, }
 {213}{}{. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?}
 {214}{}{Yes, Aunt Morlis.}
 {215}{mor20}{Then get yourself out of here and find the GECK! People are depending on you!}
@@ -56,3 +55,8 @@
 #added by Darek
 {304}{mor26}{I already gave you the flint, stupid. Now stop wasting my time and get out of here!}
 {305}{mor27}{I already gave you the flint, stupid. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.}
+
+# VOCK Add Ons
+# mor19 was removed in a later release on purpose
+# full mor18 line (212 + PC name + 213 merged) — matches what was actually recorded, for lipsync/reference text
+{1212}{mor18}{Listen, Chosen One. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?}

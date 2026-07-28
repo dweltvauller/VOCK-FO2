@@ -1,8 +1,51 @@
-variable tmp_gen_rep;
-variable restock_amt;
-variable restock_obj;
-variable removed_qty;
+/*
+	Copyright 1998-2003 Interplay Entertainment Corp.  All rights reserved.
+*/
 
+/*
+        Name: Kaga Encounter 5
+        Location: Random Encounter
+        Description:
+
+        Log:
+           Please note any changes that have been made to the file in Updated. Then comment
+           the code which you have changed/altered/commented out. Please, do not delete any
+           code which was written.
+
+           Created:
+
+           Updated:
+              VOCK: rebuilt from the clean rpu/scripts_src/rndenctr/eckaga5.ssl source
+              instead of the decompiled THAT-RPU .int, with only the 3 known VOCK behavior
+              fixes re-applied (see below). No other content changed vs. official RPU source.
+                 1) added `pending_dialog` local var
+                 2) critter_p_proc now checks pending_dialog and calls dialogue_system_enter
+                    instead of doSequence calling start_gdialog directly from a timed event
+                    (fixes VA lines not voicing because _gdialogActive() wasn't set when
+                    dialogue was entered outside talk_p_proc's call stack)
+                 3) Node998 now calls end_dialogue instead of attack(dude_obj)
+*/
+
+/* Include Files */
+
+/* Note, the Following Lines need to be in this order so that
+   the script will be compilable. The define Name is referenced
+   in a module from define.h and used in command.h. Please do
+   not change the ordering.
+        -rwh2   11/13/97
+*/
+#define SCRIPT_REALNAME "eckaga5"
+#include "../headers/define.h"
+//#include "../headers/<TownName.h>"
+
+#define NAME                    SCRIPT_ECKAGA5
+//#define TOWN_REP_VAR            (GVAR_TOWN_REP_)
+
+#include "../headers/command.h"
+#include "../headers/modreact.h"
+
+
+/* Standard Script Procedures */
 procedure start;
 procedure critter_p_proc;
 procedure pickup_p_proc;
@@ -16,7 +59,17 @@ procedure do_setup;
 procedure map_enter_p_proc;
 procedure combat_p_proc;
 procedure timed_event_p_proc;
-procedure Node998;
+
+/* Script Specific Procedure Calls */
+procedure Node998;                                      // This Node is Always Combat
+procedure Node999;                                      // This Node is Always Ending
+
+// The next lines are added in by the Designer Tool.
+// Do NOT add in any lines here.
+//~~~~~~~~~~~~~~~~ DESIGNER TOOL STARTS HERE
+#define TAUNT_CHANCE 50
+
+procedure NodeFleeing;
 procedure NodeFighting;
 procedure doSequence;
 procedure Node001;
@@ -25,899 +78,318 @@ procedure Node003;
 procedure Node004;
 procedure Node005;
 
-variable Only_Once;
-variable pending_dialog;
+//~~~~~~~~~~~~~~~~ DESIGN TOOL ENDS HERE
+// The Following lines are for anything that is not needed to be
+// seen by the design Tool
 
-procedure map_exit_p_proc;
+
+/* Local Variables which are saved. All Local Variables need to be
+   prepended by LVAR_ */
+#define LVAR_Herebefore                 (4)
+#define LVAR_Hostile                    (5)
+#define LVAR_Personal_Enemy             (6) //Also used to as a run flag
+
+/* Imported variables from the Map scripts. These should only be
+   pointers and variables that need not be saved. If a variable
+   Needs to be saved, make it a map variable (MVAR_) */
 
 
-procedure start
-begin
+/* Local variables which do not need to be saved between map changes. */
+variable Only_Once:=0;
+variable sequence:=0;
+variable animated:=0;
+variable pending_dialog:=0;
+#define TIMER_SEQUENCE 1
+#define ATTACK 2
+#define DEFEAT 3
+
+procedure start begin
 end
 
-procedure critter_p_proc
-begin
-	if (pending_dialog) then begin
-		pending_dialog := 0;
-		dialogue_system_enter;
-	end
-	if (not(metarule(22, 0)) and not(global_var(399) bwand 32)) then begin
-		call do_setup();
-	end
-	else begin
-		if (not(combat_is_initialized) and (local_var(5) == 2) and obj_can_see_obj(self_obj, dude_obj)) then begin
-			attack_complex(dude_obj, 0, 1, 0, 0, 30000, 0, 0);
-		end
-	end
+procedure timed_event_p_proc begin
+   if (fixed_param == TIMER_SEQUENCE) then begin
+      call doSequence;
+   end
 end
 
-procedure pickup_p_proc
-begin
-	if (source_obj == dude_obj) then begin
-		set_local_var(5, 2);
-	end
+procedure combat_p_proc begin
+   if (Random(1, 100) <= TAUNT_CHANCE) then
+      call NodeFighting;
 end
 
-procedure talk_p_proc
-begin
-	if ((game_time_hour < 600) or (game_time_hour >= 1900)) then begin
-		start_gdialog(835, self_obj, 4, 123, 21);
-	end
-	else begin
-		start_gdialog(835, self_obj, 4, 123, 16);
-	end
-	gsay_start;
-	call Node001();
-	gsay_end;
-	end_dialogue;
+
+procedure map_exit_p_proc begin
+   set_kaga_met;
 end
 
-procedure destroy_p_proc
-begin
-	if (source_obj == dude_obj) then begin
-		set_global_var(4, global_var(4) + 1);
-		if (metarule(51, self_obj) == 2) then begin
-			if (source_obj == dude_obj) then begin
-				set_global_var(2, 0);
-				set_global_var(1, global_var(1) + 1);
-				set_global_var(0, global_var(0) + -15);
-				debug_msg("eckaga5" + ": " + "Player gains " + -15 + " Karma Points." + "\n");
-				set_global_var(37, 0);
-				set_global_var(38, 0);
-				set_global_var(39, 0);
-				set_global_var(40, 0);
-				set_global_var(41, 0);
-				set_global_var(42, 0);
-				set_global_var(43, 0);
-				set_global_var(44, 0);
-				set_global_var(45, 0);
-				tmp_gen_rep := global_var(0);
-				if (has_trait(0, dude_obj, 95)) then begin
-					tmp_gen_rep := global_var(0) * 2;
-				end
-				if (tmp_gen_rep >= 1000) then begin
-					set_global_var(37, 1);
-				end
-				else begin
-					if (tmp_gen_rep >= 750) then begin
-						set_global_var(38, 1);
-					end
-					else begin
-						if (tmp_gen_rep >= 500) then begin
-							set_global_var(39, 1);
-						end
-						else begin
-							if (tmp_gen_rep >= 250) then begin
-								set_global_var(40, 1);
-							end
-							else begin
-								if (tmp_gen_rep > -250) then begin
-									set_global_var(41, 1);
-								end
-								else begin
-									if (tmp_gen_rep > -500) then begin
-										set_global_var(42, 1);
-									end
-									else begin
-										if (tmp_gen_rep > -750) then begin
-											set_global_var(43, 1);
-										end
-										else begin
-											if (tmp_gen_rep > -1000) then begin
-												set_global_var(44, 1);
-											end
-											else begin
-												set_global_var(45, 1);
-											end
-										end
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		if (((global_var(4) + global_var(5)) >= 25) and ((global_var(5) > (2 * global_var(4))) or (global_var(3) == 1))) then begin
-			set_global_var(3, 1);
-			set_global_var(2, 0);
-		end
-		if (((global_var(4) + global_var(5)) >= 25) and ((global_var(4) > (3 * global_var(5))) or (global_var(2) == 1)) and (global_var(1) == 0)) then begin
-			set_global_var(2, 1);
-			set_global_var(3, 0);
-		end
-		set_global_var(0, global_var(0) + 5);
-		debug_msg("eckaga5" + ": " + "Player gains " + 5 + " Karma Points." + "\n");
-		set_global_var(37, 0);
-		set_global_var(38, 0);
-		set_global_var(39, 0);
-		set_global_var(40, 0);
-		set_global_var(41, 0);
-		set_global_var(42, 0);
-		set_global_var(43, 0);
-		set_global_var(44, 0);
-		set_global_var(45, 0);
-		tmp_gen_rep := global_var(0);
-		if (has_trait(0, dude_obj, 95)) then begin
-			tmp_gen_rep := global_var(0) * 2;
-		end
-		if (tmp_gen_rep >= 1000) then begin
-			set_global_var(37, 1);
-		end
-		else begin
-			if (tmp_gen_rep >= 750) then begin
-				set_global_var(38, 1);
-			end
-			else begin
-				if (tmp_gen_rep >= 500) then begin
-					set_global_var(39, 1);
-				end
-				else begin
-					if (tmp_gen_rep >= 250) then begin
-						set_global_var(40, 1);
-					end
-					else begin
-						if (tmp_gen_rep > -250) then begin
-							set_global_var(41, 1);
-						end
-						else begin
-							if (tmp_gen_rep > -500) then begin
-								set_global_var(42, 1);
-							end
-							else begin
-								if (tmp_gen_rep > -750) then begin
-									set_global_var(43, 1);
-								end
-								else begin
-									if (tmp_gen_rep > -1000) then begin
-										set_global_var(44, 1);
-									end
-									else begin
-										set_global_var(45, 1);
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-	set_global_var(399, global_var(399) bwor 128);
-	set_global_var(399, global_var(399) bwor 64);
-	give_exp_points(1000);
-	display_msg(message_str(14, 100) + (1000 + (1000 * (5 * has_trait(0, dude_obj, 50)) / 100)) + message_str(14, 101));
+procedure do_setup begin
+   variable item;
+   variable Critter;
+   variable Critter_Rotation;
+   variable Critter_Tile;
+
+   ndebug("do_setup");
+
+   Only_Once:=0;
+   set_self_team(TEAM_RND_KAGA);
+   set_self_ai(AI_KAGA);
+   set_kaga_1;
+   set_kaga_2;
+   set_kaga_3;
+   set_kaga_4;
+   set_kaga_5;
+   check_restock_item(PID_PLASMA_GRENADE, 3, 3, 100)
+   check_restock_item(PID_STIMPAK, 5, 5, 100)
+   check_restock_item(PID_MICRO_FUSION_CELL, 3, 3, 100)
+   check_restock_item(PID_BOTTLE_CAPS, 5000, 5000, 100)
+   check_restock_item(PID_GATLING_LASER, 1, 1, 100)
+
+   wield_obj_critter(self_obj,self_item(PID_GATLING_LASER));
+
+   Critter:=create_object_sid(PID_MALE_MERCENARY ,0,0,SCRIPT_ECMERCS);
+   add_obj_to_inven(Critter, create_object(PID_PLASMA_PISTOL,0,0));
+   add_mult_objs_to_inven(Critter, create_object(PID_BOTTLE_CAPS,0,0),random(0,50));
+   add_mult_objs_to_inven(Critter, create_object(PID_SMALL_ENERGY_CELL,0,0),2);
+   wield_obj_critter(Critter,get_item(Critter, PID_PLASMA_PISTOL));
+   set_team(Critter,TEAM_RND_KAGA);
+   set_ai(Critter,AI_GENERIC_GUARDS);
+   Critter_Rotation:=dude_inv_rot;
+   Critter_Tile:=tile_num_in_direction(self_tile,Critter_Rotation,random(3,4));
+   critter_attempt_placement(Critter,Critter_Tile,0);
+   Face_Critter(dude_obj,Critter);
+
+   Critter:=create_object_sid(PID_MALE_MERCENARY ,0,0,SCRIPT_ECMERCS);
+   add_obj_to_inven(Critter, create_object(PID_NEEDLER_PISTOL,0,0));
+   add_mult_objs_to_inven(Critter, create_object(PID_BOTTLE_CAPS,0,0),random(0,50));
+   add_mult_objs_to_inven(Critter, create_object(PID_HN_NEEDLER_CARTRIDGE,0,0),2);
+   wield_obj_critter(Critter,get_item(Critter, PID_NEEDLER_PISTOL));
+   set_team(Critter,TEAM_RND_KAGA);
+   set_ai(Critter,AI_GENERIC_GUARDS);
+   Critter_Rotation:=dude_inv_rot;
+   Critter_Tile:=tile_num_in_direction(self_tile,Critter_Rotation,random(3,4));
+   critter_attempt_placement(Critter,Critter_Tile,0);
+   Face_Critter(dude_obj,Critter);
+
+   Critter:=create_object_sid(PID_FEMALE_MERCENARY ,0,0,SCRIPT_ECMERCS);
+   add_obj_to_inven(Critter, create_object(PID_RIPPER,0,0));
+   add_mult_objs_to_inven(Critter, create_object(PID_BOTTLE_CAPS,0,0),random(0,50));
+   add_mult_objs_to_inven(Critter, create_object(PID_SMALL_ENERGY_CELL,0,0),2);
+   item:=create_object(PID_PLASMA_GRENADE,0,0);
+   add_mult_objs_to_inven(Critter,item,random(4,6));
+   wield_obj_critter(Critter,get_item(Critter, PID_PLASMA_GRENADE));
+   set_team(Critter,TEAM_RND_KAGA);
+   set_ai(Critter,AI_GENERIC_GUARDS);
+   Critter_Rotation:=dude_inv_rot;
+   Critter_Tile:=tile_num_in_direction(self_tile,Critter_Rotation,random(3,4));
+   critter_attempt_placement(Critter,Critter_Tile,0);
+   Face_Critter(dude_obj,Critter);
+
+   Critter:=create_object_sid(PID_FEMALE_MERCENARY ,0,0,SCRIPT_ECMERCS);
+   add_obj_to_inven(Critter, create_object(PID_RIPPER,0,0));
+   add_mult_objs_to_inven(Critter, create_object(PID_BOTTLE_CAPS,0,0),random(0,50));
+   add_mult_objs_to_inven(Critter, create_object(PID_SMALL_ENERGY_CELL,0,0),2);
+   wield_obj_critter(Critter,get_item(Critter, PID_RIPPER));
+   set_team(Critter,TEAM_RND_KAGA);
+   set_ai(Critter,AI_GENERIC_GUARDS);
+   Critter_Rotation:=dude_inv_rot;
+   Critter_Tile:=tile_num_in_direction(self_tile,Critter_Rotation,random(3,4));
+   critter_attempt_placement(Critter,Critter_Tile,0);
+   Face_Critter(dude_obj,Critter);
+
+   if (kaga_met) then begin
+      float_msg(dude_obj, mstr(120), FLOAT_MSG_GREEN);
+      set_local_var(LVAR_Herebefore, 1);
+      set_local_var(LVAR_Hostile,2);
+   end else begin
+      add_timer_event(self_obj, 1, TIMER_SEQUENCE);
+   end
 end
 
-procedure look_at_p_proc
-begin
-	script_overrides;
-	if (local_var(4) == 0) then begin
-		display_msg(message_str(835, 100));
-	end
-	else begin
-		display_msg(message_str(835, 101));
-	end
+/* This procedure will get called each time that the map is first entered. It will
+   set up the Team number and AI packet for this critter. This will override the
+   default from the prototype, and needs to be set in scripts. */
+procedure map_enter_p_proc begin
+   if( not( is_loading_game ) ) then begin
+      call do_setup;
+   end
 end
 
-procedure description_p_proc
-begin
-	script_overrides;
-	display_msg(message_str(835, 102));
+
+/* Every heartbeat that the critter gets, this procedure will be called. Anything from
+   Movement to attacking the player on sight can be placed in here.*/
+procedure critter_p_proc begin
+   if (pending_dialog) then begin
+      pending_dialog := 0;
+      dialogue_system_enter;
+   end
+
+/* If the critter is mad at the player for any reason, it will attack and remember to attack
+   the player should the game be saved and loaded repeatedly. Additionally, if any special
+   actions need to be taken by the critter based on previous combat, the critter will remember
+   this as well. */
+   if (not( is_loading_game ) and not(kaga_5)) then begin
+      call do_setup;
+   end else if ( not(combat_is_initialized) and (local_var(LVAR_Hostile) == 2) and (self_can_see_dude)) then begin
+       //set_local_var(LVAR_Hostile,1);
+       attack(dude_obj);
+   end
 end
 
-procedure use_skill_on_p_proc
-begin
+/* Whenever the critter takes damage of any type, this procedure will be called. Things
+   like setting ENEMY_ and LVAR_Personal_Enemy can be set here. */
+procedure damage_p_proc begin
 end
 
-procedure damage_p_proc
-begin
+/* Any time that the player is caught stealing from this critter, Pickup_proc will be called.
+   In here, various things can happen. The most common response is instant hostility which
+   will be remembered. */
+procedure pickup_p_proc begin
+   if (source_obj == dude_obj) then begin
+       set_local_var(LVAR_Hostile,2);
+   end
 end
 
-procedure do_setup
-begin
-	variable LVar0 := 0;
-	variable LVar1 := 0;
-	variable LVar2 := 0;
-	variable LVar3 := 0;
-	debug_msg("eckaga5" + ": " + "do_setup" + "\n");
-	Only_Once := 0;
-	critter_add_trait(self_obj, 1, 6, 194);
-	critter_add_trait(self_obj, 1, 5, 141);
-	set_global_var(399, global_var(399) bwor 2);
-	set_global_var(399, global_var(399) bwor 4);
-	set_global_var(399, global_var(399) bwor 8);
-	set_global_var(399, global_var(399) bwor 16);
-	set_global_var(399, global_var(399) bwor 32);
-	restock_amt := random(3, 3);
-	if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
-		if (100 >= random(1, 100)) then begin
-			if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
-				restock_obj := create_object_sid(26, 0, 0, -1);
-				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 26));
-			end
-			else begin
-				if (obj_is_carrying_obj_pid(self_obj, 26) > restock_amt) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 26);
-					if ((obj_is_carrying_obj_pid(self_obj, 26) - restock_amt) < removed_qty) then begin
-						removed_qty := obj_is_carrying_obj_pid(self_obj, 26) - restock_amt;
-					end
-					if (removed_qty > 0) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 26);
-						if (obj_type(self_obj) == 1) then begin
-							restock_obj := obj_carrying_pid_obj(self_obj, 26);
-							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-									restock_obj := critter_inven_obj(self_obj, 0);
-									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-									rm_obj_from_inven(self_obj, restock_obj);
-									add_obj_to_inven(self_obj, restock_obj);
-								end
-							end
-							else begin
-								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-									metarule(43, self_obj);
-								end
-							end
-						end
-						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-						destroy_object(restock_obj);
-					end
-					restock_obj := 0;
-					restock_amt := 0;
-				end
-				else begin
-					restock_obj := 0;
-				end
-			end
-		end
-	end
-	else begin
-		if (obj_is_carrying_obj_pid(self_obj, 26) < restock_amt) then begin
-			restock_obj := create_object_sid(26, 0, 0, -1);
-			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 26));
-		end
-		else begin
-			if (obj_is_carrying_obj_pid(self_obj, 26) > restock_amt) then begin
-				removed_qty := obj_is_carrying_obj_pid(self_obj, 26);
-				if ((obj_is_carrying_obj_pid(self_obj, 26) - restock_amt) < removed_qty) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 26) - restock_amt;
-				end
-				if (removed_qty > 0) then begin
-					restock_obj := obj_carrying_pid_obj(self_obj, 26);
-					if (obj_type(self_obj) == 1) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 26);
-						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-								restock_obj := critter_inven_obj(self_obj, 0);
-								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-								rm_obj_from_inven(self_obj, restock_obj);
-								add_obj_to_inven(self_obj, restock_obj);
-							end
-						end
-						else begin
-							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-								metarule(43, self_obj);
-							end
-						end
-					end
-					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-					destroy_object(restock_obj);
-				end
-				restock_obj := 0;
-				restock_amt := 0;
-			end
-			else begin
-				restock_obj := 0;
-			end
-		end
-	end
-	restock_amt := random(5, 5);
-	if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
-		if (100 >= random(1, 100)) then begin
-			if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
-				restock_obj := create_object_sid(40, 0, 0, -1);
-				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 40));
-			end
-			else begin
-				if (obj_is_carrying_obj_pid(self_obj, 40) > restock_amt) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 40);
-					if ((obj_is_carrying_obj_pid(self_obj, 40) - restock_amt) < removed_qty) then begin
-						removed_qty := obj_is_carrying_obj_pid(self_obj, 40) - restock_amt;
-					end
-					if (removed_qty > 0) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 40);
-						if (obj_type(self_obj) == 1) then begin
-							restock_obj := obj_carrying_pid_obj(self_obj, 40);
-							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-									restock_obj := critter_inven_obj(self_obj, 0);
-									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-									rm_obj_from_inven(self_obj, restock_obj);
-									add_obj_to_inven(self_obj, restock_obj);
-								end
-							end
-							else begin
-								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-									metarule(43, self_obj);
-								end
-							end
-						end
-						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-						destroy_object(restock_obj);
-					end
-					restock_obj := 0;
-					restock_amt := 0;
-				end
-				else begin
-					restock_obj := 0;
-				end
-			end
-		end
-	end
-	else begin
-		if (obj_is_carrying_obj_pid(self_obj, 40) < restock_amt) then begin
-			restock_obj := create_object_sid(40, 0, 0, -1);
-			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 40));
-		end
-		else begin
-			if (obj_is_carrying_obj_pid(self_obj, 40) > restock_amt) then begin
-				removed_qty := obj_is_carrying_obj_pid(self_obj, 40);
-				if ((obj_is_carrying_obj_pid(self_obj, 40) - restock_amt) < removed_qty) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 40) - restock_amt;
-				end
-				if (removed_qty > 0) then begin
-					restock_obj := obj_carrying_pid_obj(self_obj, 40);
-					if (obj_type(self_obj) == 1) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 40);
-						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-								restock_obj := critter_inven_obj(self_obj, 0);
-								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-								rm_obj_from_inven(self_obj, restock_obj);
-								add_obj_to_inven(self_obj, restock_obj);
-							end
-						end
-						else begin
-							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-								metarule(43, self_obj);
-							end
-						end
-					end
-					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-					destroy_object(restock_obj);
-				end
-				restock_obj := 0;
-				restock_amt := 0;
-			end
-			else begin
-				restock_obj := 0;
-			end
-		end
-	end
-	restock_amt := random(3, 3);
-	if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
-		if (100 >= random(1, 100)) then begin
-			if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
-				restock_obj := create_object_sid(39, 0, 0, -1);
-				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 39));
-			end
-			else begin
-				if (obj_is_carrying_obj_pid(self_obj, 39) > restock_amt) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 39);
-					if ((obj_is_carrying_obj_pid(self_obj, 39) - restock_amt) < removed_qty) then begin
-						removed_qty := obj_is_carrying_obj_pid(self_obj, 39) - restock_amt;
-					end
-					if (removed_qty > 0) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 39);
-						if (obj_type(self_obj) == 1) then begin
-							restock_obj := obj_carrying_pid_obj(self_obj, 39);
-							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-									restock_obj := critter_inven_obj(self_obj, 0);
-									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-									rm_obj_from_inven(self_obj, restock_obj);
-									add_obj_to_inven(self_obj, restock_obj);
-								end
-							end
-							else begin
-								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-									metarule(43, self_obj);
-								end
-							end
-						end
-						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-						destroy_object(restock_obj);
-					end
-					restock_obj := 0;
-					restock_amt := 0;
-				end
-				else begin
-					restock_obj := 0;
-				end
-			end
-		end
-	end
-	else begin
-		if (obj_is_carrying_obj_pid(self_obj, 39) < restock_amt) then begin
-			restock_obj := create_object_sid(39, 0, 0, -1);
-			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 39));
-		end
-		else begin
-			if (obj_is_carrying_obj_pid(self_obj, 39) > restock_amt) then begin
-				removed_qty := obj_is_carrying_obj_pid(self_obj, 39);
-				if ((obj_is_carrying_obj_pid(self_obj, 39) - restock_amt) < removed_qty) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 39) - restock_amt;
-				end
-				if (removed_qty > 0) then begin
-					restock_obj := obj_carrying_pid_obj(self_obj, 39);
-					if (obj_type(self_obj) == 1) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 39);
-						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-								restock_obj := critter_inven_obj(self_obj, 0);
-								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-								rm_obj_from_inven(self_obj, restock_obj);
-								add_obj_to_inven(self_obj, restock_obj);
-							end
-						end
-						else begin
-							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-								metarule(43, self_obj);
-							end
-						end
-					end
-					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-					destroy_object(restock_obj);
-				end
-				restock_obj := 0;
-				restock_amt := 0;
-			end
-			else begin
-				restock_obj := 0;
-			end
-		end
-	end
-	restock_amt := random(5000, 5000);
-	if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
-		if (100 >= random(1, 100)) then begin
-			if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
-				restock_obj := create_object_sid(41, 0, 0, -1);
-				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 41));
-			end
-			else begin
-				if (obj_is_carrying_obj_pid(self_obj, 41) > restock_amt) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 41);
-					if ((obj_is_carrying_obj_pid(self_obj, 41) - restock_amt) < removed_qty) then begin
-						removed_qty := obj_is_carrying_obj_pid(self_obj, 41) - restock_amt;
-					end
-					if (removed_qty > 0) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 41);
-						if (obj_type(self_obj) == 1) then begin
-							restock_obj := obj_carrying_pid_obj(self_obj, 41);
-							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-									restock_obj := critter_inven_obj(self_obj, 0);
-									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-									rm_obj_from_inven(self_obj, restock_obj);
-									add_obj_to_inven(self_obj, restock_obj);
-								end
-							end
-							else begin
-								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-									metarule(43, self_obj);
-								end
-							end
-						end
-						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-						destroy_object(restock_obj);
-					end
-					restock_obj := 0;
-					restock_amt := 0;
-				end
-				else begin
-					restock_obj := 0;
-				end
-			end
-		end
-	end
-	else begin
-		if (obj_is_carrying_obj_pid(self_obj, 41) < restock_amt) then begin
-			restock_obj := create_object_sid(41, 0, 0, -1);
-			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 41));
-		end
-		else begin
-			if (obj_is_carrying_obj_pid(self_obj, 41) > restock_amt) then begin
-				removed_qty := obj_is_carrying_obj_pid(self_obj, 41);
-				if ((obj_is_carrying_obj_pid(self_obj, 41) - restock_amt) < removed_qty) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 41) - restock_amt;
-				end
-				if (removed_qty > 0) then begin
-					restock_obj := obj_carrying_pid_obj(self_obj, 41);
-					if (obj_type(self_obj) == 1) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 41);
-						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-								restock_obj := critter_inven_obj(self_obj, 0);
-								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-								rm_obj_from_inven(self_obj, restock_obj);
-								add_obj_to_inven(self_obj, restock_obj);
-							end
-						end
-						else begin
-							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-								metarule(43, self_obj);
-							end
-						end
-					end
-					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-					destroy_object(restock_obj);
-				end
-				restock_obj := 0;
-				restock_amt := 0;
-			end
-			else begin
-				restock_obj := 0;
-			end
-		end
-	end
-	restock_amt := random(1, 1);
-	if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
-		if (100 >= random(1, 100)) then begin
-			if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
-				restock_obj := create_object_sid(28, 0, 0, -1);
-				add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 28));
-			end
-			else begin
-				if (obj_is_carrying_obj_pid(self_obj, 28) > restock_amt) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 28);
-					if ((obj_is_carrying_obj_pid(self_obj, 28) - restock_amt) < removed_qty) then begin
-						removed_qty := obj_is_carrying_obj_pid(self_obj, 28) - restock_amt;
-					end
-					if (removed_qty > 0) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 28);
-						if (obj_type(self_obj) == 1) then begin
-							restock_obj := obj_carrying_pid_obj(self_obj, 28);
-							if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-								if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-									restock_obj := critter_inven_obj(self_obj, 0);
-									debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-									rm_obj_from_inven(self_obj, restock_obj);
-									add_obj_to_inven(self_obj, restock_obj);
-								end
-							end
-							else begin
-								if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-									metarule(43, self_obj);
-								end
-							end
-						end
-						restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-						destroy_object(restock_obj);
-					end
-					restock_obj := 0;
-					restock_amt := 0;
-				end
-				else begin
-					restock_obj := 0;
-				end
-			end
-		end
-	end
-	else begin
-		if (obj_is_carrying_obj_pid(self_obj, 28) < restock_amt) then begin
-			restock_obj := create_object_sid(28, 0, 0, -1);
-			add_mult_objs_to_inven(self_obj, restock_obj, restock_amt - obj_is_carrying_obj_pid(self_obj, 28));
-		end
-		else begin
-			if (obj_is_carrying_obj_pid(self_obj, 28) > restock_amt) then begin
-				removed_qty := obj_is_carrying_obj_pid(self_obj, 28);
-				if ((obj_is_carrying_obj_pid(self_obj, 28) - restock_amt) < removed_qty) then begin
-					removed_qty := obj_is_carrying_obj_pid(self_obj, 28) - restock_amt;
-				end
-				if (removed_qty > 0) then begin
-					restock_obj := obj_carrying_pid_obj(self_obj, 28);
-					if (obj_type(self_obj) == 1) then begin
-						restock_obj := obj_carrying_pid_obj(self_obj, 28);
-						if (critter_inven_obj(self_obj, 0) == restock_obj) then begin
-							if (obj_item_subtype(critter_inven_obj(self_obj, 0)) == 0) then begin
-								restock_obj := critter_inven_obj(self_obj, 0);
-								debug_msg("eckaga5" + ": " + "armour pid == " + obj_pid(restock_obj) + "\n");
-								rm_obj_from_inven(self_obj, restock_obj);
-								add_obj_to_inven(self_obj, restock_obj);
-							end
-						end
-						else begin
-							if ((critter_inven_obj(self_obj, 2) == restock_obj) or (critter_inven_obj(self_obj, 1) == restock_obj)) then begin
-								metarule(43, self_obj);
-							end
-						end
-					end
-					restock_amt := rm_mult_objs_from_inven(self_obj, restock_obj, removed_qty);
-					destroy_object(restock_obj);
-				end
-				restock_obj := 0;
-				restock_amt := 0;
-			end
-			else begin
-				restock_obj := 0;
-			end
-		end
-	end
-	wield_obj_critter(self_obj, obj_carrying_pid_obj(self_obj, 28));
-	LVar1 := create_object_sid(16777470, 0, 0, 486);
-	add_obj_to_inven(LVar1, create_object_sid(24, 0, 0, -1));
-	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
-	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
-	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 24));
-	critter_add_trait(LVar1, 1, 6, 194);
-	critter_add_trait(LVar1, 1, 5, 12);
-	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
-	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
-	critter_attempt_placement(LVar1, LVar3, 0);
-	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
-	LVar1 := create_object_sid(16777470, 0, 0, 486);
-	add_obj_to_inven(LVar1, create_object_sid(388, 0, 0, -1));
-	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
-	add_mult_objs_to_inven(LVar1, create_object_sid(361, 0, 0, -1), 2);
-	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 388));
-	critter_add_trait(LVar1, 1, 6, 194);
-	critter_add_trait(LVar1, 1, 5, 12);
-	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
-	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
-	critter_attempt_placement(LVar1, LVar3, 0);
-	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
-	LVar1 := create_object_sid(16777471, 0, 0, 486);
-	add_obj_to_inven(LVar1, create_object_sid(116, 0, 0, -1));
-	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
-	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
-	LVar0 := create_object_sid(26, 0, 0, -1);
-	add_mult_objs_to_inven(LVar1, LVar0, random(4, 6));
-	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 26));
-	critter_add_trait(LVar1, 1, 6, 194);
-	critter_add_trait(LVar1, 1, 5, 12);
-	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
-	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
-	critter_attempt_placement(LVar1, LVar3, 0);
-	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
-	LVar1 := create_object_sid(16777471, 0, 0, 486);
-	add_obj_to_inven(LVar1, create_object_sid(116, 0, 0, -1));
-	add_mult_objs_to_inven(LVar1, create_object_sid(41, 0, 0, -1), random(0, 50));
-	add_mult_objs_to_inven(LVar1, create_object_sid(38, 0, 0, -1), 2);
-	wield_obj_critter(LVar1, obj_carrying_pid_obj(LVar1, 116));
-	critter_add_trait(LVar1, 1, 6, 194);
-	critter_add_trait(LVar1, 1, 5, 12);
-	LVar2 := (has_trait(1, dude_obj, 10) + 3) % 6;
-	LVar3 := tile_num_in_direction(tile_num(self_obj), LVar2, random(3, 4));
-	critter_attempt_placement(LVar1, LVar3, 0);
-	anim(LVar1, 1000, rotation_to_tile(tile_num(LVar1), tile_num(dude_obj)));
-	if (global_var(399) bwand 64) then begin
-		float_msg(dude_obj, message_str(835, 120), 3);
-		set_local_var(4, 1);
-		set_local_var(5, 2);
-	end
-	else begin
-		add_timer_event(self_obj, 1, 1);
-	end
+/* The dialog system is setup and prepares the player to talk to this NPC. Where To Go
+   written by designers are placed in here. Additionally, Reactions are generated and
+   stored which affects player interactions. */
+procedure talk_p_proc begin
+   if ((game_time_hour < 600) or (game_time_hour >= 1900)) then begin
+      start_gdialog(NAME, self_obj, 4, 123, 21);
+   end else begin
+      start_gdialog(NAME, self_obj, 4, 123, 16);
+   end
+   gSay_Start;
+      call Node001;
+   gSay_End;
+   end_dialogue;
 end
 
-procedure map_enter_p_proc
-begin
-	if (not(metarule(22, 0))) then begin
-		call do_setup();
-	end
+/* This procedure gets called only on the death of this NPC. Special things like
+   incrementing the death count for reputation purposes and Enemy Counters are placed
+   in here. */
+procedure destroy_p_proc begin
+
+/* Increment the aligned critter counter*/
+   inc_evil_critter
+
+/* Set global_variable for Enemy status*/
+   set_kaga_dead;
+   set_kaga_met;
+   give_xp(1000);
 end
 
-procedure combat_p_proc
-begin
-	if (random(1, 100) <= 50) then begin
-		call NodeFighting();
-	end
+/* Look_at_p_proc gets called any time that the player passes the cursor over any object.
+   This should only hold the most cursory of glances for the player. */
+procedure look_at_p_proc begin
+   script_overrides;
+   if (local_var(LVAR_Herebefore) == 0) then begin
+      display_msg(mstr(100));
+   end else begin
+      display_msg(mstr(101));
+   end
 end
 
-procedure timed_event_p_proc
-begin
-	if (fixed_param == 1) then begin
-		call doSequence();
-	end
+/* The player will see more indepth descriptions from this procedure. They are actively
+   looking at the critter and want more information. Things like names can be added here
+   if the critter is known to the player. */
+procedure description_p_proc begin
+   script_overrides;
+   display_msg(mstr(102));
 end
 
-procedure Node998
-begin
-	set_local_var(5, 2);
-	end_dialogue;
+/* Any time a skill is used on a critter this call is made. This can be to give examinations
+   for things like Doctor skill or messages for various other skills. */
+procedure use_skill_on_p_proc begin
 end
 
-procedure NodeFighting
-begin
-	variable LVar0 := 0;
-	LVar0 := random(103, 111);
-	if ((LVar0 == 103) or (LVar0 == 104) and not(global_var(399) bwand 64)) then begin
-		LVar0 := 105;
-	end
-	if (LVar0 == 108) then begin
-		set_global_var(37, 0);
-		set_global_var(38, 0);
-		set_global_var(39, 0);
-		set_global_var(40, 0);
-		set_global_var(41, 0);
-		set_global_var(42, 0);
-		set_global_var(43, 0);
-		set_global_var(44, 0);
-		set_global_var(45, 0);
-		tmp_gen_rep := global_var(0);
-		if (has_trait(0, dude_obj, 95)) then begin
-			tmp_gen_rep := global_var(0) * 2;
-		end
-		if (tmp_gen_rep >= 1000) then begin
-			set_global_var(37, 1);
-		end
-		else begin
-			if (tmp_gen_rep >= 750) then begin
-				set_global_var(38, 1);
-			end
-			else begin
-				if (tmp_gen_rep >= 500) then begin
-					set_global_var(39, 1);
-				end
-				else begin
-					if (tmp_gen_rep >= 250) then begin
-						set_global_var(40, 1);
-					end
-					else begin
-						if (tmp_gen_rep > -250) then begin
-							set_global_var(41, 1);
-						end
-						else begin
-							if (tmp_gen_rep > -500) then begin
-								set_global_var(42, 1);
-							end
-							else begin
-								if (tmp_gen_rep > -750) then begin
-									set_global_var(43, 1);
-								end
-								else begin
-									if (tmp_gen_rep > -1000) then begin
-										set_global_var(44, 1);
-									end
-									else begin
-										set_global_var(45, 1);
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		if (not(global_var(39) == 1)) then begin
-			LVar0 := 110;
-		end
-	end
-	if (LVar0 == 109) then begin
-		set_global_var(37, 0);
-		set_global_var(38, 0);
-		set_global_var(39, 0);
-		set_global_var(40, 0);
-		set_global_var(41, 0);
-		set_global_var(42, 0);
-		set_global_var(43, 0);
-		set_global_var(44, 0);
-		set_global_var(45, 0);
-		tmp_gen_rep := global_var(0);
-		if (has_trait(0, dude_obj, 95)) then begin
-			tmp_gen_rep := global_var(0) * 2;
-		end
-		if (tmp_gen_rep >= 1000) then begin
-			set_global_var(37, 1);
-		end
-		else begin
-			if (tmp_gen_rep >= 750) then begin
-				set_global_var(38, 1);
-			end
-			else begin
-				if (tmp_gen_rep >= 500) then begin
-					set_global_var(39, 1);
-				end
-				else begin
-					if (tmp_gen_rep >= 250) then begin
-						set_global_var(40, 1);
-					end
-					else begin
-						if (tmp_gen_rep > -250) then begin
-							set_global_var(41, 1);
-						end
-						else begin
-							if (tmp_gen_rep > -500) then begin
-								set_global_var(42, 1);
-							end
-							else begin
-								if (tmp_gen_rep > -750) then begin
-									set_global_var(43, 1);
-								end
-								else begin
-									if (tmp_gen_rep > -1000) then begin
-										set_global_var(44, 1);
-									end
-									else begin
-										set_global_var(45, 1);
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		if (not(global_var(43) == 1)) then begin
-			LVar0 := 110;
-		end
-	end
-	float_msg(self_obj, message_str(835, LVar0), 2);
+/* Should the Player ever cause the NPC too much discomfort that he desires to attack the player,
+   this call will be made. Essentially, it stores the Hostile vaule so that the critter remembers
+   he was once hostile towards the player.*/
+procedure Node998 begin
+   set_local_var(LVAR_Hostile,2);
+   end_dialogue;
 end
 
-procedure doSequence
-begin
-	anim(self_obj, 1000, rotation_to_tile(tile_num(self_obj), tile_num(dude_obj)));
-	anim(dude_obj, 1000, rotation_to_tile(tile_num(dude_obj), tile_num(self_obj)));
-	pending_dialog := 1;
+/* Anytime that there is a need for an ending to dialog, this node is to be called. It will just
+   exit from the dialog system without any reprisals from the NPC. */
+procedure Node999 begin
 end
 
-procedure Node001
-begin
-	set_local_var(4, 1);
-	gsay_reply(835, 150);
-	giq_option(4, 835, 151, Node002, 50);
-	giq_option(4, 835, 152, Node003, 50);
-	giq_option(-3, 835, 200, Node004, 50);
+
+// Not lines are allowed to be added below here
+// The Following lines are from the Design Tool
+//~~~~~~~~~~~~~~~~ DESIGN TOOL STARTS HERE
+
+procedure NodeFleeing begin
 end
 
-procedure Node002
-begin
-	gsay_reply(835, 160);
-	giq_option(4, 835, message_str(14, 350), Node998, 50);
+procedure NodeFighting begin
+   variable rnd := 0;
+
+   rnd := Random(103, 111);
+
+   if ((rnd == 103 or rnd == 104) and not kaga_met) then rnd := 105;
+
+   if (rnd == 108) then begin
+      CheckKarma;
+      if not (has_rep_shield) then begin
+         rnd := 110;
+      end
+   end
+
+   if (rnd == 109) then begin
+      CheckKarma;
+      if not (has_rep_sword) then begin
+         rnd := 110;
+      end
+   end
+
+   float_msg(self_obj, mstr(rnd), FLOAT_MSG_RED);
+
+
 end
 
-procedure Node003
-begin
-	gsay_reply(835, 161);
-	giq_option(4, 835, message_str(14, 350), Node998, 50);
+procedure doSequence begin
+
+   Face_Critter(dude_obj, self_obj);
+   Face_Critter(self_obj, dude_obj);
+
+   pending_dialog := 1;
+
 end
 
-procedure Node004
-begin
-	gsay_reply(835, 201);
-	giq_option(-3, 835, 202, Node005, 50);
+procedure Node001 begin
+   set_local_var(LVAR_Herebefore, 1);
+   Reply(150);
+   NOption(151,Node002,004);
+   NOption(152,Node003,004);
+   NLowOption(200,Node004);
 end
 
-procedure Node005
-begin
-	gsay_reply(835, 203);
-	giq_option(-3, 835, message_str(14, 350), Node998, 50);
+
+procedure Node002 begin
+   Reply(160);
+   NOption(g_mstr(350),Node998,004);
+   //attack
 end
 
-procedure map_exit_p_proc
-begin
-	set_global_var(399, global_var(399) bwor 64);
+
+procedure Node003 begin
+   Reply(161);
+   NOption(g_mstr(350),Node998,004);
+   //attack
 end
 
+
+procedure Node004 begin
+   Reply(201);
+   NLowOption(202,Node005);
+end
+
+
+procedure Node005 begin
+   Reply(203);
+   NLowOption(g_mstr(350),Node998);
+end
+
+//xxxxxxxxxxxxxxxxxxxx
