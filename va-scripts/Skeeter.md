@@ -1,0 +1,159 @@
+# Skeeter — Voice Actor Script
+**Character:** Skeeter, ghoul gadgeteer/mechanic
+**Total recordable lines:** 64 (SKEET1–SKEET64)
+
+---
+
+> **Direction:** Skeeter is a grubby but intelligent ghoul mechanic and gadgeteer. Raspy, gravelly (classic ghoul), with an eccentric tinkerer's cadence. Proud of his work, slightly condescending to "tribals," eager for a trade. Heavy use of slang ('jist', 'ain't', 'fer', 'edu-ma-cated').
+
+> Lines marked PC are for context only — do not record. Skip bracketed stage directions in the dialogue (e.g. "(He hands you the part back.)").
+
+---
+
+## Floats & Greetings
+
+SKEET1: Just don't touch anything -- you might hurt yourself.
+SKEET2: I thought tribals were just unsophisticated.
+SKEET3: You can watch. You might learn something, but I doubt it.
+SKEET4: Well, ain't you something else.
+SKEET5: Are you just pretending to be dumb, or are you really that stupid?
+
+## Main Introductions
+
+SKEET13: Hello there, I'm Skeeter. I sort of put things together here.
+SKEET14: Hello there. Whatcha lookin' fer?
+SKEET15: Whaddya need?
+
+## Explaining the Fuel Cell Controller
+
+SKEET6: Funny you should ask that. Ya see, cars use replaceable fuel cells, or batteries, for fuel. What usually broke down was the Fuel Cell Controller. Most amateur mechanics jist assume that it's the battery itself. But you know what ass-uming things does, dontcha?
+*Explaining car repair basics.*
+
+SKEET7: Well, assuming something makes an ass out of you and me. Get it? That's still a good one, ain't it? Heh heh! I haven't used that for years.
+*Delivering the old joke.*
+
+SKEET8: Yep. Sure do. Got it right here. Jist waitin' fer a car to be put into. You got a car?
+*Confirms he has a Fuel Cell Controller.*
+
+## The Plasma Regulator Trade
+
+SKEET9: Well, money's nice, but I need sumthin' else right now. Sumthin' I cain't get for myself.
+*Turns down cash, names an alternate need.*
+
+SKEET10: Great. You've got my Plasma Regulator. Thanks. Now I owe you some free work. What did you want me to work on? I'll tell you how much it would've cost, but this one's already paid for.
+*PC delivers the Plasma Regulator.*
+
+## The Atomic Reactor Repair
+
+SKEET11: Thanks for fixin' up our atomic reactor. It shore needed some work. I woulda show'd 'em how, but they don't trust me in there anymore. They got that idjit loudmouth Festus doin' all the work now.
+
+## The 3-Step Plasma Transformer Check-In
+
+SKEET12: Did you get my 3-Step Plasma Transformer yet?
+
+## General Inquiries — Tinkering & the GECK
+
+SKEET16: What do ya want me to look at?
+SKEET17: Ready for me to take a gander at something else? What do ya want me to look at now?
+
+SKEET18: Hmm, I can attach this scope you've got to that rifle of yours.
+SKEET19: Well, I can attach this scope to one of your rifles. Which one do you want me to attach it to?
+*Alternate — PC has more than one rifle.*
+
+SKEET20: Hmm, I thought so. Well, ya see, I cain't do nuthin' with it. (He hands you the [item] back.) You need to have sumthin' else for me to do sumthin' with it.
+*Item doesn't match anything he can combine it with.*
+
+SKEET21: There ya go. I think that ought to work for you all right. Anything else?
+*Successful combination.*
+
+SKEET22: Hmm, you don't have enough money to cover the cost of working on that. Got sumthin' else ya want me ta look at?
+*PC can't afford the job.*
+
+SKEET23: Mostly I jist sorta tinker with things. Take 'em apart an try to put 'em all back t'gether... Mostly. Make 'em work better... Sometimes. Keepin' myself outta trouble. Know what I mean?
+*Asked what he does here.*
+
+SKEET24: You're lookin' fer a GECK, huh? Well, I don't rightly know where ya might find one of them thar things. I know that Vault City prolly used ta have themselves one.
+SKEET25: They sure did. That's how come they're so darn well off. It sure ain't 'cause they know what to do. It's 'cause the GECK done started up their crops, and got their town running when they came outta the Vault.
+*PC follows up on Vault City having a GECK.*
+
+SKEET26: Well, lemme see here now. As I recollect, most Vaults were s'posed to have themselves a GECK. You might try lookin fer another vault somewheres.
+*PC asks who else might have an unused GECK.*
+
+## Negotiating Trades & Tools
+
+SKEET27: Ta be right-honest with ya, I jist dunno. If'n I get all da parts together, I jist get sort of a feel fer how they all goes together. Know whatta mean?
+SKEET28: Well, yup. But you see, it's right edu-ma-cated guesswork. That's what it is. Know whatta mean?
+
+SKEET29: These days, good tools is harder to git than parts is. I need myself a bran' new Super Tool Kit. Snap-sumthin brand's best.
+SKEET30: I reckon that the best place to go an' git that would be down in Vault City somewheres. They've got all kinds of tools, but they sure as heck wouldn't give 'em to a ghoul, no how.
+SKEET31: Egg-zactly. That's the deal. One Super Tool Kit for one Fuel Cell Controller.
+
+SKEET32: Well, now. You could do that, maybe. Then agin, you might be in fer a little surprise there. I might be tougher than you think. Then again, mebbe you'd jist be slittin' yur own throat. I kin be pretty useful puttin' items together. Always nice to know someone's able to do that, ain't it?
+*PC threatens to just kill him and take the part.*
+
+SKEET33: I see that you've got a mighty fine tool kit there. Snap-off, ain't it? I'll trade you this Fuel Cell Controller for it.
+SKEET34: Hey there! Yur back with my repair kit. Mmm, Snap-off -- they're the best. Ready to trade?
+
+SKEET35: That's a mighty fine trade. You should be able to jist plug that sucker in and git your car a'workin'.
+SKEET36: That's a mighty fine trade. You should be able to jist plug that sucker in and git your car a'workin'. You know I could do you another favor by fixin' up some of yur stuff for free, too.
+*Same beat, with an added free-favor offer.*
+
+SKEET37: Well, ya see, I need a darn 3-Step Plasma Transformer. An the only place I can figger to git one is from the supply room.
+
+## Supply Forms & Upgrade Discussions
+
+SKEET38: I kinda wore out my welcome there. An it was only a little fire, too. Coulda happened to jist anyone. Anyhow, they won't let me anywhere's inside the reactor building now. I need someone else to git my part for me.
+
+SKEET39: Youz gotta git yourself a Supply Requisition Form. Once you have that, jist give it to Jeremy in the Supply Room and he'll give you any darn thing you want. You can get Supply Requisitions from Harold or Festus.
+
+SKEET40: Harold's in the Settlement, and Festus is in the reactor control room. But you might have to kind of get the forms on the sly, if ya know what I mean.
+
+SKEET41: Well, err, yeah. I guess so. You might ask them, but I wouldn't put your chances too high there.
+*PC realizes he means they'll have to steal the form.*
+
+SKEET42: Didja come here to take me up on that work I owe you?
+
+SKEET43: I'm sorry. You don't have anything that I can use that with. Anything else?
+
+SKEET44: Let's see. That ain't exactly cheap. (He chalks the final price onto the dusty table: $[cost].) Do you want to do that?
+
+SKEET45: Once I put things together they stay put. You cain't pull 'em apart later and attach 'em to other things. Better pick right the first time, I guess.
+
+SKEET46: I was wunderin' where the heck my Repair Kit is. You did say you were gonna git it, didn't ya? I cain't rightly do much fer ya without that. Sorry. Should be plenty of 'em available in Vault City.
+
+## Weapon Upgrades & Tinkering
+
+SKEET47: What do ya want me to look at?
+*Weapons-specific version of the "what do you want me to look at" hub.*
+
+SKEET48: (Spots your magnum revolver.) I can rig a speed loader on that there magnum for a flat fee. (He writes on his workbench with a piece of chalk: $[cost].)
+SKEET49: Hmm, that Desert Eagle would sure be a sweet rig with an expanded magazine. I can do that for a price. (He scrawls a number onto the dusty table: $[cost].)
+
+SKEET50: (Skeeter studies your long arm, and nods slowly.)
+SKEET51: I can put a nice all-weather scope on that hunting rifle for a fair price. (He chalks the cost onto his workbench: $[cost].)
+SKEET52: Nothing like having an assault rifle with an expanded magazine. I can fix yours up with one for a fee. (He scrawls the number next to his vise: $[cost].)
+SKEET53: That FN FAL is a good gun. Hey, I got a low-light scope for that. It's yours for a price. (He scribbles the cost onto the table with chalk: $[cost].)
+
+SKEET54: You want that melee weapon juiced up? I can *supercharge* it for you. (He writes down the total in chalk: $[cost].)
+
+SKEET55: (Skeeter takes the item and looks it over with a weird gleam in his eye.) Well, this is a mite challengin', but I think I can fix this up real nice for ya. Just sit tight for a while. (Skeeter takes the weapon over to his workbench and locks it in a really big vise.)
+
+SKEET56: (As you wait you can see Skeeter's back as he works on your weapon. You don't know exactly what he's doing but that weird chuckle and all the pounding are making you nervous.)
+
+SKEET57: (More pounding and cackling as you wait some more...)
+
+SKEET58: There you go. (You wake suddenly as Skeeter takes your weapon from the workbench - you can see a number of small shiny, metal parts lingering on the bench as Skeeter returns your weapon to you.) That *should* do it, I reckon. Give 'er a try.
+
+## Free Weapon Upgrades
+*Same upgrade offers as above, given for free — plays under a different quest state.*
+
+SKEET59: (Spots your magnum revolver.) I can rig a speed loader on that there magnum for free.
+SKEET60: Hmm, that Desert Eagle would sure be a sweet rig with an expanded magazine. I can do that for free.
+SKEET61: I can put a nice scope all-weather on that hunting rifle for free.
+SKEET62: Nothing like having an assault rifle with an expanded magazine. I can fix yours up with one for free.
+SKEET63: That FN FAL is a good gun. Hey, I got a low-light scope for that. It's yours for free.
+SKEET64: You want that melee weapon juiced up? I can *supercharge* it for free.
+
+---
+
+*End of script — 64 lines total (SKEET1–SKEET64). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
