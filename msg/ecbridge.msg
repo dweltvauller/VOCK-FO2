@@ -82,3 +82,9 @@
 {178}{brige16}{I hear that is where all the money is made these days.}
 
 {200}{brige17}{AAAAAAAHHHHHHHHhhhhhh!}
+
+# VOCK Add Ons
+# 2200: untagged twin of 200 (brige17) used only for the player's death float in killPlayer()
+# (dude_obj, not self_obj). No VA tag on purpose -- keeps the PC's scream from ever playing back
+# in the Keeper's voice actor's voice if the float_msg voice-gating bug is fixed later.
+{2200}{}{AAAAAAAHHHHHHHHhhhhhh!}
