@@ -21,6 +21,7 @@ Each dialogue line moves through these stages, identified by a shared filename s
 | `msg/` | Extracted per-character dialogue MSG files |
 | `scripts_src/` | SSL dialogue script source for characters with custom logic |
 | `scripts/` | Compiled INT scripts |
+| `va-scripts/` | Per-character VA line scripts, standardized template (title, character, Direction, scene-grouped lines) |
 | `CREDITS.md` | Cast and contributor links |
 | `CHANGELOG.md` | Version history |
 
