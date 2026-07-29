@@ -15,37 +15,13 @@
            Created:
 
            Updated:
-           2026-07-28 (VOCK): forked into vock-fo2 from the clean rpu/scripts_src/rndenctr/ecbridge.ssl
-           source (this NPC hadn't been brought into the project yet -- eckaga1-5.ssl were forked
-           earlier but ecbridge.ssl wasn't). Cross-checked against the decompiled TH and THAT-RPU
-           builds (dat/th/scripts_ssl/ecbridge-th.ssl, dat/that-rpu/scripts_ssl/ecbridge-that-rpu.ssl).
-           Plain THAT does not touch this script at all (no ecbridge.int in that build). TH and
-           THAT-RPU turned out to be identical to each other and differ from this RPU baseline in
-           two ways:
-              1) talk_p_proc's start_gdialog() call: RPU passed (NAME,self_obj,4,-1,-1) (no
-                 portrait). TH/THAT-RPU instead swap the background based on time of day -- merged
-                 in below, same pattern already used in acmorlis.ssl. Head 203 is a TH/THAT-RPU-only
-                 portrait ID, not defined in this project's header set, so it's given a local
-                 #define (HEAD_BRIGE) rather than pulling in TH's whole header set.
-                 BACKGROUND_WASTELAND (16) and BACKGROUND_WASTELAND_NIGHT (21) *are* already defined
-                 symbolically in this project's headers (rpu.h, pulled in via define.h), so those
-                 stayed symbolic.
-              2) THAT-RPU is missing Node998 entirely (RPU and TH both declare and define it). Since
-                 RPU and TH agree, this reads as a THAT-RPU-only regression rather than something to
-                 adopt -- Node998 is kept as-is below; see the comment on it.
-           Also: msg 168 (brige9, "Uh... I... I don't know that!") was tagged and had audio recorded
-           but was never called anywhere in the source. Node008 (the branch where the player turns a
-           question back on the Keeper and stumps him, killing him) didn't play any line of his own
-           before ending -- added Reply(168) there, which is exactly the beat the line was written
-           for.
-           Also: killPlayer()'s float_msg(dude_obj, mstr(200)...) reused the Keeper's own brige17
-           "AAAAAAAHHHHHHHHhhhhhh!" VA tag for the player's death scream float. Split it onto a new
-           untagged msg 2200 (see "VOCK Add Ons" footer in ecbridge.msg) so the player's scream can
-           never play back in the Keeper's voice actor's voice.
-           2026-07-29 (VOCK): switched HEAD_BRIGE from a bare inlined raw number to a local
-           #define, then moved it out of that local #define into headers/talking_heads.h, a new
-           consolidated header (also kept in compile/headers/) holding every Talking Heads
-           portrait id, vendored once instead of duplicated per-script.
+           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
+           matches BEL there). Diffs are: added headers/talking_heads.h include for HEAD_BRIGE;
+           Node008 now plays Reply(168) (msg 168/brige9 was tagged and recorded but never called
+           anywhere in the baseline source); killPlayer()'s float_msg(dude_obj,...) now plays msg
+           2200 instead of msg 200 (msg 200 = brige17, the Keeper's own VA-tagged death scream --
+           split onto an untagged copy, see "VOCK Add Ons" in ecbridge.msg, so the player's death
+           float can't play back in the Keeper's voice actor's voice).
 */
 
 /* Include Files */
@@ -65,7 +41,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_BRIGE), consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_BRIGE (see file header log)
 
 #include "../headers/specenc.h"
 
@@ -237,10 +213,6 @@ procedure talk_p_proc begin
 //   GetReaction;
 
    if (not local_var(LVAR_Leave_Tile)) then begin
-      //VOCK: merged in TH/THAT-RPU's day/night background swap -- the original RPU source just had
-      //start_gdialog(NAME,self_obj,4,-1,-1) (no portrait) here. 203 is a TH/THAT-RPU-only head id
-      //not defined in this project's header set, inlined as a raw number; BACKGROUND_WASTELAND /
-      //BACKGROUND_WASTELAND_NIGHT are already-defined constants (same pattern as acmorlis.ssl).
       if night then
          start_gdialog(NAME,self_obj,4,HEAD_BRIGE,BACKGROUND_WASTELAND_NIGHT);
       else
@@ -302,9 +274,6 @@ end
    this call will be made. Essentially, it stores the Hostile vaule so that the critter remembers
    he was once hostile towards the player.*/
 procedure Node998 begin
-   //VOCK: kept as-written (matches RPU and TH). THAT-RPU's decompile is missing this procedure
-   //entirely -- since RPU and TH agree with each other, that reads as a THAT-RPU-only regression,
-   //not a change to adopt, so behavior here is unchanged.
    set_local_var(LVAR_Hostile,2);
 end
 
@@ -427,11 +396,7 @@ procedure Node007 begin
 end
 
 procedure Node008 begin
-   //VOCK: added Reply(168) -- msg 168 (brige9, "Uh... I... I don't know that!") was tagged and
-   //recorded but never called anywhere in the source. This is the branch where the player turns a
-   //question back on the Keeper and stumps him (KILL_SELF), so it's the Keeper's own confused
-   //reaction right before he's flung into the chasm -- exactly the beat the line was written for.
-   //Still runs inside talk_p_proc's active gSay_Start/gSay_End block, so it voices normally.
+   //VOCK: added Reply(168) -- recorded but unused in baseline (see file header log)
    Reply(168);
    give_xp(EXP_DEAD_ROBE_MAN);
    doWhat := KILL_SELF;
@@ -452,10 +417,7 @@ end
 
 procedure killPlayer begin
    float_msg(self_obj, mstr(170), FLOAT_MSG_NORMAL);
-   //VOCK: was mstr(200) (brige17, the Keeper's own VA-tagged death scream) reused here for the
-   //player's death float on dude_obj. Split onto untagged msg 2200 (see "VOCK Add Ons" in
-   //ecbridge.msg) -- same text, but with no VA tag the PC's scream can never accidentally play back
-   //in the Keeper's voice actor's voice.
+   //VOCK: was mstr(200), the Keeper's own VA tag -- split to untagged msg 2200 (see file header log)
    float_msg(dude_obj, mstr(2200), FLOAT_MSG_RED);
    critter_damage(dude_obj, 10000);
 end

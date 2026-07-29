@@ -158,7 +158,7 @@ CHARACTERS = [
     ("rcmarion",   "Earl Marion",                "marin",   ['rcmarion'],              ['marin']),
     ("rcmcgrew",   "Dan McGrew",                 "dan",     ['rcmcgrew'],              ['dan']),
     ("rcwade",     "Ben Wade",                   "ben",     ['rcwade'],                ['ben']),
-    ("scdocjub",   "Doctor Jubilee",             "jub",     ['scdocjub'],              ['docj']),
+    ("scdocjub",   "Doctor Jubilee",             "jub",     ['scdocjub'],              ['jub']),
     ("scelise",    "Ranger Chief Elise",         "elise",   ['scelise'],               ['elise']),
     ("scenlone",   "Enlightened One",            "eo",      ['scenlone'],              ['eo']),
     ("schenry",    "Doctor Henry",               "henry",   ['schenry'],               ['henry']),

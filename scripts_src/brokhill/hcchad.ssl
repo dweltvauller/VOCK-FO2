@@ -15,21 +15,11 @@
            Created: June 4, 1998
 
            Updated:
-           2026-07-27 (VOCK): merged in the Talking Heads (TH) / THAT-RPU portrait changes on
-           top of this RPU baseline. THAT does not touch this script at all (no hcchad.int in
-           that build). TH and THAT-RPU turned out to be identical to each other and to this
-           RPU copy except for the head-art swap below -- confirmed by diffing node/procedure
-           lists and start_gdialog() arguments across all three. HEAD_CHAD (97) and HEAD_CHA2
-           (98) are TH-only portrait IDs, not defined in this project's header set. Also folded
-           in the VOCK VA fix for Node032's concatenated Reply (see msg 2200 in hcchad.msg) so
-           chad21 no longer plays only half its displayed line.
-           2026-07-29 (VOCK): switched HEAD_CHAD/HEAD_CHA2 from bare inlined raw numbers with
-           comments to real local #defines (sourced from
-           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/define.h), so every
-           start_gdialog() call now reads the symbolic name directly.
-           2026-07-29 (VOCK): moved HEAD_CHAD/HEAD_CHA2 out of those local #defines into
-           headers/talking_heads.h, a new consolidated header (also kept in compile/headers/)
-           holding every Talking Heads portrait id, vendored once instead of duplicated per-script.
+           (VOCK) vs Black_Electric_LIP baseline: no portrait changes (this file already matches
+           BEL there). Diffs are: added headers/talking_heads.h include for HEAD_CHAD/HEAD_CHA2;
+           map_update_p_proc's float_msg now reads mstr(450) from hcchad.msg instead of
+           g_mstr(450) from generic.msg (Chad's own voice); Node032's Reply now plays msg 2200
+           instead of concatenating mstr(220)+" "+mstr(216) (see inline comment there).
 */
 
 /* Include Files */
@@ -52,7 +42,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_CHAD, HEAD_CHA2), consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_CHAD, HEAD_CHA2 (see file header log)
 
 /* Standard Script Procedures */
 procedure start;
@@ -220,7 +210,7 @@ procedure map_update_p_proc begin
    end
    if (cur_map_index == MAP_BH_RND_DESERT) then begin
        if ( map_var(MVAR_Hostile_Total) <= 0 ) then begin //edit by killap - can drop below 0
-           float_msg(self_obj,mstr(450),FLOAT_COLOR_NORMAL); //VOCK: was g_mstr(450) (generic.msg) -- moved to hcchad.msg so it's Chad's own voice
+           float_msg(self_obj,mstr(450),FLOAT_COLOR_NORMAL); //VOCK: was g_mstr(450) (see file header log)
        end
    end
 end
@@ -702,9 +692,7 @@ procedure Node031 begin
 end
 
 procedure Node032 begin
-   Reply(2200); //VOCK VA fix: was Reply(mstr(220) + " " + mstr(216)) -- only the first mstr() in a
-                //concatenated Reply() plays audio, so chad21 was silently missing 216's half of the
-                //displayed line. msg 2200 holds the full merged text as one line, recorded whole.
+   Reply(2200); //VOCK: was Reply(mstr(220) + " " + mstr(216)) (see file header log)
    NOption(217,Node031,004);
 end
 

@@ -22,32 +22,13 @@
            Created: Febuary 3, 1998
 
            Updated:
-           2026-07-28 (VOCK): forked from this RPU baseline. TH and THAT-RPU decompiles were
-           confirmed identical to this copy for every node/procedure and every literal Reply()/
-           floater() msg ID (only difference is inlined shared-library bloat from missing
-           #include in the decompile) -- no THAT layer touches this script at all (no
-           kcdunton.int in that build). Folded in the VOCK VA fix for four concatenated Reply()
-           calls that were losing their second half's audio (Node027, Node029, Node032, and the
-           Node992 "later than 6pm" branch) -- see msg 2200-2206 in kcdunton.msg. Each now calls
-           a single merged mstr() so its buck tag covers the full displayed line.
-           2026-07-29 (VOCK): the dialogue-content check above missed a real difference outside
-           msg IDs -- the actual Fallout2 Talking Heads mod source
-           (Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/klamath/kcdunton.ssl, not the
-           decompiled dat/th copy) gives the Duntons a portrait and scene background in every
-           talk_p_proc branch's start_gdialog() call (this RPU baseline just passes -1,-1 for
-           both). Folded that in: added HEAD_BUCK (183, TH-only portrait id, not in this
-           project's own headers) and swapped every start_gdialog(NAME,self_obj,4,-1,-1) for
-           HEAD_BUCK + BACKGROUND_RAIDERS (shop/downtown branches) or a night-gated
-           BACKGROUND_WASTELAND_NIGHT/BACKGROUND_WASTELAND pair (pasture/bar branches), matching
-           the TH source exactly. BACKGROUND_* and the night macro are already defined in this
-           project's own headers, so only HEAD_BUCK needed a local #define.
-           2026-07-29 (VOCK): moved HEAD_BUCK out of a local #define into
-           headers/talking_heads.h, a new consolidated header (also kept in
-           compile/headers/) holding every Talking Heads portrait id and the
-           th_start_dialog_at_node/th_check_forced_dialog macros, vendored once instead of
-           duplicated per-script. Compared all 14 files that differ between rpu/scripts_src/
-           headers/ and Black_Electric_LIP's own headers -- only define.h and command.h had
-           genuine Talking Heads content; nothing else needed merging in.
+           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
+           matches BEL there). Diffs are: added headers/talking_heads.h include for HEAD_BUCK;
+           four concatenated Reply() calls that were losing their second mstr()'s audio now play
+           a single merged msg instead -- Node992 (was mstr(198)+mstr(601)), Node027 (mstr(400)+
+           mstr(405) / mstr(404)+mstr(405)), Node029 (mstr(420)+mstr(424) / mstr(420)+mstr(533)),
+           Node032 (mstr(449)+mstr(450) / mstr(449)+mstr(451)) -- see msg 2200-2206 in
+           kcdunton.msg and the inline comment at each site.
 */
 
 /* Include Files */
@@ -74,7 +55,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_BUCK), consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_BUCK (see file header log)
 
 #define Vault_Known             (1)     // Temp Until get command from Jesse
 #define Visited_City            (1)     // Temp Until get command from Jesse

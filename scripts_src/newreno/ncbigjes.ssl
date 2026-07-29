@@ -12,35 +12,13 @@
            Created: May 6, 1998
 
            Updated:
-           2026-07-29 (VOCK): rebuilt from the clean rpu/scripts_src/newreno/ncbigjes.ssl source.
-           This fork had originally been built from the decompiled dat/that-rpu/scripts_ssl/
-           ncbigjes-that-rpu.ssl (1915 lines of inlined shared-library bloat vs. RPU's 1089) --
-           replaced with this clean RPU baseline and only the known VOCK/TH changes re-applied:
-              1) Talking Heads portrait/background merge: diffed RPU against the real TH source
-                 (Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/newreno/ncbigjes.ssl, not
-                 the decompiled copy) with `diff -bw` and found exactly 7 differences -- every
-                 talk_p_proc branch's start_dialog_at_node(NodeX) becomes
-                 th_start_dialog_at_node(NodeX,HEAD_BGJES,BACKGROUND_RAIDERS), a TH-only macro
-                 (copied locally below from Black_Electric_LIP's own command.h, since it's not
-                 defined in this project's headers) that's identical to start_dialog_at_node
-                 except it passes a real portrait/background to start_gdialog() instead of -1,-1.
-                 HEAD_BGJES (36) is a TH-only portrait id, given a local #define since it isn't in
-                 this project's header set either; BACKGROUND_RAIDERS (13) *is* already defined
-                 symbolically in this project's own headers (define.h), so it's used directly.
-              2) Node041's concatenated Reply (Reply(mstr(680) + mstr(683))) was losing msg 683's
-                 half of the line to the engine's first-mstr()-wins concatenation bug. The
-                 decompiled fork this replaces had already fixed it by extending msg 683's text to
-                 cover the full merged line (tag bgjes68) and calling Reply(683) directly instead
-                 of concatenating -- preserved that exact fix here. The non-bonus branch
-                 (Reply(680), tag bgjes67) was never part of the bug and is unchanged.
-           Known open issue, not addressed by this rebuild (see [[vock_2026_07_27_audit]]):
-           bgjes41 still covers 7 different companion-farewell lines (msg 410-416) and needs
-           splitting into distinct tags.
-           2026-07-29 (VOCK): moved HEAD_BGJES and the locally-duplicated th_start_dialog_at_node
-           macro out of this file and into headers/talking_heads.h, a new consolidated header
-           (also kept in compile/headers/) holding every Talking Heads portrait id and both TH-only
-           dialog macros (th_start_dialog_at_node, th_check_forced_dialog), vendored once instead
-           of duplicated per-script.
+           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
+           matches BEL there, including th_start_dialog_at_node/HEAD_BGJES/BACKGROUND_RAIDERS).
+           Diffs are: added headers/talking_heads.h include for HEAD_BGJES and the
+           th_start_dialog_at_node/th_check_forced_dialog macros; Node041's bonus-branch Reply now
+           plays msg 683 directly instead of concatenating mstr(680)+mstr(683) (msg 683's text
+           covers the full merged line, tag bgjes68). The non-bonus branch (Reply(680), tag
+           bgjes67) was never part of that bug and is unchanged.
 */
 
 /* Include Files */
@@ -51,7 +29,7 @@
 #include "../headers/command.h"
 #include "../headers/newreno.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait id (HEAD_BGJES) + th_start_dialog_at_node macro, consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_BGJES, th_start_dialog_at_node (see file header log)
 
 /* Standard Script Procedures */
 procedure start;

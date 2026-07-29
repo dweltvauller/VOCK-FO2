@@ -1,41 +1,3 @@
-/*
-    VOCK: Talking Heads add-ons, consolidated.
-
-    This project's scripts are forked from the RPU baseline (rpu/scripts_src/), not from
-    Black_Electric_LIP/Fallout2_Talking_Heads/. That mod's headers can't be #include'd directly --
-    compile.ps1 stages every project's .ssl into compile/scripts_src/, and "../headers/..." always
-    resolves to this compile/headers/ directory, which is an exact sync of rpu/scripts_src/headers/
-    (verified via `diff -rq`, 2026-07-29). So instead of merging Talking Heads content into the
-    shared RPU headers (define.h, command.h, etc.) -- which would drift from upstream RPU and be
-    overwritten by any future re-sync -- every TH-only addition lives in this one file.
-
-    Full comparison of all 14 header files that differ between rpu/scripts_src/headers/ and
-    Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/ (2026-07-29): only define.h and
-    command.h contain genuine Talking Heads content (portrait ids + dialog macros, both vendored
-    below). The other 12 differences (command_extra.h, depolvz.h, epa.h, exppoint.h, global.h,
-    itempid.h, partybkg.h, rpu.h, scenepid.h, scripts.h, updatmap.h, upu.h) are either RPU-only
-    content that BEL's tree lacks (is_alcohol macro, MAX_KILL_EPAPLANTS, quest-item PID list, RPU's
-    own dude_is_addicted helper), a relocated-but-identical PID_* block (itempid.h -> rpu.h), or
-    unrelated version drift on other subsystems (car hex constants, script id renames, reputation
-    logic, EPA/scenery macros) -- none of it is Talking Heads related, so none of it belongs here.
-
-    Contents:
-      1) All HEAD_* portrait constants, vendored verbatim from
-         Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/define.h (that file's only
-         addition over RPU's define.h -- everything else in it is identical).
-      2) th_start_dialog_at_node / th_check_forced_dialog, vendored verbatim from
-         Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/command.h (that file's only
-         addition over RPU's command.h). Same behavior as RPU's own start_dialog_at_node(x), except
-         it passes a real portrait/background pair to start_gdialog() instead of -1,-1.
-
-    Any script that wants a portrait/background on its dialog needs both an #include of this file
-    and BACKGROUND_* -- those already exist as ordinary symbols in this project's own headers
-    (define.h/rpu.h), no vendoring needed.
-
-    Build copy: this same file is also kept at compile/headers/talking_heads.h, the actual staging
-    directory compile.ps1 resolves "../headers/..." includes against. Keep both copies in sync.
-*/
-
 //Additional Head Defines from Talking Heads Mod, Black_Electric & Goat_Boy//
 #define HEAD_LARAD          (15)
 #define HEAD_DAVIN          (16)
@@ -207,9 +169,8 @@
 #define HEAD_IANOJ          (182)
 #define HEAD_BUCK           (183)
 #define HEAD_FLICK          (184)
-// VOCK: BEL's own define.h defines HEAD_JONES twice (185 here, 197 below) -- a pre-existing
-// duplicate in their source, not ours. Keeping only the later/effective value (197) to avoid a
-// redefinition error; neither value is currently used by any vock-fo2 script.
+// VOCK: TH mod define.h has HEAD_JONES twice (185 here, 197 below). Keeping only the value (197) to avoid a redefinition error.
+// #define HEAD_JONES          (185)
 #define HEAD_TUBBY          (186)
 #define HEAD_AMA            (187)
 #define HEAD_ARIEL          (188)

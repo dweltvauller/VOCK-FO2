@@ -15,33 +15,13 @@
            Created:
 
            Updated:
-           2026-07-28 (VOCK): merged in the Talking Heads (TH) / THAT-RPU portrait changes on
-           top of this RPU baseline. Plain THAT does not touch this script at all (no
-           acmorlis.int in that build). TH and THAT-RPU turned out to be identical to each
-           other and to this RPU copy except for the head/mood/background args on every
-           start_gdialog() call in talk_p_proc -- confirmed by diffing node/procedure lists and
-           start_gdialog() arguments across all three (dat/th/scripts_ssl/acmorlis-th.ssl,
-           dat/that-rpu/scripts_ssl/acmorlis-that-rpu.ssl, and
-           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/arroyo/acmorlis.ssl). RPU
-           passed -1,-1 (no portrait) with a flat mood of 4 on every branch; TH/THAT-RPU/BEL
-           give her a real portrait (HEAD_MOR, day/night background swap) and use mood 7 on the
-           three "busy/annoyed" branches (Caught_Stealing, SPEAR_GET_POWDER, first
-           SPEAR_GET_FLINT check) vs mood 4 on the five later-game branches (reached_tl_1-4,
-           Darek's second SPEAR_GET_FLINT check) -- a real, intentional mood distinction, not
-           just a placeholder artifact, so it's preserved here. HEAD_MOR (194) is a TH-only
-           portrait ID, not defined in this project's header set. BACKGROUND_WASTELAND (16) and
-           BACKGROUND_WASTELAND_NIGHT (21) *are* already defined symbolically in this project's
-           headers, so those stayed symbolic. Also folded in the VOCK VA fix for Node015's
-           concatenated Reply (see msg 1212 in acmorlis.msg) so mor18 no longer relies on a
-           runtime mstr()+dude_name+mstr() concatenation -- it now plays back the single merged
-           line that was actually recorded.
-           2026-07-29 (VOCK): switched HEAD_MOR from a bare inlined "194 // HEAD_MOR" to a real
-           local #define (sourced from
-           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/define.h), so every
-           start_gdialog() call now reads HEAD_MOR directly instead of a commented raw number.
-           2026-07-29 (VOCK): moved HEAD_MOR out of that local #define into
-           headers/talking_heads.h, a new consolidated header (also kept in compile/headers/)
-           holding every Talking Heads portrait id, vendored once instead of duplicated per-script.
+           (VOCK) vs Black_Electric_LIP baseline: no dialogue routing/portrait changes (this
+           file already matches BEL there). Diffs are: added headers/talking_heads.h include
+           for HEAD_MOR; Node015's Reply now plays msg 1212 directly instead of concatenating
+           mstr(212)+dude_name+mstr(213) (see acmorlis.msg); Node018 adds NOption(115,Node999,001)
+           + return after Reply(154) so that branch ends the dialogue there instead of falling
+           through to NOption(156,...). Also dropped BEL's commented-out legacy Node004/006/007/018
+           duplicates (dead code, not referenced).
 */
 
 /* Include Files */
@@ -61,7 +41,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_MOR), consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_MOR (see file header log)
 
 /* Standard Script Procedures */
 procedure start;
@@ -217,7 +197,6 @@ procedure talk_p_proc begin
 
    if (Caught_Stealing) then begin
        Caught_Stealing:=0;
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
         start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -234,7 +213,6 @@ procedure talk_p_proc begin
 
    else if ((global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_POWDER) and
             (local_var(LVAR_Gave_Flint) == 0)) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
         start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -247,7 +225,6 @@ procedure talk_p_proc begin
 
    else if ( (global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_FLINT) and
               (local_var(LVAR_Stole_Flint) == 0)) then begin //edit by killap LVAR_Stole_Flint
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
         start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -259,7 +236,6 @@ procedure talk_p_proc begin
    end
 
    else if (reached_tl_4) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
         start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -271,7 +247,6 @@ procedure talk_p_proc begin
    end
 
    else if (reached_tl_3) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
         start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -283,7 +258,6 @@ procedure talk_p_proc begin
    end
 
    else if (reached_tl_2) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
         start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -295,7 +269,6 @@ procedure talk_p_proc begin
    end
 
    else if (reached_tl_1) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
         start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -307,7 +280,6 @@ procedure talk_p_proc begin
    end
    //code by Darek
    else if ((global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_FLINT) and (local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Said_17) < 2)) then begin
-       // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
         start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
@@ -565,9 +537,7 @@ procedure Node014 begin
 end
 
 procedure Node015 begin
-   // VOCK: was Reply(mstr(212)+dude_name+mstr(213)) -- mor18's actual recording covers the
-   // full merged line (see msg 1212 in acmorlis.msg), so play that single msg ID directly
-   // instead of concatenating a silent-tail mstr() with the runtime player name.
+   // VOCK: was Reply(mstr(212)+dude_name+mstr(213)); msg 1212 is the single recorded line
    Reply(1212);
 
    NOption(214,Node016,001);
@@ -615,7 +585,7 @@ begin
         rm_obj_from_inven(self_obj,item);
         add_obj_to_inven(dude_obj,item);
         Reply(154);
-        // This node is gated behind int 4 anyway, but just in case use min of 1 here.
+        // VOCK: ends dialogue here instead of falling through to NOption(156,...) below
         NOption(115, Node999, 001);
         return;
       end

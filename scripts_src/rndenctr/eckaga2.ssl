@@ -15,25 +15,13 @@
            Created:
 
            Updated:
-              VOCK: rebuilt from the clean rpu/scripts_src/rndenctr/eckaga2.ssl source
-              instead of the decompiled TH .int, with only the 3 known VOCK behavior fixes
-              re-applied (see below). No other content changed vs. official RPU source.
-                 1) added `pending_dialog` local var
-                 2) critter_p_proc now checks pending_dialog and calls dialogue_system_enter
-                    instead of doSequence calling start_gdialog directly from a timed event
-                    (fixes VA lines not voicing because _gdialogActive() wasn't set when
-                    dialogue was entered outside talk_p_proc's call stack)
-                 3) Node998 now calls end_dialogue instead of attack(dude_obj)
-              (undocumented at the time) Also merged in the Talking Heads portrait/background
-              swap on talk_p_proc's start_gdialog() call -- RPU passed (NAME,self_obj,4,-1,-1),
-              TH/THAT-RPU give a real portrait (HEAD_KAGA) and swap BACKGROUND_WASTELAND_NIGHT/
-              BACKGROUND_WASTELAND by time of day. Confirmed via
-              Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/rndenctr/eckaga2.ssl.
-           2026-07-29 (VOCK): switched HEAD_KAGA from a bare raw number to a real local #define
-              (same source as above), so start_gdialog() reads HEAD_KAGA directly.
-           2026-07-29 (VOCK): moved HEAD_KAGA out of that local #define into headers/talking_heads.h,
-              a new consolidated header (also kept in compile/headers/) holding every Talking
-              Heads portrait id, vendored once instead of duplicated per-script.
+           (VOCK) vs Black_Electric_LIP baseline: BEL calls doSequence (and its start_gdialog/
+           Node001) from timed_event_p_proc, outside talk_p_proc's call stack, so VA never
+           voices there (_gdialogActive() gate). Fixed by moving the start_gdialog/Node001 call
+           into talk_p_proc; doSequence now just sets a new `pending_dialog` flag, which
+           critter_p_proc checks and enters via dialogue_system_enter. Node998 now calls
+           end_dialogue instead of attack(dude_obj), since it now runs inside an active dialogue.
+           Also added headers/talking_heads.h include for HEAD_KAGA (unchanged from baseline).
 */
 
 /* Include Files */
@@ -51,7 +39,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_KAGA), consolidated -- see file header comment
+#include "../headers/talking_heads.h" //VOCK: adds HEAD_KAGA (see file header log)
 
 
 /* Standard Script Procedures */
