@@ -20,11 +20,16 @@
            that build). TH and THAT-RPU turned out to be identical to each other and to this
            RPU copy except for the head-art swap below -- confirmed by diffing node/procedure
            lists and start_gdialog() arguments across all three. HEAD_CHAD (97) and HEAD_CHA2
-           (98) are TH-only portrait IDs, not defined in this project's header set (sourced
-           from rpu/scripts_src/headers), so they're inlined here as raw numbers with comments
-           rather than pulling in TH's whole header set. Also folded in the VOCK VA fix for
-           Node032's concatenated Reply (see msg 2200 in hcchad.msg) so chad21 no longer plays
-           only half its displayed line.
+           (98) are TH-only portrait IDs, not defined in this project's header set. Also folded
+           in the VOCK VA fix for Node032's concatenated Reply (see msg 2200 in hcchad.msg) so
+           chad21 no longer plays only half its displayed line.
+           2026-07-29 (VOCK): switched HEAD_CHAD/HEAD_CHA2 from bare inlined raw numbers with
+           comments to real local #defines (sourced from
+           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/define.h), so every
+           start_gdialog() call now reads the symbolic name directly.
+           2026-07-29 (VOCK): moved HEAD_CHAD/HEAD_CHA2 out of those local #defines into
+           headers/talking_heads.h, a new consolidated header (also kept in compile/headers/)
+           holding every Talking Heads portrait id, vendored once instead of duplicated per-script.
 */
 
 /* Include Files */
@@ -47,6 +52,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
+#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_CHAD, HEAD_CHA2), consolidated -- see file header comment
 
 /* Standard Script Procedures */
 procedure start;
@@ -349,13 +355,13 @@ procedure talk_p_proc begin
    end else if (doTalk == 1) then begin
       doTalk := 0;
       set_local_var(LVAR_Safe_Attack,1);
-      start_gdialog(NAME,self_obj,4,98,BACKGROUND_JUNKTOWN); //98 = HEAD_CHA2 (TH portrait, not in this header set) -- merged from TH/THAT-RPU
+      start_gdialog(NAME,self_obj,4,HEAD_CHA2,BACKGROUND_JUNKTOWN);
       gSay_Start;
          call Node026;
       gSay_End;
       end_dialogue;
    end else if (map_var(MVAR_Chad_Draw) == 1) then begin
-      start_gdialog(NAME,self_obj,4,97,BACKGROUND_JUNKTOWN); //97 = HEAD_CHAD (TH portrait, not in this header set) -- merged from TH/THAT-RPU
+      start_gdialog(NAME,self_obj,4,HEAD_CHAD,BACKGROUND_JUNKTOWN);
       gSay_Start;
          call Node033;
       gSay_End;
@@ -373,7 +379,7 @@ procedure talk_p_proc begin
       dude_caps_adjust( 200);
       add_timer_event( self_obj, 1, 1 );
    end else if (global_var(GVAR_ENEMY_BROKEN_HILLS) == 1) then begin
-       start_gdialog(NAME,self_obj,4,97,BACKGROUND_JUNKTOWN); //97 = HEAD_CHAD (TH portrait, not in this header set) -- merged from TH/THAT-RPU
+       start_gdialog(NAME,self_obj,4,HEAD_CHAD,BACKGROUND_JUNKTOWN);
        gSay_Start;
            call Node016;
        gSay_End;
@@ -381,7 +387,7 @@ procedure talk_p_proc begin
    end else if (bad_critter_reaction) then begin
       call Node016;
    end else begin
-       start_gdialog(NAME,self_obj,4,97,BACKGROUND_JUNKTOWN); //97 = HEAD_CHAD (TH portrait, not in this header set) -- merged from TH/THAT-RPU
+       start_gdialog(NAME,self_obj,4,HEAD_CHAD,BACKGROUND_JUNKTOWN);
        gSay_Start;
 /*
              if (local_var(LVAR_Herebefore) == 0) then begin

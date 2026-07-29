@@ -3,7 +3,7 @@
 */
 
 /*
-        Name: Kaga Encounter 1
+        Name: Kaga Encounter 3
         Location: Random Encounter
         Description:
 
@@ -24,6 +24,16 @@
                     (fixes VA lines not voicing because _gdialogActive() wasn't set when
                     dialogue was entered outside talk_p_proc's call stack)
                  3) Node998 now calls end_dialogue instead of attack(dude_obj)
+              (undocumented at the time) Also merged in the Talking Heads portrait/background
+              swap on talk_p_proc's start_gdialog() call -- RPU passed (NAME,self_obj,4,-1,-1),
+              TH/THAT-RPU give a real portrait (HEAD_KAGA) and swap BACKGROUND_WASTELAND_NIGHT/
+              BACKGROUND_WASTELAND by time of day. Confirmed via
+              Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/rndenctr/eckaga3.ssl.
+           2026-07-29 (VOCK): switched HEAD_KAGA from a bare raw number to a real local #define
+              (same source as above), so start_gdialog() reads HEAD_KAGA directly.
+           2026-07-29 (VOCK): moved HEAD_KAGA out of that local #define into headers/talking_heads.h,
+              a new consolidated header (also kept in compile/headers/) holding every Talking
+              Heads portrait id, vendored once instead of duplicated per-script.
 */
 
 /* Include Files */
@@ -41,6 +51,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
+#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_KAGA), consolidated -- see file header comment
 
 
 /* Standard Script Procedures */
@@ -295,9 +306,9 @@ end
    stored which affects player interactions. */
 procedure talk_p_proc begin
    if ((game_time_hour < 600) or (game_time_hour >= 1900)) then begin
-      start_gdialog(NAME, self_obj, 4, 123, 21);
+      start_gdialog(NAME, self_obj, 4, HEAD_KAGA, BACKGROUND_WASTELAND_NIGHT);
    end else begin
-      start_gdialog(NAME, self_obj, 4, 123, 16);
+      start_gdialog(NAME, self_obj, 4, HEAD_KAGA, BACKGROUND_WASTELAND);
    end
    gSay_Start;
       call Node001;

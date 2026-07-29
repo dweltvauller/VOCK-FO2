@@ -1,6 +1,6 @@
 # Torr Buckner — Voice Actor Script
 **Character:** Torr Buckner, brahmin herder, Klamath
-**Total recordable lines:** 62 (**torr1**–**torr62**; **torr13**/14/17/18 are cut content, not used in the shipped game — see footer)
+**Total recordable lines:** 62 (**torr1**–**torr62**)
 
 ---
 
@@ -136,4 +136,4 @@
 
 ---
 
-*End of script — 62 lines total (**torr1**–**torr62**; **torr13**/14/17/18 are unused cut content). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script — 62 lines total (**torr1**–**torr62**). Tag numbers follow ascending message-ID order, not this document's topical grouping.*

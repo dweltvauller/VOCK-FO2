@@ -25,8 +25,8 @@
               1) talk_p_proc's start_gdialog() call: RPU passed (NAME,self_obj,4,-1,-1) (no
                  portrait). TH/THAT-RPU instead swap the background based on time of day -- merged
                  in below, same pattern already used in acmorlis.ssl. Head 203 is a TH/THAT-RPU-only
-                 portrait ID, not defined in this project's header set, so it's inlined as a raw
-                 number with a comment rather than pulling in TH's whole header set.
+                 portrait ID, not defined in this project's header set, so it's given a local
+                 #define (HEAD_BRIGE) rather than pulling in TH's whole header set.
                  BACKGROUND_WASTELAND (16) and BACKGROUND_WASTELAND_NIGHT (21) *are* already defined
                  symbolically in this project's headers (rpu.h, pulled in via define.h), so those
                  stayed symbolic.
@@ -42,6 +42,10 @@
            "AAAAAAAHHHHHHHHhhhhhh!" VA tag for the player's death scream float. Split it onto a new
            untagged msg 2200 (see "VOCK Add Ons" footer in ecbridge.msg) so the player's scream can
            never play back in the Keeper's voice actor's voice.
+           2026-07-29 (VOCK): switched HEAD_BRIGE from a bare inlined raw number to a local
+           #define, then moved it out of that local #define into headers/talking_heads.h, a new
+           consolidated header (also kept in compile/headers/) holding every Talking Heads
+           portrait id, vendored once instead of duplicated per-script.
 */
 
 /* Include Files */
@@ -61,6 +65,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
+#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_BRIGE), consolidated -- see file header comment
 
 #include "../headers/specenc.h"
 
@@ -237,9 +242,9 @@ procedure talk_p_proc begin
       //not defined in this project's header set, inlined as a raw number; BACKGROUND_WASTELAND /
       //BACKGROUND_WASTELAND_NIGHT are already-defined constants (same pattern as acmorlis.ssl).
       if night then
-         start_gdialog(NAME,self_obj,4,203,BACKGROUND_WASTELAND_NIGHT); //203 = TH/THAT-RPU head id (not in this header set)
+         start_gdialog(NAME,self_obj,4,HEAD_BRIGE,BACKGROUND_WASTELAND_NIGHT);
       else
-         start_gdialog(NAME,self_obj,4,203,BACKGROUND_WASTELAND); //203 = TH/THAT-RPU head id (not in this header set)
+         start_gdialog(NAME,self_obj,4,HEAD_BRIGE,BACKGROUND_WASTELAND);
       gSay_Start;
          call Node001;
       gSay_End;

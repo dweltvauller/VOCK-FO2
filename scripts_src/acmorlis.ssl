@@ -29,14 +29,19 @@
            SPEAR_GET_FLINT check) vs mood 4 on the five later-game branches (reached_tl_1-4,
            Darek's second SPEAR_GET_FLINT check) -- a real, intentional mood distinction, not
            just a placeholder artifact, so it's preserved here. HEAD_MOR (194) is a TH-only
-           portrait ID, not defined in this project's header set (sourced from
-           rpu/scripts_src/headers), so it's inlined below as a raw number with a comment rather
-           than pulling in TH's whole header set. BACKGROUND_WASTELAND (16) and
+           portrait ID, not defined in this project's header set. BACKGROUND_WASTELAND (16) and
            BACKGROUND_WASTELAND_NIGHT (21) *are* already defined symbolically in this project's
            headers, so those stayed symbolic. Also folded in the VOCK VA fix for Node015's
            concatenated Reply (see msg 1212 in acmorlis.msg) so mor18 no longer relies on a
            runtime mstr()+dude_name+mstr() concatenation -- it now plays back the single merged
            line that was actually recorded.
+           2026-07-29 (VOCK): switched HEAD_MOR from a bare inlined "194 // HEAD_MOR" to a real
+           local #define (sourced from
+           Black_Electric_LIP/Fallout2_Talking_Heads/scripts_src/headers/define.h), so every
+           start_gdialog() call now reads HEAD_MOR directly instead of a commented raw number.
+           2026-07-29 (VOCK): moved HEAD_MOR out of that local #define into
+           headers/talking_heads.h, a new consolidated header (also kept in compile/headers/)
+           holding every Talking Heads portrait id, vendored once instead of duplicated per-script.
 */
 
 /* Include Files */
@@ -56,6 +61,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
+#include "../headers/talking_heads.h" //VOCK: Talking Heads portrait ids (HEAD_MOR), consolidated -- see file header comment
 
 /* Standard Script Procedures */
 procedure start;
@@ -213,9 +219,9 @@ procedure talk_p_proc begin
        Caught_Stealing:=0;
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node017;
        gSay_End;
@@ -230,9 +236,9 @@ procedure talk_p_proc begin
             (local_var(LVAR_Gave_Flint) == 0)) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node006;
        gSay_End;
@@ -243,9 +249,9 @@ procedure talk_p_proc begin
               (local_var(LVAR_Stole_Flint) == 0)) then begin //edit by killap LVAR_Stole_Flint
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1, mood 4)
        if night then
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,7,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,7,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node002;
        gSay_End;
@@ -255,9 +261,9 @@ procedure talk_p_proc begin
    else if (reached_tl_4) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node014;
        gSay_End;
@@ -267,9 +273,9 @@ procedure talk_p_proc begin
    else if (reached_tl_3) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node013;
        gSay_End;
@@ -279,9 +285,9 @@ procedure talk_p_proc begin
    else if (reached_tl_2) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node011;
        gSay_End;
@@ -291,9 +297,9 @@ procedure talk_p_proc begin
    else if (reached_tl_1) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node009;
        gSay_End;
@@ -303,9 +309,9 @@ procedure talk_p_proc begin
    else if ((global_var(GVAR_ARROYO_SPEAR) == SPEAR_GET_FLINT) and (local_var(LVAR_Stole_Flint) == 1) and (local_var(LVAR_Said_17) < 2)) then begin
        // VOCK: real portrait from TH/THAT-RPU/BEL (RPU baseline used -1,-1)
        if night then
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND_NIGHT); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND_NIGHT);
         else
-        start_gdialog(NAME,self_obj,4,194,BACKGROUND_WASTELAND); // HEAD_MOR
+        start_gdialog(NAME,self_obj,4,HEAD_MOR,BACKGROUND_WASTELAND);
        gSay_Start;
            call Node002;
        gSay_End;
