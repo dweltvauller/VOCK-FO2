@@ -15,13 +15,12 @@
            Created:
 
            Updated:
-           (VOCK) vs Black_Electric_LIP baseline: BEL calls doSequence (and its start_gdialog/
-           Node001) from timed_event_p_proc, outside talk_p_proc's call stack, so VA never
-           voices there (_gdialogActive() gate). Fixed by moving the start_gdialog/Node001 call
-           into talk_p_proc; doSequence now just sets a new `pending_dialog` flag, which
-           critter_p_proc checks and enters via dialogue_system_enter. Node998 now calls
-           end_dialogue instead of attack(dude_obj), since it now runs inside an active dialogue.
-           Also added headers/talking_heads.h include for HEAD_KAGA (unchanged from baseline).
+           (VOCK) Added headers/talking_heads.h for HEAD_KAGA. Fixed doSequence's start_gdialog/
+           Node001 call being made from timed_event_p_proc, outside talk_p_proc's call stack, so
+           VA never voiced there (_gdialogActive() gate) -- moved the call into talk_p_proc;
+           doSequence now just sets a new `pending_dialog` flag, which critter_p_proc checks and
+           enters via dialogue_system_enter. Node998 now calls end_dialogue instead of
+           attack(dude_obj), since it now runs inside an active dialogue.
 */
 
 /* Include Files */

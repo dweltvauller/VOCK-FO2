@@ -71,8 +71,8 @@
 {222}{}{Roger? Gick Vic, Haji! (Thanks; I think I'll go look for him now. Goodbye.)}
 
 {229}{}{Torr like }
-{230}{torr24}{. Torr thank. Bugmen bad, no let bugmen eat moo-moos! (Thanks so much for helping me out. These bugmen give me the creeping willies. I hope we can keep any brahmin from being lost.)}
-{231}{torr25}{. Torr thank. Bugmen bad, no let bugmen eat moo-moos!}
+{230}{}{. Torr thank. Bugmen bad, no let bugmen eat moo-moos! (Thanks so much for helping me out. These bugmen give me the creeping willies. I hope we can keep any brahmin from being lost.)}
+{231}{}{. Torr thank. Bugmen bad, no let bugmen eat moo-moos!}
 {232}{}{Torr. (I'm sure that they won't take your brahmin if we're both here.)}
 {233}{}{I hope we can put a stop to these things attacking your moo-moos. Uh, I mean brahmin. I don't think anything would attack with both of us here.}
 {234}{}{Actually, I'm here to warn you. I saw some Bugmen just on the other side of that rock. As a friend, I'll watch the moo-moos for you, while you run for help.}
@@ -86,8 +86,8 @@
 {246}{}{Sorry, Torr. I'm too busy to stand around with a bunch of brahmin, whether they've got two legs or four.}
 
 {249}{}{Torr love }
-{250}{torr28}{. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)}
-{251}{torr29}{. Torr love ma. Torr love fa.}
+{250}{}{. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)}
+{251}{}{. Torr love ma. Torr love fa.}
 {252}{}{Torr good. (It wasn't anything, really. I'm sure you'd have done the same for me. Let me ask you something, though.)}
 {253}{}{Torr heh, heh, heh. (Well, you looked pretty funny there, stranded by that automaton. Just be more careful next time. Goodbye.)}
 {254}{}{Torr, you be careful now, okay? Okay, then. Goodbye, Torr.}
@@ -113,7 +113,7 @@
 {277}{torr47}{Torr!}
 
 {279}{}{Torr see }
-{280}{torr48}{! (Hello again, friend. Can I help you with anything?)}
+{280}{}{! (Hello again, friend. Can I help you with anything?)}
 {281}{}{ see Torr! (Well, actually, I did have some questions for you.)}
 {282}{}{Torr, bye. (Nice to see you again, Torr. I'm just ambling through. Goodbye for now.)}
 
@@ -142,3 +142,15 @@
 {702}{}{Grok! Torr! (Thanks so much, Torr. You're a prince amongst men. I need to be leaving but I wish you the best of luck with your cattle production. Goodbye, friend Torr.)}
 
 {800}{}{You have successfully rescued Torr.}
+
+# VOCK Add Ons
+# VA re-recorded torr24/torr25/torr28/torr29/torr48 saying "friend" instead of the PC's name.
+# Merged 229+230 / 229+231 / 249+250 / 249+251 / 279+280 (PC name spliced between) into one
+# line each so the existing recording covers the full displayed text. Stripped the torr24/25/
+# 28/29/48 tags off the old 230/231/250/251/280 entries above so each tag maps to exactly one
+# msg (the merged one) -- the old entries are left in place, untagged, for reference only.
+{1230}{torr24}{Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos! (Thanks so much for helping me out. These bugmen give me the creeping willies. I hope we can keep any brahmin from being lost.)}
+{1231}{torr25}{Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos!}
+{1250}{torr28}{Torr love friend. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)}
+{1251}{torr29}{Torr love friend. Torr love ma. Torr love fa.}
+{1280}{torr48}{Torr see friend! (Hello again, friend. Can I help you with anything?)}

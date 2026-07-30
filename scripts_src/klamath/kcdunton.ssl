@@ -22,13 +22,12 @@
            Created: Febuary 3, 1998
 
            Updated:
-           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
-           matches BEL there). Diffs are: added headers/talking_heads.h include for HEAD_BUCK;
-           four concatenated Reply() calls that were losing their second mstr()'s audio now play
-           a single merged msg instead -- Node992 (was mstr(198)+mstr(601)), Node027 (mstr(400)+
-           mstr(405) / mstr(404)+mstr(405)), Node029 (mstr(420)+mstr(424) / mstr(420)+mstr(533)),
-           Node032 (mstr(449)+mstr(450) / mstr(449)+mstr(451)) -- see msg 2200-2206 in
-           kcdunton.msg and the inline comment at each site.
+           (VOCK) Added headers/talking_heads.h for HEAD_BUCK. Four concatenated Reply() calls
+           that were losing their second mstr()'s audio now play a single merged msg instead --
+           Node992 (was mstr(198)+mstr(601)), Node027 (mstr(400)+mstr(405) / mstr(404)+mstr(405)),
+           Node029 (mstr(420)+mstr(424) / mstr(420)+mstr(533)), Node032 (mstr(449)+mstr(450) /
+           mstr(449)+mstr(451)) -- see msg 2200-2206 in kcdunton.msg and the inline comment at
+           each site.
 */
 
 /* Include Files */

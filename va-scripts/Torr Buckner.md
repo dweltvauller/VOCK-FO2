@@ -168,18 +168,18 @@
 ## Repeat Visit in Klamath
 *Torr spots the PC coming back. Low-intelligence characters only.*
 
-`torr48:` Torr see [PC NAME]! (Hello again, friend. Can I help you with anything?)
+`torr48:` Torr see friend! (Hello again, friend. Can I help you with anything?)
 
 ## Meeting at the Pasture
 *PC shows up to guard the brahmin.*
 
 *To a low-intelligence PC.*
 
-`torr24:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
+`torr24:` Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
 
 *To a normal PC.*
 
-`torr25:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
+`torr25:` Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
 
 ## Asking for Help at the Pasture
 *Torr sees the PC approach and hopes they're there to help.*
@@ -197,11 +197,11 @@
 
 *To a low-intelligence PC.*
 
-`torr28:` Torr love [PC NAME]. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)
+`torr28:` Torr love friend. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)
 
 *To a normal PC.*
 
-`torr29:` Torr love [PC NAME]. Torr love ma. Torr love fa.
+`torr29:` Torr love friend. Torr love ma. Torr love fa.
 
 ## Torr Runs for Help
 *PC has warned Torr the Duntons are nearby. Torr bolts.*

@@ -15,11 +15,10 @@
            Created: June 4, 1998
 
            Updated:
-           (VOCK) vs Black_Electric_LIP baseline: no portrait changes (this file already matches
-           BEL there). Diffs are: added headers/talking_heads.h include for HEAD_CHAD/HEAD_CHA2;
-           map_update_p_proc's float_msg now reads mstr(450) from hcchad.msg instead of
-           g_mstr(450) from generic.msg (Chad's own voice); Node032's Reply now plays msg 2200
-           instead of concatenating mstr(220)+" "+mstr(216) (see inline comment there).
+           (VOCK) Added headers/talking_heads.h for HEAD_CHAD/HEAD_CHA2. map_update_p_proc's
+           float_msg now reads mstr(450) from hcchad.msg instead of g_mstr(450) from generic.msg
+           (Chad's own voice). Node032's Reply now plays msg 2200 instead of concatenating
+           mstr(220)+" "+mstr(216) (see inline comment there).
 */
 
 /* Include Files */

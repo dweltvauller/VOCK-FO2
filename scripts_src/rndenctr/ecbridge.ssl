@@ -15,13 +15,11 @@
            Created:
 
            Updated:
-           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
-           matches BEL there). Diffs are: added headers/talking_heads.h include for HEAD_BRIGE;
-           Node008 now plays Reply(168) (msg 168/brige9 was tagged and recorded but never called
-           anywhere in the baseline source); killPlayer()'s float_msg(dude_obj,...) now plays msg
-           2200 instead of msg 200 (msg 200 = brige17, the Keeper's own VA-tagged death scream --
-           split onto an untagged copy, see "VOCK Add Ons" in ecbridge.msg, so the player's death
-           float can't play back in the Keeper's voice actor's voice).
+           (VOCK) Added headers/talking_heads.h for HEAD_BRIGE. Node008 now plays Reply(168)
+           (msg 168/brige9 was tagged and recorded but never called anywhere). killPlayer()'s
+           float_msg(dude_obj,...) now plays msg 2200 instead of msg 200 (msg 200 = brige17, the
+           Keeper's own VA-tagged death scream -- split onto an untagged copy, see "VOCK Add Ons"
+           in ecbridge.msg, so the player's death float can't play in the Keeper's voice).
 */
 
 /* Include Files */

@@ -12,13 +12,11 @@
            Created: May 6, 1998
 
            Updated:
-           (VOCK) vs Black_Electric_LIP baseline: no dialogue/portrait changes (this file already
-           matches BEL there, including th_start_dialog_at_node/HEAD_BGJES/BACKGROUND_RAIDERS).
-           Diffs are: added headers/talking_heads.h include for HEAD_BGJES and the
-           th_start_dialog_at_node/th_check_forced_dialog macros; Node041's bonus-branch Reply now
-           plays msg 683 directly instead of concatenating mstr(680)+mstr(683) (msg 683's text
-           covers the full merged line, tag bgjes68). The non-bonus branch (Reply(680), tag
-           bgjes67) was never part of that bug and is unchanged.
+           (VOCK) Added headers/talking_heads.h for HEAD_BGJES and the th_start_dialog_at_node/
+           th_check_forced_dialog macros. Node041's bonus-branch Reply now plays msg 683 directly
+           instead of concatenating mstr(680)+mstr(683) (msg 683's text covers the full merged
+           line, tag bgjes68). The non-bonus branch (Reply(680), tag bgjes67) was never part of
+           that bug and is unchanged.
 */
 
 /* Include Files */

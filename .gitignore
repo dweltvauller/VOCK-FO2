@@ -3,6 +3,7 @@ audio/
 pending/
 dat/
 loc/
+scripts/
 
 # Python
 __pycache__/
