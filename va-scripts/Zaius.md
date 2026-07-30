@@ -19,6 +19,7 @@
 *Baffled but not hostile — faintly pitying, a little tired.*
 
 `zaius2:` Ummm... Riiiight. Tell you what. Here's a couple of dollars. Head on down to the saloon and get yourself something to drink.
+
 `zaius3:` Can't understand you, pal. Why not head on down to the saloon? Hell, maybe Francis will arm-wrestle with you.
 
 ## Quest Introduction — Air Purifier
@@ -45,16 +46,18 @@
 *Recognizes the low-INT PC returning. Mildly exasperated.*
 
 `zaius9:` You again, eh?
+
 `zaius10:` Pal, I already gave you some money. Go bother someone else, eh?
+
 `zaius11:` Hi again. Why not go check out... Umm... The bank in town? I'm sure there are plenty people there who'd love to talk to you.
 
 ## Rejection / Quest Choice Branches
 
-`zaius12:` Well, if you ever happen to think of a way, let me know.
 *Gentle dismissal when the PC says they can't help.*
+`zaius12:` Well, if you ever happen to think of a way, let me know.
 
-`zaius13:` Really? Would you do it for me... And, more importantly, for Broken Hills?
 *Kicks off the bargaining/commitment loop.*
+`zaius13:` Really? Would you do it for me... And, more importantly, for Broken Hills?
 
 ## Challenge / Smart-Aleck Escalation
 *PC has been insulting Zaius. He turns it around — sardonic, slightly contemptuous but not fully hostile.*
@@ -104,29 +107,29 @@
 ## Return Greetings / Status-Dependent Hub
 *These play on subsequent visits — which one triggers depends on PC reputation and quest state. Record all; they're short.*
 
-`zaius23:` Hi, friend!
 *Warm / high reputation.*
+`zaius23:` Hi, friend!
 
-`zaius24:` Oh, good. It's you again.
 *Cool / low reputation.*
+`zaius24:` Oh, good. It's you again.
 
-`zaius25:` Howdy.
 *Neutral.*
+`zaius25:` Howdy.
 
-`zaius26:` Y'know, I knew those bastards Franc, Manson, Jacob, and Aileen had it out for us. Well done! So...
 *After the PC exposed the conspiracy and eliminated the traitors.*
+`zaius26:` Y'know, I knew those bastards Franc, Manson, Jacob, and Aileen had it out for us. Well done! So...
 
-`zaius27:` I hope you've given some thought to giving the ore back to the town... So...
 *After the PC took the town's ore instead of returning it.*
+`zaius27:` I hope you've given some thought to giving the ore back to the town... So...
 
-`zaius28:` Thanks for selling the ore. It's not like we couldn't use it or anything. So...
 *After the PC sold the ore — negative outcome.*
+`zaius28:` Thanks for selling the ore. It's not like we couldn't use it or anything. So...
 
-`zaius29:` Thanks so much for returning that ore. You don't know how hard we work for that stuff.
 *After the PC returned the ore — positive outcome.*
+`zaius29:` Thanks so much for returning that ore. You don't know how hard we work for that stuff.
 
-`zaius30:` What do you want now?
 *Generic impatient re-greeting.*
+`zaius30:` What do you want now?
 
 ## Quest Re-Prompt
 *Asks if the PC has reconsidered. Slightly hopeful.*
@@ -146,11 +149,11 @@
 ## Quest Completion Rewards
 *The mine is fixed. Genuinely grateful. Warm, relieved.*
 
-`zaius35:` You've fixed it? Excellent! Say, I know you were doing this for free, but... I couldn't let you do that. So me and the guys got together and got you this. It's a combat shotgun. Good luck. And thank you.
 *Free-run completion.*
+`zaius35:` You've fixed it? Excellent! Say, I know you were doing this for free, but... I couldn't let you do that. So me and the guys got together and got you this. It's a combat shotgun. Good luck. And thank you.
 
-`zaius36:` You've fixed it? Excellent! As agreed, here's the remainder of what we owe you. Thank you again.
 *Agreed retainer completion.*
+`zaius36:` You've fixed it? Excellent! As agreed, here's the remainder of what we owe you. Thank you again.
 
 ## Impatient Urging
 *PC said they're making progress but Zaius pushes back. Firm, anxious.*
@@ -161,6 +164,7 @@
 *Holds his ground, controlled anger. `zaius39` is the male-PC version, `zaius47` the female-PC version ("Mrs." instead of "Mr.") — otherwise identical, record both.*
 
 `zaius39:` Well, I'm sorry, Mr. High and Mighty, but I think that the town's survival might be a little more important. Hurry it up, will you?
+
 `zaius47:` Well, I'm sorry, Mrs. High and Mighty, but I think that the town's survival might be a little more important. Hurry it up, will you?
 
 ## Hostile Confrontation
@@ -191,15 +195,15 @@
 ## Secret Tunnel / Conspiracy Quest
 *Late-game branch. The PC found a note implicating Zaius in deaths in the tunnels beneath Broken Hills. Defensive but not guilty — he's been trying to contain a conspiracy, not run one.*
 
-`zaius48:` Hey, I just received the note. Go talk to Francis about it, all right? He's the one who wrote it.
 *Initial confrontation.*
+`zaius48:` Hey, I just received the note. Go talk to Francis about it, all right? He's the one who wrote it.
 
-`zaius49:` No! We're just protecting ourselves from the conspiracy. Marcus believes in law and evidence, and even though he knows these people are dangerous, he doesn't know who they are- and he's too honorable to plant evidence. My part is keeping Francis restrained from all-out revenge.
 *Explaining himself.*
+`zaius49:` No! We're just protecting ourselves from the conspiracy. Marcus believes in law and evidence, and even though he knows these people are dangerous, he doesn't know who they are- and he's too honorable to plant evidence. My part is keeping Francis restrained from all-out revenge.
 
-`zaius50:` I knew Francis couldn't handle exposure. He knew the risks of what he did, but I guess he didn't figure on ever being caught. He'll be all right eventually. I hope the same will be true of Broken Hills.
 *Resolution / aftermath.*
+`zaius50:` I knew Francis couldn't handle exposure. He knew the risks of what he did, but I guess he didn't figure on ever being caught. He'll be all right eventually. I hope the same will be true of Broken Hills.
 
 ---
 
-*End of script — 45 lines total (`zaius1`–`zaius50`, numbering not sequential). Tag numbers follow message-ID order, not this document's topical grouping.*
+*End of script*

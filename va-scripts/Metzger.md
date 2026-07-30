@@ -18,46 +18,67 @@
 *Metzger greets the PC the first time they approach. Line varies by PC sex and INT.*
 
 `metzg2:` What the fuck do you want? This is the Slaver's Guild, not some safe house for you fucking jetheads.
+
 `metzg3:` What the hell do you want, you ugly bitch? This is the Slaver's Guild, not some fucking whorehouse.
+
 `metzg4:` What the hell do you want, bitch? This is the Slaver's Guild, not some fucking whorehouse.
 
 ## Repeat Greetings
 *Subsequent conversations, cycling through random variants.*
 
 `metzg5:` You're starting to piss me off. What the hell do you want now?
+
 `metzg6:` Now what, damn it?
+
 `metzg7:` What?
+
 `metzg8:` Oh, you better make it quick.
+
 `metzg9:` You here to work for a fucking change?
+
 `metzg10:` I'm starting to get used to your ugly mug. So... Are you here for a reason or what?
+
 `metzg11:` Do I look like your fucking dad or something? I sure as hell hope not. Now spit it out, what do you want?
+
 `metzg12:` Oh, look who's here. You think you're special or something? Speak up or get the fuck out.
+
 `metzg13:` What do you want now, slaver?
+
 `metzg14:` You just going to stand there or are you going to say something?
+
 `metzg15:` Speak up. I don't have all day for this crap.
 
 ## Selling an NPC
 *PC says they have someone to sell. Metzger asks who.*
 
 `metzg16:` Oh, and 'who' would that be? I hope you don't plan on seeing this person again...
+
 `metzg17:` You don't have anyone that I'm interested in. I'm only interested in people - normal ones, that is.
+
 `metzg18:` You fucking moron, what do you think I am, a fucking store or something? If you get a slave you'd like to sell, let me know. If you want to sell something else, go to a fucking store.
 
 ## Before PC Responses
 *Short acknowledgment lines before the PC speaks. Random selection.*
 
 `metzg19:` Go ahead.
+
 `metzg20:` Yeah?
+
 `metzg21:` I'm not your fucking servant, so hurry it up.
+
 `metzg22:` What is it? I don't have all day.
+
 `metzg23:` Shoot.
+
 `metzg24:` Maybe.
 
 ## Want to Join the Guild?
 *PC asks to join the Slaver's Guild.*
 
 `metzg25:` You think you can cut it? I don't take in just anyone... What the hell. If you fuck up, I'll sell you off. You'll have to get a tattoo on your forehead identifying you as a slaver to everyone. It's permanent, so no second thoughts.
+
 `metzg26:` So, our delicate little flower girl returns... You changed your mind then? Going to get that tat after all?
+
 `metzg27:` Yeah, you might do... You don't need much in the way of brains to go on a run. If you fuck up, I'll just sell you off. If you think you can cut it you'll have to get a tattoo on your forehead identifying you to everyone as slaver.
 
 ## Tell Me About the Guild
@@ -79,11 +100,17 @@
 *PC asks about going on a slave run.*
 
 `metzg31:` Two of my men will get you fairly close to your targets. Your pay will be based on the number of the slaves you return, but watch each other's backs. If anyone gets killed, your pay will be severely cut.
+
 `metzg32:` Damn, we're all farmed out. Have to wait for some primitives to move back into the area. Maybe we should start breeding them.
+
 `metzg33:` Sorry, you're just not working out. Too many losses and this is a business. I need to make money, not lose it.
+
 `metzg34:` All right. They're ready.
+
 `metzg35:` Good, you can leave now.
+
 `metzg36:` Get a move on it then.
+
 `metzg37:` Good. See me when you're done.
 
 ## Slave Run Instructions, Part 1
@@ -98,16 +125,22 @@
 *Metzger evaluates and names a price for the NPC the PC wants to sell.*
 
 `metzg40:` Ah, yeah. She's pretty nice. I'll give you this much for her. How about it?
+
 `metzg41:` He's okay. I could probably take him off your hands for, oh, say... This much?
+
 `metzg42:` You fucking idiot. What the hell makes you think I want that moron back? It took him forever to fix a damn radio! A radio! You're stuck with him. I don't want him breaking anything else around here.
+
 `metzg43:` I don't know, this one's pretty skinny... But a smart one? That might be worth something. Here.
+
 `metzg44:` This one looks like he could really put up a fight. Hmm...
+
 `metzg45:` Another primitive. This one's a freak show. Still, he looks strong and that look might fetch something extra. Deal?
 
 ## NPC Sold
 *Metzger orders his men to take the sold NPC away.*
 
 `metzg46:` All right, boys, put him in the pens.
+
 `metzg47:` All right, boys, put her in the pens.
 
 ## PC Turns Down Offer
@@ -138,14 +171,18 @@
 *PC asks about a merchant; Metzger realizes they mean Vic.*
 
 `metzg53:` What the fuck are you asking me for? Do I look like some kind of fucking... Oh, wait. You're probably looking for Vic?
+
 `metzg54:` He's the one that 'specializes' in vault technology, or so he says. He's my property now. He's not going anywhere.
 
 ## Radio Fix Story
 *Metzger explains why he's holding Vic.*
 
 `metzg55:` That little fuck - he sold me a radio that he said would be able to pick up some transmissions. It didn't. I caught his ass trying to sneak out of town before I found out. Bad mistake. No one fucks with me. He's lucky to be alive.
+
 `metzg56:` Like I said. He needs to fix something first. After that we'll see.
+
 `metzg57:` Well he's finally gotten that damn radio to work, but it doesn't mean I'm going to let him off that easy.
+
 `metzg58:` He still tried to screw me over.
 
 ## See Vic Is Okay
@@ -157,12 +194,14 @@
 *PC asks what kind of transmissions the radio is supposed to pick up.*
 
 `metzg60:` The Enclave and New... Hey, what the hell you care for? It's business. I need to be sure no one's trying to fuck me over. That's all you need to know.
+
 `metzg61:` Mind your own business.
 
 ## Pay for Vic
 *Metzger names a price for Vic's freedom.*
 
 `metzg62:` Sure, but it'll cost you.
+
 `metzg63:` Like I said...
 
 ## Vic Bought
@@ -173,6 +212,7 @@
 *Female PC offers sex for a discount.*
 
 `metzg65:` Oh, yes. We can work everything out nice and smooth... I'll give you half off if you make it worth my while...
+
 `metzg66:` You had best stop teasing me, girly. I'm not much with patience.
 
 ## Good to Me
@@ -183,27 +223,44 @@
 *Metzger pays the PC after a slave run. Where the original script concatenates the PC's name, it has been replaced with "slaver" per production direction.*
 
 `metzg68:` Pretty fucking good job, slaver.
+
 `metzg69:` You kicked some serious ass. Keep it up.
+
 `metzg70:` Good job out there.
+
 `metzg71:` Here's your money, slaver.
+
 `metzg72:` That isn't something to laugh at, but you can't make a lot more than that.
+
 `metzg73:` Well it's around this much. Pretty good job.
+
 `metzg74:` It wasn't that tough, now was it? Next time no mistakes. Here.
+
 `metzg75:` Not bad.
+
 `metzg76:` Come on! You can do better than that.
+
 `metzg77:` Remember, watch each other's backs and only kill the hostile slaves. Take this.
+
 `metzg78:` Is this all?! That's fucking pitiful! Shape up or I'll kick your ass out.
+
 `metzg79:` You want to make any money or not? You're pissing me off. How fucking hard can it be? Now take this and get out.
+
 `metzg80:` What the hell was your problem? You don't earn shit this time. We're in this to make money, not dick around.
 
 ## Post-Sex Float
 *Metzger's reaction after the female PC spends time with him. Delivered as ambient text, not dialog.*
 
 `metzg81:` Damn bitch, was that your first time? There's no way that was not your first time.
+
 `metzg82:` Damn girl, was that your first time?
+
 `metzg83:` Pretty good, I guess.
+
 `metzg84:` Very nice, maybe we can do it again sometime.
+
 `metzg85:` Damn! That was... Very well spent money.
+
 `metzg86:` Damn! You were the best piece of ass I've ever had, and I've had a lot.
 
 ## Abandoned Slave Run
@@ -228,6 +285,7 @@
 *Metzger signals his men to attack.*
 
 `metzg91:` Oh, don't worry. I'm sure I can find it in my heart to pay - I mean repay you. Men, it's payday.
+
 `metzg92:` Oh, don't worry. I'm sure I can find it in my heart to pay - I mean repay you. Men, take this bitch down.
 
 ## Smart PC Hostile Run
@@ -287,4 +345,4 @@
 
 ---
 
-*End of script — 105 lines total (`metzg1`–`metzg105`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

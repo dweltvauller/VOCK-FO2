@@ -14,6 +14,7 @@
 *Default when reaction is bad from the start.*
 
 `buck1:` You just better push off, or my brother and I are going to pound your little head into jam.
+
 `buck2:` Just get out before we smash you flat and turn you into drymeat.
 
 ## Standard Greeting
@@ -21,7 +22,9 @@
 *Three variants depending on reputation and whether you've already asked about work this visit.*
 
 `buck3:` What do you want to know from us?
+
 `buck4:` I don't think we need to tell you anything. What the heck do you want, anyway?
+
 `buck5:` So, what's the little wimp want from us, anyway?
 
 ## Angered — General Warning
@@ -53,6 +56,7 @@
 *buck12 if the reward's already been paid out, buck13 if not.*
 
 `buck12:` Back again, huh? Well, what can we help you with, business partner?
+
 `buck13:` Hey there, pal. That sure was a sweet job we pulled on that dumb-ass Torr, huh? Let me get your cut of the action.
 
 ## Paying Out the Reward
@@ -64,20 +68,30 @@
 *buck15 before 6 PM, buck16 after — buck16 has an extra "Ready to go?" tacked on the end.*
 
 `buck15:` OK, here's the deal. We need some help in, uh, liberating some brahmin from that idiot Torr. You shouldn't have trouble with that. Just talk him out of them. What do you say?
+
 `buck16:` OK, here's the deal. We need some help in, uh, liberating some brahmin from that idiot Torr. You shouldn't have trouble with that. Just talk him out of them. What do you say? Ready to go?
 
 ## Introducing Himself
 *One plays at random each time this comes up — five variants each for Chuck and Buck (same actor, no differentiation needed). buck25/buck26 are a bit where he claims to be "Big Nose Sally Dunton" (their mother, see Sally Dunton's own script) as a jab at the PC before circling back to his real name.*
 
 `buck17:` I'm Chuck Dunton. What are you? Dumb?
+
 `buck18:` I'm Buck Dunton. What are you? Dumb?
+
 `buck19:` Do I look especially ugly? I'm Chuck Dunton.
+
 `buck20:` Do I look especially ugly? I'm Buck Dunton.
+
 `buck21:` Are you slow in the head? I'm Chuck Dunton.
+
 `buck22:` Are you slow in the head? I'm Buck Dunton.
+
 `buck23:` You just can't get it straight. Damn simpleton tribals. I'm Chuck, you dumb-ass.
+
 `buck24:` You just can't get it straight. Damn simpleton tribals. I'm Buck, you dumb-ass.
+
 `buck25:` I'm Big Nose Sally Dunton. Do you like my dress? I'm Chuck Dunton, you stupid tribal.
+
 `buck26:` I'm Big Nose Sally Dunton. Do you like my dress? I'm Buck Dunton, you stupid tribal.
 
 ## Warning to Keep Quiet
@@ -97,13 +111,21 @@
 *Several variants depending on whether you've beaten/lost to him before, your strength, and reputation with the Duntons.*
 
 `buck30:` Well, if it isn't our burly-armed chum.
+
 `buck31:` Hey there. How's your arm coming? Ready to go again?
+
 `buck32:` Hey there, you little squirt. What are you doing in our bar? You have to prove yourself to the Duntons by arm-wrestling me before we'll let you stay. (ha ha ha)
+
 `buck33:` You don't look so darn tough. Why don't you arm-wrestle me, Chuck Dunton, for the right to drink in our bar?
+
 `buck34:` You don't look so darn tough. Why don't you arm-wrestle me, Buck Dunton, for the right to drink in our bar?
+
 `buck35:` Hey there, goody-two-shoes. You've gotta earn your admittance to our bar. You've gotta arm-wrestle me, Chuck Dunton.
+
 `buck36:` Hey there, goody-two-shoes. You've gotta earn your admittance to our bar. You've gotta arm-wrestle me, Buck Dunton.
+
 `buck37:` Hey, looks like we've got ourselves a contender here. You've gotta arm-wrestle me, Chuck Dunton, if you want to drink in here.
+
 `buck38:` Hey, looks like we've got ourselves a contender here. You've gotta arm-wrestle me, Buck Dunton, if you want to drink in here.
 
 ## Arm-Wrestling — Won by PC
@@ -115,6 +137,7 @@
 *buck40 the first time, buck41 on a repeat loss.*
 
 `buck40:` You're lucky I didn't snap your little arm like a dried twig. (Hyuk, hyk, hyuk) Well, I guess there's still no challenge here in town.
+
 `buck41:` Haven't you had enough abuse for one evening?
 
 ## Declining to Arm-Wrestle
@@ -134,6 +157,7 @@
 *buck45 the first time you're offered drymeat, buck46 on repeat visits.*
 
 `buck45:` Hello there. You here to barter for some of our World Famous Dunton's Drymeat?
+
 `buck46:` Well? You here to buy some drymeat or what?
 
 ## Caught Noticing the Mismatched Brahmin Brands
@@ -145,12 +169,19 @@
 *buck48 is the first pitch; one of buck49–buck55 plays at random on repeat asks.*
 
 `buck48:` Well, our drymeat is an incredible blend of eleven herbs and spices. Let me tell you, it's finger-lickin' good. Animals love it, too. They'll chase you from all over to get some. Must be that rotting smell.
+
 `buck49:` There's nothing else like it. Anywhere. It's you-neek. And most people are happy it's like that.
+
 `buck50:` It's PEOPLE! Hyuk, hyuk, hyuk, just wanted to see your face when I said that. Heck, it's only part people. Hyuk, hyuk.
+
 `buck51:` It's not like anything that most people would eat. It's different. Not better, just different.
+
 `buck52:` No cruelty to animals involved here. This is all found meat. Sometimes it takes us a while to find it, but usually we can home in on the stink.
+
 `buck53:` After a long day in the brahmin pen, we get some choice boot scrapings to flavor it with.
+
 `buck54:` Well, we've found that a sauce made by us personally, if ya' know what I mean, gives it that down-home taste.
+
 `buck55:` It's made from beef aged over six months and tenderized by the choicest horsefly maggots.
 
 ## Arriving at the Pasture — Offering the Job
@@ -158,6 +189,7 @@
 *buck56 if you've already turned them down once before, buck57 the first time you're asked.*
 
 `buck56:` You here because you changed your mind? You want to help save those poor little brahmin from Torr?
+
 `buck57:` What the heck are you doing here? You here to help us or not? We might have a job for you if you're interested.
 
 ## Arriving at the Pasture — Already Agreed to Help
@@ -173,6 +205,7 @@
 *buck60 if Torr's already on the map, buck61 if he's not yet.*
 
 `buck60:` Here's what's happening. You need to get Torr out of here for a while. You can talk to him or knock him unconscious. But don't kill him or you'll get people all riled up. While you do that, we'll get the brahmin. Meet us back at our shop tomorrow to pick up your reward.
+
 `buck61:` When Torr shows up, we need you to get him out of here for a while. You can talk to him or knock him unconscious. But don't kill him or you'll get people all riled up. While you do that, we'll get the brahmin. Meet us back at our shop tomorrow to pick up your reward.
 
 ## Rattled by the Player's Warning
@@ -184,6 +217,7 @@
 *buck63 if Torr's on the map, buck64 if not.*
 
 `buck63:` Nobody's watching us. We're real careful about that. You're just yellow, aren't you? Frigging coward. Now get back to your job and get rid of that idiot Torr!
+
 `buck64:` Nobody's watching us. We're real careful about that. You're just yellow, aren't you? Frigging coward. When that Dumb-ass Torr gets here, you just better get rid of him.
 
 ## Explaining Away the Radscorpion Parts
@@ -198,6 +232,7 @@
 *buck67 (Chuck) / buck68 (Buck).*
 
 `buck67:` Hello there, tribal. I'm Chuck Dunton.
+
 `buck68:` Hello there, tribal. I'm Buck Dunton.
 
 ## Mocking a Low-IQ PC
@@ -221,6 +256,7 @@
 *buck73 if he decides to fight instead, buck74 if he backs down.*
 
 `buck73:` [hyuk, hyuk, hyuk] Yeah right, tribal. I think it's about time we teach you what happens to nosy tribals 'round here.
+
 `buck74:` Alright Tribal, you win this time. We'll stop, now just leave us alone.
 
 ## Grudging Compliance
@@ -243,4 +279,4 @@
 
 ---
 
-*End of script — 78 lines total (`buck1`–`buck78`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

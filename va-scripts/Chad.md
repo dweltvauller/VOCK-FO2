@@ -12,6 +12,7 @@
 ## Standard Greeting
 
 `chad1:` Howdy, friend! What can I do for you?
+
 `chad2:` More questions? I'll see what I can do for answers.
 
 ## Cold Brush-Off
@@ -23,12 +24,15 @@
 *Short, angry barks once things have turned hostile.*
 
 `chad24:` You'll pay for this someday, you putz.
+
 `chad25:` Get out of my sight, you jerk.
 
 ## Introducing Himself
 
 `chad4:` I'm Chad.
+
 `chad5:` Look, I'm very busy. Please go find someone else to bother.
+
 `chad6:` I'm the caravan master for the city. I take care of the business on the other end of the trade routes. These days, I'm focusing primarily on Gecko.
 
 ## Telling You About Broken Hills
@@ -38,11 +42,13 @@
 ## Marcus's Suspicions
 
 `chad8:` Like what?
+
 `chad9:` Look, I don't know anything about that, and I sure as hell don't like it when people accuse me of things. Now I suggest you leave.
 
 ## About the Caravan Job
 
 `chad10:` Talk to the Bill. He'll help you out.
+
 `chad11:` Yeah, it is. You wouldn't think it, but I get to travel and see the world... and I feel I contribute to the town here. It's a good life.
 
 ## Mocking a Low-Intelligence PC
@@ -54,6 +60,7 @@
 *One plays at random.*
 
 `chad26:` You really cocked up that caravan, my friend. So much for your cash.
+
 `chad27:` You surely screwed the pooch on that caravan, my friend. Good luck ever getting another from Broken Hills.
 
 ## Caravan Outcome — Success
@@ -69,7 +76,9 @@
 *One plays at random while escorting a caravan through the desert.*
 
 `chad30:` Keep your eyes peeled.
+
 `chad31:` I'll watch your back.
+
 `chad32:` Don't let the bastards sneak up on you.
 
 ## Random Encounter Cleared
@@ -80,12 +89,14 @@
 ## Hostile — Confronted Outright
 
 `chad13:` I don't know what yer talking about. I suggest you drop this matter before you start to piss people off. Now get outta here.
+
 `chad14:` Wrong answer. Looks like you picked the wrong guy to mess with.
 
 ## Bribe — Caught and Buying Silence
 *Two recordings of the same beat: `chad15` plays if the PC hasn't already recovered his incriminating briefcase, `chad23` if they have (note the added "you hand him his briefcase" line).*
 
 `chad15:` Ah dammit, I knew this wouldn't last forever. [Looks around and lowers his voice.] Alright, listen. Keep your mouth shut about this little matter. Here's $1000 to keep you quiet. [He hands you the money.] Now, if you'll excuse me, I have to get going.
+
 `chad23:` Ah dammit I knew this wouldn't last forever. (Looks around and lowers his voice.) Alright listen. Keep your mouth shut about this little matter. Here's $1000 to keep you quiet. [He hands you the money and you hand him his briefcase.] Now if you excuse me I have to get going.
 
 ## Calling for Help
@@ -97,11 +108,17 @@
 *Player sneaks into Chad's house at night and catches him with the caravan money. Escalates from startled, to threatening, to a desperate confession.*
 
 `chad16:` What the!? Who the hell are you?
+
 `chad17:` Yeah and I'm Saint Nick. Now who the fuck are you and why are you in my house?
+
 `chad18:` Listen, I don't give a flying fuck about any of your rambling bullshit. You're the one who's been snooping around, asking questions about the missing caravan money.
+
 `chad19:` Oh yeah? Let me help. The documents you're looking for are in a briefcase that's locked away in the bottom drawer of that dresser over there. But you're never gonna touch it, 'cause I'm gonna kill you, you fuckin' do-gooder. If it weren't for you, I coulda kept skimming off the caravan runs for another couple months. But no, you had to go an' meddle in affairs that aren't any of your fuckin' concern. So now I gotta flee town, but at least I'll have the pleasure of leaving your corpse behind.
+
 `chad20:` You think I'm stupid? That big ugly prick would lock me up in a second. No, I'm afraid someone's certainly going to die here. And it's not gonna be me!
+
 `chad21:` Oh really?...I thought I recognized you. Oh yeah? Let me help. The documents you're looking for are in a briefcase that's locked away in the bottom drawer of that dresser over there. But you're never gonna touch it, 'cause I'm gonna kill you, you fuckin' do-gooder. If it weren't for you, I coulda kept skimming off the caravan runs for another couple months. But no, you had to go an' meddle in affairs that aren't any of your fuckin' concern. So now I gotta flee town, but at least I'll have the pleasure of leaving your corpse behind.
+
 `chad22:` Alright, Alright. I admit to everything. I don't want to die for this. Tell Marcus I'll come peacefully.
 
 ## Arrested
@@ -110,4 +127,4 @@
 
 ---
 
-*End of script — 35 lines total (`chad1`–`chad35`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

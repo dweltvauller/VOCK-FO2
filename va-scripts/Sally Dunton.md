@@ -12,7 +12,9 @@
 ## Low-Intelligence PC — First Meeting
 
 `sally1:` Hello there, my name's Sally Dunton. Hmm, did you catch that?
+
 `sally2:` Well, that's a right nice try for an idjit. But I ain't having none of your kind in here. Now, git out. Shoo, shoo.
+
 `sally3:` I know you're a tribal and all, but this is a bathhouse, not an outhouse. Git out afore I have you thrown out!
 
 ## Turned Away — Bad Reputation With the Duntons
@@ -122,4 +124,4 @@
 
 ---
 
-*End of script — 28 lines total (`sally1`–`sally28`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

@@ -48,6 +48,7 @@
 *Passing floats said when the PC walks near Ann and the overall village quest hasn't progressed past a certain point. One of the two plays at random.*
 
 `annvv8:` Did Vault City send you?
+
 `annvv9:` We have the right to live here, you know.
 
 ## Ambient Float — Food Quest Failed
@@ -64,6 +65,7 @@
 *Later-stage passing floats once the broader village quest has progressed (guns delivered). One of the two plays at random.*
 
 `annvv12:` Thanks so much!
+
 `annvv13:` Finally we are safe.
 
 ## Ambient Float — Village Fully Settled
@@ -88,4 +90,4 @@
 
 ---
 
-*End of script — 17 lines total (`annvv1`–`annvv17`, `annvv8`–`annvv14` are floats, not full-conversation lines). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

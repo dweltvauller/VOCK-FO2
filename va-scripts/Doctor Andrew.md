@@ -13,9 +13,13 @@
 *Andrew's opening line on approach, chosen by how hurt the PC looks. `andr5` always follows whichever severity line plays.*
 
 `andr1:` Looks like you've seen some fighting, friend. You here to get patched up?
+
 `andr2:` Whoa... looks like you've seen some serious action, friend. You here to get patched up?
+
 `andr3:` Whoa... looks like you've been in some heavy fighting, friend. You here to get patched up?
+
 `andr4:` Holy...! You're bleeding all over the floor! You here to get patched up?
+
 `andr5:` You here to get patched up?
 
 ## Healing Cost Quote — Auto-Doc Fixed
@@ -32,6 +36,7 @@
 *PC pays (full price or successful haggle) and agrees to be healed. `andr8` only plays if the PC haggled the price down.*
 
 `andr8:` Well... all right. That sounds fair.
+
 `andr9:` Let's get to it, then. I'll just hook you up to the ol' Doctor here... slip your arms into the slots there, and I'll tighten the braces and secure the clamps...
 
 ## Healing Successful — Self
@@ -43,12 +48,14 @@
 *PC has full HP but rides the Auto-Doc anyway. Andrew warns there's a one-time HP bonus available, with a catch.*
 
 `andr11:` Uh, well now, that might not be the safest thing for you, friend. Seems like you already took a few trips in the ol' Doctor from the way you talk. But if you want to...
+
 `andr12:` Uh... how you feel? Any better? Any worse?
 
 ## Repeat Ride — Outcome
 *PC rides again after already taking the bonus or penalty ride. `andr56` (see Repeat Autodoc Ride After Toe Removal) plays instead of `andr13` if returning from the mutated-toe path.*
 
 `andr13:` Uh, well, I warned you...
+
 `andr14:` Uh-oh. Looks like the ol' Doctor took a pound of flesh this time.
 
 ## Refuses Robobrain
@@ -80,6 +87,7 @@
 *PC asks about "the ol' Doctor" specifically. `andr20` plays if it's currently broken; `andr21` plays instead if the PC already repaired it. (The old shared intro line for this node was removed — each of these two now plays correctly on its own, matching the actual repair state.)*
 
 `andr20:` It can be a little ornery sometimes, but mostly it does its job. Mostly.
+
 `andr21:` Been running a lot smoother lately, which is good. Cuts down on repeat visitors.
 
 ## Thanks for the Repair
@@ -96,6 +104,7 @@
 *Falls back to the main topic list. `andr24` plays if returning from the repair conversation; `andr25` is the default "what do you need" prompt.*
 
 `andr24:` So... was there something else I could help you with?
+
 `andr25:` What can I help you with?
 
 ## Combat Implants — Introduced
@@ -117,6 +126,7 @@
 *PC asks which implant. `andr29` plays the first time; `andr30` (shorter) plays on repeat visits to this menu.*
 
 `andr29:` Depends what you want. You want low impact, high impact, low thermal, or high thermal? Each one's got its price tag.
+
 `andr30:` Which one? Low impact, high impact, low thermal, or high thermal?
 
 ## Dermal Impact — Low Quote
@@ -171,20 +181,25 @@
 *PC pays for any implant, but the Auto-Doc is broken and the surgery is aborted before it starts. `andr43` only plays if the PC haggled the price.*
 
 `andr43:` Well... that sounds fair.
+
 `andr44:` All right, let me just bolt you into the ol' Doctor here... hope the anesthesia reservoir ain't clogged again... maybe you better bite down on this piece of brahmin hide just in case.
 
 ## Implant Surgery — Result
 *Surgery completes (successfully or not, depending on which implant/branch led here). Reuses `andr43`/`andr44` from the section above if this is a repeat of that same acceptance beat. Exactly one of the four result lines below plays, matching whichever implant was purchased.*
 
 `andr46:` Well, they're in, I guess. Uh, about the swelling and soreness, I'm pretty sure that both are just temporary side effects. Oh, that stabbing sensation you feel when you move your arms and legs should fade in a few weeks.
+
 `andr47:` Can you hear me? Whew. I didn't think there was any room left for those impact plates, but I was able to pry a lot of muscle tissue and cartilage out of the way. They're in a jar over there, if you want a souvenir.
+
 `andr48:` Mercy... that was trial and error surgery if I ever saw it. I ended up having to amputate some of your nerve endings... that's the burning and itching sensation you're feeling right now. It'll probably fade in a few weeks.
+
 `andr49:` I hope to heaven you can hear me right now. Look, when you regain feeling in your extremities, you'll feel an incredible itching sensation all over. Don't scratch! If you do, those pus-crusts over the drainage incisions'll burst and leave scars. Give 'em a few weeks to heal, okay?
 
 ## Healing Failed — Self
 *PC pays for a regular heal, but the broken Auto-Doc fails instead. Reuses `andr8` (see Healing Accepted — Self) if the PC haggled.*
 
 `andr50:` Let's get to it, then. I'll just hook up the ol' Doctor here... Let me tighten the braces and secure the clamps...
+
 `andr51:` Hmmph. Looks like the ol' Doctor's being stubborn again. Piece of junk... still, I was glad I was able to pop the clamps before it started the exploratory surgery routine. Maybe it'll work better next time.
 
 ## Threatened Over a Failed Heal
@@ -229,4 +244,4 @@
 
 ---
 
-*End of script — 57 lines total (`andr1`–`andr57`, tag numbers not necessarily sequential to reading order above)*
+*End of script*

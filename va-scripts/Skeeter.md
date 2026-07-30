@@ -12,35 +12,41 @@
 ## Floats & Greetings
 
 `skeet1:` Just don't touch anything -- you might hurt yourself.
+
 `skeet2:` I thought tribals were just unsophisticated.
+
 `skeet3:` You can watch. You might learn something, but I doubt it.
+
 `skeet4:` Well, ain't you something else.
+
 `skeet5:` Are you just pretending to be dumb, or are you really that stupid?
 
 ## Main Introductions
 
 `skeet13:` Hello there, I'm Skeeter. I sort of put things together here.
+
 `skeet14:` Hello there. Whatcha lookin' fer?
+
 `skeet15:` Whaddya need?
 
 ## Explaining the Fuel Cell Controller
 
-`skeet6:` Funny you should ask that. Ya see, cars use replaceable fuel cells, or batteries, for fuel. What usually broke down was the Fuel Cell Controller. Most amateur mechanics jist assume that it's the battery itself. But you know what ass-uming things does, dontcha?
 *Explaining car repair basics.*
+`skeet6:` Funny you should ask that. Ya see, cars use replaceable fuel cells, or batteries, for fuel. What usually broke down was the Fuel Cell Controller. Most amateur mechanics jist assume that it's the battery itself. But you know what ass-uming things does, dontcha?
 
-`skeet7:` Well, assuming something makes an ass out of you and me. Get it? That's still a good one, ain't it? Heh heh! I haven't used that for years.
 *Delivering the old joke.*
+`skeet7:` Well, assuming something makes an ass out of you and me. Get it? That's still a good one, ain't it? Heh heh! I haven't used that for years.
 
-`skeet8:` Yep. Sure do. Got it right here. Jist waitin' fer a car to be put into. You got a car?
 *Confirms he has a Fuel Cell Controller.*
+`skeet8:` Yep. Sure do. Got it right here. Jist waitin' fer a car to be put into. You got a car?
 
 ## The Plasma Regulator Trade
 
-`skeet9:` Well, money's nice, but I need sumthin' else right now. Sumthin' I cain't get for myself.
 *Turns down cash, names an alternate need.*
+`skeet9:` Well, money's nice, but I need sumthin' else right now. Sumthin' I cain't get for myself.
 
-`skeet10:` Great. You've got my Plasma Regulator. Thanks. Now I owe you some free work. What did you want me to work on? I'll tell you how much it would've cost, but this one's already paid for.
 *PC delivers the Plasma Regulator.*
+`skeet10:` Great. You've got my Plasma Regulator. Thanks. Now I owe you some free work. What did you want me to work on? I'll tell you how much it would've cost, but this one's already paid for.
 
 ## The Atomic Reactor Repair
 
@@ -53,49 +59,57 @@
 ## General Inquiries — Tinkering & the GECK
 
 `skeet16:` What do ya want me to look at?
+
 `skeet17:` Ready for me to take a gander at something else? What do ya want me to look at now?
 
 `skeet18:` Hmm, I can attach this scope you've got to that rifle of yours.
-`skeet19:` Well, I can attach this scope to one of your rifles. Which one do you want me to attach it to?
+
 *Alternate — PC has more than one rifle.*
+`skeet19:` Well, I can attach this scope to one of your rifles. Which one do you want me to attach it to?
 
-`skeet20:` Hmm, I thought so. Well, ya see, I cain't do nuthin' with it. (He hands you the [item] back.) You need to have sumthin' else for me to do sumthin' with it.
 *Item doesn't match anything he can combine it with.*
+`skeet20:` Hmm, I thought so. Well, ya see, I cain't do nuthin' with it. (He hands you the [item] back.) You need to have sumthin' else for me to do sumthin' with it.
 
-`skeet21:` There ya go. I think that ought to work for you all right. Anything else?
 *Successful combination.*
+`skeet21:` There ya go. I think that ought to work for you all right. Anything else?
 
-`skeet22:` Hmm, you don't have enough money to cover the cost of working on that. Got sumthin' else ya want me ta look at?
 *PC can't afford the job.*
+`skeet22:` Hmm, you don't have enough money to cover the cost of working on that. Got sumthin' else ya want me ta look at?
 
-`skeet23:` Mostly I jist sorta tinker with things. Take 'em apart an try to put 'em all back t'gether... Mostly. Make 'em work better... Sometimes. Keepin' myself outta trouble. Know what I mean?
 *Asked what he does here.*
+`skeet23:` Mostly I jist sorta tinker with things. Take 'em apart an try to put 'em all back t'gether... Mostly. Make 'em work better... Sometimes. Keepin' myself outta trouble. Know what I mean?
 
 `skeet24:` You're lookin' fer a GECK, huh? Well, I don't rightly know where ya might find one of them thar things. I know that Vault City prolly used ta have themselves one.
-`skeet25:` They sure did. That's how come they're so darn well off. It sure ain't 'cause they know what to do. It's 'cause the GECK done started up their crops, and got their town running when they came outta the Vault.
-*PC follows up on Vault City having a GECK.*
 
-`skeet26:` Well, lemme see here now. As I recollect, most Vaults were s'posed to have themselves a GECK. You might try lookin fer another vault somewheres.
+*PC follows up on Vault City having a GECK.*
+`skeet25:` They sure did. That's how come they're so darn well off. It sure ain't 'cause they know what to do. It's 'cause the GECK done started up their crops, and got their town running when they came outta the Vault.
+
 *PC asks who else might have an unused GECK.*
+`skeet26:` Well, lemme see here now. As I recollect, most Vaults were s'posed to have themselves a GECK. You might try lookin fer another vault somewheres.
 
 ## Negotiating Trades & Tools
 
 `skeet27:` Ta be right-honest with ya, I jist dunno. If'n I get all da parts together, I jist get sort of a feel fer how they all goes together. Know whatta mean?
+
 `skeet28:` Well, yup. But you see, it's right edu-ma-cated guesswork. That's what it is. Know whatta mean?
 
 `skeet29:` These days, good tools is harder to git than parts is. I need myself a bran' new Super Tool Kit. Snap-sumthin brand's best.
+
 `skeet30:` I reckon that the best place to go an' git that would be down in Vault City somewheres. They've got all kinds of tools, but they sure as heck wouldn't give 'em to a ghoul, no how.
+
 `skeet31:` Egg-zactly. That's the deal. One Super Tool Kit for one Fuel Cell Controller.
 
-`skeet32:` Well, now. You could do that, maybe. Then agin, you might be in fer a little surprise there. I might be tougher than you think. Then again, mebbe you'd jist be slittin' yur own throat. I kin be pretty useful puttin' items together. Always nice to know someone's able to do that, ain't it?
 *PC threatens to just kill him and take the part.*
+`skeet32:` Well, now. You could do that, maybe. Then agin, you might be in fer a little surprise there. I might be tougher than you think. Then again, mebbe you'd jist be slittin' yur own throat. I kin be pretty useful puttin' items together. Always nice to know someone's able to do that, ain't it?
 
 `skeet33:` I see that you've got a mighty fine tool kit there. Snap-off, ain't it? I'll trade you this Fuel Cell Controller for it.
+
 `skeet34:` Hey there! Yur back with my repair kit. Mmm, Snap-off -- they're the best. Ready to trade?
 
 `skeet35:` That's a mighty fine trade. You should be able to jist plug that sucker in and git your car a'workin'.
-`skeet36:` That's a mighty fine trade. You should be able to jist plug that sucker in and git your car a'workin'. You know I could do you another favor by fixin' up some of yur stuff for free, too.
+
 *Same beat, with an added free-favor offer.*
+`skeet36:` That's a mighty fine trade. You should be able to jist plug that sucker in and git your car a'workin'. You know I could do you another favor by fixin' up some of yur stuff for free, too.
 
 `skeet37:` Well, ya see, I need a darn 3-Step Plasma Transformer. An the only place I can figger to git one is from the supply room.
 
@@ -107,8 +121,8 @@
 
 `skeet40:` Harold's in the Settlement, and Festus is in the reactor control room. But you might have to kind of get the forms on the sly, if ya know what I mean.
 
-`skeet41:` Well, err, yeah. I guess so. You might ask them, but I wouldn't put your chances too high there.
 *PC realizes he means they'll have to steal the form.*
+`skeet41:` Well, err, yeah. I guess so. You might ask them, but I wouldn't put your chances too high there.
 
 `skeet42:` Didja come here to take me up on that work I owe you?
 
@@ -122,15 +136,19 @@
 
 ## Weapon Upgrades & Tinkering
 
-`skeet47:` What do ya want me to look at?
 *Weapons-specific version of the "what do you want me to look at" hub.*
+`skeet47:` What do ya want me to look at?
 
 `skeet48:` (Spots your magnum revolver.) I can rig a speed loader on that there magnum for a flat fee. (He writes on his workbench with a piece of chalk: $[cost].)
+
 `skeet49:` Hmm, that Desert Eagle would sure be a sweet rig with an expanded magazine. I can do that for a price. (He scrawls a number onto the dusty table: $[cost].)
 
 `skeet50:` (Skeeter studies your long arm, and nods slowly.)
+
 `skeet51:` I can put a nice all-weather scope on that hunting rifle for a fair price. (He chalks the cost onto his workbench: $[cost].)
+
 `skeet52:` Nothing like having an assault rifle with an expanded magazine. I can fix yours up with one for a fee. (He scrawls the number next to his vise: $[cost].)
+
 `skeet53:` That FN FAL is a good gun. Hey, I got a low-light scope for that. It's yours for a price. (He scribbles the cost onto the table with chalk: $[cost].)
 
 `skeet54:` You want that melee weapon juiced up? I can *supercharge* it for you. (He writes down the total in chalk: $[cost].)
@@ -147,12 +165,17 @@
 *Same upgrade offers as above, given for free — plays under a different quest state.*
 
 `skeet59:` (Spots your magnum revolver.) I can rig a speed loader on that there magnum for free.
+
 `skeet60:` Hmm, that Desert Eagle would sure be a sweet rig with an expanded magazine. I can do that for free.
+
 `skeet61:` I can put a nice scope all-weather on that hunting rifle for free.
+
 `skeet62:` Nothing like having an assault rifle with an expanded magazine. I can fix yours up with one for free.
+
 `skeet63:` That FN FAL is a good gun. Hey, I got a low-light scope for that. It's yours for free.
+
 `skeet64:` You want that melee weapon juiced up? I can *supercharge* it for free.
 
 ---
 
-*End of script — 64 lines total (`skeet1`–`skeet64`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*

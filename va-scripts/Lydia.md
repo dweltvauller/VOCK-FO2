@@ -18,29 +18,38 @@
 *One plays at random after the Enclave has been destroyed.*
 
 `lydia34:` Welcome! Care for a drink, Chosen One?
+
 `lydia35:` Welcome, Chosen One! Please, take a seat in the bar.
+
 `lydia36:` Please! Take a seat, rest for a while!
+
 `lydia37:` It's the Chosen One! Everybody give it up for the HERO of Fallout 2!
 
 ## Floats — Greeting a Citizen or the Captain
 *One plays at random, depending on the PC's rank.*
 
 `lydia38:` Good day, Captain.
+
 `lydia39:` Vault City prevails, Captain.
+
 `lydia40:` Good day, Citizen.
+
 `lydia41:` Vault City prevails, Citizen.
 
 ## Floats — Hostile Reaction to a Companion
 *Triggered if the PC brings a mutant or ghoul companion into the bar.*
 
 `lydia42:` A mutant! Guards! Guards!
+
 `lydia43:` A ghoul! Guards! Guards!
 
 ## Floats — Closed for the Night
 *One plays at random after hours.*
 
 `lydia44:` We're closed. Come back in the morning.
+
 `lydia45:` Sorry, last call was a while ago. Come back in the morning.
+
 `lydia46:` We're closed. Once I finish making this list of our stock, I'll be closing up.
 
 ---
@@ -53,14 +62,18 @@
 *Escalating annoyance at a low-INT PC's babbling; ends with her calling the guards and having them thrown out.*
 
 `lydia2:` Uh... so I smell. Um, thanks again for saving the world and all.
+
 `lydia3:` Look, maybe you saved the world and all, but a poet, you're not. Now cut it out.
+
 `lydia4:` Look, take these and get out of here, okay? They ought to keep your mouth busy for a while.
 
 ## Standard Greeting
 *Varies by the PC's citizenship/rank.*
 
 `lydia5:` Uh... what can I do for you, Captain?
+
 `lydia6:` What can I do for you, Citizen?
+
 `lydia7:` Yes? Can I help you?
 
 ## Low-Intelligence PC — Not a Citizen (Reported to the Guards)
@@ -76,6 +89,7 @@
 ## The Bar Menu
 
 `lydia9:` We have synthetic beers and liquor... vodka-H, tequila derivatives W and W2. Oh, and water. And brahmin milk. Beer or liquor is ten bucks, water or milk's three bucks.
+
 `lydia10:` Like...? *(repeat visit — recapping the menu)*
 
 ## Ordering the Brahmin Milk
@@ -94,12 +108,14 @@
 *Varies by citizenship status.*
 
 `lydia14:` Uh, First Citizen Lynette... you are a Citizen, aren't you?
+
 `lydia15:` First Citizen Lynette. She's in the council building up north if you need to talk to her.
 
 ## Where's the Vault?
 *Varies by citizenship status.*
 
 `lydia16:` Uh, it's the big hole in the side of the mountain to the east of here... say, you are a Citizen, aren't you?
+
 `lydia17:` It's that big hole in the mountain to the east of here. You can't miss it. You also can't get inside unless you're a Citizen, though.
 
 ## Calling Out Forged Papers
@@ -134,15 +150,20 @@
 ## Bootleg Alcohol — Opening the Deal (Non-Captain/Citizen)
 
 `lydia25:` Why? You looking for something with some more kick than these synthetic drinks?
+
 `lydia26:` That's for sure. I used to have a... well, I used to know this merchant who had a bottle of Maddog 30/30. Bitter stuff... couldn't feel my tongue afterwards, but it was refreshingly different.
+
 `lydia27:` It got drunk. Or so I heard. There were a few other "friends" here in Vault City who helped this merchant friend drink the stash. They were willing to pay a good price to have the real stuff for a change.
+
 `lydia28:` Is that so? Well, if you happened to be looking to relieve yourself of some real alcohol, then I could make it worth your while. If you could keep quiet about our deal. And get the contraband past the gate.
+
 `lydia29:` Say, a case of ten bottles of premium alcohol, and ten bottles of beer. And none of that radioactive stuff I hear comes out of Gecko. Just good old "booze," all right?
 
 ## Bootleg Alcohol — Refusing the Captain
 *Lydia won't risk the deal with the Captain of the Guard asking.*
 
 `lydia31:` No, those wasteland concoctions they call alcohol are illegal here in Vault City. I don't even want to know how they brew them. Now did you want something to drink, Captain...?
+
 `lydia32:` I wouldn't know anything about that. I only serve synthetic alcohol here. If any real alcohol were to enter Vault City, I wouldn't know anything about it.
 
 ## Delivering the Bootleg Shipment
@@ -151,4 +172,4 @@
 
 ---
 
-*End of script — 47 lines total (`lydia1`–`lydia47`). Tag numbers follow ascending message-ID order, not this document's topical grouping.*
+*End of script*
