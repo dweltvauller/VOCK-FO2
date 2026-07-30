@@ -7,8 +7,6 @@
 
 > **Direction:** Torr is a large, gentle simpleton. He speaks in broken, childlike sentences and refers to himself in the third person. To low-intelligence characters he speaks a shared pidgin; to normal characters he just babbles. Warm and earnest throughout, never mean-spirited even when scared or hurt.
 
-> Bracketed/parenthetical text is either stage direction or the "translation" of Torr's pidgin for the player — record only the actual pidgin/broken-English words Torr speaks, not the parenthetical translation.
-
 ---
 
 ## Hit Reactions
@@ -84,54 +82,83 @@
 `torr60:` Torr coming to save moo-moos!
 
 ## Event Floats
-
 *Brahmin are all safe.*
+
 `torr50:` Bugs dead. Moo-moos safe. Torr thank-you.
 
 *After being rescued, telling the PC to go.*
+
 `torr61:` Torr, thank. Torr okay now. You go.
 
 ## Rescue in the Canyon
 *Torr is trapped and calling for help.*
 
-`torr7:` Torr help! (Please help me. There's some sort of creature preventing me from escaping from this place.) *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr8:` Torr help! *(to a normal PC)*
+`torr7:` Torr help! (Please help me. There's some sort of creature preventing me from escaping from this place.)
 
-`torr9:` Squea Squea bad! Hep Torr! (Watch out for the Spirit that Walks! We can talk after you get me out of here.) *(to a low-intelligence PC, scared, urging them to watch out)*
+*To a normal PC.*
 
-`torr10:` Squea Squea! Ack! Spirit Bad! Hep Torr! Torr go now! *(to a normal PC, more expressive, panicked)*
+`torr8:` Torr help!
+
+*To a low-intelligence PC, scared, urging them to watch out.*
+
+`torr9:` Squea Squea bad! Hep Torr! (Watch out for the Spirit that Walks! We can talk after you get me out of here.)
+
+*To a normal PC, more expressive, panicked.*
+
+`torr10:` Squea Squea! Ack! Spirit Bad! Hep Torr! Torr go now!
 
 ## First Meeting in Klamath
 
-`torr11:` Me Torr. (I'm Torr. Can I help you with anything?) *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr12:` Me Torr. *(to a normal PC)*
+`torr11:` Me Torr. (I'm Torr. Can I help you with anything?)
+
+*To a normal PC.*
+
+`torr12:` Me Torr.
 
 ## Brahmin Quest
 
-`torr15:` Bugmen take moo-moos at night. Torr scared! Hep Torr? (Well, as I said, they are nocturnal in their feeding habits. I sure could use some assistance in guarding the brahmin. Will you kill any bugmen that you see near the brahmin?) *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr16:` Bugmen take moo-moos at night. Torr scared! Hep Torr? *(to a normal PC)*
+`torr15:` Bugmen take moo-moos at night. Torr scared! Hep Torr? (Well, as I said, they are nocturnal in their feeding habits. I sure could use some assistance in guarding the brahmin. Will you kill any bugmen that you see near the brahmin?)
+
+*To a normal PC.*
+
+`torr16:` Bugmen take moo-moos at night. Torr scared! Hep Torr?
 
 ## Agreeing to Help
 
-`torr51:` You hep Torr. Moo-moos field (points east of here) now yes? (smiles) (Thanks for your assistance. I can really use your help.) *(to a low-intelligence PC — happy and excited, points east)*
+*To a low-intelligence PC — happy and excited, points east.*
 
-`torr52:` You hep Torr. Moo-moos field. (points east of here) now yes? (smiles) *(to a normal PC — happy and excited, points east)*
+`torr51:` You hep Torr. Moo-moos field (points east of here) now yes? (smiles) (Thanks for your assistance. I can really use your help.)
+
+*To a normal PC — happy and excited, points east.*
+
+`torr52:` You hep Torr. Moo-moos field. (points east of here) now yes? (smiles)
 
 ## Torr's Information Hub
 *The PC asks Torr what he knows.*
 
 `torr19:` Torr tell? (What would you like to know, my friend?)
 
-`torr20:` Ook! Ugmen, Ulik ribal, Smiley mook. (Well, there's my bugmen problem. Then there's Sulik, the tribal, that my mom is making work off a debt — I think sis is in love with him. Mom's boyfriend, a fellow named Smiley, is missing someplace out to the west. Quite exciting here, lately.) *(responding to "Tell me what's going on")*
+*Responding to "Tell me what's going on."*
 
-`torr21:` Zzzzz? Torr Zzzzz. (Well, you're welcome to sleep in my room — no charge.) *(responding to "I need a place to stay")*
+`torr20:` Ook! Ugmen, Ulik ribal, Smiley mook. (Well, there's my bugmen problem. Then there's Sulik, the tribal, that my mom is making work off a debt — I think sis is in love with him. Mom's boyfriend, a fellow named Smiley, is missing someplace out to the west. Quite exciting here, lately.)
 
-`torr22:` Uckner! Zoogy (I think you'll get the best prices right here at my family's place. You'll only get laughed at in the Golden Gecko.) *(responding to "Where can I barter?")*
+*Responding to "I need a place to stay."*
 
-`torr23:` Jeannie? Gick Vic (So you want a GECK, huh? Weren't those originally issued to vaults? I don't know where you'd find one, but if anyone does it would be Vic, the trader. He specializes in prewar things. He lives in the northeast part of Klamath.) *(responding to "Have you ever heard of a Garden of Eden Creation Kit?")*
+`torr21:` Zzzzz? Torr Zzzzz. (Well, you're welcome to sleep in my room — no charge.)
+
+*Responding to "Where can I barter?"*
+
+`torr22:` Uckner! Zoogy (I think you'll get the best prices right here at my family's place. You'll only get laughed at in the Golden Gecko.)
+
+*Responding to "Have you ever heard of a Garden of Eden Creation Kit?"*
+
+`torr23:` Jeannie? Gick Vic (So you want a GECK, huh? Weren't those originally issued to vaults? I don't know where you'd find one, but if anyone does it would be Vic, the trader. He specializes in prewar things. He lives in the northeast part of Klamath.)
 
 ## About the Trader
 *PC asks if there's a trader in Klamath.*
@@ -146,23 +173,35 @@
 ## Meeting at the Pasture
 *PC shows up to guard the brahmin.*
 
-`torr24:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos! *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr25:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos! *(to a normal PC)*
+`torr24:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
+
+*To a normal PC.*
+
+`torr25:` Torr like [PC NAME]. Torr thank. Bugmen bad, no let bugmen eat moo-moos!
 
 ## Asking for Help at the Pasture
 *Torr sees the PC approach and hopes they're there to help.*
 
-`torr26:` Ook? Hep moo-moos hep Torr? No bugmen! Bugmen bad! (Are you here to help me guard the brahmin from the assault of the Bugmen?) *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr27:` Ook? Hep moo-moos hep Torr? No bugmen! Bugmen bad! *(to a normal PC)*
+`torr26:` Ook? Hep moo-moos hep Torr? No bugmen! Bugmen bad! (Are you here to help me guard the brahmin from the assault of the Bugmen?)
+
+*To a normal PC.*
+
+`torr27:` Ook? Hep moo-moos hep Torr? No bugmen! Bugmen bad!
 
 ## After the Rescue
 *Torr is overjoyed the PC saved him.*
 
-`torr28:` Torr love [PC NAME]. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.) *(to a low-intelligence PC)*
+*To a low-intelligence PC.*
 
-`torr29:` Torr love [PC NAME]. Torr love ma. Torr love fa. *(to a normal PC)*
+`torr28:` Torr love [PC NAME]. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)
+
+*To a normal PC.*
+
+`torr29:` Torr love [PC NAME]. Torr love ma. Torr love fa.
 
 ## Torr Runs for Help
 *PC has warned Torr the Duntons are nearby. Torr bolts.*
@@ -170,15 +209,21 @@
 `torr49:` Torr go get hep! (Torr scampers off into the night, leaving you alone with the moo-moos, uh, brahmin.)
 
 ## Cut Content
-*These lines exist in the file but are not used in the shipped game. Included here for completeness — confirm with Fede whether these are worth recording.*
+*To a low-intelligence PC.*
 
-`torr13:` Me guard moo-moos from bugmen. (I guard our family's brahmin herd from ferocious nocturnal attacks by bipedal, carapaced creatures that I call bugmen.) *(to a low-intelligence PC)*
+`torr13:` Me guard moo-moos from bugmen. (I guard our family's brahmin herd from ferocious nocturnal attacks by bipedal, carapaced creatures that I call bugmen.)
 
-`torr14:` Me guard moo-moos from bugmen. *(to a normal PC)*
+*To a normal PC.*
 
-`torr17:` You hep Torr. Moo-moos field (points east of here) dark yes? (smiles) (Thanks for your assistance. I can really use your help tonight.) *(to a low-intelligence PC — earlier version of agreeing to guard, at night rather than now)*
+`torr14:` Me guard moo-moos from bugmen.
 
-`torr18:` You hep Torr. Moo-moos field. (points east of here) dark yes? (smiles) *(to a normal PC)*
+*To a low-intelligence PC — earlier version of agreeing to guard, at night rather than now.*
+
+`torr17:` You hep Torr. Moo-moos field (points east of here) dark yes? (smiles) (Thanks for your assistance. I can really use your help tonight.)
+
+*To a normal PC.*
+
+`torr18:` You hep Torr. Moo-moos field. (points east of here) dark yes? (smiles)
 
 ---
 

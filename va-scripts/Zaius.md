@@ -1,13 +1,11 @@
 # Zaius — VA Script
 **Character:** Zaius, Mine Foreman, Broken Hills (hczaius)
 
-**Total recordable lines:** 45 (`zaius1`–`zaius50`, non-sequential — see footer)
+**Total recordable lines:** 45 (`zaius1`–`zaius50`)
 
 ---
 
 > **Direction:** Zaius is a super mutant (older-generation; tough, weathered, pragmatic) who serves as Broken Hills' mine foreman. Gruff but fair. He's a working man — blunt, no-nonsense, with flashes of dry humor. He genuinely cares about Broken Hills and its survival. Gets short-tempered when pressured or disrespected, but is not cruel by nature. Think foreman-who's-seen-it-all, not villain. Maintain consistent gravel and weight across all sessions — he should sound the same whether greeting a stranger or threatening one.
-
-> Two lines (`zaius17`, `zaius20`) come right after Zaius counts out a dollar amount out loud — just record the clean spoken clause given for each below.
 
 ---
 
@@ -52,11 +50,12 @@
 `zaius11:` Hi again. Why not go check out... Umm... The bank in town? I'm sure there are plenty people there who'd love to talk to you.
 
 ## Rejection / Quest Choice Branches
-
 *Gentle dismissal when the PC says they can't help.*
+
 `zaius12:` Well, if you ever happen to think of a way, let me know.
 
 *Kicks off the bargaining/commitment loop.*
+
 `zaius13:` Really? Would you do it for me... And, more importantly, for Broken Hills?
 
 ## Challenge / Smart-Aleck Escalation
@@ -108,27 +107,35 @@
 *These play on subsequent visits — which one triggers depends on PC reputation and quest state. Record all; they're short.*
 
 *Warm / high reputation.*
+
 `zaius23:` Hi, friend!
 
 *Cool / low reputation.*
+
 `zaius24:` Oh, good. It's you again.
 
 *Neutral.*
+
 `zaius25:` Howdy.
 
 *After the PC exposed the conspiracy and eliminated the traitors.*
+
 `zaius26:` Y'know, I knew those bastards Franc, Manson, Jacob, and Aileen had it out for us. Well done! So...
 
 *After the PC took the town's ore instead of returning it.*
+
 `zaius27:` I hope you've given some thought to giving the ore back to the town... So...
 
 *After the PC sold the ore — negative outcome.*
+
 `zaius28:` Thanks for selling the ore. It's not like we couldn't use it or anything. So...
 
 *After the PC returned the ore — positive outcome.*
+
 `zaius29:` Thanks so much for returning that ore. You don't know how hard we work for that stuff.
 
 *Generic impatient re-greeting.*
+
 `zaius30:` What do you want now?
 
 ## Quest Re-Prompt
@@ -150,9 +157,11 @@
 *The mine is fixed. Genuinely grateful. Warm, relieved.*
 
 *Free-run completion.*
+
 `zaius35:` You've fixed it? Excellent! Say, I know you were doing this for free, but... I couldn't let you do that. So me and the guys got together and got you this. It's a combat shotgun. Good luck. And thank you.
 
 *Agreed retainer completion.*
+
 `zaius36:` You've fixed it? Excellent! As agreed, here's the remainder of what we owe you. Thank you again.
 
 ## Impatient Urging
@@ -196,12 +205,15 @@
 *Late-game branch. The PC found a note implicating Zaius in deaths in the tunnels beneath Broken Hills. Defensive but not guilty — he's been trying to contain a conspiracy, not run one.*
 
 *Initial confrontation.*
+
 `zaius48:` Hey, I just received the note. Go talk to Francis about it, all right? He's the one who wrote it.
 
 *Explaining himself.*
+
 `zaius49:` No! We're just protecting ourselves from the conspiracy. Marcus believes in law and evidence, and even though he knows these people are dangerous, he doesn't know who they are- and he's too honorable to plant evidence. My part is keeping Francis restrained from all-out revenge.
 
 *Resolution / aftermath.*
+
 `zaius50:` I knew Francis couldn't handle exposure. He knew the risks of what he did, but I guess he didn't figure on ever being caught. He'll be all right eventually. I hope the same will be true of Broken Hills.
 
 ---

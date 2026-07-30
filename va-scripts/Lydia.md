@@ -90,7 +90,9 @@
 
 `lydia9:` We have synthetic beers and liquor... vodka-H, tequila derivatives W and W2. Oh, and water. And brahmin milk. Beer or liquor is ten bucks, water or milk's three bucks.
 
-`lydia10:` Like...? *(repeat visit — recapping the menu)*
+*Repeat visit — recapping the menu.*
+
+`lydia10:` Like...?
 
 ## Ordering the Brahmin Milk
 

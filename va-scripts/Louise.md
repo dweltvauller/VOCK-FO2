@@ -1,7 +1,7 @@
 # Louise — VA Script
 **Character:** Lou, owner and madam of the Malamute Saloon, Redding
 
-**Total recordable lines:** 49 (`lou1`–`lou48`, `lou38` shared across {202} and {207})
+**Total recordable lines:** 48 (`lou1`–`lou48`)
 
 ---
 
@@ -14,27 +14,41 @@
 
 `lou1:` I just want you to know that I'm thankful for what you did. How can I help you?
 
-`lou2:` Hello there. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. I just want you to know that I'm thankful for what you did. How can I help you? *(first meeting — quest resolved favorably)*
+*First meeting — quest resolved favorably.*
+
+`lou2:` Hello there. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. I just want you to know that I'm thankful for what you did. How can I help you?
 
 `lou3:` Jail's too good for what that bastard done.
 
-`lou4:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Jail's too good for what that bastard done. *(first meeting — criminal unpunished)*
+*First meeting — criminal unpunished.*
+
+`lou4:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Jail's too good for what that bastard done.
 
 `lou5:` I cain't rightly believe that you let the bastard that cut my gal go free. You've got some nerve coming back in here. What the hell do you want?
 
-`lou6:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. I cain't rightly believe that you let the bastard that cut my gal go free. You've got some nerve coming back in here. What the hell do you want? *(first meeting — player let attacker go)*
+*First meeting — player let attacker go.*
+
+`lou6:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. I cain't rightly believe that you let the bastard that cut my gal go free. You've got some nerve coming back in here. What the hell do you want?
 
 `lou7:` You're still a damn idiot. But life goes on, for the rest of us. Now just what the hell do you want?
 
-`lou8:` You're still a damn idiot. But life goes on, for the rest of us. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Now just what the hell do you want? *(first meeting — player acted foolishly)*
+*First meeting — player acted foolishly.*
+
+`lou8:` You're still a damn idiot. But life goes on, for the rest of us. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Now just what the hell do you want?
 
 `lou9:` Remember what I said. Too much money ain't good for that gal. Now whattya need?
 
-`lou10:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Just remember, too much money ain't good for that gal. Now whattya need? *(first meeting — player gave Fannie too much money)*
+*First meeting — player gave Fannie too much money.*
 
-`lou11:` Hello there. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. *(first meeting — no prior quest context)*
+`lou10:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Just remember, too much money ain't good for that gal. Now whattya need?
 
-`lou12:` What now? *(return visit, neutral)*
+*First meeting — no prior quest context.*
+
+`lou11:` Hello there. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran.
+
+*Return visit, neutral.*
+
+`lou12:` What now?
 
 ## Freaks
 *Float lines triggered when the player enters with non-human companions. Delivered as ambient floats, not in dialog.*
@@ -48,7 +62,9 @@
 ## Saloon Business
 *Lou's lines when the player asks about goods, drinks, rooms, and services.*
 
-`lou13:` Sorry, I don't have much time or patience for stupid people. What do you want? *(low-INT greeting)*
+*Low-INT greeting.*
+
+`lou13:` Sorry, I don't have much time or patience for stupid people. What do you want?
 
 `lou14:` A drink huh? Well that'll be $25 for a nice cold bottle of beer. I'm giving you the special discount price too, 'cause I have a soft spot in my heart for the simple.
 
@@ -56,9 +72,13 @@
 
 `lou33:` What can I do for you? You want an empty bed, a full one? Maybe some booze or other goods?
 
-`lou34:` That do it for you, or was there something else you wanted to buy? *(after bartering)*
+*After bartering.*
 
-`lou35:` Seems like you're having a little trouble making up your mind. That it, or you wanna look again? *(player hesitates at barter screen)*
+`lou34:` That do it for you, or was there something else you wanted to buy?
+
+*Player hesitates at barter screen.*
+
+`lou35:` Seems like you're having a little trouble making up your mind. That it, or you wanna look again?
 
 `lou36:` You wanna get some sleep, huh? Well, that's going to cost you $40. Includes fresh, mostly clean sheets too. You still interested?
 
@@ -98,15 +118,25 @@
 
 `lou37:` You're one of Fannie's regulars, aren't you? Why don't you go talk to her. She's in back someplace.
 
-`lou38:` Listen. You're a jinx here. After what happened to Fannie Mae, none of my other girls has much interest in being with you... And I cain't say as I blame 'em. *(shared take — plays for both {202} and {207})*
+*Shared take — plays for both {202} and {207}.*
 
-`lou39:` Looking for someone to help you warm up that big lonely bed, huh? Let me see who I've got available. Hmm, why don't you try Fannie Mae? She oughta be around here somewheres. You can make the arrangements with her yourself. *(male player, first time asking)*
+`lou38:` Listen. You're a jinx here. After what happened to Fannie Mae, none of my other girls has much interest in being with you... And I cain't say as I blame 'em.
 
-`lou40:` You and Fannie already worked things out. Why don't you go see her. She's right in back someplace. *(player already arranged with Fannie)*
+*Male player, first time asking.*
 
-`lou41:` We've only got gals working here, hun. If that's alright by you, a buck's a buck. You might try talking to Fannie Mae. She's in back someplace here. You can make the arrangements with her. *(female player asking)*
+`lou39:` Looking for someone to help you warm up that big lonely bed, huh? Let me see who I've got available. Hmm, why don't you try Fannie Mae? She oughta be around here somewheres. You can make the arrangements with her yourself.
 
-`lou42:` I can't believe that you were dumb enough to give Fannie enough money all at once to overdose herself. You're just an idjit, ain't ya? *(player gave Fannie too much money and she overdosed)*
+*Player already arranged with Fannie.*
+
+`lou40:` You and Fannie already worked things out. Why don't you go see her. She's right in back someplace.
+
+*Female player asking.*
+
+`lou41:` We've only got gals working here, hun. If that's alright by you, a buck's a buck. You might try talking to Fannie Mae. She's in back someplace here. You can make the arrangements with her.
+
+*Player gave Fannie too much money and she overdosed.*
+
+`lou42:` I can't believe that you were dumb enough to give Fannie enough money all at once to overdose herself. You're just an idjit, ain't ya?
 
 `lou43:` So you're the sucker giving my Fannie all that money. I wouldn't do that if I were you. You're not helping her like you think you are.
 
@@ -116,9 +146,13 @@
 
 `lou46:` You can think whatever you like. I just thought I'd try to tell you what the straight scoop really is. Your choice whether you want to listen or not.
 
-`lou47:` What the hell's this stuff? *(PC just gave Lou the Jet antidote)*
+*PC just gave Lou the Jet antidote.*
 
-`lou48:` Well... Alright. Now, is there anything else you wanted? *(agrees to slip the antidote into Fannie's drink)*
+`lou47:` What the hell's this stuff?
+
+*Agrees to slip the antidote into Fannie's drink.*
+
+`lou48:` Well... Alright. Now, is there anything else you wanted?
 
 ---
 

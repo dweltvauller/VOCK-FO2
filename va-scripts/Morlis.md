@@ -1,7 +1,7 @@
-# Aunt Morlis — VA Script
+# Morlis — VA Script
 **Character:** Morlis, one of the Chosen One's aunts, Arroyo village
 
-**Total recordable lines:** 26 (`mor1`–`mor27`, `mor19` intentionally skipped — see footer)
+**Total recordable lines:** 26 (`mor1`–`mor27`, `mor19` intentionally skipped)
 
 ---
 

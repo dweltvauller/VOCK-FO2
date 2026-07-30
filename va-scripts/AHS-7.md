@@ -10,13 +10,11 @@
 ---
 
 ## Combat Float
-
 *Player is hostile.*
 
 `ahs71:` Guards! An oppressive! Strike it down!
 
 ## Ambient Floats
-
 *During the alignment ceremony.*
 
 `ahs739:` Lesson 1: Here we have eternity. Over here is where Quetzel is. [points at something] And here is where we are. [points at something] Now all we have to do is walk really far to get there.
@@ -26,7 +24,6 @@
 `ahs740:` You are not wanted here. Please leave now.
 
 ## Opening Greetings
-
 *First visit.*
 
 `ahs72:` You. State your business.
@@ -36,7 +33,6 @@
 `ahs741:` You again? What?
 
 ## Low-Intelligence PC — Alignment Offer
-
 *To a low-intelligence PC who has not yet been aligned.*
 
 `ahs73:` Ah, poor child. Would you like to be aligned?
@@ -54,7 +50,6 @@
 `ahs76:` ::his voice hardens:: Then I see no reason you should be admitted here. Good day.
 
 ## Letter Delivery
-
 *Player has a letter for AHS-9.*
 
 `ahs77:` Very well. Be quick, though - he's a busy, busy man.
@@ -84,7 +79,6 @@
 `ahs713:` So now you've spoken to Juan and Vikki. Are you interested in joining our friends in the search for enlightenment to the Great Wheel?
 
 ## Joining the Hubologists
-
 *Player agrees to join.*
 
 `ahs714:` ::he smiles:: You won't regret this. You may have the run of the compound. Oh... you're a person who knows how to use a weapon. Would you care to use yours in the service of the Great Wheel?
@@ -110,7 +104,6 @@
 `ahs719:` You do not have more time. Make your choice, meat.
 
 ## The Shi Emperor Mission
-
 *Assigning the mission.*
 
 `ahs720:` The oppressive Shi have been contesting our power and wreaking havoc among our brethren with their neurodyne-influencing ways. We believe that if their Emperor is killed, they will see the error of their ways. Will you kill the Emperor?
@@ -136,7 +129,6 @@
 `ahs725:` Have you removed the Emperor's oppressive stain from this material existence?
 
 ## The Badger Mission
-
 *Emperor is dead. Assigning the next mission.*
 
 `ahs726:` The de facto leader of the Tanker vagrants is a piece of anti-therapeutic raw meat named Badger. With his death, they will come to understand our position. Will you remove him?
@@ -154,7 +146,6 @@
 `ahs729:` His people shall embrace the Hub! All will be well! You have performed a great service!
 
 ## The Tanker Fuel Quest
-
 *Fuel is secured; waiting for AHS-9's launch order.*
 
 `ahs730:` Now that the ship is filled with fuel, we await only the word of AHS-9 the Great and Terrible to achieve liftoff.
@@ -168,7 +159,6 @@
 `ahs732:` I understand the Shi have a massive tank of fuel. Maybe you can steal it from them.
 
 ## Hubologist Lore
-
 *Player asks about Hubologist terminology.*
 
 `ahs733:` Simply use the holodisk Juan and Vikki provided to you and check out the Glossary.
@@ -182,7 +172,6 @@
 `ahs735:` He's usually in his lab, working on ways to perfect our bodies and our spirits.
 
 ## The Alignment Scan
-
 *Offering the player an alignment scan before joining.*
 
 `ahs736:` Before you can truly be one of us, we must perform an initial zeta scan - an alignment. Are you prepared for your scan?

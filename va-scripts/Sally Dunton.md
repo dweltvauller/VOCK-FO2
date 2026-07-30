@@ -18,7 +18,7 @@
 `sally3:` I know you're a tribal and all, but this is a bathhouse, not an outhouse. Git out afore I have you thrown out!
 
 ## Turned Away — Bad Reputation With the Duntons
-*Fires instead of a normal greeting once the PC has crossed her family (`GVAR_RUSTLE_FAIL`).*
+*Fires instead of a normal greeting once the PC has crossed her family.*
 
 `sally4:` I know my boys have taken up with some poor sorts, but you're the worst yet. I just can't believe that you let them down. I won't have you in my place. Now, get out.
 
@@ -118,7 +118,7 @@
 `sally27:` Before we go any further, you've gotta know that the baths are for individuals, not groups. You can make your own arrangements, and then your friends can do as they please on their own.
 
 ## Hostile / Banned Float
-*Fires as a float instead of starting normal dialogue if she's turned hostile toward the PC, or the PC's already been thrown out of the bathhouse for good (`GVAR_BATH_HOUSE_REJECT`).*
+*Fires as a float instead of starting normal dialogue if she's turned hostile toward the PC, or the PC's already been thrown out of the bathhouse for good.*
 
 `sally28:` We don't want your kind around here.
 

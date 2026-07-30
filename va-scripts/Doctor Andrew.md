@@ -30,7 +30,7 @@
 ## Healing Cost Quote — Auto-Doc Broken
 *Merged recording — `andr6` is repeated.*
 
-`andr7` *(merged recording)*:  All right... from the looks of it, it's gonna be pricey. (Scribbles $[PRICE] onto a blood-stained prescription pad.) You got the cash, then you're good to go. No guarantees with the ol' Doc in the back room, of course...
+`andr7:` All right... from the looks of it, it's gonna be pricey. (Scribbles $[PRICE] onto a blood-stained prescription pad.) You got the cash, then you're good to go. No guarantees with the ol' Doc in the back room, of course...
 
 ## Healing Accepted — Self
 *PC pays (full price or successful haggle) and agrees to be healed. `andr8` only plays if the PC haggled the price down.*

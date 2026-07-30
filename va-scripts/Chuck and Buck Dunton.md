@@ -10,7 +10,6 @@
 ---
 
 ## Hostile Opener — First Warning
-
 *Default when reaction is bad from the start.*
 
 `buck1:` You just better push off, or my brother and I are going to pound your little head into jam.
@@ -18,7 +17,6 @@
 `buck2:` Just get out before we smash you flat and turn you into drymeat.
 
 ## Standard Greeting
-
 *Three variants depending on reputation and whether you've already asked about work this visit.*
 
 `buck3:` What do you want to know from us?
@@ -52,7 +50,6 @@
 `buck11:` You worthless sack of gecko shit! Just what the hell are doing in our sight again?
 
 ## Post-Rustling Reward Greeting
-
 *buck12 if the reward's already been paid out, buck13 if not.*
 
 `buck12:` Back again, huh? Well, what can we help you with, business partner?
@@ -64,7 +61,6 @@
 `buck14:` OK - here's the $50 and a little something extra for you, as well. A few sticks of Dunton's Drymeat. Thanks again, partner.
 
 ## Pitching the Rustling Job
-
 *buck15 before 6 PM, buck16 after — buck16 has an extra "Ready to go?" tacked on the end.*
 
 `buck15:` OK, here's the deal. We need some help in, uh, liberating some brahmin from that idiot Torr. You shouldn't have trouble with that. Just talk him out of them. What do you say?
@@ -107,7 +103,6 @@
 `buck29:` Hey there, partner. Still counting on you for tonight. What can I do for you?
 
 ## Arm-Wrestling — Challenge
-
 *Several variants depending on whether you've beaten/lost to him before, your strength, and reputation with the Duntons.*
 
 `buck30:` Well, if it isn't our burly-armed chum.
@@ -133,7 +128,6 @@
 `buck39:` You won this time. Well, aren't you a tricky little cuss? Quick as a gecko with its tail set on fire. Well, the first drink's on me.
 
 ## Arm-Wrestling — Lost by PC
-
 *buck40 the first time, buck41 on a repeat loss.*
 
 `buck40:` You're lucky I didn't snap your little arm like a dried twig. (Hyuk, hyk, hyuk) Well, I guess there's still no challenge here in town.
@@ -153,7 +147,6 @@
 `buck44:` Well, I hear that they're some (hyuk, hyuk) bug-men cutting up brahmin out east of us. But I wouldn't believe everything you hear. (hyuk, hyuk, hyuk).
 
 ## Drymeat Bartering Greeting
-
 *buck45 the first time you're offered drymeat, buck46 on repeat visits.*
 
 `buck45:` Hello there. You here to barter for some of our World Famous Dunton's Drymeat?
@@ -165,7 +158,6 @@
 `buck47:` Huh? What the hell do you mean? They're all ours.
 
 ## Drymeat "Recipe" Jokes
-
 *buck48 is the first pitch; one of buck49–buck55 plays at random on repeat asks.*
 
 `buck48:` Well, our drymeat is an incredible blend of eleven herbs and spices. Let me tell you, it's finger-lickin' good. Animals love it, too. They'll chase you from all over to get some. Must be that rotting smell.
@@ -185,7 +177,6 @@
 `buck55:` It's made from beef aged over six months and tenderized by the choicest horsefly maggots.
 
 ## Arriving at the Pasture — Offering the Job
-
 *buck56 if you've already turned them down once before, buck57 the first time you're asked.*
 
 `buck56:` You here because you changed your mind? You want to help save those poor little brahmin from Torr?

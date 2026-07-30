@@ -1,7 +1,7 @@
 # Kaga — VA Script
 **Character:** Kaga, disgraced tribal warrior, ec`kaga1`–ec`kaga5` (five recurring encounters)
 
-**Total recordable lines:** 49 (`kaga1`–`kaga49` — 5 dialogue lines shared across all encounters, 44 float lines unique per encounter)
+**Total recordable lines:** 49 (`kaga1`–`kaga49`)
 
 ---
 
@@ -10,20 +10,24 @@
 ---
 
 ## Greeting — First Encounter
-
 *Opens every encounter with Kaga's talking-head portrait, shared across all five fights.*
+
 `kaga1:` So, they cast out Kaga, then deem YOU the Chosen One? Ha! You think being the grandchild of the Vault Dweller makes you special?! You think you are better than I, Kaga the Great?!
 
 *PC insists they ARE the Chosen One.*
+
 `kaga2:` That title will mean nothing when Kaga rips the head from your shoulders!
 
 *PC says they never claimed to be better than Kaga.*
+
 `kaga3:` No words can save your hide. With your death, Kaga's honor shall be restored. Kaga will now take his vengeance!
 
 *Low-Intelligence PC.*
+
 `kaga4:` What!? They picked *you* to be the Chosen One? Oh my, they've become desperate.
 
 *Low-Intelligence PC follow-up.*
+
 `kaga5:` Kaga won't even bother speaking with you further. Prepare to die at the hands of Kaga!
 
 ## Encounter 1 — Minimal Clothing (ec`kaga1`)

@@ -7,8 +7,6 @@
 
 > **Direction:** Big Jesus Mordino is a morbidly obese crime boss dying slowly from a serious heart condition. He sweats constantly, breathes with great difficulty, and speaks slowly — not from stupidity, but from the effort of breathing. Every word is deliberate and deliberate words carry weight. He does not raise his voice to intimidate; he lowers it. He is not angry, he is disappointed, and disappointment from him is fatal. Deep, wet, rasping voice. Latin American accent (light to moderate — not a caricature). He rarely uses contractions. He expects to be addressed as *Señor* Mordino.
 
-> **Ellipses ("...")** in dialogue represent genuine pauses for breath — perform them as real gaps, not stylistic hesitations. Embedded stage directions like *(Takes a deep wheezing breath)* or *(coughs)* should be performed as real sounds, not spoken aloud.
-
 ---
 
 ## Warning Floats
@@ -25,14 +23,14 @@
 
 `bgjes4:` ::Wheeze::
 
-`bgjes5:` *Cough* *Cough*
+`bgjes5:` (Cough) (Cough)
 
 ## Made Man Floats
 *Triggered when the PC has become a Made Man of the Mordino family. Random selection.*
 
-`bgjes6:` You are the... *cough*... most valued of my men.
+`bgjes6:` You are the... (Cough)... most valued of my men.
 
-`bgjes7:` Are the people of Reno showing you... *cough*... proper respect?
+`bgjes7:` Are the people of Reno showing you... (Cough)... proper respect?
 
 ## Heart Attack Floats
 *Triggered during a scripted heart attack event. Delivered in sequence — these are his last sounds.*
@@ -374,3 +372,7 @@
 *PC asked him to explain. Mordino shakes his head slightly mid-line.*
 
 `bgjes79:` Ramirez let... four slaves escape last month. (Shakes his head slightly.) That is not good. Within the hour, the Jet you gave Ramirez will stop his... heart. It is PUNISHMENT.
+
+---
+
+*End of script*
