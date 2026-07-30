@@ -1,7 +1,7 @@
 # Morlis — VA Script
 **Character:** Morlis, one of the Chosen One's aunts, Arroyo village
 
-**Total recordable lines:** 26 (`mor1`–`mor27`, `mor19` intentionally skipped)
+**Total recordable lines:** 26 (`mor1`–`mor26`)
 
 ---
 
@@ -12,9 +12,9 @@
 ## Greeting Floats
 *Plays instead of full dialogue on approach, or as talk_p_proc's fallback once nothing else applies. Varies by PC sex.*
 
-`mor21:` Why do you bother me, nephew? Can't you see I'm busy?
+`mor20:` Why do you bother me, nephew? Can't you see I'm busy?
 
-`mor22:` Why do you bother me, niece? Can't you see I'm busy?
+`mor21:` Why do you bother me, niece? Can't you see I'm busy?
 
 ## Asking About the Flint
 
@@ -68,20 +68,20 @@
 
 `mor18:` Listen, Chosen One. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?
 
-`mor20:` Then get yourself out of here and find the GECK! People are depending on you!
+`mor19:` Then get yourself out of here and find the GECK! People are depending on you!
 
 ## If the Flint's Already Gone
 *Variant apology/scolding lines depending on whether the flint was stolen out from under her or already handed over earlier, and whether the powders got turned in along the way.*
 
-`mor23:` Well, I seem to have misplaced the flint. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.
+`mor22:` Well, I seem to have misplaced the flint. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.
 
-`mor24:` Well, I can't seem to find the flint. I'm sure you took it from me when I wasn't looking though. I caught you before. Now off with you! I don't have time to gossip.
+`mor23:` Well, I can't seem to find the flint. I'm sure you took it from me when I wasn't looking though. I caught you before. Now off with you! I don't have time to gossip.
 
-`mor25:` Well... Oh, I'm sorry but I seem to have misplaced the flint. I wish you a safe journey though, child.
+`mor24:` Well... Oh, I'm sorry but I seem to have misplaced the flint. I wish you a safe journey though, child.
 
-`mor26:` I already gave you the flint, stupid. Now stop wasting my time and get out of here!
+`mor25:` I already gave you the flint, stupid. Now stop wasting my time and get out of here!
 
-`mor27:` I already gave you the flint, stupid. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.
+`mor26:` I already gave you the flint, stupid. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.
 
 ---
 

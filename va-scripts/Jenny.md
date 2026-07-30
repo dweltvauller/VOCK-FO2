@@ -97,7 +97,7 @@
 `jenny21:` A Geck? What's that? Some kind of small gecko, I'd guess. Sorry, I don't know what else it would be.
 
 ## Float — Caught Stealing
-*Player attempts to steal from Jenny and is caught.*
+*PC attempts to steal from Jenny and is caught.*
 
 `jenny22:` [Jenny slaps you.] Please don't grope me like that!
 

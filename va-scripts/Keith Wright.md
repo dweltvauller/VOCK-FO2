@@ -102,7 +102,7 @@
 
 `keith25:` Naw, she don't know half of it. She thinks Dad's all clean and above the board, but she ain't too bright to catch on to what he's doin'. If she found that still beneath the train station, she'd raise cain, she would.
 
-*If the player previously helped Mom destroy the family's secret alcohol stills.*
+*If the PC previously helped Mom destroy the family's secret alcohol stills.*
 
 `keith26:` She done it this time, wrecking Pa's stills n' all. The workers were too afraid ta stop her, and Pa threw a fit, and she threw one right back at him. It'll take Pa a while to get back up on his feet.
 

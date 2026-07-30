@@ -1,6 +1,6 @@
 {100}{}{You see Morlis, one of your aunts -- the one who never liked you.}
-{101}{mor21}{Why do you bother me, nephew? Can't you see I'm busy?}
-{301}{mor22}{Why do you bother me, niece? Can't you see I'm busy?}
+{101}{mor20}{Why do you bother me, nephew? Can't you see I'm busy?}
+{301}{mor21}{Why do you bother me, niece? Can't you see I'm busy?}
 {102}{}{Umm, okay. Sorry.}
 {103}{mor1}{What is it? You know I have a lot to do!}
 {104}{}{Ummm, Mynoc said...}
@@ -44,19 +44,18 @@
 {212}{}{Listen, }
 {213}{}{. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?}
 {214}{}{Yes, Aunt Morlis.}
-{215}{mor20}{Then get yourself out of here and find the GECK! People are depending on you!}
+{215}{mor19}{Then get yourself out of here and find the GECK! People are depending on you!}
 {216}{}{Yes, Aunt Morlis.}
 
 #added by killap
-{300}{mor23}{Well, I seem to have misplaced the flint. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.}
-{302}{mor24}{Well, I can't seem to find the flint. I'm sure you took it from me when I wasn't looking though. I caught you before. Now off with you! I don't have time to gossip.}
-{303}{mor25}{Well... Oh, I'm sorry but I seem to have misplaced the flint. I wish you a safe journey though, child.}
+{300}{mor22}{Well, I seem to have misplaced the flint. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.}
+{302}{mor23}{Well, I can't seem to find the flint. I'm sure you took it from me when I wasn't looking though. I caught you before. Now off with you! I don't have time to gossip.}
+{303}{mor24}{Well... Oh, I'm sorry but I seem to have misplaced the flint. I wish you a safe journey though, child.}
 
 #added by Darek
-{304}{mor26}{I already gave you the flint, stupid. Now stop wasting my time and get out of here!}
-{305}{mor27}{I already gave you the flint, stupid. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.}
+{304}{mor25}{I already gave you the flint, stupid. Now stop wasting my time and get out of here!}
+{305}{mor26}{I already gave you the flint, stupid. Oh well, at least I got my powders. Now off with you! I don't have time to gossip.}
 
 # VOCK Add Ons
-# mor19 was removed in a later release on purpose
-# full mor18 line (212 + PC name + 213 merged) — matches what was actually recorded, for lipsync/reference text
+# Merged 212+213 (PC name inserted between) into one line so mor18's recording covers the full displayed text.
 {1212}{mor18}{Listen, Chosen One. People are dying, cattle are dying, and crops are failing. Everyone is either hungry, sick, or both. Our time draws near. If you do not find the GECK soon, we are doomed. Do you understand me?}

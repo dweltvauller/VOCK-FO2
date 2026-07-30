@@ -5,7 +5,7 @@
 
 ---
 
-> **Direction:** A Monty Python and the Holy Grail parody — Arthur plays a Brotherhood of Steel knight with the exact pompous, dead-serious medieval-knight affect of the film, completely unaware anything about his quest is absurd. Formal, archaic phrasing ("Hail, travelers," "Hast thou seen it?") delivered with total sincerity. Grows visibly exasperated as the player drags out the "Why?" exchange, but never breaks composure into real anger until pushed (theft, the low-INT brush-off). Clipped and business-like once the quest resumes. British RP knight energy throughout — think self-important, slightly harried, and always in character.
+> **Direction:** A Monty Python and the Holy Grail parody — Arthur plays a Brotherhood of Steel knight with the exact pompous, dead-serious medieval-knight affect of the film, completely unaware anything about his quest is absurd. Formal, archaic phrasing ("Hail, travelers," "Hast thou seen it?") delivered with total sincerity. Grows visibly exasperated as the PC drags out the "Why?" exchange, but never breaks composure into real anger until pushed (theft, the low-INT brush-off). Clipped and business-like once the quest resumes. British RP knight energy throughout — think self-important, slightly harried, and always in character.
 
 ---
 

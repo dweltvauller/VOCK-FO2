@@ -1,7 +1,10 @@
 # Changelog
 
 ## WIP
-- Louise (Redding), Zaius (Broken Hills), Christopher Wright (New Reno)
+- Louise (Redding), Zaius (Broken Hills)
+
+## v1.9
+- Added voices: Chad (Broken Hills), Christopher Wright (New Reno)
 
 ## v1.8
 - Added voices: Skeeter (Gecko)

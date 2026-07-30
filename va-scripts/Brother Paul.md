@@ -26,7 +26,7 @@
 
 `paul4:` I'm sorry, but I don't have time for someone of your intelligence.
 
-*Snapping in sudden anger/annoyance because the player is messing with his things or stealing.*
+*Snapping in sudden anger/annoyance because the PC is messing with his things or stealing.*
 
 `paul23:` Stop that, moron!
 
@@ -36,7 +36,7 @@
 `paul26:` Greetings traveler! I am Brother Paul and I am in charge of the collection of information for the Abbey. What can I do for you?
 
 ## Opening the Conversation
-*Prompting the player. Polite, open to assistance.*
+*Prompting the PC. Polite, open to assistance.*
 
 `paul5:` Yes?
 
@@ -68,7 +68,7 @@
 `paul11:` Because I've heard sounds echoing up from the caves -- The sounds of snapping claws and skittering legs.
 
 ## Vault 13 / Vault City
-*Thoughtful, trying to point the player in the right direction.*
+*Thoughtful, trying to point the PC in the right direction.*
 
 `paul13:` I don't know anything about Vault 13, but there is Vault City down south. Maybe they have the info you need.
 
@@ -98,12 +98,12 @@
 
 `paul17:` I've never seen one, but I've read about them. (He looks around nervously and lowers his voice.) I know we're not supposed to actually study these books, but when I was transcribing a book on botany, I just couldn't help but get sucked into it. The world of plants is simply captivating. Perhaps, if, during your travels, you happen upon some botany information, you could bring it to me? I'd be most grateful. Of course, it'd have to be our secret.
 
-## Botany Quest — Player's Reaction
-*Offended or defensive because the player judged him or rejected his hobby.*
+## Botany Quest — PC's Reaction
+*Offended or defensive because the PC judged him or rejected his hobby.*
 
 `paul18:` Oh, well then. Fine, forget I asked.
 
-*Appreciative of the player's willingness to keep an eye out.*
+*Appreciative of the PC's willingness to keep an eye out.*
 
 `paul19:` Would you? I'd appreciate that.
 
@@ -116,12 +116,12 @@
 
 `paul21:` Fascinating! I shall take this holodisk and add it to the computer database immediately. I appreciate you taking the time to find this for me. Thank you for collecting this for me.
 
-*Excited, but instructing the player on how to help him process the new data.*
+*Excited, but instructing the PC on how to help him process the new data.*
 
 `paul22:` Fascinating! I appreciate you taking the time to find this for me. Please go and upload this information to our computers.
 
 ## Quest Reward — Terminal Access Granted
-*Appreciative, relieved, and warm. Giving the player a reward for helping the Abbey.*
+*Appreciative, relieved, and warm. Giving the PC a reward for helping the Abbey.*
 
 `paul25:` Ah yes, I heard about what you did. Thanks for taking care of that situation. Here is the access key. (He hands you the key.) Enjoy!
 

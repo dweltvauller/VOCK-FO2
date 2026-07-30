@@ -50,7 +50,7 @@
 
 `eric9:` I could scrape a little something together for you if you did it. I can't promise much, but then, it's not too huge a favor, either.
 
-*Player accepts the quest. Genuinely moved.*
+*PC accepts the quest. Genuinely moved.*
 
 `eric10:` I can't tell you how grateful I am to you. Please let me know as soon as you're done so I can turn up the air conditioning and take a bath.
 

@@ -46,7 +46,7 @@
 
 `tubby1:` I would prefer that you take your business elsewhere.
 
-*Reiterating his desire for the player to leave.*
+*Reiterating his desire for the PC to leave.*
 
 `tubby5:` I would prefer that you leave, instead.
 
@@ -92,11 +92,11 @@
 
 `tubby11:` That's not the kind of information I would just GIVE away to anyone.
 
-*Mocking the player when they try to pay but don't have enough caps/money.*
+*Mocking the PC when they try to pay but don't have enough caps/money.*
 
 `tubby12:` Sure, that kind of money MIGHT help me change my mind. But you ain't got it!
 
-*When the player offers an amount lower than his minimum bribe requirement.*
+*When the PC offers an amount lower than his minimum bribe requirement.*
 
 `tubby13:` I don't think that's going to be enough.
 

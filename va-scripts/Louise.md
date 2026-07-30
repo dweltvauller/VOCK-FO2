@@ -26,19 +26,19 @@
 
 `lou5:` I cain't rightly believe that you let the bastard that cut my gal go free. You've got some nerve coming back in here. What the hell do you want?
 
-*First meeting — player let attacker go.*
+*First meeting — PC let attacker go.*
 
 `lou6:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. I cain't rightly believe that you let the bastard that cut my gal go free. You've got some nerve coming back in here. What the hell do you want?
 
 `lou7:` You're still a damn idiot. But life goes on, for the rest of us. Now just what the hell do you want?
 
-*First meeting — player acted foolishly.*
+*First meeting — PC acted foolishly.*
 
 `lou8:` You're still a damn idiot. But life goes on, for the rest of us. I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Now just what the hell do you want?
 
 `lou9:` Remember what I said. Too much money ain't good for that gal. Now whattya need?
 
-*First meeting — player gave Fannie too much money.*
+*First meeting — PC gave Fannie too much money.*
 
 `lou10:` I'm Lou. Owner of the Malamute Saloon, finest house north of San Fran. Just remember, too much money ain't good for that gal. Now whattya need?
 
@@ -51,7 +51,7 @@
 `lou12:` What now?
 
 ## Freaks
-*Float lines triggered when the player enters with non-human companions. Delivered as ambient floats, not in dialog.*
+*Float lines triggered when the PC enters with non-human companions. Delivered as ambient floats, not in dialog.*
 
 `lou16:` You can come in here, but your traveling freak show stays outside.
 
@@ -60,7 +60,7 @@
 `lou18:` Those *things* aren't coming into my saloon. Leave them outside.
 
 ## Saloon Business
-*Lou's lines when the player asks about goods, drinks, rooms, and services.*
+*Lou's lines when the PC asks about goods, drinks, rooms, and services.*
 
 *Low-INT greeting.*
 
@@ -76,7 +76,7 @@
 
 `lou34:` That do it for you, or was there something else you wanted to buy?
 
-*Player hesitates at barter screen.*
+*PC hesitates at barter screen.*
 
 `lou35:` Seems like you're having a little trouble making up your mind. That it, or you wanna look again?
 
@@ -114,7 +114,7 @@
 `lou32:` Well, I'm sure glad that someone's workin' on it. This type of thing is just bad all the way around. I sure hope you make the bastard pay for what he did to my girl. Make sure he cain't never do that to no one ever again.
 
 ## Fannie
-*Lines about Fannie Mae, Lou's employee — her availability, the player's relationship with her, and the Jet addiction subplot.*
+*Lines about Fannie Mae, Lou's employee — her availability, the PC's relationship with her, and the Jet addiction subplot.*
 
 `lou37:` You're one of Fannie's regulars, aren't you? Why don't you go talk to her. She's in back someplace.
 
@@ -122,19 +122,19 @@
 
 `lou38:` Listen. You're a jinx here. After what happened to Fannie Mae, none of my other girls has much interest in being with you... And I cain't say as I blame 'em.
 
-*Male player, first time asking.*
+*Male PC, first time asking.*
 
 `lou39:` Looking for someone to help you warm up that big lonely bed, huh? Let me see who I've got available. Hmm, why don't you try Fannie Mae? She oughta be around here somewheres. You can make the arrangements with her yourself.
 
-*Player already arranged with Fannie.*
+*PC already arranged with Fannie.*
 
 `lou40:` You and Fannie already worked things out. Why don't you go see her. She's right in back someplace.
 
-*Female player asking.*
+*Female PC asking.*
 
 `lou41:` We've only got gals working here, hun. If that's alright by you, a buck's a buck. You might try talking to Fannie Mae. She's in back someplace here. You can make the arrangements with her.
 
-*Player gave Fannie too much money and she overdosed.*
+*PC gave Fannie too much money and she overdosed.*
 
 `lou42:` I can't believe that you were dumb enough to give Fannie enough money all at once to overdose herself. You're just an idjit, ain't ya?
 

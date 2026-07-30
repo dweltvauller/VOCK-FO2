@@ -38,7 +38,7 @@
 `cmdr6:` Make it quick soldier, I don't have all day to stand around.
 
 ## Base Alert / Security Check
-*Non-dialogue script trigger if the player manually interacts with his personal locker while he's watching.*
+*Non-dialogue script trigger if the PC manually interacts with his personal locker while he's watching.*
 
 `cmdr7:` Leave my locker alone or I will dish out some serious pain.
 
@@ -64,11 +64,11 @@
 
 `cmdr12:` Alright, let's get this over with -- I don't like muties stinking up my office, and I got shit to do. Do you work for the Salvatores?
 
-## Interrogation — Player Is Hostile
+## Interrogation — PC Is Hostile
 
 `cmdr13:` I don't have time for this bullshit. Guards! Kill this mutie!
 
-## Interrogation — Player Claims Independence
+## Interrogation — PC Claims Independence
 
 `cmdr14:` So you're saying you're nothing more than a stray wasteland rat that happened to wander into one of our vertibirds?
 
@@ -80,7 +80,7 @@
 
 `cmdr16:` You're not leaving here alive, mutant. I couldn't risk you blabbing the location of this base to all your wasteland friends, now could I? Guards! Kill this mutie!
 
-## Interrogation — Player Admits Working for the Salvatores
+## Interrogation — PC Admits Working for the Salvatores
 
 `cmdr17:` Tell me what I want to know, and I'll make sure your death is quick and... Relatively painless. Did Salvatore put you up to this?
 

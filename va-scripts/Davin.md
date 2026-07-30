@@ -27,7 +27,7 @@
 
 `davin10:` I knew you'd come back to me.
 
-*Player ends the conversation. A gentle goodbye with a hint of flirtation.*
+*PC ends the conversation. A gentle goodbye with a hint of flirtation.*
 
 `davin16:` Come back and see me if you want to... Talk again.
 
@@ -87,9 +87,9 @@
 `davin24:` Uhhh, I'm not the one you should be talking to.
 
 ## Married / Pimped Float Lines
-*Ambient floats when the player is near Davin after the wedding.*
+*Ambient floats when the PC is near Davin after the wedding.*
 
-*Davin is married to the player. Flirtatious, inviting.*
+*Davin is married to the PC. Flirtatious, inviting.*
 
 `davin1:` If you asked, you could have me.
 
@@ -97,7 +97,7 @@
 
 `davin2:` Hmpf! Miria isn't that good in bed.
 
-*Player has pimped Davin out. Indignant, a little hurt.*
+*PC has pimped Davin out. Indignant, a little hurt.*
 
 `davin3:` I don't believe you pimped me.
 
@@ -109,7 +109,7 @@
 
 `davin5:` Ooo... He's a cutie.
 
-*Davin nudging the player to approach someone. Casual, conspiratorial.*
+*Davin nudging the PC to approach someone. Casual, conspiratorial.*
 
 `davin6:` Ask her.
 
@@ -117,7 +117,7 @@
 
 `davin7:` That was great; who's next?
 
-*Player is actively pimping Davin. Oddly excited about being "in charge." Naive, oblivious.*
+*PC is actively pimping Davin. Oddly excited about being "in charge." Naive, oblivious.*
 
 `davin25:` Oh boy, I get to be the one that's in charge here.
 
@@ -148,36 +148,36 @@
 `davin34:` I healed myself as much as I could but I'm still pretty badly hurt.
 
 ## Party Member — Following Distance
-*Player tells Davin to keep his distance. Hurt and confused, like he did something wrong.*
+*PC tells Davin to keep his distance. Hurt and confused, like he did something wrong.*
 
 `davin28:` But... But... What did I do wrong?
 
-*Player asks Davin to holster his weapon. Agreeable, no fuss.*
+*PC asks Davin to holster his weapon. Agreeable, no fuss.*
 
 `davin36:` Sure thing, I'll put it away.
 
-*Player sets Davin to follow close. Enthusiastic, loyal, happy to be near them.*
+*PC sets Davin to follow close. Enthusiastic, loyal, happy to be near them.*
 
 `davin37:` OK, I'm right behind you all the way.
 
-*Player asks Davin to hang back. He resists — wants to stay close to protect them.*
+*PC asks Davin to hang back. He resists — wants to stay close to protect them.*
 
 `davin38:` Then I wouldn't be able to protect you. No, I better stay close.
 
-*Player insists on more distance. Davin flatly refuses. Possessive and dramatic.*
+*PC insists on more distance. Davin flatly refuses. Possessive and dramatic.*
 
 `davin39:` Is that it? No way. I'm not letting you out my sight, you little sex pistol.
 
-*Player tries to dismiss Davin from the party. He refuses to leave. Clingy, affectionate.*
+*PC tries to dismiss Davin from the party. He refuses to leave. Clingy, affectionate.*
 
 `davin35:` No, baby; I wanna come with you.
 
 ## Party Member — Inventory & Weapons
-*Player opens Davin's inventory. Eager to please.*
+*PC opens Davin's inventory. Eager to please.*
 
 `davin29:` What is it you want from me, my dearest?
 
-*Player asks what weapons Davin can use. Matter-of-fact, slightly rambling, a little sheepish at the end.*
+*PC asks what weapons Davin can use. Matter-of-fact, slightly rambling, a little sheepish at the end.*
 
 `davin30:` I used to skin the brahmin at the slaughterhouse, so I'm pretty handy with the knife. Also dad had me beat a brahmin to death with a crowbar once. I guess I could use a club if I need to. Uhhh, oh yeah, dad took me to shoot a pistol once, but I got scared and almost shot him by accident.
 

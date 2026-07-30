@@ -199,12 +199,12 @@
 
 `buck61:` When Torr shows up, we need you to get him out of here for a while. You can talk to him or knock him unconscious. But don't kill him or you'll get people all riled up. While you do that, we'll get the brahmin. Meet us back at our shop tomorrow to pick up your reward.
 
-## Rattled by the Player's Warning
+## Rattled by the PC's Warning
 *He's just been warned someone might be onto the scheme, and it's gotten to him.*
 
 `buck62:` Maybe you're right. (looking around quickly) I don't like the idea of someone watching me.
 
-## Accusing the Player of Cowardice
+## Accusing the PC of Cowardice
 *buck63 if Torr's on the map, buck64 if not.*
 
 `buck63:` Nobody's watching us. We're real careful about that. You're just yellow, aren't you? Frigging coward. Now get back to your job and get rid of that idiot Torr!
@@ -243,7 +243,7 @@
 
 `buck72:` [The Dunton brothers' eyes get really wide and the two men begin to fidget uncomfortably.] Yy..yyy... yeah so... what's it to you, tribal? Everyone needs a little extra cash now and then. What's it to you anyway? What are you gonna do about it, huh?
 
-## Reaction to the Player's Ultimatum
+## Reaction to the PC's Ultimatum
 *buck73 if he decides to fight instead, buck74 if he backs down.*
 
 `buck73:` [hyuk, hyuk, hyuk] Yeah right, tribal. I think it's about time we teach you what happens to nosy tribals 'round here.

@@ -105,7 +105,7 @@
 `chad33:` Help! We have a thief on our hands here.
 
 ## Night Confrontation — Caught With the Stolen Money
-*Player sneaks into Chad's house at night and catches him with the caravan money. Escalates from startled, to threatening, to a desperate confession.*
+*PC sneaks into Chad's house at night and catches him with the caravan money. Escalates from startled, to threatening, to a desperate confession.*
 
 `chad16:` What the!? Who the hell are you?
 

@@ -5,7 +5,7 @@
 
 ---
 
-> **Direction:** Kaga is a disgraced tribal warrior who was passed over for the title of Chosen One in favor of the player character. He is bitter, vengeful, and obsessed with his own honor and greatness. He refers to himself in the third person frequently ("Kaga will...", "Kaga has...") though occasionally slips into first person. His tone is intense and threatening throughout — never friendly, never uncertain. He believes himself to be the rightful Chosen One and considers the PC an insult to everything he stands for. Voice direction: deep, aggressive, tribal warrior — controlled fury rather than mindless rage, proud and calculating, not just angry. Third-person self-references should feel natural and habitual, not comedic.
+> **Direction:** Kaga is a disgraced tribal warrior who was passed over for the title of Chosen One in favor of the PC. He is bitter, vengeful, and obsessed with his own honor and greatness. He refers to himself in the third person frequently ("Kaga will...", "Kaga has...") though occasionally slips into first person. His tone is intense and threatening throughout — never friendly, never uncertain. He believes himself to be the rightful Chosen One and considers the PC an insult to everything he stands for. Voice direction: deep, aggressive, tribal warrior — controlled fury rather than mindless rage, proud and calculating, not just angry. Third-person self-references should feel natural and habitual, not comedic.
 
 ---
 

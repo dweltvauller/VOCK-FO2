@@ -5,7 +5,7 @@
 
 ---
 
-> **Direction:** Zomak is a large, burly ghoul who serves as guard to "the Brain," a mutant superintelligence cult leader. He is fanatically devoted to the Brain and the concept of "Renewal" (a cult ritual). Zomak is not very bright — he is easily flustered when caught in a slip-up and tries to cover it badly. Vocal qualities: deep, gravelly ghoul voice with enthusiastic, almost child-like devotion when talking about Renewal or the Brain; bluster and low-key menace when turning the player away; comic embarrassment when he accidentally reveals the Brain's location. The catchphrase "Renew, comrade!" should feel like a cult salute — rote but sincere.
+> **Direction:** Zomak is a large, burly ghoul who serves as guard to "the Brain," a mutant superintelligence cult leader. He is fanatically devoted to the Brain and the concept of "Renewal" (a cult ritual). Zomak is not very bright — he is easily flustered when caught in a slip-up and tries to cover it badly. Vocal qualities: deep, gravelly ghoul voice with enthusiastic, almost child-like devotion when talking about Renewal or the Brain; bluster and low-key menace when turning the PC away; comic embarrassment when he accidentally reveals the Brain's location. The catchphrase "Renew, comrade!" should feel like a cult salute — rote but sincere.
 
 ---
 
@@ -40,11 +40,11 @@
 
 `zomak7:` Well, wander on out of here, then.
 
-*Player claims to be the Chosen One. Also used when the Brain is hostile/dead. Firm dismissal.*
+*PC claims to be the Chosen One. Also used when the Brain is hostile/dead. Firm dismissal.*
 
 `zomak9:` Well, you should choose to leave. Get out of here.
 
-*Player gives an acceptable answer (here for annual renewal, or just has questions). Satisfied — waves them through warmly.*
+*PC gives an acceptable answer (here for annual renewal, or just has questions). Satisfied — waves them through warmly.*
 
 `zomak8:` Well, in that case... Come on in. He's right in the next room. Don't keep him waiting.
 
@@ -53,7 +53,7 @@
 
 `zomak10:` Yes, you can all Renew inside.
 
-*Baffled. Genuine confusion — he's not sure if the player is messing with him.*
+*Baffled. Genuine confusion — he's not sure if the PC is messing with him.*
 
 `zomak11:` Ook? What do you mean by that? Are you dumb?
 
@@ -92,7 +92,7 @@
 `zomak19:` Yes, the sacred talisman of Renewal. Renew, comrade! Renew!
 
 ## Float — Recognized Passage
-*Ambient floats, no dialog box. Triggered when the player approaches after already being granted passage. Gender-gated.*
+*Ambient floats, no dialog box. Triggered when the PC approaches after already being granted passage. Gender-gated.*
 
 *Male PC.*
 

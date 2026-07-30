@@ -10,7 +10,7 @@
 ---
 
 ## Combat Float
-*Player is hostile.*
+*PC is hostile.*
 
 `ahs71:` Guards! An oppressive! Strike it down!
 
@@ -19,7 +19,7 @@
 
 `ahs739:` Lesson 1: Here we have eternity. Over here is where Quetzel is. [points at something] And here is where we are. [points at something] Now all we have to do is walk really far to get there.
 
-*Player is unwelcome.*
+*PC is unwelcome.*
 
 `ahs740:` You are not wanted here. Please leave now.
 
@@ -50,7 +50,7 @@
 `ahs76:` ::his voice hardens:: Then I see no reason you should be admitted here. Good day.
 
 ## Letter Delivery
-*Player has a letter for AHS-9.*
+*PC has a letter for AHS-9.*
 
 `ahs77:` Very well. Be quick, though - he's a busy, busy man.
 
@@ -62,44 +62,44 @@
 
 `ahs79:` Excellent! Go in, go in. Speak to Juan Cruz and Vikki Goldman - they're celebrities, you know, but they'll talk to YOU.
 
-*Player asks who AHS-7 is.*
+*PC asks who AHS-7 is.*
 
 `ahs710:` I am AHS-7, the second in command of this facility. Before you ask: AHS stands for Aligned Hub Seeker, which means that I have cleared seven levels of neurodynes from my spirit. This means that I am more enlightened and closer to the hub of the Great Wheel than you. And this means that you will tell me what you want here. Now.
 
-*Player asks about the celebrities.*
+*PC asks about the celebrities.*
 
 `ahs711:` They're stars from New Reno. They heard the truth behind our gospel and came to cleanse their neurodynes.
 
-*Player asks where to find them.*
+*PC asks where to find them.*
 
 `ahs712:` You can find them in the prayer room, showing all our new recruits and the raw meat just how rewarding it is to be a Hubologist.
 
-*Player has just met Juan Cruz and Vikki Goldman.*
+*PC has just met Juan Cruz and Vikki Goldman.*
 
 `ahs713:` So now you've spoken to Juan and Vikki. Are you interested in joining our friends in the search for enlightenment to the Great Wheel?
 
 ## Joining the Hubologists
-*Player agrees to join.*
+*PC agrees to join.*
 
 `ahs714:` ::he smiles:: You won't regret this. You may have the run of the compound. Oh... you're a person who knows how to use a weapon. Would you care to use yours in the service of the Great Wheel?
 
-*Player wants more time to decide.*
+*PC wants more time to decide.*
 
 `ahs715:` Do not wait too long before returning with a reply. Your neurodynes will be filled with more and more pollution until we can begin the cleansing process.
 
-*Player refuses to join.*
+*PC refuses to join.*
 
 `ahs716:` You may leave this compound safely, traveler, but I would recommend not returning. If you do not travel with us, then you work against us - and I would hate to see you hurt.
 
-*Player threatens to destroy the compound.*
+*PC threatens to destroy the compound.*
 
 `ahs717:` Torch us? TORCH US? GUARDS! KILL THE UNBELIEVER!
 
-*Returning visit — player has not yet committed to joining.*
+*Returning visit — PC has not yet committed to joining.*
 
 `ahs718:` So. You have now had time to reconsider your decision. Will you join us?
 
-*Player is still stalling.*
+*PC is still stalling.*
 
 `ahs719:` You do not have more time. Make your choice, meat.
 
@@ -108,19 +108,19 @@
 
 `ahs720:` The oppressive Shi have been contesting our power and wreaking havoc among our brethren with their neurodyne-influencing ways. We believe that if their Emperor is killed, they will see the error of their ways. Will you kill the Emperor?
 
-*Player refuses the Emperor mission.*
+*PC refuses the Emperor mission.*
 
 `ahs721:` Perhaps you will reconsider. Let me know if you do. Now, is there anything the Hub can provide for you, recruit?
 
-*Checking whether player will take the mission.*
+*Checking whether PC will take the mission.*
 
 `ahs722:` Have you thought on aiding us in our struggle against the oppressive Shi? The Star Father will bless you if you take part in our crusade.
 
-*Player is a member asking questions.*
+*PC is a member asking questions.*
 
 `ahs723:` Perhaps I can ease your troubled soul. What do you need?
 
-*Player accepts the Emperor mission.*
+*PC accepts the Emperor mission.*
 
 `ahs724:` Let us know when you have completed your task.
 
@@ -133,7 +133,7 @@
 
 `ahs726:` The de facto leader of the Tanker vagrants is a piece of anti-therapeutic raw meat named Badger. With his death, they will come to understand our position. Will you remove him?
 
-*Checking whether player will kill Badger.*
+*Checking whether PC will kill Badger.*
 
 `ahs727:` So... have you reconsidered whether you would remove this "Badger"?
 
@@ -141,7 +141,7 @@
 
 `ahs728:` Have you removed this "Badger"?
 
-*Player reports Badger is dead.*
+*PC reports Badger is dead.*
 
 `ahs729:` His people shall embrace the Hub! All will be well! You have performed a great service!
 
@@ -150,7 +150,7 @@
 
 `ahs730:` Now that the ship is filled with fuel, we await only the word of AHS-9 the Great and Terrible to achieve liftoff.
 
-*Player asks where to get tanker fuel.*
+*PC asks where to get tanker fuel.*
 
 `ahs731:` Aside from the precious fuel we need to launch ourselves into the bosom of our starry brethren on the planet Quetzel, I can't think of a place. Perhaps the Shi?
 
@@ -159,24 +159,24 @@
 `ahs732:` I understand the Shi have a massive tank of fuel. Maybe you can steal it from them.
 
 ## Hubologist Lore
-*Player asks about Hubologist terminology.*
+*PC asks about Hubologist terminology.*
 
 `ahs733:` Simply use the holodisk Juan and Vikki provided to you and check out the Glossary.
 
-*Player asks when the ship launches.*
+*PC asks when the ship launches.*
 
 `ahs734:` When AHS-9 receives his vision from the Hub, we will leave, and join him in celestial glory!
 
-*Player asks where Crockett is.*
+*PC asks where Crockett is.*
 
 `ahs735:` He's usually in his lab, working on ways to perfect our bodies and our spirits.
 
 ## The Alignment Scan
-*Offering the player an alignment scan before joining.*
+*Offering the PC an alignment scan before joining.*
 
 `ahs736:` Before you can truly be one of us, we must perform an initial zeta scan - an alignment. Are you prepared for your scan?
 
-*Player refuses the alignment scan.*
+*PC refuses the alignment scan.*
 
 `ahs737:` Without a scan, you cannot join us. Are you sure you wish to refuse?
 
