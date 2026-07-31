@@ -30,10 +30,10 @@ item []:
             text = "know" 
         intervals [5]:
             xmin = 0.71 
-            xmax = 1.1 
+            xmax = 1.14 
             text = "you" 
         intervals [6]:
-            xmin = 1.1 
+            xmin = 1.14 
             xmax = 1.29 
             text = "" 
         intervals [7]:
@@ -102,10 +102,10 @@ item []:
             text = "gonna" 
         intervals [23]:
             xmin = 5.64 
-            xmax = 6.2 
+            xmax = 6.19 
             text = "matter" 
         intervals [24]:
-            xmin = 6.2 
+            xmin = 6.19 
             xmax = 6.234558 
             text = "" 
     item [2]:
@@ -152,10 +152,10 @@ item []:
             text = "Y" 
         intervals [10]:
             xmin = 0.88 
-            xmax = 1.1 
+            xmax = 1.14 
             text = "UW1" 
         intervals [11]:
-            xmin = 1.1 
+            xmin = 1.14 
             xmax = 1.29 
             text = "" 
         intervals [12]:
@@ -364,9 +364,9 @@ item []:
             text = "T" 
         intervals [63]:
             xmin = 5.98 
-            xmax = 6.2 
+            xmax = 6.19 
             text = "ER0" 
         intervals [64]:
-            xmin = 6.2 
+            xmin = 6.19 
             xmax = 6.234558 
             text = "" 

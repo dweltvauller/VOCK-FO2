@@ -15,7 +15,7 @@
            Created: June 4, 1998
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_CHAD/HEAD_CHA2. map_update_p_proc's
+           (VOCK) map_update_p_proc's
            float_msg now reads mstr(450) from hcchad.msg instead of g_mstr(450) from generic.msg
            (Chad's own voice). Node032's Reply now plays msg 2200 instead of concatenating
            mstr(220)+" "+mstr(216) (see inline comment there).
@@ -41,7 +41,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_CHAD, HEAD_CHA2 (see file header log)
+#include "../headers/talking_heads.h"
 
 /* Standard Script Procedures */
 procedure start;

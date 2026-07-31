@@ -15,7 +15,7 @@
            Created:
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_KAGA. Fixed doSequence's start_gdialog/
+           (VOCK) Fixed doSequence's start_gdialog/
            Node001 call being made from timed_event_p_proc, outside talk_p_proc's call stack, so
            VA never voiced there (_gdialogActive() gate) -- moved the call into talk_p_proc;
            doSequence now just sets a new `pending_dialog` flag, which critter_p_proc checks and
@@ -40,7 +40,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_KAGA (see file header log)
+#include "../headers/talking_heads.h"
 
 
 /* Standard Script Procedures */

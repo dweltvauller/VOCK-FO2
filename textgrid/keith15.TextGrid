@@ -200,14 +200,14 @@ item []:
             text = "G" 
         intervals [27]:
             xmin = 3.15 
-            xmax = 3.27 
+            xmax = 3.28 
             text = "AA1" 
         intervals [28]:
-            xmin = 3.27 
-            xmax = 3.3 
+            xmin = 3.28 
+            xmax = 3.31 
             text = "N" 
         intervals [29]:
-            xmin = 3.3 
+            xmin = 3.31 
             xmax = 3.36 
             text = "AH0" 
         intervals [30]:

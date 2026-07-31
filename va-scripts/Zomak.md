@@ -30,7 +30,7 @@
 
 *Recited like a creed. Sincere, a little vacant.*
 
-`zomak5:` He is the granter of enlightenment. It is he that promises Renewal to all who follow him.
+`zomak5:` He is the granter of enlightenment. It is he that promises the Renewal to all who follow him.
 
 *Starts to point the way, catches himself, suddenly suspicious.*
 

@@ -34,10 +34,10 @@ item []:
             text = "" 
         intervals [6]:
             xmin = 1.46 
-            xmax = 1.97 
+            xmax = 1.96 
             text = "dim" 
         intervals [7]:
-            xmin = 1.97 
+            xmin = 1.96 
             xmax = 2.079501 
             text = "" 
     item [2]:
@@ -96,9 +96,9 @@ item []:
             text = "IH1" 
         intervals [13]:
             xmin = 1.77 
-            xmax = 1.97 
+            xmax = 1.96 
             text = "M" 
         intervals [14]:
-            xmin = 1.97 
+            xmin = 1.96 
             xmax = 2.079501 
             text = "" 

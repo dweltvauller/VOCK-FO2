@@ -59,11 +59,11 @@
 
 `davin18:` I have to be dreaming. I don't believe such a beautiful woman is trying to seduce me. You are trying to seduce me, right?
 
-*Male PC path, PC accepts. Passionate, breathless. Record only up to "Take me now!" — stop before the bracketed stage direction that follows.*
+*Female PC path, PC accepts. Passionate, breathless. Record only up to "Take me now!" — stop before the bracketed stage direction that follows.*
 
 `davin19:` Oh god! Take me! Take me now!
 
-*Female PC path, PC accepts. Playful and giggling — start with an actual giggle, then deliver the line.*
+*Male PC path, PC accepts. Playful and giggling — start with an actual giggle, then deliver the line.*
 
 `davin20:` [Giggles] I'm 'caboose'! You can be it the next time.
 
@@ -122,11 +122,11 @@
 `davin25:` Oh boy, I get to be the one that's in charge here.
 
 ## Party Member — Greeting
-*Male PC talks to Davin. Affectionate, attentive.*
+*Female PC talks to Davin. Affectionate, attentive.*
 
 `davin26:` Yes, my sweet.
 
-*Female PC talks to Davin. Playful, flirtatious.*
+*Male PC talks to Davin. Playful, flirtatious.*
 
 `davin27:` What can I do for you, lover boy?
 

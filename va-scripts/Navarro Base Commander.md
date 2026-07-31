@@ -1,7 +1,7 @@
 # Navarro Base Commander — VA Script
 **Character:** Navarro Base Commander (CMDR), Enclave
 
-**Total recordable lines:** 25 (`cmdr1`–`cmdr25`)
+**Total recordable lines:** 26 (`cmdr1`–`cmdr26`)
 
 ---
 
@@ -58,6 +58,11 @@
 *Overhead combat shout when he or his guards open fire.*
 
 `cmdr11:` Time to die.
+
+## Pickpocket Detection
+*Overhead bark if the PC is caught trying to steal from him directly (not his locker).*
+
+`cmdr26:` Time to die.
 
 ## Restoration Project — Captured / Brought to Office
 *Extended scene: PC sneaks onto the Enclave Vertibird in New Reno and gets caught arriving at Navarro.*

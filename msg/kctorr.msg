@@ -144,11 +144,7 @@
 {800}{}{You have successfully rescued Torr.}
 
 # VOCK Add Ons
-# VA re-recorded torr24/torr25/torr28/torr29/torr48 saying "friend" instead of the PC's name.
-# Merged 229+230 / 229+231 / 249+250 / 249+251 / 279+280 (PC name spliced between) into one
-# line each so the existing recording covers the full displayed text. Stripped the torr24/25/
-# 28/29/48 tags off the old 230/231/250/251/280 entries above so each tag maps to exactly one
-# msg (the merged one) -- the old entries are left in place, untagged, for reference only.
+# VA re-recorded torr24/torr25/torr28/torr29/torr48 saying "friend" instead of the PC's name. Merged 229+230 / 229+231 / 249+250 / 249+251 / 279+280 (PC name spliced between) into one line each so the existing recording covers the full displayed text. Stripped the torr24/25/28/29/48 tags off the old 230/231/250/251/280 entries above so each tag maps to exactly one msg (the merged one) -- the old entries are left in place, untagged, for reference only.
 {1230}{torr24}{Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos! (Thanks so much for helping me out. These bugmen give me the creeping willies. I hope we can keep any brahmin from being lost.)}
 {1231}{torr25}{Torr like friend. Torr thank. Bugmen bad, no let bugmen eat moo-moos!}
 {1250}{torr28}{Torr love friend. Torr love ma. Torr love fa. (I'm so happy you found me. I was really thinking that I was going to buy the farm that time.)}

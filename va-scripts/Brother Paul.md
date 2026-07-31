@@ -47,7 +47,7 @@
 ## Small Talk — Tedium of the Job
 *Sighing, letting out a bit of workplace frustration. Emphasize the word tedium.*
 
-`paul7:` Yes, we have. Too many, in my opinion. I can't express to you the tedium of having to back up all these files each and every day. There's just so much information to preserve, but, of course, it must be done.
+`paul7:` Ugh, yes, we have. Too many, in my opinion. I can't express to you the tedium of having to back up all these files each and every day. There's just so much information to preserve, but, of course, it must be done.
 
 ## About the Abbey
 *Welcoming, explaining the town policy.*

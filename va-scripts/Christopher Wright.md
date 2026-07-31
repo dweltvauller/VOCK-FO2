@@ -10,7 +10,7 @@
 ---
 
 ## Ambient Floats — Enclave Destroyed
-*Triggered when the Enclave has been destroyed and Chris sees the PC. The engine randomly picks one from the pool; `cw1`–`cw3` have the PC's name appended at runtime, `cw4`–`cw6` are complete non-verbal exclamations (cheer/clap/whistle) delivered as an enthusiastic crowd reaction.*
+*Triggered when the Enclave has been destroyed and Chris sees the PC. The engine randomly picks one from the pool; `cw1`–`cw3` are recorded as complete lines, `cw4`–`cw6` are complete non-verbal exclamations (cheer/clap/whistle) delivered as an enthusiastic crowd reaction.*
 
 `cw1:` Hey! Way to kick the Enclave's ass!
 
@@ -30,7 +30,7 @@
 `cw7:` How do you go to the bathroom with that thing on?
 
 ## Ambient Floats — Made Man Greeting
-*Triggered when the PC has been made a Made Man of a crime family. Engine randomly picks one and appends the PC's name.*
+*Triggered when the PC has been made a Made Man of a crime family. Engine randomly picks one.*
 
 `cw8:` Howdy. What you been up to?
 
@@ -59,11 +59,11 @@
 
 `cw15:` Yeah?
 
-*Warm greeting — PC is a Made Man of Family Wright. Engine appends PC name.*
+*Warm greeting — PC is a Made Man of Family Wright. No PC name is spoken — recorded as a complete line.*
 
 `cw16:` Hey! How's it going? Everybody treating you all right? Anything you need?
 
-*Post-Richard-investigation greeting — PC found Richard's killer.*
+*Post-Richard-investigation greeting — PC found Richard's killer. No PC name is spoken — recorded as a complete line.*
 
 `cw17:` Hey, you got my thanks for finding who killed Richard. I owe you big, and the Wright family always pays its debts. What can I do for you?
 
@@ -97,7 +97,7 @@
 
 `cw23:` Well, now. Why don't you make yourself useful and lick that up, slaver?
 
-*(The young man looks you up and down.) (He sneers, then spits on your feet.)*
+*(The young man looks you up and down.) (He sneers, then spits on your feet.) No PC family name is spoken — recorded as a complete line.*
 
 `cw24:` Well, now. Why don't you make yourself useful and lick that up, you piece of dogshit?
 

@@ -3,8 +3,8 @@
 */
 
 /*
-        Name: Keeper of the Bridge of Death
-        Location: Random Encounter (Bridge of Death, Monty Python special encounter)
+        Name: Robed Figure
+        Location: Special Encounter map
         Description: He likes to ask you questions
 
         Log:
@@ -15,7 +15,7 @@
            Created:
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_BRIGE. Node008 now plays Reply(168)
+           (VOCK) Node008 now plays Reply(168)
            (msg 168/brige9 was tagged and recorded but never called anywhere). killPlayer()'s
            float_msg(dude_obj,...) now plays msg 2200 instead of msg 200 (msg 200 = brige17, the
            Keeper's own VA-tagged death scream -- split onto an untagged copy, see "VOCK Add Ons"
@@ -39,7 +39,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_BRIGE (see file header log)
+#include "../headers/talking_heads.h"
 
 #include "../headers/specenc.h"
 

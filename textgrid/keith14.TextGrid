@@ -86,10 +86,10 @@ item []:
             text = "yer" 
         intervals [19]:
             xmin = 4.66 
-            xmax = 5.09 
+            xmax = 5.12 
             text = "doing" 
         intervals [20]:
-            xmin = 5.09 
+            xmin = 5.12 
             xmax = 5.53 
             text = "here" 
         intervals [21]:
@@ -284,10 +284,10 @@ item []:
             text = "IH0" 
         intervals [46]:
             xmin = 5.03 
-            xmax = 5.09 
+            xmax = 5.12 
             text = "NG" 
         intervals [47]:
-            xmin = 5.09 
+            xmin = 5.12 
             xmax = 5.19 
             text = "HH" 
         intervals [48]:

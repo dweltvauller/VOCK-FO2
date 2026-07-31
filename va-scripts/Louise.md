@@ -99,7 +99,7 @@
 
 `lou25:` Well, I hear all kinds of things about the whole city bein' full o' nuthin' but crazy followers of some kind of kooky religion.
 
-`lou26:` Yup. That's right. I aheard that they're buildin' some huge device that'll let them get in touch with their gods. Or sumthin' like that. Don't know much for certain. It's a long ways off.
+`lou26:` Yup. That's right. I aheard that they're buildin' some kinda huge device that lets them get in touch with their gods. Or sumthin' like that. Don't know much for certain. It's a long ways off.
 
 `lou27:` That's right. She's in a bad way. Used to be such a perty thing, too. I sure hope you take care of this quick. It's bad for business to let those miners think they can get away with something like this.
 

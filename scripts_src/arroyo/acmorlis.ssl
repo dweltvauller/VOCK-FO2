@@ -15,7 +15,7 @@
            Created:
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_MOR. Node015's Reply now plays msg 1212
+           (VOCK) Node015's Reply now plays msg 1212
            directly instead of concatenating mstr(212)+dude_name+mstr(213) (see acmorlis.msg).
            Node018 adds NOption(115,Node999,001) + return after Reply(154) so that branch ends
            the dialogue there instead of falling through to NOption(156,...).
@@ -38,7 +38,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_MOR (see file header log)
+#include "../headers/talking_heads.h"
 
 /* Standard Script Procedures */
 procedure start;
@@ -464,6 +464,7 @@ end
        NOption(113,Node008,004);
 end*/
 
+
 procedure Node007 begin
    variable item;
    variable item2;
@@ -514,6 +515,9 @@ begin
       call Node008;
     end
 end
+
+
+
 
 /*procedure Node007 begin
    variable item;
@@ -679,7 +683,7 @@ begin
         rm_obj_from_inven(self_obj,item);
         add_obj_to_inven(dude_obj,item);
         Reply(154);
-        // VOCK: ends dialogue here instead of falling through to NOption(156,...) below
+        // This node is gated behind int 4 anyway, but just in case use min of 1 here.
         NOption(115, Node999, 001);
         return;
       end
@@ -738,3 +742,5 @@ procedure Node018b begin
   NOption(156,Node999,001);
 end
 //end added
+
+//xxxxxxxxxxxxxxxxxxxx

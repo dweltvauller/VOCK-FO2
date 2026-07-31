@@ -12,11 +12,15 @@
            Created: May 6, 1998
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_BGJES and the th_start_dialog_at_node/
-           th_check_forced_dialog macros. Node041's bonus-branch Reply now plays msg 683 directly
-           instead of concatenating mstr(680)+mstr(683) (msg 683's text covers the full merged
-           line, tag bgjes68). The non-bonus branch (Reply(680), tag bgjes67) was never part of
-           that bug and is unchanged.
+           (VOCK) Node041's bonus-branch Reply now plays new msg 1680
+           directly instead of concatenating mstr(680)+mstr(683); msg 1680 (tag bgjes68, see
+           # VOCK Add Ons in ncbigjes.msg) holds the full merged text. Msgs 680 and 683 restored
+           to their default text/tags (680 stays bgjes67, 683 left untagged). The non-bonus
+           branch (Reply(680), tag bgjes67) was never part of that bug and is unchanged.
+           Node012's prev_node==7 branch now plays new msg 1335 directly instead of
+           concatenating mstr(335)+mstr(336); msg 1335 (tag bgjes19) holds the full merged
+           text. Msg 335 restored to its default text, left untagged. Msg 336 (tag bgjes20)
+           unaffected -- still used standalone in Node012's other branch.
 */
 
 /* Include Files */
@@ -27,7 +31,7 @@
 #include "../headers/command.h"
 #include "../headers/newreno.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_BGJES, th_start_dialog_at_node (see file header log)
+#include "../headers/talking_heads.h"
 
 /* Standard Script Procedures */
 procedure start;
@@ -562,7 +566,7 @@ procedure Node011 begin
 end
 procedure Node012 begin
    if (prev_node == 7) then begin
-      Reply(mstr(335) + mstr(336));
+      Reply(1335); //VOCK: was Reply(mstr(335) + mstr(336)) -- new msg 1335 (bgjes19, see VOCK Add Ons in ncbigjes.msg) holds the full merged text
    end else begin
       Reply(336);
    end
@@ -1008,13 +1012,11 @@ procedure Node041 begin
       give_xp(EXP_KILL_SALVATORE_ASSIGNED);
    end
    if (dude_charisma > 5) then begin
-      Reply(683);   //VOCK: was Reply(mstr(680) + mstr(683)) -- msg 683 (bgjes68) already
-                    //contains the full merged text, so it covers the whole displayed line
-                    //instead of only voicing 680's half
+      Reply(1680);  //VOCK: was Reply(mstr(680) + mstr(683)) -- new msg 1680 (bgjes68, see VOCK Add Ons in ncbigjes.msg) holds the full merged text
       give_pid_qty(dude_obj, PID_GREASE_GUN, 1)
       give_pid_qty(dude_obj, PID_LEATHER_ARMOR_MK_II, 1)
    end else begin
-      Reply(680);   //unaffected -- bgjes67, standalone text
+      Reply(680);
    end
    dude_caps_adjust(500);
    NOption(681, Node979, 004);

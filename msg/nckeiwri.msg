@@ -12,7 +12,7 @@
 # 2. FLOAT DIALOGUE: WARNING - KNOWS PLAYER BUT NOT MADE MAN (WTG)
 
 # 3. FLOAT DIALOGUE: WARNING - PLAYER IS MADE MAN (WTG)
-{220}{keith3}{Hey, }
+{220}{}{Hey, }
 
 # 4. INTRO (WARNING) (WTG)
 {230}{keith4}{Make another move towards that door, an' you'll be sorry.}
@@ -23,8 +23,8 @@
 # 6. INTRO (NORMAL) (WTG)
 {250}{keith6}{Slaver, you done come to the wrong side of town. If you don't start explain' yourself, yer gonna be in a whole mess of trouble.}
 {251}{keith7}{I don't know you, my Dad don't know you, and if you don't start explainin', it ain't gonna matter.}
-{252}{keith8}{How's it goin', }
-{253}{keith9}{Thanks for finding out who killed Richard, }
+{252}{}{How's it goin', }
+{253}{}{Thanks for finding out who killed Richard, }
 {254}{keith10}{Whatdya want now?}
 {255}{}{Mattah. Man is Mattah!}
 {256}{}{Jabawokee Ding Dong}
@@ -67,70 +67,70 @@
 {346}{}{If you could, I'd appreciate it.}
 
 # 14. I'M LOOKING FOR A JOB . . . [BAD RESPONSE] (6, 10, 11)
-{355}{keith18}{Naw... We don't hire muscle like the other families, 'least not now.}
-{356}{keith19}{Naw... We don't traffic with slaver trash like the other families.}
-{357}{keith20}{You better git.}
+{355}{}{Naw... We don't hire muscle like the other families, 'least not now.}
+{356}{}{Naw... We don't traffic with slaver trash like the other families.}
+{357}{}{You better git.}
 {358}{}{I'm not leaving until I see Mr. Wright.}
 {359}{}{All right then.}
 
 # 15. I'M NOT LEAVING UNTIL I SEE MR. WRIGHT. (14)
-{365}{keith21}{Naw, I reckon you WILL be leaving, 'cause you look like the kinda person who likes living. Now get.}
+{365}{keith20}{Naw, I reckon you WILL be leaving, 'cause you look like the kinda person who likes living. Now get.}
 {366}{}{I'm NOT leaving.}
 {367}{}{All right.}
 
 # 16. I'M NOT LEAVING. (15)
-{375}{keith22}{I WARNED you...}
+{375}{keith21}{I WARNED you...}
 {376}{}{You want some of THIS, BOY?! You want some of THIS?! Then come GET s --}
 
 # 17. TELL ME ABOUT MOM (6, 10)
-{380}{keith23}{Uh... What about her? Has she gotten herself in trouble again?}
+{380}{keith22}{Uh... What about her? Has she gotten herself in trouble again?}
 {381}{}{No. Is that a common occurrence?}
 {383}{}{No, I was just curious. Later, Keith.}
 
 # 18. NO. IS THAT A COMMON OCCURRENCE? (17)
-{390}{keith24}{Sometimes. She's always preachin' and hollerin' about the evils of ol' drinkin' and gamblin' and damn near everything else. Causes quite a stir, sometimes, and gets Dad real upset.}
+{390}{keith23}{Sometimes. She's always preachin' and hollerin' about the evils of ol' drinkin' and gamblin' and damn near everything else. Causes quite a stir, sometimes, and gets Dad real upset.}
 {391}{}{Does your Mom have any idea what your family does?}
 {392}{}{I'll bet. Well, thanks for talking with me, Keith.}
 
 # 19. DOES YOUR MOM HAVE ANY IDEA WHAT YOUR FAMILY DOES? (17, 18)
-{400}{keith25}{Naw, she don't know half of it. She thinks Dad's all clean and above the board, but she ain't too bright to catch on to what he's doin'. If she found that still beneath the train station, she'd raise cain, she would.}
+{400}{keith24}{Naw, she don't know half of it. She thinks Dad's all clean and above the board, but she ain't too bright to catch on to what he's doin'. If she found that still beneath the train station, she'd raise cain, she would.}
 {401}{}{I see. Thanks, Keith.}
 
 # 20. MOM = AFTER WRECKED STILLS (17)
-{410}{keith26}{(Shakes head.) She done it this time, wrecking Pa's stills n' all. The workers were too afraid ta stop her, and Pa threw a fit, and she threw one right back at him. (Shrugs.) It'll take Pa a while to get back up on his feet.}
+{410}{keith25}{(Shakes head.) She done it this time, wrecking Pa's stills n' all. The workers were too afraid ta stop her, and Pa threw a fit, and she threw one right back at him. (Shrugs.) It'll take Pa a while to get back up on his feet.}
 
 # 21. CAN YOU TELL ME ABOUT RICHARD? (6, 10)
-{420}{keith27}{Good kid. Damn, if we ever find out who done it to him...}
+{420}{keith26}{Good kid. Damn, if we ever find out who done it to him...}
 {421}{}{Any ideas who might've done it?}
 {422}{}{Well, hopefully you'll find the killer. Bye, Keith.}
 
 # 22. ANY IDEAS WHO MIGHT'VE DONE IT? (21)
-{430}{keith28}{Lotta other families sell Jet, coulda been one of them. Mordino's got the most Jet dealers, though, cause they make the most Jet. Me, I'm bettin' it was one of them.}
+{430}{keith27}{Lotta other families sell Jet, coulda been one of them. Mordino's got the most Jet dealers, though, cause they make the most Jet. Me, I'm bettin' it was one of them.}
 {431}{}{What dealers do you suspect?}
 {432}{}{Can you tell me a little about Richard?}
 
 # 23. WHAT DEALERS ARE SUSPECT? (22, 24)
-{440}{keith29}{Bunch of 'em: Jagged Jimmy J on 2nd Street, that old sonuvabitch Renesco in the West End... and Jules deals, too, at th' fronta town, but mostly to dumb tourists. Then there's Little Jesus Mordino.}
+{440}{keith28}{Bunch of 'em: Jagged Jimmy J on 2nd Street, that old sonuvabitch Renesco in the West End... and Jules deals, too, at th' fronta town, but mostly to dumb tourists. Then there's Little Jesus Mordino.}
 {441}{}{Little Jesus Mordino?}
 {442}{}{Can you tell me a little more about Richard?}
 {443}{}{Thanks for the info, Keith.}
 
 # 24. CAN YOU TELL ME A LITTLE MORE ABOUT RICHARD? (22, 23, 27)
-{450}{keith30}{Quiet kid, clean kid. Kept outta trouble, and for a Wright, that's something. We buried him on the Golgotha plains a while ago, but even so, Mom still don't want his room disturbed. It's hard for her to let go, y'know?}
+{450}{keith29}{Quiet kid, clean kid. Kept outta trouble, and for a Wright, that's something. We buried him on the Golgotha plains a while ago, but even so, Mom still don't want his room disturbed. It's hard for her to let go, y'know?}
 {451}{}{Which room was his? Do you think your mother would mind if I looked in there?}
 {452}{}{Any dealers you suspect may have given him the Jet?}
 {454}{}{Buried in Golgotha, huh? Hmmm. Thanks for the info, Keith.}
 
 # 25. CAN I LOOK AROUND HIS ROOM? (24)
-{460}{keith31}{His room? It's the empty one next to Mom's room, the second one down from the kitchen. As fer looking around... Well... Look, don't stay long... And don't mess the place up, or Mom'll pop a clip if she finds out.}
+{460}{keith30}{His room? It's the empty one next to Mom's room, the second one down from the kitchen. As fer looking around... Well... Look, don't stay long... And don't mess the place up, or Mom'll pop a clip if she finds out.}
 {461}{}{Thanks, Keith. I won't be long.}
 
 # 26. JOB, SUCCESS . . . (12, 13)
-{470}{keith32}{Hold on. (Knocks on door behind him) Pa? (He sticks his head in, there's some mumbling, then he comes back and nods at the door) You ken go in, but watch out. Dad's in a pissy mood.}
+{470}{keith31}{Hold on. (Knocks on door behind him) Pa? (He sticks his head in, there's some mumbling, then he comes back and nods at the door) You ken go in, but watch out. Dad's in a pissy mood.}
 {471}{}{Thanks.}
 
 # 27. LIL' JESUS (23)
-{480}{keith33}{He's Big Jesus' son. A bastard, more like. He mighta caught Richard alone, then pumped him fulla Jet outta spite. You looking for him, check out the Desperado. Little Jesus hangs out there with his old man.}
+{480}{keith32}{He's Big Jesus' son. A bastard, more like. He mighta caught Richard alone, then pumped him fulla Jet outta spite. You looking for him, check out the Desperado. Little Jesus hangs out there with his old man.}
 
 
 
@@ -138,3 +138,15 @@
 {1220}{}{. What's goin' on?}
 {1252}{}{. Everybody treating you all right? Anything I can do for you?}
 {1253}{}{. We owe you big, and the Wrights always pay their debts. What can I do for you?}
+
+# VOCK Add Ons
+# was 220+made_man_name+1220; VA recorded keith3 with no PC name spoken
+{1350}{keith3}{Hey. What's goin' on?}
+# was 252+made_man_name+1252; VA recorded keith8 with no PC name spoken
+{1351}{keith8}{How's it goin'. Everybody treating you all right? Anything I can do for you?}
+# was 253+dude_name+1253; VA recorded keith9 with no PC name spoken
+{1352}{keith9}{Thanks for finding out who killed Richard. We owe you big, and the Wrights always pay their debts. What can I do for you?}
+# Merged 355+357 (Node014's non-slaver variant) so keith18's recording covers the full displayed text instead of only voicing 355's half.
+{1355}{keith18}{Naw... We don't hire muscle like the other families, 'least not now. You better git.}
+# Merged 356+357 (Node014's slaver variant) so keith19's recording covers the full displayed text instead of only voicing 356's half.
+{1356}{keith19}{Naw... We don't traffic with slaver trash like the other families. You better git.}

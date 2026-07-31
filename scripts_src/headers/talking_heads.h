@@ -1,3 +1,5 @@
+// This entire file is part of the Talking Heads mod (Black_Electric & Goat_Boy), not a VOCK addition. Any script that #includes it for a HEAD_X define or the th_start_dialog_at_node/th_check_forced_dialog macros below is just using TH mod baseline functionality.
+
 //Additional Head Defines from Talking Heads Mod, Black_Electric & Goat_Boy//
 #define HEAD_LARAD          (15)
 #define HEAD_DAVIN          (16)

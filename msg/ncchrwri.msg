@@ -6,9 +6,9 @@
 {152}{}{You see Chris Wright. He looks bored out of his skull.}
 
 # 1. FLOAT DIALOGUE: ENCLAVE DESTROYED IS TRUE (WTG)
-{200}{cw1}{Hey! }
-{201}{cw2}{Full on, }
-{202}{cw3}{Rock on, }
+{200}{}{Hey! }
+{201}{}{Full on, }
+{202}{}{Rock on, }
 {203}{cw4}{::Cheers::}
 {204}{cw5}{::Claps::}
 {205}{cw6}{::Whistles::}
@@ -17,9 +17,9 @@
 {215}{cw7}{How do you go to the bathroom with that thing on?}
 
 # 3. FLOAT DIALOGUE: WARNING - PLAYER IS MADE MAN (WTG)
-{220}{cw8}{Howdy, }
-{221}{cw9}{Damn hot, innit, }
-{222}{cw10}{Howdy, }
+{220}{}{Howdy, }
+{221}{}{Damn hot, innit, }
+{222}{}{Howdy, }
 
 # 4. FLOAT/CLICK (DAD IS DEAD) (WTG)
 {230}{cw11}{I still can't believe Dad is dead. There's so much that I wanted to say to him...}
@@ -31,9 +31,9 @@
 
 # 6. INTRO (NORMAL) (WTG)
 {245}{cw15}{Yeah?}
-{246}{cw16}{Hey! How's it going, }
+{246}{}{Hey! How's it going, }
 {1246}{}{? Everybody treating you all right? Anything you need?}
-{247}{cw17}{Hey, you got my thanks for finding who killed Richard, }
+{247}{}{Hey, you got my thanks for finding who killed Richard, }
 {248}{}{. I owe you big, and the Wright family always pays its debts. What can I do for you?}
 {249}{}{Mattah. Man is Mattah!}
 {250}{}{Hoobajuube}
@@ -72,7 +72,7 @@
 
 # 11. INTRO (SLAVER) (WTG)
 {315}{cw23}{(The young man looks you up and down. His eyes stop at the mark on your forehead.) Well, now. (He sneers, then spits on your feet.) Why don't you make yourself useful and lick that up, slaver?}
-{316}{cw24}{(The young man looks you up and down.) Well, now. (He sneers, then spits on your feet.) Why don't you make yourself useful and lick that up, you piece of }
+{316}{}{(The young man looks you up and down.) Well, now. (He sneers, then spits on your feet.) Why don't you make yourself useful and lick that up, you piece of }
 {317}{}{ dogshit?}
 {318}{}{Kick him with the boot he spat on.}
 {320}{}{Let it alone and walk away. This time.}
@@ -180,3 +180,23 @@
 {1220}{}{. What you been up to?}
 {1221}{}{?}
 {1222}{}{. How's things?}
+
+# VOCK Add Ons
+# was 200+dude_name+1200; VA recorded cw1 with no PC name spoken
+{1300}{cw1}{Hey! Way to kick the Enclave's ass!}
+# was 201+dude_name+1201; VA recorded cw2 with no PC name spoken
+{1301}{cw2}{Full on! You rock!}
+# was 202+dude_name+1202; VA recorded cw3 with no PC name spoken
+{1302}{cw3}{Rock on!}
+# was 220+dude_name+1220; VA recorded cw8 with no PC name spoken
+{1303}{cw8}{Howdy. What you been up to?}
+# was 221+dude_name+1221; VA recorded cw9 with no PC name spoken
+{1304}{cw9}{Damn hot, innit?}
+# was 222+dude_name+1222; VA recorded cw10 with no PC name spoken
+{1305}{cw10}{Howdy. How's things?}
+# was 246+dude_name+1246; VA recorded cw16 with no PC name spoken
+{1306}{cw16}{Hey! How's it going? Everybody treating you all right? Anything you need?}
+# was 247+dude_name+248; VA recorded cw17 with no PC name spoken
+{1307}{cw17}{Hey, you got my thanks for finding who killed Richard. I owe you big, and the Wright family always pays its debts. What can I do for you?}
+# was 316+dude_family_name+317; VA recorded cw24 with no PC family name spoken
+{1308}{cw24}{(The young man looks you up and down.) Well, now. (He sneers, then spits on your feet.) Why don't you make yourself useful and lick that up, you piece of dogshit?}

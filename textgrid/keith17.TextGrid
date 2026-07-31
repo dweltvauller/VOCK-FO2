@@ -50,10 +50,10 @@ item []:
             text = "good" 
         intervals [10]:
             xmin = 2.34 
-            xmax = 2.7 
+            xmax = 2.69 
             text = "but" 
         intervals [11]:
-            xmin = 2.7 
+            xmin = 2.69 
             xmax = 2.78 
             text = "" 
         intervals [12]:
@@ -188,10 +188,10 @@ item []:
             text = "AH1" 
         intervals [25]:
             xmin = 2.53 
-            xmax = 2.7 
+            xmax = 2.69 
             text = "T" 
         intervals [26]:
-            xmin = 2.7 
+            xmin = 2.69 
             xmax = 2.78 
             text = "" 
         intervals [27]:

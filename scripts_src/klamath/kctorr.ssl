@@ -19,7 +19,7 @@
            Created: Febuary 3, 1998
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_TORR. Node013/Node015/Node017's Reply()
+           (VOCK) Node013/Node015/Node017's Reply()
            calls now play a single merged msg directly instead of concatenating
            mstr(lead-in)+dude_name+mstr(tail) -- the VA re-recorded torr24/torr25/torr28/torr29/
            torr48 saying "friend" instead of the PC's name, so the merged msgs (1230/1231/1250/
@@ -40,7 +40,7 @@
 #include "../headers/klamath.h"
 #include "../headers/klagraz.h"
 #include "../headers/den.h" //added by killap
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_TORR (see file header log)
+#include "../headers/talking_heads.h"
 
 #define NAME                    SCRIPT_KCTORR
 #define TOWN_REP_VAR            (GVAR_TOWN_REP_KLAMATH)

@@ -22,7 +22,7 @@
            Created: Febuary 3, 1998
 
            Updated:
-           (VOCK) Added headers/talking_heads.h for HEAD_BUCK. Four concatenated Reply() calls
+           (VOCK) Four concatenated Reply() calls
            that were losing their second mstr()'s audio now play a single merged msg instead --
            Node992 (was mstr(198)+mstr(601)), Node027 (mstr(400)+mstr(405) / mstr(404)+mstr(405)),
            Node029 (mstr(420)+mstr(424) / mstr(420)+mstr(533)), Node032 (mstr(449)+mstr(450) /
@@ -54,7 +54,7 @@
 
 #include "../headers/command.h"
 #include "../headers/modreact.h"
-#include "../headers/talking_heads.h" //VOCK: adds HEAD_BUCK (see file header log)
+#include "../headers/talking_heads.h"
 
 #define Vault_Known             (1)     // Temp Until get command from Jesse
 #define Visited_City            (1)     // Temp Until get command from Jesse
@@ -495,9 +495,9 @@ procedure talk_p_proc begin
 
    else if (area == PASTURE) then begin
          if night then
-            start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
+         start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
          else
-            start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
+         start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
          gSay_Start;
          if (global_var(GVAR_RUSTLE_FAIL) == 1) then
             call Node007;
@@ -516,7 +516,7 @@ procedure talk_p_proc begin
    else if (global_var(GVAR_RUSTLE_FAIL_VIOLENT) == 1) then begin
       if night then
          start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
-      else
+         else
          start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
       gSay_Start;
       call Node004;
@@ -526,9 +526,9 @@ procedure talk_p_proc begin
 
    else if (global_var(GVAR_RUSTLE_FAIL) == 1) then begin
          if night then
-            start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
+         start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
          else
-            start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
+         start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
          gSay_Start;
          call Node007;
          gSay_End;
@@ -574,7 +574,7 @@ procedure talk_p_proc begin
    else if (area == GOLDENGECKO) then begin
       if night then
          start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND_NIGHT);
-      else
+         else
          start_gdialog(NAME,self_obj,4,HEAD_BUCK,BACKGROUND_WASTELAND);
       gSay_Start;
       call Node015;

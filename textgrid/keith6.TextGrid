@@ -22,10 +22,10 @@ item []:
             text = "slaver" 
         intervals [3]:
             xmin = 0.68 
-            xmax = 1.15 
+            xmax = 1.16 
             text = "" 
         intervals [4]:
-            xmin = 1.15 
+            xmin = 1.16 
             xmax = 1.33 
             text = "you" 
         intervals [5]:
@@ -136,10 +136,10 @@ item []:
             text = "" 
         intervals [2]:
             xmin = 0.04 
-            xmax = 0.2 
+            xmax = 0.21 
             text = "S" 
         intervals [3]:
-            xmin = 0.2 
+            xmin = 0.21 
             xmax = 0.28 
             text = "L" 
         intervals [4]:
@@ -156,10 +156,10 @@ item []:
             text = "ER0" 
         intervals [7]:
             xmin = 0.68 
-            xmax = 1.15 
+            xmax = 1.16 
             text = "" 
         intervals [8]:
-            xmin = 1.15 
+            xmin = 1.16 
             xmax = 1.25 
             text = "Y" 
         intervals [9]:

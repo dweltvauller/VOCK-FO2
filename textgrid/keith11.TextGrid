@@ -38,10 +38,10 @@ item []:
             text = "dimbulb" 
         intervals [7]:
             xmin = 2.62 
-            xmax = 3.02 
+            xmax = 3.03 
             text = "" 
         intervals [8]:
-            xmin = 3.02 
+            xmin = 3.03 
             xmax = 3.34 
             text = "next" 
         intervals [9]:
@@ -160,18 +160,18 @@ item []:
             text = "AH1" 
         intervals [17]:
             xmin = 2.13 
-            xmax = 2.51 
+            xmax = 2.52 
             text = "L" 
         intervals [18]:
-            xmin = 2.51 
+            xmin = 2.52 
             xmax = 2.62 
             text = "B" 
         intervals [19]:
             xmin = 2.62 
-            xmax = 3.02 
+            xmax = 3.03 
             text = "" 
         intervals [20]:
-            xmin = 3.02 
+            xmin = 3.03 
             xmax = 3.11 
             text = "N" 
         intervals [21]:
