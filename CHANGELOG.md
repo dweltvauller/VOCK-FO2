@@ -3,6 +3,9 @@
 ## WIP
 - Louise (Redding), Zaius (Broken Hills)
 
+## v1.10
+- Fixed several bugs related to text concatenation and audio misplacement
+
 ## v1.9
 - Added voices: Chad (Broken Hills), Christopher Wright (New Reno)
 
