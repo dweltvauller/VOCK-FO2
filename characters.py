@@ -89,6 +89,7 @@ CHARACTERS = [
     ("hcdoc",      "Doc Holliday",               "hol",     ['hcdoc'],                 ['hol']),
     ("hceric",     "Eric",                       "eric",    ['hceric'],                ['eric']),
     ("hcfranci",   "Francis",                    "franc",   ['hcfranci'],              ['franc']),
+    ("hcfranci",   "Phil (bartender, arm-wrestle commentary)", "pbt", ['hcfranci'],     []),
     ("hcjacob",    "Jacob",                      "jacob",   ['hcjacob'],               ['jacob']),
     ("hcmarcus",   "Marcus",                     "mrcus",   ['hcmarcus'],              ['mrcus']),
     ("hcseymor",   "Seymour",                    "plant",   ['hcseymor'],              ['plant']),

@@ -62,8 +62,8 @@
 
 {198}{buck15}{OK, here's the deal. We need some help in, uh, liberating some brahmin from that idiot Torr. You shouldn't have trouble with that. Just talk him out of them. What do you say?}
 {199}{}{Now I remember. Thanks. }
-{200}{}{Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tonight.}
-{201}{}{Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tomorrow night.}
+{200}{buck79}{Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tonight.}
+{201}{buck80}{Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tomorrow night.}
 {202}{}{OK, I'll take care of Torr. }
 {203}{}{OK, I'll find Torr at the grazing area and take care of him for you. }
 {204}{}{I don't think I want to do that after all.}
@@ -226,7 +226,7 @@
 {471}{}{Ook! }
 {472}{}{ Chosen one!}
 
-{480}{}{You ready to go? Well, come on then. We don't have all damn night. We've got work to do.}
+{480}{buck81}{You ready to go? Well, come on then. We don't have all damn night. We've got work to do.}
 {481}{}{Uh, yeah; I'm ready. Let's go.}
 {482}{}{I'm ready to teach that idiot herdboy a lesson.}
 {483}{}{I don't think I want to do this. See you later. }

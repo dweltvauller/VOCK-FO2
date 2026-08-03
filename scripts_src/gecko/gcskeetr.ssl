@@ -17,16 +17,6 @@
            Credit given here to Tommy "the balls" who wrote the weapon upgrade code.
 
            Updated:
-           (VOCK) Baseline is RPU, not BEL, for this NPC specifically -- BEL's Node111/Node112/
-           Node113 are unmodified vanilla and reference msg IDs (6697+ range) that don't exist
-           anywhere in this project's gcskeetr.msg, while RPU's weapon-upgrade nodes already use
-           this project's real msg numbering (610/611/620-623/630/680-685/5500). RPU's Node015
-           also carries a real quest-flow fix (alternate path into the Plasma Transformer quest)
-           that BEL doesn't have; inherited here for free by using RPU as the base.
-           (VOCK) Added "../headers/talking_heads.h" and swapped all 8 talk_p_proc
-           start_gdialog(...,-1,-1) call sites to start_gdialog(...,HEAD_SKEET,BACKGROUND_HUB),
-           merged in from the TH/BEL layer (BACKGROUND_HUB already existed in RPU's own define.h;
-           HEAD_SKEET did not).
            (VOCK) Node111 (magnum/Desert Eagle) and Node112 (hunting rifle/assault rifle/FN FAL)
            rewritten from string-concatenation ("Reply(temp_msg)" built from multiple mstr() calls
            glued together) into a weapon picker + one leaf node per weapon. This fixes a live

@@ -50,7 +50,7 @@
 
 `lydia45:` Sorry, last call was a while ago. Come back in the morning.
 
-`lydia46:` We're closed. Once I finish making this list of our stock, I'll be closing up.
+`lydia46:` We're closed. Once I finish making the list of our stock, I'll be closing up.
 
 ---
 
@@ -65,7 +65,7 @@
 
 `lydia3:` Look, maybe you saved the world and all, but a poet, you're not. Now cut it out.
 
-`lydia4:` Look, take these and get out of here, okay? They ought to keep your mouth busy for a while.
+`lydia4:` Look, take these and get out of here, okay? They've got to keep your mouth busy for a while.
 
 ## Standard Greeting
 *Varies by the PC's citizenship/rank.*
@@ -74,7 +74,7 @@
 
 `lydia6:` What can I do for you, Citizen?
 
-`lydia7:` Yes? Can I help you?
+`lydia7:` Yes? How can I help you?
 
 ## Low-Intelligence PC — Not a Citizen (Reported to the Guards)
 *Same low-INT babbling as above, but from a first "standard greeting" pass — leads to expulsion.*
@@ -111,12 +111,12 @@
 
 `lydia14:` Uh, First Citizen Lynette... you are a Citizen, aren't you?
 
-`lydia15:` First Citizen Lynette. She's in the council building up north if you need to talk to her.
+`lydia15:` First Citizen Lynette. She's in the council building up north if you want to talk to her.
 
 ## Where's the Vault?
 *Varies by citizenship status.*
 
-`lydia16:` Uh, it's the big hole in the side of the mountain to the east of here... say, you are a Citizen, aren't you?
+`lydia16:` Uh, it's the big hole in the side of the mountain to the east of here... Say, you are a Citizen, aren't you?
 
 `lydia17:` It's that big hole in the mountain to the east of here. You can't miss it. You also can't get inside unless you're a Citizen, though.
 
@@ -131,7 +131,7 @@
 
 ## Contact With the Outside World
 
-`lydia20:` Not much. Most contact we have with Outsiders is merchants travelling the Big Circle caravan trail from Broken Hills, New Reno, and Redding. Only other place outside the caravan trail that I know of is Gecko.
+`lydia20:` Not much. Most contact we have with Outsiders is merchants travelling the Big Circle caravan trail from Broken Hills, New Reno, and Redding. Only other place outside the caravan trail that we know of is Gecko.
 
 ## City Info — Broken Hills
 
@@ -147,7 +147,7 @@
 
 ## City Info — Gecko
 
-`lydia24:` A town of ghouls less than a day's travel to the northeast, as I understand it. Rumor is they prey on any travelers that enter their territory. Best stay away.
+`lydia24:` A town of ghouls less than a day's travel to the northeast, as I understand it. Rumor is they prey on travelers that enter their territory. Best stay away.
 
 ## Bootleg Alcohol — Opening the Deal (Non-Captain/Citizen)
 
@@ -157,9 +157,9 @@
 
 `lydia27:` It got drunk. Or so I heard. There were a few other "friends" here in Vault City who helped this merchant friend drink the stash. They were willing to pay a good price to have the real stuff for a change.
 
-`lydia28:` Is that so? Well, if you happened to be looking to relieve yourself of some real alcohol, then I could make it worth your while. If you could keep quiet about our deal. And get the contraband past the gate.
+`lydia28:` Is that so? Well, if you happened to be looking to relieve yourself on some real alcohol, then I could make it worth your while. If you could keep quiet about our deal. And get the contraband past the gate.
 
-`lydia29:` Say, a case of ten bottles of premium alcohol, and ten bottles of beer. And none of that radioactive stuff I hear comes out of Gecko. Just good old "booze," all right?
+`lydia29:` Say, a case of ten bottles of premium alcohol, and ten bottles of beer. And none of that radioactive stuff I hear comes from Gecko. Just good old "booze," all right?
 
 ## Bootleg Alcohol — Refusing the Captain
 *Lydia won't risk the deal with the Captain of the Guard asking.*

@@ -1,7 +1,7 @@
 # Chuck and Buck Dunton — VA Script
 **Character:** Chuck and Buck Dunton, identical twin brothers running the Dunton drymeat/brahmin operation in Klamath
 
-**Total recordable lines:** 78 (`buck1`–`buck78`)
+**Total recordable lines:** 81 (`buck1`–`buck81`)
 
 ---
 
@@ -267,6 +267,17 @@
 *Float. Fires once the Duntons have been intimidated into dropping the rustling scheme (or as a brush-off if they're already scared off).*
 
 `buck78:` Just leave us alone.
+
+## Arranging the Meetup
+*Two variants — tonight or tomorrow night, depending on timing.*
+
+`buck79:` Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tonight.
+
+`buck80:` Meet us at the brahmin grazing area, just to the east of town, at 6:00 PM tomorrow night.
+
+## Ready to Head Out
+
+`buck81:` You ready to go? Well, come on then. We don't have all damn night. We've got work to do.
 
 ---
 
