@@ -1,0 +1,98 @@
+<svg width="640" height="480" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>V.O.C.K. — Vocal Output Creation Kit</title>
+<desc>Pip-Boy 2000 device photo with the VOCK wordmark composited into the CRT screen in glowing green phosphor text.</desc>
+<defs>
+<clipPath id="screenClip">
+<path d="M608,30 L256,30 L243,39 L245,173 L249,343 L249,449 L252,457 L257,462 L264,466 L274,467 L294,468 L338,470 L434,469 L489,469 L531,468 L552,468 L573,465 L594,462 L610,455 L613,449 L619,282 L624,155 L630,63 L630,51 L626,42 L620,35 L612,31 Z"/>
+</clipPath>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+<feGaussianBlur stdDeviation="8"/>
+</filter>
+<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+<rect width="4" height="1" fill="#000000" opacity="0.55"/>
+</pattern>
+<g id="crawlContent">
+<text x="436" y="0" text-anchor="middle" font-family="'Courier New', monospace" font-size="44" font-weight="700" letter-spacing="3" fill="#3cf800" opacity="0.55" filter="url(#glow)">V.O.C.K.</text>
+<text x="436" y="0" text-anchor="middle" font-family="'Courier New', monospace" font-size="44" font-weight="700" letter-spacing="3" fill="#3cf800">V.O.C.K.</text>
+<text x="436" y="45" text-anchor="middle" font-family="'Brush Script MT', 'Lucida Calligraphy', cursive" font-size="24" fill="#3cf800" opacity="0.5" filter="url(#glow)">Vocal Output Creation Kit</text>
+<text x="436" y="45" text-anchor="middle" font-family="'Brush Script MT', 'Lucida Calligraphy', cursive" font-size="24" fill="#3cf800" opacity="0.9">Vocal Output Creation Kit</text>
+<text x="436" y="68" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="2" fill="#3cf800" opacity="0.5">Fallout 2 Voice Modding Pipeline</text>
+
+<text x="436" y="130" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="4" fill="#3cf800" opacity="0.5" filter="url(#glow)">CREDITS</text>
+<text x="436" y="130" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="4" fill="#3cf800">CREDITS</text>
+
+<text x="436" y="162" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" letter-spacing="3" fill="#3cf800" opacity="0.7">CREATED &amp; MANAGED BY</text>
+<text x="436" y="186" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#3cf800" opacity="0.5" filter="url(#glow)">Dwelt Vauller — Fede</text>
+<text x="436" y="186" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#3cf800">Dwelt Vauller — Fede</text>
+
+<text x="436" y="228" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" letter-spacing="3" fill="#3cf800" opacity="0.7">VOICE ACTORS</text>
+
+<text x="436" y="262" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">SKEETER · VEGEIR</text>
+<text x="436" y="280" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Joshua Luther</text>
+
+<text x="436" y="314" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">KEITH WRIGHT</text>
+<text x="436" y="332" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">dar_duck</text>
+
+<text x="436" y="366" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">ERIC</text>
+<text x="436" y="384" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">KALLEKANNIBAL</text>
+
+<text x="436" y="418" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">KAGA · CHUCK DUNTON</text>
+<text x="436" y="436" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Richard Manzano — Sp3lunky</text>
+
+<text x="436" y="470" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">METZGER</text>
+<text x="436" y="488" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Bailey Geen — stab0talksVA</text>
+
+<text x="436" y="522" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">ZAIUS</text>
+<text x="436" y="540" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">sedatednerves</text>
+
+<text x="436" y="574" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">CHRISTOPHER WRIGHT</text>
+<text x="436" y="592" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Halyze</text>
+
+<text x="436" y="626" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">JENNY</text>
+<text x="436" y="644" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Kiti Celine</text>
+
+<text x="436" y="678" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">ZOMAK THE DESTROYER · OLD JOE</text>
+<text x="436" y="696" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Lewis Saunders</text>
+
+<text x="436" y="730" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">BROTHER PAUL</text>
+<text x="436" y="748" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Matt Bartlett</text>
+
+<text x="436" y="782" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">BIG JESUS MORDINO</text>
+<text x="436" y="800" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Enrico Leone</text>
+
+<text x="436" y="834" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">TORR BUCKNER · FRANCIS</text>
+<text x="436" y="852" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">David Pastore-Theriaque</text>
+
+<text x="436" y="886" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">LOUISE</text>
+<text x="436" y="904" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Billy Graves</text>
+
+<text x="436" y="938" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">CHAD</text>
+<text x="436" y="956" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Sn8kezz</text>
+
+<text x="436" y="990" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">KROM</text>
+<text x="436" y="1008" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Jeremy Lindsay</text>
+
+<text x="436" y="1042" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" letter-spacing="1.5" fill="#3cf800" opacity="0.6">LYDIA</text>
+<text x="436" y="1060" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Juliet Blank</text>
+
+<text x="436" y="1154" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" letter-spacing="3" fill="#3cf800" opacity="0.7">SPECIAL THANKS</text>
+<text x="436" y="1186" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Goat_Boy — Talking Heads Mod</text>
+<text x="436" y="1208" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">Black_Electric — THAT Mod</text>
+<text x="436" y="1230" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">No Mutants Allowed Forum</text>
+<text x="436" y="1252" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#3cf800" opacity="0.95">The Fallout 2 Community</text>
+</g>
+</defs>
+
+<image href="pipboy.png" x="0" y="0" width="640" height="480"/>
+
+<g clip-path="url(#screenClip)">
+<g>
+<animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 470" to="0 -1272" dur="49s" repeatCount="indefinite"/>
+<use href="#crawlContent" x="0" y="0"/>
+<use href="#crawlContent" x="0" y="1742"/>
+</g>
+</g>
+
+<rect x="240" y="25" width="395" height="450" clip-path="url(#screenClip)" fill="url(#scan)" opacity="0.14"/>
+
+</svg>
