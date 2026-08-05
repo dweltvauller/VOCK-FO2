@@ -33,3 +33,9 @@
 | [Sally Dunton](https://fallout.fandom.com/wiki/Sally_Dunton) | Klamath |
 | [Bridgekeeper](https://fallout.fandom.com/wiki/Bridgekeeper) | Special Encounter |
 | [Arthur Pendragon](https://fallout.fandom.com/wiki/Arthur_Pendragon) | Special Encounter |
+
+## Quality Assurance
+
+| Name | Links |
+|------|-------|
+| C. Jared Castor | [Facebook](https://www.facebook.com/CJaredCastor/) |
