@@ -3,6 +3,10 @@
 ## WIP
 - Louise (Redding), Zaius (Broken Hills)
 
+## v1.11
+- Added voices: Lydia (Vault City)
+- Fixed Talking Head bugs related to Don and Kurisu (head was not displayed)
+
 ## v1.10
 - Fixed several bugs related to text concatenation and audio misplacement
 
@@ -20,7 +24,6 @@
 
 ## v1.5
 - Multilanguage support (resolved)
-- Added voices (WIP): Zaius (Broken Hills), Christopher Wright (New Reno)
 
 ## v1.4
 - Multilanguage support (not working, see v1.5)
