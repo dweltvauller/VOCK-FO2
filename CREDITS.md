@@ -39,3 +39,9 @@
 | Name | Links |
 |------|-------|
 | C. Jared Castor | [Facebook](https://www.facebook.com/CJaredCastor/) |
+
+## Font Design
+
+| Name | Links |
+|------|-------|
+| Milky Shakester | [FontStruct](https://fontstruct.com/fontstructions/show/2920219/fallout-1) · [DeviantArt](https://www.deviantart.com/milky-shakester) |
