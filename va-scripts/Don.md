@@ -89,6 +89,4 @@
 
 ---
 
-*End of script*
-
-*Tag numbers follow ascending message-ID order, not this document's topical grouping. `don13`–`don16` are all floats fired outside the normal dialogue wrapper (pre-dialogue check, or combat) and are not confirmed to voice under current engine behavior — see project memory for details.*
+*End of script — 16 lines total. Tag numbers (`don1`–`don16`) follow ascending message-ID order, not this document's topical grouping.*
