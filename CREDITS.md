@@ -45,3 +45,4 @@
 | Name | Links |
 |------|-------|
 | Milky Shakester | [FontStruct](https://fontstruct.com/fontstructions/show/2920219/fallout-1) · [DeviantArt](https://www.deviantart.com/milky-shakester) |
+| Jaqinta | [GitHub](https://github.com/jaqinta/Fallout_2_Font_Editor) |
